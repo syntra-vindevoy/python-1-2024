@@ -1,8 +1,8 @@
-import math  # complete import
+import math
 from datetime import datetime
-from math import pi  # partial import
-from math import pi as pie  # partial import with alias
-import altair as alt  # complete import
+from math import pi
+from math import pi as pie
+import altair
 
 
 def get_seconds(minutes: int, seconds: int) -> int:
