@@ -1,0 +1,4 @@
+#These files are not sent to GitHub
+.idea
+.vscode
+__pycache__
