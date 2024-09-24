@@ -8,3 +8,31 @@ seconds = 42
 output = (minutes * 60 + seconds)
 print(output, "seconds")
 
+print("----------------------------------------------------")
+# 2.How many miles are there in 10 kilometers? Hint: there are 1.61 kilometers in a mile.
+print("2.How many miles are there in 10 kilometers? Hint: there are 1.61 kilometers in a mile.")
+kilometers : 1
+Miles : 1.61
+kilometers = 10
+Miles = 1.61
+output = (kilometers / Miles)
+output = round(output, 2)
+print(output," miles in 10 kilometers" )
+
+print("----------------------------------------------------")
+# 3.If you run a 10 kilometer race in 42 minutes 42 seconds, what is your average pace in seconds per mile?
+print("3.If you run a 10 kilometer race in 42 minutes 42 seconds, what is your average pace in seconds per mile?")
+
+hour : 1
+minutes = 42
+seconds = 42
+
+output = (minutes * 60 + seconds)
+output2 = (kilometers/Miles)
+output3 = (output2/output)
+output3= round(output3,4)
+print(output3,"mph average speed in hour")
+
+
+
+
