@@ -3,7 +3,7 @@ y=42
 z= x*60+y
 print (x, "minutes +", y, "seconds=", z, "seconds")
 x=10
-y=x*1.61
+y=x/1.61
 print ("there are", y, "miles in", x, "kilometers" )
 a=z/y
 print ("the pace is", a, "seconds per mile")
