@@ -1,0 +1,21 @@
+# lesson 2 exercise 1
+from math import pi
+radius = 5
+# radius must be in cm
+volume = (4 / 3) * pi * radius ** 3
+print('volume =', volume, "cm³")
+# the volume is in cubic cm
+# exercise 2
+import math
+x = 42
+result1 = (math.cos(x)) ** 2 + (math.sin(x)) ** 2
+print("Result exercise 2 =", result1)
+# exercise 3
+e = math.e
+result2 = (e) ** 2
+print("Result exercise 3_1 =", result2)
+result3 = math.pow (e, 2)
+print("Result exercise 3_2 =", result3)
+result4 = math.exp(2)
+print("Result exercise 3_3 =", result4)
+
