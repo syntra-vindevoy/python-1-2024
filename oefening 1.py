@@ -1,16 +1,15 @@
-x=42
-y=42
-z= x*60+y
-print (f"{x} minutes {y} seconds= {z} seconds")
-x=10
-y=x/1.61
-print (f"there are {y} miles in {x} kilometers")
-a=z/y
-print (f"the pace is {a} seconds per mile")
-b=a/60
-c=a-(int(b)*60)
-print (f"that equals {int(b)} minutes, and {c} seconds per mile")
-print (f"or {int (b)} minutes, {int(c)} seconds and {round (((a-int(a))*100))} hundreds")
-h=60*60
-i=z/h
-print (f"the average speed is {i*y} miles per hour, ({round((i*y)*100)/100})miles per hour")
+minutes=42
+sec=42
+tot_sec= minutes*60+sec
+print (f"{minutes} minutes {sec} seconds= {tot_sec} seconds")
+km=10
+miles=km/1.61
+print (f"there are {miles} miles in {km} kilometers")
+pace=tot_sec/miles
+print (f"the pace is {pace} seconds per mile")
+pace_per_min=pace/60
+pace_sec_rest=pace-(int(pace_per_min)*60)
+print (f"that equals {int(pace_per_min)} minutes, and {pace_sec_rest} seconds per mile")
+print (f"or {int (pace_per_min)} minutes, {int(pace_sec_rest)} seconds and {round (((pace-int(pace))*100))} hundreds")
+i=tot_sec/3600 #aantal sec t.o.v. een uur
+print (f"the average speed is {i*miles} miles per hour, ({round((i*miles)*100)/100})miles per hour")
