@@ -1,4 +1,3 @@
-
 # https://colab.research.google.com/github/AllenDowney/ThinkPython/blob/v3/chapters/chap01.ipynb#scrollTo=9d562609
 
 print("----------------------------------------------------")
@@ -49,6 +48,7 @@ print(output3,"mph average speed in minutes and seconds per mile.")
 
 print("-----------------------------------------------------")
 
+# 5.What is your average speed in miles per hour?
 print("5.What is your average speed in miles per hour?")
 output1 = (minutes / 60 + seconds / 3600)
 output2 = (kilometers/Miles)
