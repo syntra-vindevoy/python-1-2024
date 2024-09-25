@@ -1,41 +1,9 @@
 # https://colab.research.google.com/github/AllenDowney/ThinkPython/blob/v3/chapters/chap02.ipynb#scrollTo=f92afde0
 
+# Chap02.ipynb
+
 # Repeating my advice from the previous chapter, whenever you learn a new feature,
 # you should make errors on purpose to see what goes wrong.
-
-
-# 1. We've seen that n = 17 is legal. What about 17 = n?
-# Because the correct syntax for assignment is to place the variable name
-# on the left side of de the = operator. "n = 17"
-
-
-# 2. How about x = y = 1?
-# is legal in Python. This statement assigns the value 1 to
-# both variables y and x simultaneously. It is a valid chain assignment,
-# where y gets 1, and then x gets the value of y (which is also 1).
-
-# 3. What happens if you put a semi-colon at the end of a Python statement?
-# In Python, the use of a semi-colon (;) at the end of a statement
-# is optional and does not affect the execution of the code. It is ignored,
-# so print("Hello World"); is equivalent to print("Hello World").
-
-# 4. What if you put a period at the end of a statement?
-# Using a period at the end of a statement in Python will typically result
-# in a syntax error. For example, print("Hello World"). would be invalid in Python.
-# The period isn't expected in general statement syntax and can lead to confusion.
-
-# 5. What happens if you spell the name of a module wrong and try to import maath?
-# If you try to import a non-existent module, such as maath, using the statement
-# import maath, Python will raise an ImportError (or ModuleNotFoundError in more
-# recent versions of Python), stating that the module does not exist. For example,
-# you'll get an error message similar to ModuleNotFoundError: No module named 'maath'.
-
-
-
-# The volume of a sphere with radius  𝑟  is  43𝜋𝑟3 . What is the volume of a sphere
-# with radius 5? Start with a variable named radius and then assign the result to a
-# variable named volume. Display the result. Add comments to indicate that radius is
-# in centimeters and volume in cubic centimeters.
 
 
 print("-----------------------------------------------------")
@@ -96,3 +64,39 @@ result3 = math.exp(2)
 print("Using math.e and the exponentiation operator:", result1)
 print("Using math.pow:", result2)
 print("Using math.exp:", result3)
+
+
+
+
+# 1. We've seen that n = 17 is legal. What about 17 = n?
+# Because the correct syntax for assignment is to place the variable name
+# on the left side of de the = operator. "n = 17"
+
+
+# 2. How about x = y = 1?
+# is legal in Python. This statement assigns the value 1 to
+# both variables y and x simultaneously. It is a valid chain assignment,
+# where y gets 1, and then x gets the value of y (which is also 1).
+
+# 3. What happens if you put a semi-colon at the end of a Python statement?
+# In Python, the use of a semi-colon (;) at the end of a statement
+# is optional and does not affect the execution of the code. It is ignored,
+# so print("Hello World"); is equivalent to print("Hello World").
+
+# 4. What if you put a period at the end of a statement?
+# Using a period at the end of a statement in Python will typically result
+# in a syntax error. For example, print("Hello World"). would be invalid in Python.
+# The period isn't expected in general statement syntax and can lead to confusion.
+
+# 5. What happens if you spell the name of a module wrong and try to import maath?
+# If you try to import a non-existent module, such as maath, using the statement
+# import maath, Python will raise an ImportError (or ModuleNotFoundError in more
+# recent versions of Python), stating that the module does not exist. For example,
+# you'll get an error message similar to ModuleNotFoundError: No module named 'maath'.
+
+
+
+# The volume of a sphere with radius  𝑟  is  43𝜋𝑟3 . What is the volume of a sphere
+# with radius 5? Start with a variable named radius and then assign the result to a
+# variable named volume. Display the result. Add comments to indicate that radius is
+# in centimeters and volume in cubic centimeters.
