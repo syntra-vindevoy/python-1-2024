@@ -1,7 +1,7 @@
-tot_per_mijl = 412.482
-duurtijd_per_mijl = 0.002424
+tot_sec_mijl = 412.482
+mijl_per_second = 1 / tot_sec_mijl
 uur_in_sec = 3600
 
-avg_speed = duurtijd_per_mijl * uur_in_sec
+avg_speed = mijl_per_second * uur_in_sec
 
-print(f"{avg_speed} miles/hour")
+print(f"{round(avg_speed,2)} miles/hour")
