@@ -4,7 +4,7 @@ hour_in_minutes = 60
 
 
 #1 How many seconds are there in 42 minutes 42 seconds?
-total_sec = minutes + (seconds * hour_in_minutes)
+total_sec = seconds + (minutes * hour_in_minutes)
 
 print(total_sec)
 
