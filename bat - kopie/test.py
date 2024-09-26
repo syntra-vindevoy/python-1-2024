@@ -1,13 +1,12 @@
-import datetime
-from math import pi
-
 import math
 
-print(pi)
-math.pi
+x = 5
 
-print(datetime.datetime.now())
+result = math.cos(x) ** 2 + math.sin(x) ** 2
+deviation = abs(result - 1)
 
-conda install altair-all
+if deviation < (10 ** $)
+    print("het is ok")
+else :
+    print(f"het is niet ok want de uitkomst is {result} ")
 
-def is_leap_year(year):
