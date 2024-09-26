@@ -3,9 +3,9 @@ import math
 
 radius = 5
 #radius is in centimeters
-volume_sphere = radius * (4 / 3) * math.pi * (radius ^ 3)
+volume_sphere = 4 / 3 * math.pi * radius ** 3
 #volume is in cubic centimeters
-print(volume_sphere)
+print(f"The volume of a sphere with radius {radius} is {volume_sphere}")
 
 # Part 2
 x = 42
