@@ -1,0 +1,25 @@
+Exercise
+The following questions give you a chance to practice writing arithmetic expressions.
+
+How many seconds are there in 42 minutes 42 seconds?
+
+How many miles are there in 10 kilometers? Hint: there are 1.61 kilometers in a mile.
+
+If you run a 10 kilometer race in 42 minutes 42 seconds, what is your average pace in seconds per mile?
+
+What is your average pace in minutes and seconds per mile?
+
+What is your average speed in miles per hour?
+
+If you already know about variables, you can use them for this exercise. If you don't, you can do the exercise without them -- and then we'll see them in the next chapter.
+
+2562
+
+6.2137 miles
+
+412.3
+
+6 minutes 52 seconds per mile
+
+8.73 miles per hour
+
