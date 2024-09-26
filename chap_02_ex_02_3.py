@@ -15,5 +15,3 @@ print(sum_run)
 
 
 #6:52
-
-
