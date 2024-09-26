@@ -2,7 +2,7 @@ unit_price = 24.95
 discount = unit_price * 40/100
 first_shipment = 3
 later_shipment = 0.75
-nbr_copies = 60
+nbr_copies = 10000
 
 price_with_discount = round(unit_price - discount, 2)
 
