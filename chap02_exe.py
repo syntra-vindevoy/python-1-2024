@@ -16,12 +16,19 @@ import math
 
 radius = 5                                  #radius in cm
 volume = (4/3) * math.pi * (radius ** 3)    #volume in cm²
-print(f"The Volume of the Sphere with radius {radius} is: {volume}")
+print(f"The volume of the sphere with radius {radius} is: {volume}")
 
 
-x = 42
+x = 5
 result = (math.cos(x) ** 2) + (math.sin(x) ** 2)
-print(f"The result of cos(x)² + sin(x)² is {result}")
+dev = abs(result - 1)
+
+if dev < (10 ** -5):
+    print("The statement is TRUE")
+else:
+    print("The statement is FALSE")
+
+print(f"The result of cos({x})² + sin({x})² is {round(result)}")
 
 
 my_result1 = math.e ** 2
