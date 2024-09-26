@@ -16,18 +16,18 @@ import math
 
 radius = 5                                  #radius in cm
 volume = (4/3) * math.pi * (radius ** 3)    #volume in cm²
-print(volume)
+print(f"The Volume of the Sphere with radius {radius} is: {volume}")
 
 
 x = 42
 result = (math.cos(x) ** 2) + (math.sin(x) ** 2)
-print(result)
+print(f"The result of cos(x)² + sin(x)² is {result}")
 
 
 my_result1 = math.e ** 2
 my_result2 = math.pow(math.e, 2)            # why is __y: added here???
 my_result3 = math.exp(2)
 
-print(my_result1)
-print(my_result2)
-print(my_result3)
+print(f"The result of e² with method 1 is {my_result1}")
+print(f"The result of e² with method 2 is {my_result2}")
+print(f"The result of e² with method 3 is {my_result3}")
