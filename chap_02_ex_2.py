@@ -7,4 +7,6 @@ print(f"the sum is {sum}")
 deviation = abs(sum - 1)
 
 if deviation < 0.000001:
-    print(f"The sum is {sum}")
+    print("Het is ok")
+else:
+    print(f"Het is niet ok want de uitkomst is {sum}")
