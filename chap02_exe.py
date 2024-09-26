@@ -45,13 +45,13 @@ print("#" * 50)
 price = 24.95                                           #Unit price of book
 discount = 0.4                                          #Discount of 40%
 book_discount = (price * (1 - discount))                #Unit price of discounted book
-amount = 60                                             #Amount of books
+amount = 10000                                          #Amount of books
 init_ship = 3                                           #Init shipping price
 whole_ship = 0.75                                       #Additinal shipping price
 
 total_book = book_discount * amount
 shipping = init_ship + (whole_ship * (amount - 1))
-total = total_book + shipping
+total = round((total_book + shipping), 2)
 
 print(f"The total price for the books is {total_book}, the total shipping is {shipping} and the total amount is {total}")
 
@@ -68,13 +68,26 @@ total_tempo = 3 * tempo_peace
 arrival = start_time + total_easy + total_tempo
 #print(arrival)
 
-arrival_hour = arrival // 3600
+arrival_hour = arrival // 3600              #Floor convert seconds to hours
 print(arrival_hour)
 
-arrival_minute = (arrival % 3600) // 60
+arrival_minute = (arrival % 3600) // 60     #Remaining seconds after converting to hour, floor divided to min
 print(arrival_minute)
 
-arrival_second = (arrival % 60)
+arrival_second = (arrival % 60)             #Remain seconds when we convert to min
 print(arrival_second)
 
 print(f"I arrive for breakfast at {arrival_hour}:{arrival_minute}:{arrival_second} am")
+
+############################################################################################
+print("#" * 50)
+
+#Switch x & y without additional var or tuple
+x = 2
+y = 3
+
+x = x + y           # x = 5
+y = x - y           # y = 5 - 3 = 2
+x = x - y           # x = 5 - 2 = 3
+
+
