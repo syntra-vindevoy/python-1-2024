@@ -9,14 +9,13 @@ shippingcost_next = 0.75 #al de rest aan 0.75cent
 
 bookdiscount = (price_book * discount)
 bookafterdiscount = (price_book - bookdiscount)
-print(bookafterdiscount)
 
 price_first = bookafterdiscount+ shippingcost_first
 price_rest = (bookafterdiscount + shippingcost_next) * 59
 result = price_first + price_rest
 print(result)
 
-
+print(round(result, 2))
 
 
 
