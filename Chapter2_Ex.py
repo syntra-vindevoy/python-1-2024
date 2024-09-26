@@ -8,10 +8,16 @@ volume_sphere = 4 / 3 * math.pi * radius ** 3
 print(f"The volume of a sphere with radius {radius} is {volume_sphere}")
 
 # Part 2
-x = 42
-sine = math.sin(x)
-cosine = math.cos(x)
-print((sine**2)+(cosine**2))
+x = 5
+result = math.cos(x) ** 2 + math.sin(x) ** 2
+deviation = abs(result - 1)
+
+if deviation < 10 ** - 5:
+    #ipv komma getallen te gebruiken: 10 ** -5 (aantal nullen na de komma)
+    print(f"This is OK because the result is {result}")
+else:
+    print(f"This is NOT OK because the result is {result}")
+
 
 # Part 3
 e = math.e
