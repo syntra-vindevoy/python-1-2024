@@ -22,7 +22,7 @@ def calculate_number_of_days():
     seconds = remaining_seconds % 60
 
     # Output the results
-    return (days_since_epoch, hours, minutes, seconds)
+    return days_since_epoch, hours, minutes, seconds
 
 
 def is_triangle (param, param1, param2):
