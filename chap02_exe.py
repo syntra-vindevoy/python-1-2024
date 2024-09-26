@@ -38,3 +38,43 @@ my_result3 = math.exp(2)
 print(f"The result of e² with method 1 is {my_result1}")
 print(f"The result of e² with method 2 is {my_result2}")
 print(f"The result of e² with method 3 is {my_result3}")
+
+############################################################################################
+print("#" * 50)
+
+price = 24.95                                           #Unit price of book
+discount = 0.4                                          #Discount of 40%
+book_discount = (price * (1 - discount))                #Unit price of discounted book
+amount = 60                                             #Amount of books
+init_ship = 3                                           #Init shipping price
+whole_ship = 0.75                                       #Additinal shipping price
+
+total_book = book_discount * amount
+shipping = init_ship + (whole_ship * (amount - 1))
+total = total_book + shipping
+
+print(f"The total price for the books is {total_book}, the total shipping is {shipping} and the total amount is {total}")
+
+############################################################################################
+print("#" * 50)
+
+start_time = ((6 * 60) + 52) * 60                       #Start time is sec
+easy_peace = (8 * 60) + 15                              #Easy peace is sec
+tempo_peace = (7 * 60) + 12                             #Tempo peace is sec
+
+total_easy = 2 * easy_peace
+total_tempo = 3 * tempo_peace
+
+arrival = start_time + total_easy + total_tempo
+#print(arrival)
+
+arrival_hour = arrival // 3600
+print(arrival_hour)
+
+arrival_minute = (arrival % 3600) // 60
+print(arrival_minute)
+
+arrival_second = (arrival % 60)
+print(arrival_second)
+
+print(f"I arrive for breakfast at {arrival_hour}:{arrival_minute}:{arrival_second} am")
