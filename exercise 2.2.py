@@ -25,8 +25,7 @@ y=3
 z=x
 x=y
 y=z
-print (x)
-print (y)
+print (x,y)
 
 x=2
 y=3
