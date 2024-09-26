@@ -3,6 +3,7 @@ from datetime import datetime
 from math import pi
 from math import pi as pie
 
+
 # import altair
 
 def get_seconds(minutes: int, seconds: int) -> int:
@@ -13,6 +14,7 @@ def get_seconds(minutes: int, seconds: int) -> int:
 def get_miles_from_kilometers(kilometers: float) -> float:
     return kilometers * 1.609
 
+
 '''
 this is a block comment
 test
@@ -20,6 +22,7 @@ test
 test
 
 '''
+
 
 def is_leap_year_0(year: int) -> bool:
     if year % 4 == 0:
@@ -32,6 +35,7 @@ def is_leap_year_0(year: int) -> bool:
             return True
     else:
         return False
+
 
 def is_leap_year_1(year: int) -> bool:
     if year % 4 > 0:
@@ -71,7 +75,6 @@ def main():
     years = (2000, 2001, 2002, 2003, 2004, 2100, 2200)
     for y in years:
         print(f"year= {y}")
-        print(is_leap_year(y))
         print(is_leap_year_0(y))
         print(is_leap_year_1(y))
         print(is_leap_year_2(y))
