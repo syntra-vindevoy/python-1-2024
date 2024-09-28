@@ -1,37 +1,43 @@
-n=10000
+books=10000
 price=24.95
-store_price = price*60/100
-shipping = 3*1 + 0.75*(n-1)
-total = store_price*n + shipping
+discount = 40/100
+shipping_first = 3
+shipping_add = 0.75
+store_price = price*(1-discount)
+shipping = shipping_first + shipping_add*(books-1)
+total = store_price*books + shipping
 print (total)
-alt_total = (n*price)*60/100 + shipping #ivm afronding van de 40% korting
+alt_total = (books*price)*(1-discount) + shipping #ivm afronding van de 40% korting tov grote hoeveelheden
 print (alt_total)
 
-start= (6*60+52)*60 #sec
+start= (6*60+52)*60 #hour to secs
 slow= 8*60+15
 fast = 7*60+12
 total_run = 2*slow + 3*fast
 
-stop= total_run + start
-uur= (int(stop/3600))
-rest_min= stop-uur*3600
-min= (int (rest_min/60))
-rest_sec= stop-uur*3600-min*60
-sec= int(rest_sec)
-print (f"{uur}u, {min}m, {sec}s")
+#eerste versie
+stop= total_run + start #seconden
+uur= (int(stop/3600)) #uren
+rest_min= stop-uur*3600 #seconden
+minutes= (int (rest_min/60)) #minuten
+rest_sec= stop-uur*3600-minutes*60 #seconden
+sec= int(rest_sec) #overbodig
+print (f"{uur}u, {minutes}m, {sec}s")
 
-x=2
-y=3
-z=x
-x=y
-y=z
-print (x,y)
+#tweede versie met dubbele //
+stop= total_run + start #seconden
+uur= stop//3600 #uren
+rest_min= stop-uur*3600 #seconden
+minutes= rest_min//60 #minuten
+rest_sec= stop-uur*3600-minutes*60 #seconden
+sec= int(rest_sec) #overbodig
+print (f"{uur}u, {minutes}m, {sec}s")
 
-x=2
-y=3
-x=y+x
-y=x-y
-x=x-y
-print (x,y)
-x,y=y,x
-print (x,y)
+#derde versie met gebruik van restwaarde
+stop = total_run + start #seconden
+uur = stop//3600 #uren
+rest_min = stop%3600 #seconden
+minutes = rest_min//60 #minuten
+rest_sec = rest_min%60 #seconden
+sec = int(rest_sec) #overbodig
+print (f"{uur}u, {minutes}m, {sec}s")
