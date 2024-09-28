@@ -1,22 +1,3 @@
-#integer
-print(type(765))
-#float
-print(type(2.718))
-#string
-print(type('2 pi'))
-#integer
-print(type(abs(-7)))
-#float
-print(type(abs(-7.0)))
-#function
-print(type(abs))
-#type
-print(type(int))
-#type
-print(type(int))
-#type
-print(type(type))
-
 print("How many seconds are there in 42 minutes 42 seconds?")
 print((60 * 42 + 42), "seconds")
 
@@ -32,4 +13,4 @@ seconds = round((60 * 42 + 42) / (10 / 1.61) % 60)
 print(f"{minutes} minutes and {seconds} seconds per mile")
 
 print("What is your average speed in miles per hour?")
-print(3600 / ((minutes * 60 ) + seconds))
+print(round((3600 / ((minutes * 60 ) + seconds)), 2))
