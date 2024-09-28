@@ -20,17 +20,15 @@ stop= total_run + start #seconden
 uur= (int(stop/3600)) #uren
 rest_min= stop-uur*3600 #seconden
 minutes= (int (rest_min/60)) #minuten
-rest_sec= stop-uur*3600-minutes*60 #seconden
-sec= int(rest_sec) #overbodig
+sec= stop-uur*3600-minutes*60 #seconden
 print (f"{uur}u, {minutes}m, {sec}s")
 
 #tweede versie met dubbele //
 stop= total_run + start #seconden
-uur= stop//3600 #uren
+uur= int(stop//3600) #uren
 rest_min= stop-uur*3600 #seconden
-minutes= rest_min//60 #minuten
-rest_sec= stop-uur*3600-minutes*60 #seconden
-sec= int(rest_sec) #overbodig
+minutes= int(rest_min//60) #minuten
+sec= stop-uur*3600-minutes*60 #seconden
 print (f"{uur}u, {minutes}m, {sec}s")
 
 #derde versie met gebruik van restwaarde
@@ -38,6 +36,14 @@ stop = total_run + start #seconden
 uur = stop//3600 #uren
 rest_min = stop%3600 #seconden
 minutes = rest_min//60 #minuten
-rest_sec = rest_min%60 #seconden
-sec = int(rest_sec) #overbodig
-print (f"{uur}u, {minutes}m, {sec}s")
+sec = rest_min%60 #seconden
+print (f"{int(uur)}u, {int(minutes)}m, {sec}s")
+
+#vierde versie met honderdsten
+stop = total_run + start #seconden
+uur = stop//3600 #uren
+rest_min = stop%3600 #seconden
+minutes = rest_min//60 #minuten
+sec = rest_min%60 #seconden
+hund = round(sec*100%100)
+print (f"{int(uur)}u, {int(minutes)}m, {int(sec)}s, {hund}hundreths")
