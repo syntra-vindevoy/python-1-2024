@@ -1,3 +1,5 @@
+import datetime
+
 # easy_pace = ((8 * 60) + 15) * 2
 # four_miles = ((7 * 60) + 12) * 3
 #
@@ -45,3 +47,12 @@ minutes = (real_time_sec % sec_in_hours) // sec_in_minutes
 seconds = real_time_sec % sec_in_minutes
 
 print (f"Ik arriveer thuis om {hour}:{minutes} en {seconds} seconden")
+
+start = datetime.timedelta(hours=6, minutes=52)
+slow = datetime.timedelta(minutes=8, seconds=15)
+fast = datetime.timedelta(minutes=7, seconds=12)
+
+print(start + slow * 2 + fast * 3)
+
+two_hours_later = datetime.timedelta(hours=2)
+print(datetime.datetime.now() + two_hours_later)
