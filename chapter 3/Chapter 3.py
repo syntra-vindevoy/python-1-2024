@@ -38,7 +38,12 @@ print(a)  # geeft steeds de uitkomst van 10 omdat a = x + y uit een functie komt
 
 assert (add(2, 3) == 5)
 
-if __name__ == "__main__":
-    print (__name__)
+if __name__ == "main":
+    print (a+10)
 
-
+def factorial(n):
+    if n < 2:
+        return 1
+    if n == 2:
+        return 2
+    return n * factorial(n - 1)
