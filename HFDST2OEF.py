@@ -52,3 +52,4 @@ home_s = int(home_ts % 60)
 
 print(f"{home_h:02d}:{home_m:02d}:{home_s:02d}")
 
+from
