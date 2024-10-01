@@ -1,5 +1,5 @@
 #Functions
-from chap03_support import add
+from chap03_support import add, div
 
 
 def my_greeting():
@@ -43,3 +43,11 @@ add(2, 3)
 
 print(a)
 
+a = 10
+b = 1
+
+c = div(a, b)
+
+from my_math import factorial
+a = factorial(5)
+print(a)

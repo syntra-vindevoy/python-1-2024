@@ -6,6 +6,11 @@ def add(x, y):
     #print(a)
     return a
 
+def div(x, y):
+    a = x / y
+    return a
+
+
 assert add(2, 3) == 5          #will generate an error when you'd make a mistake in your function for example * instead of +
 
 def __main__():                      #Good practice!!!
