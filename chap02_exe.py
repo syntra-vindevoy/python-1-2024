@@ -81,6 +81,19 @@ print(f"I arrive for breakfast at {arrival_hour}:{arrival_minute}:{arrival_secon
 
 ############################################################################################
 print("#" * 50)
+import datetime
+
+start = datetime.timedelta(hours = 6, minutes = 52)
+slow = datetime.timedelta(minutes = 8, seconds = 15)
+fast = datetime.timedelta(minutes = 7, seconds = 12)
+
+print(start + (2 * slow) + (3 * fast))
+
+two_hours_later = datetime.timedelta(hours = 2)
+print(datetime.datetime.now() + two_hours_later)
+
+############################################################################################
+print("#" * 50)
 
 #Switch x & y without additional var or tuple
 x = 2
