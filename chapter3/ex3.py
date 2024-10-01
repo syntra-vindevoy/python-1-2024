@@ -1,3 +1,6 @@
+import string
+
+
 def main ():
    print(f"2020 {leap_year(2020)}")
    print (f"1900 {leap_year (1900)}")
@@ -19,6 +22,35 @@ def leap_year(year):
         return True
     else:
         return False
+
+
+def is_valid_iban(iban):
+    # Verwijder spaties en zet alles om naar hoofdletters
+    iban = iban.replace(' ', '').upper()
+
+    # Controleer lengte van Nederlandse IBAN (18 tekens)
+    if len(iban) != 18:
+        return False
+
+    # Controleer of de IBAN begint met "NL" en de eerste vier tekens correct zijn
+    if not iban[:2].isalpha() or not iban[2:4].isdigit():
+        return False
+
+    # Verplaats de eerste vier tekens naar het einde
+    rearranged_iban = iban[4:] + iban[:4]
+
+    # Vervang letters door cijfers (A = 10, B = 11, ..., Z = 35)
+    iban_numeric = ''.join(str(int(char, 36)) if char in string.ascii_uppercase else char for char in rearranged_iban)
+
+    # Controleer of het IBAN mod 97 gelijk is aan 1
+    return int(iban_numeric) % 97 == 1
+
+
+def factorial(n):
+    total = 0
+    for i in range(1,n+1):
+        total = total*i
+    return total
 
 if __name__ == '__main__':
     main()
