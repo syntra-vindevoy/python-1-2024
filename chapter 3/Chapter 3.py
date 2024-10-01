@@ -1,18 +1,16 @@
-def print_lyrics():
-    print("hello")
-    print("world")
-print_lyrics()
 
-def print_twice(string):
-    print (string)
-    print (string)
+def facu (x):
+    y = 1
+    while x > 1:
+        y = y * x
+        x = x - 1
+    print(y)
+facu(3)
 
-print_twice("hallo")
+def hallo ():
+    print ("Hallo")
+print(type(hallo))
 
-line = 'Dennis Moore, '
-print_twice(line)
-
-def repeat (word, n):
-    print(word*n)
-repeat("What?", 3)
-print (10**-5)
+def print_t(text):
+    print(text)
+print_t("hallokes")
