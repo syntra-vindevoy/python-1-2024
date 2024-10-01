@@ -1,10 +1,11 @@
 import string
 
+def main_start():
+    print(f"2020 {leap_year(2020)}")
+    print(f"1900 {leap_year(1900)}")
+    print(f"400 {leap_year(400)}")
 
-def main ():
-   print(f"2020 {leap_year(2020)}")
-   print (f"1900 {leap_year (1900)}")
-   print (f"400 {leap_year (400)}")
+
 # To determine whether a year is a leap year, you can follow these rules:
 #
 # A year is a leap year if it is divisible by 4.
@@ -46,11 +47,26 @@ def is_valid_iban(iban):
     return int(iban_numeric) % 97 == 1
 
 
-def factorial(n):
-    total = 0
-    for i in range(1,n+1):
-        total = total*i
+def fac1(n):
+    total = 1
+    for i in range(2, n+1):
+        total = total * i
     return total
 
+def fact(n):
+    if n < 2:
+        return 1
+    if n == 2:
+        return 2
+    return n * fact(n-1)
+
 if __name__ == '__main__':
-    main()
+    main_start()
+    assert is_valid_iban("NL91ABNA0417164300") == True
+    assert fac1(3) == 6
+    assert fact(0) == 1
+    assert fact(1) == 1
+    assert fact(3) == 6
+    assert fact(2) == 2
+    assert fact(4) == 24
+    assert fact(5) == 120
