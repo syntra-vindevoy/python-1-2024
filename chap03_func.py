@@ -1,4 +1,6 @@
 #Functions
+from chap03_support import add
+
 
 def my_greeting():
     print("Hello")
@@ -28,12 +30,12 @@ for i in range(1, 11, 2):       #1 = start point / 2 = until (but not included) 
     print(i)
 
 #############################################################################
-def add(x, y):
+def add1(x, y):
     a = x + y                   #'a' is local just within the function
 
     print(a)
 
-a = 100
+a = 100                         #bad practice, but this a is a completely different a than the one in the function
 
 print(a)
 
