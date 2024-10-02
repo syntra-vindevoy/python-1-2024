@@ -26,6 +26,7 @@ def leap_year(year):
 
 
 def is_valid_iban(iban):
+
     # Verwijder spaties en zet alles om naar hoofdletters
     iban = iban.replace(' ', '').upper()
 
