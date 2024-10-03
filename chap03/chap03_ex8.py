@@ -6,16 +6,18 @@ def square(x, y, z, f, g):
             g(x, z)
     f(x, z)
 
-def outer(x, z):
-    part = "+" + "-" * z
-    side = part * x + "+"
-    print(side)
+def pattern1(x, z):
+    #part = "+" + "-" * z
+    #side = part * x + "+"
+    #print(side)
+    print((("+" + "-" * z) * x) + "+")
 
-def inner(x, z):
-    part = "|" + " " * z
-    side = part * x + "|"
-    print(side)
+def pattern2(x, z):
+    #part = "|" + " " * z
+    #side = part * x + "|"
+    #print(side)
+    print((("|" + " " * z) * x) + "|")
 
-square(4, 4, 4, outer, inner)
-square(5, 2, 5, outer, inner)
-square(10, 3, 3, outer, inner)
+square(4, 4, 4, pattern1, pattern2)
+square(5, 2, 5, pattern1, pattern2)
+square(10, 3, 3, pattern1, pattern2)
