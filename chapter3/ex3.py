@@ -83,11 +83,9 @@ def fact(n):
     return n * fact(n-1)
 
 
-def draw_grid(row_count, col_count):
-    horizontal_line = ("+ - - - - " * col_count) + "+"
-    vertical_line = ("|         " * col_count) + "|"
-
-    # Draw the grid
+def draw_grid(row_count, col_count,inner_width):
+    horizontal_line = (("+" + ("-" * inner_width)) * col_count) + "+"
+    vertical_line = (("|" + (" " * inner_width))* col_count) + "|"
     for _ in range(row_count):
         print(horizontal_line)
         for _ in range(col_count):
@@ -106,5 +104,5 @@ if __name__ == '__main__':
     assert fact(2) == 2
     assert fact(4) == 24
     assert fact(5) == 120
-    draw_grid(5, 5)
+    draw_grid(2, 5,4)
 
