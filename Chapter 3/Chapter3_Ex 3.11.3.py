@@ -3,8 +3,7 @@
 # Here’s an example of a pyramid with 5 levels, using the string 'L'.
 
 def triangle(text , height):
-    for i in range(1, height + 1):
-        repeat = text * (2 * i - 1)
-        print(repeat)
+    for i in range(height):
+        print(text * (i + 1))
 
 triangle("L" , 5)
