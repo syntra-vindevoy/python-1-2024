@@ -1,3 +1,4 @@
+
 books=10000
 price=24.95
 discount = 40/100
@@ -13,7 +14,7 @@ print (alt_total)
 start= (6*60+52)*60 #hour to secs
 slow= 8*60+15
 fast = 7*60+12
-total_run = 2*slow + 3*fast
+total_run = 2*slow + 2.8*fast
 
 #eerste versie
 stop= total_run + start #seconden
@@ -47,3 +48,13 @@ minutes = rest_min//60 #minuten
 sec = rest_min%60 #seconden
 hund = round(sec*100%100)
 print (f"{int(uur)}u, {int(minutes)}m, {int(sec)}s, {hund}hundreths")
+
+#vijfde versie
+import datetime
+
+start = datetime.timedelta(hours=6, minutes=52)
+slow = datetime.timedelta(minutes=8, seconds=15)
+fast = datetime.timedelta(minutes=7, seconds=12)
+
+print(start + slow * 2 + fast * 3)
+
