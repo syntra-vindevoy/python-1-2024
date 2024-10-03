@@ -1,4 +1,11 @@
 def calculate_gcd (a:int, b:int) -> int:
+    """
+    Calculate the greatest common divisor of a and b
+    Args:
+        a (object):
+        b (object):
+    Returns:int
+    """
     assert type(a) == int and type(b) == int, "Must be integers"
     while b:
         a, b = b, a % b

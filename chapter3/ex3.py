@@ -14,7 +14,14 @@ def main_start():
 # Steps for Calculation:
 # If the year is divisible by 4 and not divisible by 100, it's a leap year.
 # If the year is divisible by 100, check if it’s divisible by 400. If so, it’s a leap year.
-def leap_year(year):
+def leap_year(year:int)->bool:
+    """
+
+    Args:
+        year (object):
+
+    Returns: bool
+    """
     if year % 400 == 0:
         return True
     elif year % 100 == 0:
@@ -57,7 +64,12 @@ def is_valid_iban(iban):
     return int(iban_numeric) % 97 == 1
 
 
-def fac1(n):
+def fac1(n:int)->int:
+    """
+
+    Args:
+        n (object):
+    """
     total = 1
     for i in range(2, n+1):
         total = total * i
@@ -70,6 +82,18 @@ def fact(n):
         return 2
     return n * fact(n-1)
 
+
+def draw_grid(row_count, col_count,inner_width):
+    horizontal_line = (("+" + ("-" * inner_width)) * col_count) + "+"
+    vertical_line = (("|" + (" " * inner_width))* col_count) + "|"
+    for _ in range(row_count):
+        print(horizontal_line)
+        for _ in range(col_count):
+            print(vertical_line)
+    print(horizontal_line)
+
+
+
 if __name__ == '__main__':
     main_start()
     assert is_valid_iban("NL91ABNA0417164300") == True
@@ -80,3 +104,5 @@ if __name__ == '__main__':
     assert fact(2) == 2
     assert fact(4) == 24
     assert fact(5) == 120
+    draw_grid(2, 5,4)
+
