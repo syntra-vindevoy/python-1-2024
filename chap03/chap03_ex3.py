@@ -5,4 +5,4 @@ def triangle(text, h):
         print(text * i)
 
 triangle("L", 5)
-triangle("A", 5)
+triangle("*", 10)
