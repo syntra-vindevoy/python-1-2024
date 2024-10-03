@@ -82,6 +82,20 @@ def fact(n):
         return 2
     return n * fact(n-1)
 
+
+def draw_grid(row_count, col_count):
+    horizontal_line = ("+ - - - - " * col_count) + "+"
+    vertical_line = ("|         " * col_count) + "|"
+
+    # Draw the grid
+    for _ in range(row_count):
+        print(horizontal_line)
+        for _ in range(col_count):
+            print(vertical_line)
+    print(horizontal_line)
+
+
+
 if __name__ == '__main__':
     main_start()
     assert is_valid_iban("NL91ABNA0417164300") == True
@@ -92,3 +106,5 @@ if __name__ == '__main__':
     assert fact(2) == 2
     assert fact(4) == 24
     assert fact(5) == 120
+    draw_grid(5, 5)
+
