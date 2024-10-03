@@ -13,8 +13,9 @@ def grid():
     grid_halve()
     grid_halve()
     line_1()
-
+    print ()
 grid()
+
 
 
 
