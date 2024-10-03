@@ -14,7 +14,14 @@ def main_start():
 # Steps for Calculation:
 # If the year is divisible by 4 and not divisible by 100, it's a leap year.
 # If the year is divisible by 100, check if it’s divisible by 400. If so, it’s a leap year.
-def leap_year(year):
+def leap_year(year:int)->bool:
+    """
+
+    Args:
+        year (object):
+
+    Returns: bool
+    """
     if year % 400 == 0:
         return True
     elif year % 100 == 0:
@@ -57,7 +64,12 @@ def is_valid_iban(iban):
     return int(iban_numeric) % 97 == 1
 
 
-def fac1(n):
+def fac1(n:int)->int:
+    """
+
+    Args:
+        n (object):
+    """
     total = 1
     for i in range(2, n+1):
         total = total * i

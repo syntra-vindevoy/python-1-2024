@@ -36,13 +36,13 @@ def square(t:turtle,lenght:int):
         t.lt (90)
 
 
-def polygon(t:turtle,lenght:int,n):
+def polygon(t:turtle,lenght:float,n):
     angle = 360/n
     for _ in range (n):
         t.fd (lenght)
         t.lt (angle)
 
-def arc(t:turtle,radius:float,angle:float):
+def arc(radius:float,angle:float):
     circumference = 2 * math.pi * radius  # Calculate the circumference of the full circle
     arc_length = circumference * (angle / 360)  # Calculate the length of the arc
     steps = int (arc_length / 2)  # Number of steps for the arc (the smaller, the smoother the arc)
@@ -52,11 +52,11 @@ def arc(t:turtle,radius:float,angle:float):
         turtle.forward (2)  # Move forward a small amount (adjust based on smoothness)
         turtle.left (step_angle)  # Turn by the step angle
 
-def circle(t:turtle,radius:int):
+def circle(tur:turtle, radius:int):
     circumference = 2 * math.pi * radius  # Circumference of the circle
     n = 50  # Number of sides; higher n gives a smoother circle
     length = circumference / n  # Length of each side
-    polygon (t, length, n)  # Draw the polygon
+    polygon (tur, length, n)  # Draw the polygon
 
 
 
@@ -65,5 +65,5 @@ if __name__ == '__main__':
     t=turtle.Turtle()
     #polygon(t,100,10)
     #circle(t,100)
-    arc(t,100, 180)
+    arc(100, 180)
     turtle.mainloop()
