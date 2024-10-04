@@ -17,8 +17,14 @@ def even_nbr(n):
         return n
     even_nbr(n - 1)
 
+def sum(n):
+    if n==1:
+        return 1
+    return sum(n-1)+n
 
+
+
+print(sum(120))
+even_nbr(6)
 assert factorial_me(5) == 120
 assert factorial_me(1) == 1
-
-even_nbr(6)

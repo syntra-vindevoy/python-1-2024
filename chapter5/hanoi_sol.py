@@ -1,9 +1,5 @@
-
-
-
 def main():
     hanoi_tower(3,"A","B","C")
-
 
 def hanoi_tower(n,src,helper,dest):
     if n == 1:
