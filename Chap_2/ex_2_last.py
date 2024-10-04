@@ -24,7 +24,7 @@ amount_tempo_miles = 3
 amount_easy_miles = 2
 sec_in_minutes = 60
 sec_in_hours = 3600
-start_hour = 6
+start_hour = 23
 start_minute = 52
 
 #total running time
