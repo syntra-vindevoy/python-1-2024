@@ -69,7 +69,7 @@ for j in range(2):
     rectangle_plus ('+', '-', '|', ' ')
 
 
-#def rectangle_hor_line (symb2, horiz):
+ #def rectangle_hor_line (symb2, horiz):
 
 
 #def rectangle_minus (symb3, minus):
