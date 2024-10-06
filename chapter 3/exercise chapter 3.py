@@ -32,22 +32,8 @@ def rectangle( char, width, height):
         print(char * width)
 rectangle ("X", 5 , 8)
 
-def do_twice (f):
-    f()
-    f()
-do_twice (rectangle("E", 3 , 4 ))
-
-part_1 = "+ " + "- "
-def line_1():
-    print (part_1 * 2) + "+"
-
-line_1()
-print ("jhkjhj")
-
-print (f"hallo", end="")
-print ("wazaa")
-
-def nog_niet_af():
-    pass
- for _ in range (8): #_geeft geen fout als nog niet toegekend
-
+def kerstboom (char, size):
+    for i in range (size+1, 1, -1):
+        print (" " * i + char*(size+2 -i) + char * (size+1-i))
+    print (" " * (size+1) + "|")
+kerstboom ("x", 7)
