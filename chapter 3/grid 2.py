@@ -14,4 +14,4 @@ def grid (size, horizontal, vertical):
             print (vertical_line(size, horizontal))
     print (horizontal_line(size, horizontal))
 
-grid(3,4,2)
+grid(5,7,3)
