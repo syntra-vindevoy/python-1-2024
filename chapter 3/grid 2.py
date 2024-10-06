@@ -1,14 +1,17 @@
-def eerste (sta):
-    start = sta
-    return start
 
-def tweede (sto):
-    stop = sto
-    return stop
+def horizontal_line(size, horizontal):
+    hor = ("+ " + size * "- ") * horizontal + "+"
+    return hor
 
-def totaal (sta, sto):
-    print (eerste(sta))
-    print (tweede(sto))
+def vertical_line(size, horizontal):
+    ver = ("| " + size * "  ") * horizontal + "|"
+    return ver
 
+def grid (size, horizontal, vertical):
+    for _ in range (1, vertical+1):
+        print (horizontal_line(size, horizontal))
+        for _ in range (1 , size+1):
+            print (vertical_line(size, horizontal))
+    print (horizontal_line(size, horizontal))
 
-totaal(50,8)
+grid(3,4,2)
