@@ -56,16 +56,18 @@ from numpy.ma.core import repeat
 #         print(row)
 #
 # rectangle('OK', 5, 5)
+aantal_horizontaal = 8
+aantal_verticaal = 7
 
 def rectangle_plus (plus, minus, horizminus, spatie):
-        row1 = f'{plus * 1}' + f'{minus *  4}' + f'{plus * 1}'
-        row2 = f'{horizminus * 1}' + f'{spatie * 4}' + f'{horizminus * 1}'
-        print(row1)
+        row1 = f'{(plus * 1) + (minus *  4) + (plus * 1)}'
+        row2 = f'{(horizminus * 1) + (spatie * 4) + (horizminus * 1)}'
+        print(row1 * aantal_horizontaal)
         for i in range(4):
-            print(row2)
-        print(row1)
+            print(row2 * aantal_horizontaal)
+        print(row1 * aantal_horizontaal)
 
-for j in range(2):
+for j in range(aantal_verticaal):
     rectangle_plus ('+', '-', '|', ' ')
 
 
