@@ -29,7 +29,7 @@ def circle(radius):
 # pentagon(50)
 # pentagon(100)
 # pentagon(75)
-circle(10)
+#circle(10)
 #octagon(20)
 
 sleep(10)
