@@ -8,7 +8,7 @@ bob = Turtle()                  #bob = an instance of class Turtle
 #If I would write length = 100, then length becomes an optional parameter
 #All optional parameters are declared in the back of the function
 #When using a * as first parameter, you force the usage of named parameters (you have to mention the name of the para when calling the function
-def polygon(*, corners, length):
+def polygon(*, corners: int, length: int):
     angle = 360 / corners
 
     for _ in range(corners):
