@@ -26,7 +26,7 @@ def circle(radius):
     polygon(steps , 720)
 
 # pentagon(200)
-# pentagon(50)
+pentagon(50)
 # pentagon(100)
 # pentagon(75)
 #circle(10)
