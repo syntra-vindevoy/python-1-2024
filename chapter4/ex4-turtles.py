@@ -1,6 +1,7 @@
 import math
 from turtle import penup, forward, pendown, left, right
 
+from anyio import sleep
 
 from chapter4 import jupyturtle
 
@@ -94,6 +95,7 @@ def main ():
     rhombus_par(50, 60)
     jump(100)
     triangle(80)
+    sleep(5)
 
 if __name__ == '__main__':
     main()

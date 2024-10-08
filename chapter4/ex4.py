@@ -58,6 +58,10 @@ def circle(tur:turtle, radius:int):
     length = circumference / n  # Length of each side
     polygon (tur, length, n)  # Draw the polygon
 
+def pentagon(tur:turtle, length:float):
+    for _ in range (5):
+        tur.fd(length)
+        tur.left(72)
 
 
 if __name__ == '__main__':
@@ -65,5 +69,5 @@ if __name__ == '__main__':
     t=turtle.Turtle()
     #polygon(t,100,10)
     #circle(t,100)
-    arc(100, 180)
+    #arc(100, 180)
     turtle.mainloop()
