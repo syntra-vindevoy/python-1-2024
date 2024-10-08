@@ -3,7 +3,7 @@ from turtle import penup, forward, pendown, left, right
 
 from anyio import sleep
 
-from chapter4 import jupyturtle
+from src.chapter4 import jupyturtle
 
 jupyturtle.make_turtle ()
 

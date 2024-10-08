@@ -4,40 +4,52 @@ Solid solution
 
 
 class Product:
-    def __init__ (self, name, price, color, size):
+    def __init__(self, name, price, color, size):
         self.name = name
         self.price = price
         self.color = color
         self.size = size
 
-    def __str__ (self):
+    def __str__(self):
         return f"Product {self.name} {self.color} {self.size} {self.price}"
 
-    def __repr__ (self):
+    def __repr__(self):
         return f"Product {self.name} {self.color} {self.size} {self.price}"
+
+
+class SuperProduct(Product):
+    def __init__(self, name, price, color, size, description):
+        self.description = description
+        super().__init__(name, price, color, size)
+
+    def __str__(self):
+        return f"Product {self.name} {self.color} {self.size} {self.price} {self.description}"
+
+    def __repr__(self):
+        return f"Product {self.name} {self.color} {self.size} {self.price} {self.description}"
 
 
 class Store:
-    def __init__ (self):
+    def __init__(self):
         self.products = []
 
-    def add (self, product):
+    def add(self, product):
         """
         Add a product to the store
         Args:
             product:
         """
-        self.products.append (product)
+        self.products.append(product)
 
-    def remove (self, product):
+    def remove(self, product):
         """
         remove a product from the store
         Args:
             product:
         """
-        self.products.remove (product)
+        self.products.remove(product)
 
-    def all (self) -> list:
+    def all(self) -> list:
         """
         get all products in the store
         Returns: 
@@ -48,7 +60,7 @@ class Store:
 
 
 class Specification:
-    def is_satisfied (self, product) -> bool:
+    def is_satisfied(self, product) -> bool:
         """
         Abstract methode
         Args:
@@ -59,7 +71,7 @@ class Specification:
         """
         pass
 
-    def __and__ (self, other) -> bool:
+    def __and__(self, other):
         """
         implement and
         Args:
@@ -68,11 +80,11 @@ class Specification:
         Returns:
             bool
         """
-        return AndSpecification (self, other)
+        return AndSpecification(self, other)
 
 
 class Filter:
-    def filter (self, items, spec):
+    def filter(self, items, spec):
         """
         Abstract methode to filter items
         Args:
@@ -82,11 +94,11 @@ class Filter:
         pass
 
 
-class ColorSpecification (Specification):
-    def __init__ (self, color):
+class ColorSpecification(Specification):
+    def __init__(self, color):
         self.color = color
 
-    def is_satisfied (self, product):
+    def is_satisfied(self, product):
         """
         check if a product is satisfied by color
         Args:
@@ -98,11 +110,27 @@ class ColorSpecification (Specification):
         return product.color == self.color
 
 
-class SizeSpecification (Specification):
-    def __init__ (self, size):
+class TypeSpecification(Specification):
+    def __init__(self, type_of):
+        self.type_of = type_of
+
+    def is_satisfied(self, product):
+        """
+        is type of
+        Args:
+            product:
+
+        Returns:
+            bool
+        """
+        return isinstance(product, self.type_of)
+
+
+class SizeSpecification(Specification):
+    def __init__(self, size):
         self.size = size
 
-    def is_satisfied (self, product) -> bool:
+    def is_satisfied(self, product) -> bool:
         """
         check if a product is satisfied by size
         Args:
@@ -114,12 +142,12 @@ class SizeSpecification (Specification):
         return product.size == self.size
 
 
-class AndSpecification (Specification):
-    def __init__ (self, spec1, spec2):
+class AndSpecification(Specification):
+    def __init__(self, spec1: Specification, spec2: Specification):
         self.spec1 = spec1
         self.spec2 = spec2
 
-    def is_satisfied (self, product) -> bool:
+    def is_satisfied(self, product) -> bool:
         """
         check if a product is satisfied by spec1 and spec2
         Args:
@@ -128,12 +156,12 @@ class AndSpecification (Specification):
         Returns:
             bool
         """
-        return self.spec1.is_satisfied (product) and self.spec2.is_satisfied (product)
+        return self.spec1.is_satisfied(product) and self.spec2.is_satisfied(product)
 
 
-class BetterFilter (Filter):
+class BetterFilter(Filter):
 
-    def filter (self, items, spec):
+    def filter(self, items, spec):
         """
         Filter items
         Args:
@@ -141,7 +169,7 @@ class BetterFilter (Filter):
             spec:
         """
         for item in items:
-            if spec.is_satisfied (item):
+            if spec.is_satisfied(item):
                 yield item
 
 
