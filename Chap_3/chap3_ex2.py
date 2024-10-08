@@ -99,15 +99,13 @@ def print_grid(rows, columns, box_size):
         print_row(columns, box_size)
     print_beam_with_posts(columns, box_size)
 
-print_grid(5, 5, 5)
+print_grid(2, 2, 5)
 
 end= datetime.now()
 
 time_diff = end - start
 
 print(time_diff)
-
-start = datetime.now()
 
 # def generate_beam(columns, box_size):
 #     """Generate the string for a single beam row."""
