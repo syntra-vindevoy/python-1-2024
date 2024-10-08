@@ -5,26 +5,29 @@ from turtle import Turtle       #Capital = class
 
 bob = Turtle()                  #bob = an instance of class Turtle
 
-def polygon(corners, length):
+#If I would write length = 100, then length becomes an optional parameter
+#All optional parameters are declared in the back of the function
+#When using a * as first parameter, you force the usage of named parameters (you have to mention the name of the para when calling the function
+def polygon(*, corners, length):
     angle = 360 / corners
 
     for _ in range(corners):
         bob.forward(length)
         bob.left(angle)
 
-def square(length):
-    polygon(4, length)
+def square(size):
+    polygon(corners = 4, length = size)
 
-def pentagon(length):
-    polygon(5, length)
+def pentagon(size):
+    polygon(corners = 5, length = size)
 
-#def circle(length):
-#    polygon(720, length)
+#def circle(size):
+#    polygon(corners = 720, length = size)
 
 def circle(radius):
     circumference = 2 * math.pi * radius
     step = circumference / 30
-    polygon(720, step)
+    polygon(corners = 720, length = step)
 
 
 
