@@ -1,11 +1,17 @@
-from turtle import Turtle
-from time import sleep
+def divide(a: int, b: int, text: str = ""):
+    return a / b
 
-bob = Turtle()
-bobbette = Turtle()
 
-for i in range(4):
-    bob.forward(100)
-    bob.left(90)
+print(divide(a=6, b=2))
+print(divide(
+    b=2,
+    a=6
+))
+print(divide(2, b=2))
 
-sleep(60)
+
+def test_divide():
+    assert divide(6, 2) == 3
+    assert divide(6, 3) == 2
+
+# test_divide()
