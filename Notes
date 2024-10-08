@@ -1,0 +1,29 @@
+Les 5
+
+Versienummer regels.
+0.0.1 -> laatste nummer is bugfix
+0.1.0 -> change in code
+1.0.0 -> Breaking change = oude code werkt niet meer
+
+Altijd functies maken om recursieve redeneringen te maken.
+Faculteit berekenen:
+def fac ( x ) :
+
+Indenteren met tab of lijnen tot een functie te laten behoren. Bijvoorbeeld:
+def print_twice(string):
+    print(string)
+    print(string)
+
+Range geeft aan hoeveel keer code iets moet doen.
+
+assert gebruiken
+
+Best practice
+
+def main():
+    a = 2
+
+if__name__=="__main__":
+    main()
+
+Globale variabelen moeten altijd in hoofdletter
