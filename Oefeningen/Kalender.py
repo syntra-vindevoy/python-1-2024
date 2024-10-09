@@ -1,10 +1,8 @@
-from calendar import month, Month
+from typing import  Any
 
-from chapter5.ex5 import calculate_number_of_days
-
+#Global var
 Days = ["za", "Zo", "Ma", "Di", "Wo", "Do", "Vr"]
-#Days = ["zaterdag", "Zondag", "Maandag", "Dinsdag", "Woensdag", "Donderdag", "Vrijdag"]
-months = [
+Months: list[str | Any] = [
     "Januari",
     "Februari",
     "Maart",
@@ -18,28 +16,53 @@ months = [
     "November",
     "December"
 ]
-def draw(days,first_day,month,year):
-    print(f"Month {months[month-1]} Year {year}")
-    output = make_banner_days(first_day) + "\n"
-    for day_count in range(1,days):
+
+
+def draw (*,days_to_print:int, first_day_to_print:int, month_to_print:int, year_to_print:int)->None:
+    def make_banner_days (first_day: int):
+        """
+        Make a string with day starting from first day
+        Args:
+            first_day:
+
+        Returns:
+            output:
+        """
+        output_banner = ""
+        for i in range (first_day, len (Days)):
+            output_banner += f"{Days[i]} "
+        for i in range (1, first_day):
+            output_banner += f"{Days[i]} "
+        return output_banner
+
+    """
+    Draw calendar month
+    Args:
+        days:
+        first_day:
+        month:
+        year:
+    """
+    print (f"Month {Months[month_to_print - 1]} Year {year_to_print}")
+    output = make_banner_days (first_day_to_print) + "\n"
+    for day_count in range (1, days_to_print):
         output += f"{day_count:02d} "
         if day_count % 6 == 0:
-            output +="\n"
-
-    print(output)
-
-
-def make_banner_days(first_day:int):
-    output =""
-    for i in range(first_day,len(Days)):
-        output += f"{Days[i]} "
-    for i in range(1,first_day):
-        output += f"{Days[i]} "
-    return output
+            output += "\n"
+    print (output)
 
 
 
-def is_leap_year(year):
+
+def is_leap_year (year:int)->bool:
+    """
+    Calculate if year is a leap year
+    Args:
+        year:
+
+    Returns:
+        bool
+    """
     if year % 400 == 0:
         return True
     elif year % 100 == 0:
@@ -49,41 +72,66 @@ def is_leap_year(year):
     else:
         return False
 
-def calculate_day_of_week(day, month, year):
+assert is_leap_year(2024) == True
+assert is_leap_year(2025) == False
+
+def calculate_day_of_week (day, month, year):
+    """
+        Calculate day of the week
+    Args:
+        day:
+        month:
+        year:
+
+    Returns:
+        day_of_week:
+    """
     # Zeller's Congruence works with months as follows:
     # January and February are treated as months 13 and 14 of the previous year
     if month < 3:
         month += 12
         year -= 1
 
-    K = year % 100  # Year of the century
-    J = year // 100  # Zero-based century
+    k = year % 100  # Year of the century
+    j = year // 100  # Zero-based century
 
     # Zeller's Congruence formula
-    f = day + ((13 * (month + 1)) // 5) + K + (K // 4) + (J // 4) - (2 * J)
+    f = day + ((13 * (month + 1)) // 5) + k + (k // 4) + (j // 4) - (2 * j)
     day_of_week = f % 7
 
     # Map the result to the day names
 
-
     return day_of_week
 
+assert calculate_day_of_week(9, 10, 2025) == 5
 
-def days_in_month(month, year):
-    # Number of days in each month for a non-leap year
+
+def days_in_month (month_to_display:int, year:int) -> int:
+    """
+     Get number of days in month
+    Args:
+        month_to_display:
+        year:
+
+    Returns:
+        int
+    """
     month_days = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
-
-    # Check for leap year and adjust February
-    if is_leap_year(year) and month == 2:
+    if is_leap_year (year) and month_to_display == 2:
         return 29
     else:
-        return month_days[month - 1]
+        return month_days[month_to_display - 1]
 
-def main():
-    month=2
-    year=2018
-    draw(days=days_in_month(month,year),month=month,year=year,first_day=calculate_day_of_week(year,month,1))
+assert days_in_month(2, 2024) == 29
+assert days_in_month(2, 2023) == 28
+assert days_in_month(1, 2023) == 31
+assert days_in_month(4, 2023) == 30
+
+def main ():
+    month_to_display = 2
+    year_to_display = 2018
+    draw (days_to_print=days_in_month(month_to_display, year_to_display), month_to_print=month_to_display, year_to_print=year_to_display, first_day_to_print=calculate_day_of_week (year_to_display, month_to_display, 1))
 
 
 if __name__ == '__main__':
-    main()
+    main ()
