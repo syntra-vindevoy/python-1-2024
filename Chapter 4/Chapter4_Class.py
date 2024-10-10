@@ -10,6 +10,6 @@ def fac(n: int):
     for i in range(2 , n):
         r *= i
 
-    print(r)
-
-fac(9)
+    return(r)
+if __name__ == '__main__':
+    print(fac(9))
