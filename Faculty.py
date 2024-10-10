@@ -4,13 +4,14 @@ from datetime import datetime
 #chatgpt: explain recursion
 #chatgpt: explain testing codetime with assert
 
-#faculteit berekenen zonder recursie + optimaliseren
+# lijn 9 tot 15 faculteit berekenen zonder recursie + optimaliseren
+
 n = int(input("Give me a number "))
 # start met r=n om een extra loop te voorkomen want anders (2, n+1) zou zijn
 r = n
 
 for i in range(2, n + 1): #beginnen bij 2 want *1 van een getal is nutteloos
-    r = r * i    #of r *= 1
+    r = r * i    # dit is de verkorte versie: r *= 1
 print(r)
 
 
