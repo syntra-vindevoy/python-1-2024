@@ -27,6 +27,23 @@ def fac(n):
 
 
 def fac2(n: int) -> int:
+    """
+
+    This function calculates the factorial of a positive integer n. In math this is n!
+
+    :param n:
+        int: The number on which we calculate the faculty
+    :return:
+        int: The calculated faculty
+
+    Notes:
+        Versie: 1.0.0
+        Autor: BESA03
+        Date: 2024-10-10
+        New feature: blabla
+        Bugfix: blabla
+
+    """
     if n < 2:
         return 1
 
