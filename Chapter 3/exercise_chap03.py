@@ -1,6 +1,4 @@
 # exercise 1 chap 03 false output
-
-
 def print_right(text):
     text = text.strip()
     assert len(text) <= 40, "maximum length of text is 40 characters"
@@ -85,10 +83,9 @@ def rectangle_plus (plus, minus, horizminus, spatie):
         row1 = f'{(plus * 1) + (minus *  4) + (plus * 1)}'
         row2 = f'{(horizminus * 1) + (spatie * 4) + (horizminus * 1)}'
         print(row1 * aantal_horizontaal)
-        for i in range(4):
+        for _ in range(4):
             print(row2 * aantal_horizontaal)
         print(row1 * aantal_horizontaal)
 
-for j in range(aantal_verticaal):
+for _ in range(aantal_verticaal):
     rectangle_plus ('+', '-', '|', ' ')
-
