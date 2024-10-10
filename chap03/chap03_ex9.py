@@ -1,5 +1,7 @@
 #Exercise 9 - Write a func to calc the faculty of a number without recursive
 #Also optimizing is investigated, each iteration of the fac'x' is more memory efficient
+import numpy
+from functools import reduce
 
 def fac1(*, x: int):
     if x == 0:
@@ -75,11 +77,14 @@ def fac5(*, x: int):
     else:
         return 0
 
+def fac6(*, x: int) -> int:             #Way less efficient by using numpy if you execute this code like a million times
+    if x < 2:
+        return 1
+
+    return int(numpy.prod(range(2, x + 1)))
+
+def fac7(*, n: int) -> int:             #Way less efficient by using numpy if you execute this code like a million times
+    return 1 if n < 2 else reduce(lambda x, y: x * y, range(2, n + 1))
 
 
-
-
-
-
-
-print(fac2(x = 5))
+print(fac7(n = 5))
