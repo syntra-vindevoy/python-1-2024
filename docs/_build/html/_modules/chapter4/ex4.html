@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>chapter4.ex4 &mdash; project2024-1-benoit 1.0.0ma documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=fc9cd1e4"></script>
+        <script src="../../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            project2024-1-benoit
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules.html">python-1-2024</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">project2024-1-benoit</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">chapter4.ex4</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for chapter4.ex4</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">math</span>
+<span class="kn">import</span> <span class="nn">turtle</span>
+
+<div class="viewcode-block" id="start">
+<a class="viewcode-back" href="../../chapter4.html#chapter4.ex4.start">[docs]</a>
+<span class="k">def</span> <span class="nf">start</span><span class="p">():</span>
+    <span class="n">bob</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Turtle</span> <span class="p">()</span>
+   <span class="c1"># print (bob)</span>
+   <span class="c1"># bob.fd (100)</span>
+   <span class="c1"># bob.lt (90)</span>
+   <span class="c1"># bob.fd (100)</span>
+
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+        <span class="n">bob</span><span class="o">.</span><span class="n">fd</span> <span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+        <span class="n">bob</span><span class="o">.</span><span class="n">lt</span> <span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+
+
+
+    <span class="n">turtle</span><span class="o">.</span><span class="n">mainloop</span> <span class="p">()</span></div>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">The following is a series of exercises using the turtle module. They are meant to be fun, but they have a point, too. While you are working on them, think about what the point is.</span>
+
+<span class="sd">The following sections have solutions to the exercises, so don’t look until you have finished (or at least tried).</span>
+
+<span class="sd">Write a function called square that takes a parameter named t, which is a turtle. It should use the turtle to draw a square.</span>
+<span class="sd">Write a function call that passes bob as an argument to square, and then run the program again.</span>
+
+<span class="sd">Add another parameter, named length, to square. Modify the body so length of the sides is length, and then modify the function call to provide a second argument. Run the program again. Test your program with a range of values for length.</span>
+<span class="sd">Make a copy of square and change the name to polygon. Add another parameter named n and modify the body so it draws an n-sided regular polygon. Hint: The exterior angles of an n-sided regular polygon are 360/n degrees.</span>
+<span class="sd">Write a function called circle that takes a turtle, t, and radius, r, as parameters and that draws an approximate circle by calling polygon with an appropriate length and number of sides. Test your function with a range of values of r.</span>
+<span class="sd">Hint: figure out the circumference of the circle and make sure that length * n = circumference.</span>
+
+<span class="sd">Make a more general version of circle called arc that takes an additional parameter angle, which determines what fraction of a circle to draw. angle is in units of degrees, so when angle=360, arc should draw a complete circle.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="square">
+<a class="viewcode-back" href="../../chapter4.html#chapter4.ex4.square">[docs]</a>
+<span class="k">def</span> <span class="nf">square</span><span class="p">(</span><span class="n">t</span><span class="p">:</span><span class="n">turtle</span><span class="p">,</span><span class="n">lenght</span><span class="p">:</span><span class="nb">int</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+        <span class="n">t</span><span class="o">.</span><span class="n">fd</span> <span class="p">(</span><span class="n">lenght</span><span class="p">)</span>
+        <span class="n">t</span><span class="o">.</span><span class="n">lt</span> <span class="p">(</span><span class="mi">90</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="polygon">
+<a class="viewcode-back" href="../../chapter4.html#chapter4.ex4.polygon">[docs]</a>
+<span class="k">def</span> <span class="nf">polygon</span><span class="p">(</span><span class="n">t</span><span class="p">:</span><span class="n">turtle</span><span class="p">,</span><span class="n">lenght</span><span class="p">:</span><span class="nb">float</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">angle</span> <span class="o">=</span> <span class="mi">360</span><span class="o">/</span><span class="n">n</span>
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="n">t</span><span class="o">.</span><span class="n">fd</span> <span class="p">(</span><span class="n">lenght</span><span class="p">)</span>
+        <span class="n">t</span><span class="o">.</span><span class="n">lt</span> <span class="p">(</span><span class="n">angle</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="arc">
+<a class="viewcode-back" href="../../chapter4.html#chapter4.ex4.arc">[docs]</a>
+<span class="k">def</span> <span class="nf">arc</span><span class="p">(</span><span class="n">radius</span><span class="p">:</span><span class="nb">float</span><span class="p">,</span><span class="n">angle</span><span class="p">:</span><span class="nb">float</span><span class="p">):</span>
+    <span class="n">circumference</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">radius</span>  <span class="c1"># Calculate the circumference of the full circle</span>
+    <span class="n">arc_length</span> <span class="o">=</span> <span class="n">circumference</span> <span class="o">*</span> <span class="p">(</span><span class="n">angle</span> <span class="o">/</span> <span class="mi">360</span><span class="p">)</span>  <span class="c1"># Calculate the length of the arc</span>
+    <span class="n">steps</span> <span class="o">=</span> <span class="nb">int</span> <span class="p">(</span><span class="n">arc_length</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>  <span class="c1"># Number of steps for the arc (the smaller, the smoother the arc)</span>
+    <span class="n">step_angle</span> <span class="o">=</span> <span class="n">angle</span> <span class="o">/</span> <span class="n">steps</span>  <span class="c1"># The angle to turn for each step</span>
+
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="n">steps</span><span class="p">):</span>
+        <span class="n">turtle</span><span class="o">.</span><span class="n">forward</span> <span class="p">(</span><span class="mi">2</span><span class="p">)</span>  <span class="c1"># Move forward a small amount (adjust based on smoothness)</span>
+        <span class="n">turtle</span><span class="o">.</span><span class="n">left</span> <span class="p">(</span><span class="n">step_angle</span><span class="p">)</span>  <span class="c1"># Turn by the step angle</span></div>
+
+
+<div class="viewcode-block" id="circle">
+<a class="viewcode-back" href="../../chapter4.html#chapter4.ex4.circle">[docs]</a>
+<span class="k">def</span> <span class="nf">circle</span><span class="p">(</span><span class="n">tur</span><span class="p">:</span><span class="n">turtle</span><span class="p">,</span> <span class="n">radius</span><span class="p">:</span><span class="nb">int</span><span class="p">):</span>
+    <span class="n">circumference</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">radius</span>  <span class="c1"># Circumference of the circle</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="mi">50</span>  <span class="c1"># Number of sides; higher n gives a smoother circle</span>
+    <span class="n">length</span> <span class="o">=</span> <span class="n">circumference</span> <span class="o">/</span> <span class="n">n</span>  <span class="c1"># Length of each side</span>
+    <span class="n">polygon</span> <span class="p">(</span><span class="n">tur</span><span class="p">,</span> <span class="n">length</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>  <span class="c1"># Draw the polygon</span></div>
+
+
+<div class="viewcode-block" id="pentagon">
+<a class="viewcode-back" href="../../chapter4.html#chapter4.ex4.pentagon">[docs]</a>
+<span class="k">def</span> <span class="nf">pentagon</span><span class="p">(</span><span class="n">tur</span><span class="p">:</span><span class="n">turtle</span><span class="p">,</span> <span class="n">length</span><span class="p">:</span><span class="nb">float</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+        <span class="n">tur</span><span class="o">.</span><span class="n">fd</span><span class="p">(</span><span class="n">length</span><span class="p">)</span>
+        <span class="n">tur</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="mi">72</span><span class="p">)</span></div>
+
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="c1">#start()</span>
+    <span class="n">t</span><span class="o">=</span><span class="n">turtle</span><span class="o">.</span><span class="n">Turtle</span><span class="p">()</span>
+    <span class="c1">#polygon(t,100,10)</span>
+    <span class="n">circle</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+    <span class="c1">#arc(100, 180)</span>
+    <span class="n">turtle</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, benoit.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
