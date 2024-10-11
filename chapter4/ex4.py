@@ -68,6 +68,6 @@ if __name__ == '__main__':
     #start()
     t=turtle.Turtle()
     #polygon(t,100,10)
-    #circle(t,100)
+    circle(t,100)
     #arc(100, 180)
     turtle.mainloop()
