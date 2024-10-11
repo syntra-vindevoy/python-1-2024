@@ -1,4 +1,4 @@
-Les 5
+---------------------------------------- Les 5----------------------------------------------
 
 Versienummer regels.
 0.0.1 -> laatste nummer is bugfix
@@ -27,3 +27,35 @@ if__name__=="__main__":
     main()
 
 Globale variabelen moeten altijd in hoofdletter
+
+
+----------------------------------------LES 8 oktober -------------------------------------------
+
+- Begin november examen : maak kalender!!
+
+- Test driven development
+
+- Named parameters:
+    print(divide(a=6, b=2)
+    print(divide(b=2, a=6)
+    als 1 parameter named, dan allemaal
+    Als * als eerste parameter, dan moet de rest named parameters zijn
+
+- optional parameters:
+    def polygon(corner, size=100): -> 100 wil zeggen, als ge geen waarde meekrijgt dan 100 is default
+    Alle optionele moeten van achter. Als optionele parameter maken dan achteraan zetten.
+
+- hinten:
+    def polygon(*, corners : int, size : int = 100): -> int hint dat de waarde altijd een integer moet zijn.
+    Nog een voorbeeld hint is 'callable' of 'any'
+
+- opt examen is docstring 20/100 punten
+
+------------------------------------------LES 10 oktober-------------------------------------------
+
+- Check if return
+- recursiviteit deftig checken
+- altijd met hekske documenteren "#dlfkgjdfkg"
+-  docstring """ """
+- oefening faculteit was het belangrijkste van de les
+- in functie altijd return gebruiken
