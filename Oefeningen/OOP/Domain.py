@@ -1,6 +1,8 @@
 """
 Solid solution
 """
+
+
 class Product:
     def __init__ (self, name, price, color, size):
         self.name = name
@@ -13,6 +15,7 @@ class Product:
 
     def __repr__ (self):
         return f"Product {self.name} {self.color} {self.size} {self.price}"
+
 
 class Store:
     def __init__ (self):
@@ -45,7 +48,7 @@ class Store:
 
 
 class Specification:
-    def is_satisfied (self, product)->bool:
+    def is_satisfied (self, product) -> bool:
         """
         Abstract methode
         Args:
@@ -56,7 +59,7 @@ class Specification:
         """
         pass
 
-    def __and__(self, other)->bool:
+    def __and__ (self, other) -> bool:
         """
         implement and
         Args:
@@ -99,7 +102,7 @@ class SizeSpecification (Specification):
     def __init__ (self, size):
         self.size = size
 
-    def is_satisfied (self, product)->bool:
+    def is_satisfied (self, product) -> bool:
         """
         check if a product is satisfied by size
         Args:
@@ -116,7 +119,7 @@ class AndSpecification (Specification):
         self.spec1 = spec1
         self.spec2 = spec2
 
-    def is_satisfied (self, product)->bool:
+    def is_satisfied (self, product) -> bool:
         """
         check if a product is satisfied by spec1 and spec2
         Args:
@@ -150,5 +153,3 @@ class Color:
 class Size:
     LARGE = "Large"
     SMALL = "Small"
-
-

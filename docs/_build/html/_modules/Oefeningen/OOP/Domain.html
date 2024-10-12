@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Oefeningen.OOP.Domain &mdash; project2024-1-benoit 1.0.0ma documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../_static/documentation_options.js?v=fc9cd1e4"></script>
+        <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            project2024-1-benoit
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../modules.html">python-1-2024</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">project2024-1-benoit</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">Oefeningen.OOP.Domain</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for Oefeningen.OOP.Domain</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Solid solution</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+
+<div class="viewcode-block" id="Product">
+<a class="viewcode-back" href="../../../Oefeningen.OOP.html#Oefeningen.OOP.Domain.Product">[docs]</a>
+<span class="k">class</span> <span class="nc">Product</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span> <span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">price</span><span class="p">,</span> <span class="n">color</span><span class="p">,</span> <span class="n">size</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">price</span> <span class="o">=</span> <span class="n">price</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="n">color</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">size</span> <span class="o">=</span> <span class="n">size</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span> <span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Product </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">color</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">size</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">price</span><span class="si">}</span><span class="s2">&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__repr__</span> <span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Product </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">color</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">size</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">price</span><span class="si">}</span><span class="s2">&quot;</span></div>
+
+
+
+<div class="viewcode-block" id="Store">
+<a class="viewcode-back" href="../../../Oefeningen.OOP.html#Oefeningen.OOP.Domain.Store">[docs]</a>
+<span class="k">class</span> <span class="nc">Store</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span> <span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">products</span> <span class="o">=</span> <span class="p">[]</span>
+
+<div class="viewcode-block" id="Store.add">
+<a class="viewcode-back" href="../../../Oefeningen.OOP.html#Oefeningen.OOP.Domain.Store.add">[docs]</a>
+    <span class="k">def</span> <span class="nf">add</span> <span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">product</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Add a product to the store</span>
+<span class="sd">        Args:</span>
+<span class="sd">            product:</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">products</span><span class="o">.</span><span class="n">append</span> <span class="p">(</span><span class="n">product</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="Store.remove">
+<a class="viewcode-back" href="../../../Oefeningen.OOP.html#Oefeningen.OOP.Domain.Store.remove">[docs]</a>
+    <span class="k">def</span> <span class="nf">remove</span> <span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">product</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        remove a product from the store</span>
+<span class="sd">        Args:</span>
+<span class="sd">            product:</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">products</span><span class="o">.</span><span class="n">remove</span> <span class="p">(</span><span class="n">product</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="Store.all">
+<a class="viewcode-back" href="../../../Oefeningen.OOP.html#Oefeningen.OOP.Domain.Store.all">[docs]</a>
+    <span class="k">def</span> <span class="nf">all</span> <span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        get all products in the store</span>
+<span class="sd">        Returns: </span>
+<span class="sd">            list</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">products</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="Specification">
+<a class="viewcode-back" href="../../../Oefeningen.OOP.html#Oefeningen.OOP.Domain.Specification">[docs]</a>
+<span class="k">class</span> <span class="nc">Specification</span><span class="p">:</span>
+<div class="viewcode-block" id="Specification.is_satisfied">
+<a class="viewcode-back" href="../../../Oefeningen.OOP.html#Oefeningen.OOP.Domain.Specification.is_satisfied">[docs]</a>
+    <span class="k">def</span> <span class="nf">is_satisfied</span> <span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">product</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Abstract methode</span>
+<span class="sd">        Args:</span>
+<span class="sd">            product:</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            bool:</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">pass</span></div>
+
+
+    <span class="k">def</span> <span class="fm">__and__</span> <span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        implement and</span>
+<span class="sd">        Args:</span>
+<span class="sd">            other:</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            bool</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">AndSpecification</span> <span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="Filter">
+<a class="viewcode-back" href="../../../Oefeningen.OOP.html#Oefeningen.OOP.Domain.Filter">[docs]</a>
+<span class="k">class</span> <span class="nc">Filter</span><span class="p">:</span>
+<div class="viewcode-block" id="Filter.filter">
+<a class="viewcode-back" href="../../../Oefeningen.OOP.html#Oefeningen.OOP.Domain.Filter.filter">[docs]</a>
+    <span class="k">def</span> <span class="nf">filter</span> <span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">items</span><span class="p">,</span> <span class="n">spec</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Abstract methode to filter items</span>
+<span class="sd">        Args:</span>
+<span class="sd">            items:</span>
+<span class="sd">            spec:</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">pass</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="ColorSpecification">
+<a class="viewcode-back" href="../../../Oefeningen.OOP.html#Oefeningen.OOP.Domain.ColorSpecification">[docs]</a>
+<span class="k">class</span> <span class="nc">ColorSpecification</span> <span class="p">(</span><span class="n">Specification</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span> <span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">color</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="n">color</span>
+
+<div class="viewcode-block" id="ColorSpecification.is_satisfied">
+<a class="viewcode-back" href="../../../Oefeningen.OOP.html#Oefeningen.OOP.Domain.ColorSpecification.is_satisfied">[docs]</a>
+    <span class="k">def</span> <span class="nf">is_satisfied</span> <span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">product</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        check if a product is satisfied by color</span>
+<span class="sd">        Args:</span>
+<span class="sd">            product:</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            bool</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">product</span><span class="o">.</span><span class="n">color</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">color</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="SizeSpecification">
+<a class="viewcode-back" href="../../../Oefeningen.OOP.html#Oefeningen.OOP.Domain.SizeSpecification">[docs]</a>
+<span class="k">class</span> <span class="nc">SizeSpecification</span> <span class="p">(</span><span class="n">Specification</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span> <span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">size</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">size</span> <span class="o">=</span> <span class="n">size</span>
+
+<div class="viewcode-block" id="SizeSpecification.is_satisfied">
+<a class="viewcode-back" href="../../../Oefeningen.OOP.html#Oefeningen.OOP.Domain.SizeSpecification.is_satisfied">[docs]</a>
+    <span class="k">def</span> <span class="nf">is_satisfied</span> <span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">product</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        check if a product is satisfied by size</span>
+<span class="sd">        Args:</span>
+<span class="sd">            product:</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            bool</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">product</span><span class="o">.</span><span class="n">size</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">size</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="AndSpecification">
+<a class="viewcode-back" href="../../../Oefeningen.OOP.html#Oefeningen.OOP.Domain.AndSpecification">[docs]</a>
+<span class="k">class</span> <span class="nc">AndSpecification</span> <span class="p">(</span><span class="n">Specification</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span> <span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">spec1</span><span class="p">,</span> <span class="n">spec2</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">spec1</span> <span class="o">=</span> <span class="n">spec1</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">spec2</span> <span class="o">=</span> <span class="n">spec2</span>
+
+<div class="viewcode-block" id="AndSpecification.is_satisfied">
+<a class="viewcode-back" href="../../../Oefeningen.OOP.html#Oefeningen.OOP.Domain.AndSpecification.is_satisfied">[docs]</a>
+    <span class="k">def</span> <span class="nf">is_satisfied</span> <span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">product</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        check if a product is satisfied by spec1 and spec2</span>
+<span class="sd">        Args:</span>
+<span class="sd">            product:</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            bool</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">spec1</span><span class="o">.</span><span class="n">is_satisfied</span> <span class="p">(</span><span class="n">product</span><span class="p">)</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">spec2</span><span class="o">.</span><span class="n">is_satisfied</span> <span class="p">(</span><span class="n">product</span><span class="p">)</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="BetterFilter">
+<a class="viewcode-back" href="../../../Oefeningen.OOP.html#Oefeningen.OOP.Domain.BetterFilter">[docs]</a>
+<span class="k">class</span> <span class="nc">BetterFilter</span> <span class="p">(</span><span class="n">Filter</span><span class="p">):</span>
+
+<div class="viewcode-block" id="BetterFilter.filter">
+<a class="viewcode-back" href="../../../Oefeningen.OOP.html#Oefeningen.OOP.Domain.BetterFilter.filter">[docs]</a>
+    <span class="k">def</span> <span class="nf">filter</span> <span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">items</span><span class="p">,</span> <span class="n">spec</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Filter items</span>
+<span class="sd">        Args:</span>
+<span class="sd">            items:</span>
+<span class="sd">            spec:</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">items</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">spec</span><span class="o">.</span><span class="n">is_satisfied</span> <span class="p">(</span><span class="n">item</span><span class="p">):</span>
+                <span class="k">yield</span> <span class="n">item</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="Color">
+<a class="viewcode-back" href="../../../Oefeningen.OOP.html#Oefeningen.OOP.Domain.Color">[docs]</a>
+<span class="k">class</span> <span class="nc">Color</span><span class="p">:</span>
+    <span class="n">BLUE</span> <span class="o">=</span> <span class="s2">&quot;Blue&quot;</span>
+    <span class="n">GREEN</span> <span class="o">=</span> <span class="s2">&quot;Green&quot;</span></div>
+
+
+
+<div class="viewcode-block" id="Size">
+<a class="viewcode-back" href="../../../Oefeningen.OOP.html#Oefeningen.OOP.Domain.Size">[docs]</a>
+<span class="k">class</span> <span class="nc">Size</span><span class="p">:</span>
+    <span class="n">LARGE</span> <span class="o">=</span> <span class="s2">&quot;Large&quot;</span>
+    <span class="n">SMALL</span> <span class="o">=</span> <span class="s2">&quot;Small&quot;</span></div>
+
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, benoit.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
