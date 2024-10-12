@@ -167,6 +167,9 @@ class BetterFilter(Filter):
         Args:
             items:
             spec:
+
+        Returns:
+            object: 
         """
         for item in items:
             if spec.is_satisfied(item):
