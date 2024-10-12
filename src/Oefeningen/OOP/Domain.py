@@ -1,6 +1,7 @@
 """
 Solid solution
 """
+from typing import Iterable
 
 
 class Product:
@@ -32,6 +33,29 @@ class SuperProduct(Product):
 class Store:
     def __init__(self):
         self.products = []
+
+    def  __iter__(self):
+       """
+        iterate over all products
+       Returns:
+            iterable: all products
+       """
+       self.index = 0  # Reset index for a new iteration
+       return self
+
+    def __next__(self):
+        """
+        get next product
+        Returns:
+            product: next product
+
+        """
+        if self.index < len(self.products):
+            result = self.products[self.index]
+            self.index += 1
+            return result
+        else:
+            raise StopIteration  # StopIteration is raised when there are no more items
 
     def add(self, product):
         """
@@ -161,7 +185,7 @@ class AndSpecification(Specification):
 
 class BetterFilter(Filter):
 
-    def filter(self, items, spec):
+    def filter(self, items: Iterable, spec: Specification) -> Iterable:
         """
         Filter items
         Args:

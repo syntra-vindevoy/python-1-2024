@@ -23,27 +23,27 @@ if __name__ == '__main__':
     print ("------------")
     bf = BetterFilter ()
     green = ColorSpecification (Color.GREEN)
-    for product in bf.filter (store_products.products, green):
+    for product in bf.filter (store_products, green):
         print (product)
     print ("\n")
     print ("All products LARGE")
     print ("------------")
     large = SizeSpecification (Size.LARGE)
-    for product in bf.filter (store_products.products, large):
+    for product in bf.filter (store_products, large):
         print (product)
     print ("\n")
     print ("All products large and green")
     print ("------------")
-    for product in bf.filter (store_products.products, AndSpecification (large, green)):
+    for product in bf.filter (store_products, AndSpecification (large, green)):
         print (product)
     print ("\n")
     print ("All products large and green")
     print ("------------")
-    for product in bf.filter (store_products.products, large & ColorSpecification (Color.GREEN)):
+    for product in bf.filter (store_products, large & ColorSpecification (Color.GREEN)):
         print (product)
     print("\n")
     print("All products type super")
     print("------------")
     type_of = TypeSpecification (type(super_house))
-    for product in bf.filter(store_products.products, type_of):
+    for product in bf.filter(store_products, type_of):
         print(product)
