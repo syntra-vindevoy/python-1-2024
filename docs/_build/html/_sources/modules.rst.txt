@@ -1,5 +1,5 @@
-python-1-2024
-=============
+src
+===
 
 .. toctree::
    :maxdepth: 4
@@ -12,4 +12,3 @@ python-1-2024
    chapter5
    chapter6
    chapter7
-   main

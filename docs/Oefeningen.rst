@@ -1,6 +1,14 @@
 Oefeningen package
 ==================
 
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 4
+
+   Oefeningen.OOP
+
 Submodules
 ----------
 

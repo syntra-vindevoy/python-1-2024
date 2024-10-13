@@ -1,15 +1,48 @@
 """
 Solid solution
 """
+from abc import abstractmethod
 from typing import Iterable
 
 
 class Product:
     def __init__(self, name, price, color, size):
-        self.name = name
-        self.price = price
-        self.color = color
-        self.size = size
+        self._name = name
+        self._price = price
+        self._color = color
+        self._size = size
+
+    @property
+    def name(self):
+        return self._name
+
+    @property
+    def price(self):
+        return self._price
+
+    @property
+    def color(self):
+        return self._color
+
+    @property
+    def size(self):
+        return self._size
+
+    @name.setter
+    def name(self, name):
+        self._name = name
+
+    @price.setter
+    def price(self, price):
+        self._price = price
+
+    @color.setter
+    def color(self, color):
+        self._color = color
+
+    @size.setter
+    def size(self, size):
+        self._size = size
 
     def __str__(self):
         return f"Product {self.name} {self.color} {self.size} {self.price}"
@@ -84,6 +117,7 @@ class Store:
 
 
 class Specification:
+    @abstractmethod
     def is_satisfied(self, product) -> bool:
         """
         Abstract methode
@@ -183,7 +217,7 @@ class AndSpecification(Specification):
         return self.spec1.is_satisfied(product) and self.spec2.is_satisfied(product)
 
 
-class BetterFilter(Filter):
+class SpecificationFilter(Filter):
 
     def filter(self, items: Iterable, spec: Specification) -> Iterable:
         """
@@ -201,6 +235,7 @@ class BetterFilter(Filter):
 
 
 class Color:
+    RED = 'Red'
     BLUE = "Blue"
     GREEN = "Green"
 

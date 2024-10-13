@@ -1,5 +1,6 @@
-from src.Oefeningen.OOP.Domain import Product, Color, Size, BetterFilter, Store, ColorSpecification, SizeSpecification, \
-    AndSpecification, TypeSpecification
+from src.Oefeningen.OOP.Domain import Product, Color, Size, Store, ColorSpecification, \
+    SizeSpecification, \
+    AndSpecification, TypeSpecification, SpecificationFilter
 
 from src.Oefeningen.OOP.Domain import SuperProduct
 
@@ -21,7 +22,7 @@ if __name__ == '__main__':
     print("\n")
     print ("All products GREEN")
     print ("------------")
-    bf = BetterFilter ()
+    bf = SpecificationFilter ()
     green = ColorSpecification (Color.GREEN)
     for product in bf.filter (store_products, green):
         print (product)
