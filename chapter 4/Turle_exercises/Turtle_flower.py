@@ -47,5 +47,5 @@ def flower (length, parts):
             arc(radius = length, angle = 90)
             bob.left (90)
         bob.left(360/parts)
-flower(100, 8)
+flower(100, 4)
 sleep (6)
