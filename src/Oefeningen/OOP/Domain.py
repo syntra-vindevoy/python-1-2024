@@ -183,7 +183,7 @@ class AndSpecification(Specification):
         return self.spec1.is_satisfied(product) and self.spec2.is_satisfied(product)
 
 
-class BetterFilter(Filter):
+class SpecificationFilter(Filter):
 
     def filter(self, items: Iterable, spec: Specification) -> Iterable:
         """
