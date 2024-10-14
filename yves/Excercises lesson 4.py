@@ -33,7 +33,9 @@ def rhombus2(length2, angle2):
         else:
             theo.left(angle2)
 
+#rhombus2(50, 60)
 
+def parallelogram():
+    rhombus(50,90)
 
-
-rhombus2(50, 60)
+parallelogram()
