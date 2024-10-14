@@ -40,3 +40,4 @@ class SpecificationFilterTest(unittest.TestCase):
         for product in sp.filter(store_products, AndSpecification(large, green)):
             result.append(product)
         self.assertEqual(len(result), 1, 'Must be 1')
+

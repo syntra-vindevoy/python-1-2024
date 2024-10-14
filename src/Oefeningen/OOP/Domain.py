@@ -233,6 +233,7 @@ class SpecificationFilter(Filter):
 
 
 class Color:
+    RED = 'Red'
     BLUE = "Blue"
     GREEN = "Green"
 
