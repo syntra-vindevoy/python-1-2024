@@ -26,7 +26,7 @@ def rhombus2(length2, angle2):
         if i := 1:
             angle2 = (90 + 90 - angle2)
             theo.forward(length2)
-        else:
-            theo.left(angle2)
+
+        theo.left(angle2)
 
 rhombus2(50, 60)
