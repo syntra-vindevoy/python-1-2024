@@ -21,12 +21,19 @@ def rhombus(length, angle):
 
 #rhombus(50, 60)
 def rhombus2(length2, angle2):
-    for i in range(2):
+    for i in range(3):
         theo.forward(length2)
-        if i := 1:
+        if i == 1:
+            angle_temp = angle2
             angle2 = (90 + 90 - angle2)
+            theo.left(angle2)
             theo.forward(length2)
+            angle2 = angle_temp
+            theo.left(angle2)
+        else:
+            theo.left(angle2)
 
-        theo.left(angle2)
+
+
 
 rhombus2(50, 60)
