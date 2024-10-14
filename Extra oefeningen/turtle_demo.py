@@ -31,8 +31,6 @@ import  math
 from time import sleep
 from turtle import Turtle
 
-from Chap2_Type import radius
-
 bob = Turtle()
 
 def polygon(*, corners: int, size: int=100):
