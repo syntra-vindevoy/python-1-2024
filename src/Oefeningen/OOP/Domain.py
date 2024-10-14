@@ -1,6 +1,7 @@
 """
 Solid solution
 """
+from abc import abstractmethod
 from typing import Iterable
 
 
@@ -116,6 +117,7 @@ class Store:
 
 
 class Specification:
+    @abstractmethod
     def is_satisfied(self, product) -> bool:
         """
         Abstract methode
