@@ -22,14 +22,8 @@ def draw (*,days_to_print:int, first_day_to_print:int, month_to_print:int, year_
             output_banner += f"{Days[i]} "
         return output_banner
 
-    """
-    Draw calendar month
-    Args:
-        days:
-        first_day:
-        month:
-        year:
-    """
+    #Draw calendar month
+
     print (f"Month {Months[month_to_print - 1]} Year {year_to_print}")
     output = make_banner_days (first_day_to_print) + "\n"
     for day_count in range (1, days_to_print):
