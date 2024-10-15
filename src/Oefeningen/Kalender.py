@@ -1,22 +1,9 @@
-from typing import  Any
-
 #Global var
 Days = ["za", "Zo", "Ma", "Di", "Wo", "Do", "Vr"]
-Months: list[str | Any] = [
-    "Januari",
-    "Februari",
-    "Maart",
-    "April",
-    "Mei",
-    "Juni",
-    "Juli",
-    "Augustus",
-    "September",
-    "Oktober",
-    "November",
+Months: list[str] = [
+    "Januari", "Februari", "Maart", "April", "Mei", "Juni", "Juli", "Augustus", "September", "Oktober", "November",
     "December"
 ]
-
 
 def draw (*,days_to_print:int, first_day_to_print:int, month_to_print:int, year_to_print:int)->None:
     def make_banner_days (first_day: int):
@@ -35,14 +22,8 @@ def draw (*,days_to_print:int, first_day_to_print:int, month_to_print:int, year_
             output_banner += f"{Days[i]} "
         return output_banner
 
-    """
-    Draw calendar month
-    Args:
-        days:
-        first_day:
-        month:
-        year:
-    """
+    #Draw calendar month
+
     print (f"Month {Months[month_to_print - 1]} Year {year_to_print}")
     output = make_banner_days (first_day_to_print) + "\n"
     for day_count in range (1, days_to_print):
@@ -50,9 +31,6 @@ def draw (*,days_to_print:int, first_day_to_print:int, month_to_print:int, year_
         if day_count % 6 == 0:
             output += "\n"
     print (output)
-
-
-
 
 def is_leap_year (year:int)->bool:
     """
@@ -63,14 +41,7 @@ def is_leap_year (year:int)->bool:
     Returns:
         bool
     """
-    if year % 400 == 0:
-        return True
-    elif year % 100 == 0:
-        return False
-    elif year % 4 == 0:
-        return True
-    else:
-        return False
+    return (year % 4 == 0 and year % 100 != 0) or (year % 400 == 0)
 
 assert is_leap_year(2024) == True
 assert is_leap_year(2025) == False
@@ -86,7 +57,6 @@ def calculate_day_of_week (day, month, year):
     Returns:
         day_of_week:
     """
-
     # January and February are treated as months 13 and 14 of the previous year
     if month < 3:
         month += 12
@@ -97,9 +67,6 @@ def calculate_day_of_week (day, month, year):
 
     f = day + ((13 * (month + 1)) // 5) + k + (k // 4) + (j // 4) - (2 * j)
     day_of_week = f % 7
-
-    # Map the result to the day names
-
     return day_of_week
 
 assert calculate_day_of_week(9, 10, 2025) == 5
@@ -130,7 +97,9 @@ assert days_in_month(4, 2023) == 30
 def main ():
     month_to_display = 2
     year_to_display = 2018
-    draw (days_to_print=days_in_month(month_to_display, year_to_display), month_to_print=month_to_display, year_to_print=year_to_display, first_day_to_print=calculate_day_of_week (year_to_display, month_to_display, 1))
+    draw (days_to_print=days_in_month(month_to_display, year_to_display),
+          month_to_print=month_to_display, year_to_print=year_to_display,
+          first_day_to_print=calculate_day_of_week (year_to_display, month_to_display, 1))
 
 
 if __name__ == '__main__':
