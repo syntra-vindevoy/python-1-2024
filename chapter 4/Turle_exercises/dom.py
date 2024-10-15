@@ -1,5 +1,5 @@
 def leap (year):
-    if (year % 4 == 0 and  year % 100 != 0) or (year % 400 == 0):
+    if (year % 4 == 0 and year % 100 != 0) or year % 400 == 0:
         return True
     return False
 
@@ -50,20 +50,19 @@ def dom_alt3 (year, month):
 
 def dom_alt4 (year, month):
     return [31, 29 if leap(year) else 28, 31, 30, 31, 30, 31, 31, 30, 31][month - 1] #begint steeds met 0 te tellen
-print (dom_alt4(2024,3))
-
 
 def day_of_week (year: int, month:int, day:int) ->int:
-    total_days = -2
+    total_days = -1
     for y in range (1900, year):
-        if leap(year):
+        if leap(y):
             total_days += 366
         else:
             total_days += 365
 
-    for d in range (1, month):
-        total_days += dom_alt4(d, month)
+    for m in range (1, month):
+        total_days += dom_alt4 (year, m)
     total_days += day
+    print(total_days)
     return total_days %7 + 1
 
 print (day_of_week(2024, 10, 15))
@@ -74,3 +73,7 @@ if __name__ == "__main__":
     assert leap(2400) == True
     assert leap(2004) == True
     assert leap(1995) == False
+    assert leap(2100) == False
+    assert dom_alt4(2100,2) == 28
+    assert dom_alt4(1983,2) == 28
+    assert dom_alt4(2000,2) == 29
