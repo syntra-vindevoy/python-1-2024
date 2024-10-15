@@ -31,13 +31,13 @@ def dom(year: int, month: int) -> bool:
     else:
         return 30
 
-#asserts to test dom function
-assert dom(2024, 2) == 29  # Leap year
-assert dom(2023, 2) == 28  # Non-leap year
-assert dom(2023, 4) == 30  # April has 30 days
-assert dom(2023, 7) == 31  # July has 31 days
-
-print(dom(2023, 9))
 
 
+if __name__ == "__main__":
+    #asserts to test dom function
+    assert dom(2024, 2) == 29  # Leap year
+    assert dom(2023, 2) == 28  # Non-leap year
+    assert dom(2023, 4) == 30  # April has 30 days
+    assert dom(2023, 7) == 31  # July has 31 days
 
+    print(dom(2076, 2))
