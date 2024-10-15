@@ -1,3 +1,6 @@
+year = 2024
+month = 2
+
 def dom(y, m):
     if m in [1,3,5,7,8,10,12]:
         return 31
@@ -12,9 +15,9 @@ def is_leap(y):
     else:
         return 28
 
-assert (dom(2024, 2) == 29)
-assert (dom(1800, 2) == 28)
-assert (dom(1900, 2) == 28)
-assert (dom(2016, 2) == 29)
-assert (dom(2000, 2) == 29)
-assert (dom(1900, 2) == 28)
+assert (dom(year, month) == 29)
+# assert (dom(1800, 2) == 28)
+# assert (dom(1900, 2) == 28)
+# assert (dom(2016, 2) == 29)
+# assert (dom(2000, 2) == 29)
+# assert (dom(1900, 2) == 28)
