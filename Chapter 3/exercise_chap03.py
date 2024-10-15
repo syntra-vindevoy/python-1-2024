@@ -74,6 +74,7 @@ def print_spam():
 
 do_twice(print_spam)
 
+
 # Exercise 3.3 uit thinkpython V2
 
 aantal_horizontaal = 2
