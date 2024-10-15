@@ -49,14 +49,7 @@ def is_leap_year (year:int)->bool:
     Returns:
         bool
     """
-    if year % 400 == 0:
-        return True
-    elif year % 100 == 0:
-        return False
-    elif year % 4 == 0:
-        return True
-    else:
-        return False
+    return (year % 4 == 0 and year % 100 != 0) or (year % 400 == 0)
 
 assert is_leap_year(2024) == True
 assert is_leap_year(2025) == False
