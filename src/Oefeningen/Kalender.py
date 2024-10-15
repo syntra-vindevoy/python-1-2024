@@ -86,7 +86,7 @@ def calculate_day_of_week (day, month, year):
     Returns:
         day_of_week:
     """
-    # Zeller's Congruence works with months as follows:
+
     # January and February are treated as months 13 and 14 of the previous year
     if month < 3:
         month += 12
@@ -95,7 +95,6 @@ def calculate_day_of_week (day, month, year):
     k = year % 100  # Year of the century
     j = year // 100  # Zero-based century
 
-    # Zeller's Congruence formula
     f = day + ((13 * (month + 1)) // 5) + k + (k // 4) + (j // 4) - (2 * j)
     day_of_week = f % 7
 
@@ -126,6 +125,7 @@ assert days_in_month(2, 2024) == 29
 assert days_in_month(2, 2023) == 28
 assert days_in_month(1, 2023) == 31
 assert days_in_month(4, 2023) == 30
+
 
 def main ():
     month_to_display = 2
