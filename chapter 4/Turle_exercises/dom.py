@@ -62,7 +62,6 @@ def day_of_week (year: int, month:int, day:int) ->int:
     for m in range (1, month):
         total_days += dom_alt4 (year, m)
     total_days += day
-    print(total_days)
     return total_days %7 + 1
 
 print (day_of_week(2024, 10, 15))
@@ -77,3 +76,5 @@ if __name__ == "__main__":
     assert dom_alt4(2100,2) == 28
     assert dom_alt4(1983,2) == 28
     assert dom_alt4(2000,2) == 29
+    assert day_of_week(2024,10,15) == 2
+    assert day_of_week(2000,3,30) == 4
