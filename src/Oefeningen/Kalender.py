@@ -18,7 +18,7 @@ def draw (*,days_to_print:int, first_day_to_print:int, month_to_print:int, year_
         output_banner = ""
         for i in range (first_day, len (Days)):
             output_banner += f"{Days[i]} "
-        for i in range (1, first_day):
+        for i in range (0, first_day):
             output_banner += f"{Days[i]} "
         return output_banner
 
@@ -28,7 +28,7 @@ def draw (*,days_to_print:int, first_day_to_print:int, month_to_print:int, year_
     output = make_banner_days (first_day_to_print) + "\n"
     for day_count in range (1, days_to_print):
         output += f"{day_count:02d} "
-        if day_count % 6 == 0:
+        if day_count % 7 == 0:
             output += "\n"
     print (output)
 
@@ -47,29 +47,17 @@ assert is_leap_year(2024) == True
 assert is_leap_year(2025) == False
 
 def calculate_day_of_week (day, month, year):
-    """
-        Calculate day of the week
-    Args:
-        day:
-        month:
-        year:
-
-    Returns:
-        day_of_week:
-    """
-    # January and February are treated as months 13 and 14 of the previous year
-    if month < 3:
+    if month == 1 or month == 2:
         month += 12
         year -= 1
 
-    k = year % 100  # Year of the century
-    j = year // 100  # Zero-based century
+    K = year % 100
+    J = year // 100
 
-    f = day + ((13 * (month + 1)) // 5) + k + (k // 4) + (j // 4) - (2 * j)
-    day_of_week = f % 7
-    return day_of_week
+    h = (day + (13 * (month + 1)) // 5 + K + (K // 4) + (J // 4) - 2 * J) % 7
+    return h
 
-assert calculate_day_of_week(9, 10, 2025) == 5
+assert calculate_day_of_week(1, 3, 1980) == 0
 
 
 def days_in_month (month_to_display:int, year:int) -> int:
@@ -95,11 +83,11 @@ assert days_in_month(4, 2023) == 30
 
 
 def main ():
-    month_to_display = 2
-    year_to_display = 2018
+    month_to_display = 3
+    year_to_display = 1980
     draw (days_to_print=days_in_month(month_to_display, year_to_display),
           month_to_print=month_to_display, year_to_print=year_to_display,
-          first_day_to_print=calculate_day_of_week (year_to_display, month_to_display, 1))
+          first_day_to_print=calculate_day_of_week (1, month_to_display, year_to_display))
 
 
 if __name__ == '__main__':
