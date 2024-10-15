@@ -7,7 +7,6 @@ Months: list[str | Any] = [
     "December"
 ]
 
-
 def draw (*,days_to_print:int, first_day_to_print:int, month_to_print:int, year_to_print:int)->None:
     def make_banner_days (first_day: int):
         """
@@ -41,9 +40,6 @@ def draw (*,days_to_print:int, first_day_to_print:int, month_to_print:int, year_
             output += "\n"
     print (output)
 
-
-
-
 def is_leap_year (year:int)->bool:
     """
     Calculate if year is a leap year
@@ -76,7 +72,6 @@ def calculate_day_of_week (day, month, year):
     Returns:
         day_of_week:
     """
-
     # January and February are treated as months 13 and 14 of the previous year
     if month < 3:
         month += 12
@@ -87,9 +82,6 @@ def calculate_day_of_week (day, month, year):
 
     f = day + ((13 * (month + 1)) // 5) + k + (k // 4) + (j // 4) - (2 * j)
     day_of_week = f % 7
-
-    # Map the result to the day names
-
     return day_of_week
 
 assert calculate_day_of_week(9, 10, 2025) == 5
