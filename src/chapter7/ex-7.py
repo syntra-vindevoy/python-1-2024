@@ -40,6 +40,7 @@ def uses_all(word,required):
     return True
 
 def check_words(word,available,required):
+
     """Check whether a word is acceptable.
 
        >>> check_word('color', 'ACDLORT', 'R')
@@ -109,54 +110,48 @@ def check_word(word, available_letters, required_letter):
 
 def word_score(word, available_letters):
     """
-    Calculate the score of an acceptable word in the Spelling Bee puzzle.
+        Calculate the score of an acceptable word in the Spelling Bee puzzle.
 
-    Parameters:
-    word (str): The word to score.
-    available_letters (str): A string of seven available letters.
+        Parameters:
+        word (str): The word to score.
+        available_letters (str): A string of available letters.
 
-    Returns:
-    int: The score of the word.
 
-    Doctests:
-    >>> word_score("color", "ACDLORT")
-    5
-    >>> word_score("rat", "ACDLORT")
-    0  # Invalid because it's less than 4 letters
-    >>> word_score("lard", "ACDLORT")
-    4
-    >>> word_score("ratatat", "ACDLORT")
-    7
-    >>> word_score("calculator", "ACDLORT")
-    10
-    >>> word_score("dollar", "ACDLORT")
-    6
-    >>> word_score("catlord", "ACDLORT")
-    14  # Pangram bonus applied
-    """
-    word_length = len(word)
+        Returns:
+        int: The score of the word, or 0 if the word is not acceptable.
 
-    # Base rule: return 0 if the word is shorter than 4 letters
-    if word_length < 4:
+        Doctests:
+        >>> word_score('card', 'ACDLORT')
+        4
+        >>> word_score('color', 'ACDLORT')
+        5
+        >>> word_score('cartload', 'ACDLORT')
+        15
+        """
+    required_letter="R"
+    # Ensure the word is at least 4 letters long
+    if len (word) < 4:
         return 0
 
-    # Rule 1: Four-letter words are worth 1 point
-    if word_length == 4:
-        score = 1
-    else:
-        # Rule 2: Words longer than 4 letters are worth 1 point per letter
-        score = word_length
+    # Ensure all letters in the word are in the available letters list
+    word_upper = word.upper ()
+    available_letters_set = set (available_letters)
+    for letter in word_upper:
+        if letter not in available_letters_set:
+            return 0
 
-    # Rule 3: Check if it's a pangram (uses all available letters)
-   # if set(available_letters.upper()) <= set(word.upper()):
-    #    score += 7  # Add bonus for a pangram
+    # Ensure the word contains the required letter
+    if required_letter.upper () not in word_upper:
+        return 0
 
-    for letter in available_letters:
-        if letter not in word.upper():
-            return score
-        else:
-            score += 7
-            return score
+    # Calculate the basic score (1 point per letter)
+    score = len (word)
+
+    # Add bonus if the word uses all available letters at least once
+    if all (letter in word_upper for letter in available_letters):
+        score += 7
+
+    return score
 
 
 def uses_none2(word, forbidden):

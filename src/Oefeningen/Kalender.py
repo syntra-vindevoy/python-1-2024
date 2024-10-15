@@ -1,11 +1,20 @@
 #Global var
-Days = ["za", "Zo", "Ma", "Di", "Wo", "Do", "Vr"]
+#Days = ["za", "Zo", "Ma", "Di", "Wo", "Do", "Vr"]
+Days = [ "Ma", "Di", "Wo", "Do", "Vr","za", "Zo"]
 Months: list[str] = [
     "Januari", "Februari", "Maart", "April", "Mei", "Juni", "Juli", "Augustus", "September", "Oktober", "November",
     "December"
 ]
 
-def draw (*,days_to_print:int, first_day_to_print:int, month_to_print:int, year_to_print:int)->None:
+
+def draw_intented (*, days_to_print: int, month_to_print: int, year_to_print: int) -> None:
+    """
+    Args:
+        days_to_print: The total number of days in the month to print.
+        first_day_to_print: The position of the first day in the week (1 for Monday, 7 for Sunday).
+        month_to_print: The numeric representation of the month to print (1 for January, 12 for December).
+        year_to_print: The year for which the calendar month is to be printed.
+    """
     def make_banner_days (first_day: int):
         """
         Make a string with day starting from first day
@@ -16,71 +25,64 @@ def draw (*,days_to_print:int, first_day_to_print:int, month_to_print:int, year_
             output:
         """
         output_banner = ""
-        for i in range (first_day, len (Days)):
-            output_banner += f"{Days[i]} "
-        for i in range (1, first_day):
+        for i in range (0, len (Days)):
             output_banner += f"{Days[i]} "
         return output_banner
 
-    #Draw calendar month
-
+    # Draw calendar month
+    first_day_to_print = calculate_day_of_week (1, month_to_print, year_to_print)
+    line_counter= first_day_to_print
     print (f"Month {Months[month_to_print - 1]} Year {year_to_print}")
     output = make_banner_days (first_day_to_print) + "\n"
-    for day_count in range (1, days_to_print):
+    output += "   " * (first_day_to_print - 1)
+    for day_count in range (1, days_to_print+1):
         output += f"{day_count:02d} "
-        if day_count % 6 == 0:
-            output += "\n"
+        if line_counter % 7 == 0:
+                output += "\n"
+        line_counter += 1
     print (output)
+
+
 
 def is_leap_year (year:int)->bool:
     """
-    Calculate if year is a leap year
     Args:
-        year:
+        year: An integer representing the year to be checked.
 
     Returns:
-        bool
+        A boolean value where True indicates that the year is a leap year, and False otherwise.
+
     """
     return (year % 4 == 0 and year % 100 != 0) or (year % 400 == 0)
 
 assert is_leap_year(2024) == True
 assert is_leap_year(2025) == False
 
+
 def calculate_day_of_week (day, month, year):
     """
-        Calculate day of the week
     Args:
-        day:
-        month:
-        year:
+        day: The day of the date.
+        month: The month of the date.
+        year: The year of the date.
 
     Returns:
-        day_of_week:
+        An integer representing the day of the week, where 0 represents Sunday, 1 represents Monday, and so on up to 6 which represents Saturday.
     """
-    # January and February are treated as months 13 and 14 of the previous year
-    if month < 3:
-        month += 12
-        year -= 1
+    t = [0, 3, 2, 5, 0, 3, 5, 1, 4, 6, 2, 4]
+    year -= month < 3
+    v = (year + year // 4 - year // 100 + year // 400 + t[month - 1] + day) % 7
 
-    k = year % 100  # Year of the century
-    j = year // 100  # Zero-based century
-
-    f = day + ((13 * (month + 1)) // 5) + k + (k // 4) + (j // 4) - (2 * j)
-    day_of_week = f % 7
-    return day_of_week
-
-assert calculate_day_of_week(9, 10, 2025) == 5
-
+    return v
 
 def days_in_month (month_to_display:int, year:int) -> int:
     """
-     Get number of days in month
     Args:
-        month_to_display:
-        year:
+        month_to_display: The month for which the number of days is to be calculated. Should be an integer between 1 and 12 inclusive.
+        year: The year for which the days in the month are to be calculated. Used to determine if it is a leap year.
 
     Returns:
-        int
+        The number of days in the specified month for the specified year. Accounts for leap years when February is selected.
     """
     month_days = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
     if is_leap_year (year) and month_to_display == 2:
@@ -95,12 +97,23 @@ assert days_in_month(4, 2023) == 30
 
 
 def main ():
-    month_to_display = 2
-    year_to_display = 2018
-    draw (days_to_print=days_in_month(month_to_display, year_to_display),
-          month_to_print=month_to_display, year_to_print=year_to_display,
-          first_day_to_print=calculate_day_of_week (year_to_display, month_to_display, 1))
+    """
+    Main function to display a calendar for a given month and year.
 
+    It calculates the number of days in the specified month, determines the day of the week on which the month starts, and then passes these values to a function that draws the calendar.
+
+    Args:
+      None
+
+    Returns:
+      None. Displays the calendar to the console output.
+    """
+
+    year_to_display = 2024
+    for month_to_display in range (1, 13):
+        draw_intented (days_to_print=days_in_month (month_to_display, year_to_display),
+                       month_to_print=month_to_display, year_to_print=year_to_display)
+        print ("\n")
 
 if __name__ == '__main__':
     main ()

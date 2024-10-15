@@ -6,6 +6,23 @@ from typing import Iterable
 
 
 class Product:
+    """
+    class Product:
+        Represents a Product with attributes name, price, color, and size.
+
+        Methods:
+            __init__(self, name, price, color, size): Initializes a new Product instance with the given attributes.
+            name(self): Gets the name of the product.
+            price(self): Gets the price of the product.
+            color(self): Gets the color of the product.
+            size(self): Gets the size of the product.
+            name(self, name): Sets the name of the product.
+            price(self, price): Sets the price of the product.
+            color(self, color): Sets the color of the product.
+            size(self, size): Sets the size of the product.
+            __str__(self): Returns a string representation of the product.
+            __repr__(self): Returns a string representation of the product.
+    """
     def __init__(self, name, price, color, size):
         self._name = name
         self._price = price
@@ -52,6 +69,21 @@ class Product:
 
 
 class SuperProduct(Product):
+    """
+        SuperProduct
+
+        A class representing a product with an extended description, inheriting from the Product class.
+
+        Methods:
+            __init__(name, price, color, size, description)
+                Initializes a new SuperProduct instance with the given name, price, color, size, and description.
+
+            __str__()
+                Returns a string representation of the SuperProduct instance.
+
+            __repr__()
+                Returns a string representation of the SuperProduct instance for debugging.
+    """
     def __init__(self, name, price, color, size, description):
         self.description = description
         super().__init__(name, price, color, size)
@@ -64,6 +96,14 @@ class SuperProduct(Product):
 
 
 class Store:
+    """
+    class Store:
+
+    def __init__(self):
+        self.products = []
+
+    def __iter__(self):
+        """
     def __init__(self):
         self.products = []
 
@@ -117,6 +157,11 @@ class Store:
 
 
 class Specification:
+    """
+    class Specification:
+        @abstractmethod
+        def is_satisfied(self, product) -> bool:
+            """
     @abstractmethod
     def is_satisfied(self, product) -> bool:
         """
@@ -142,6 +187,10 @@ class Specification:
 
 
 class Filter:
+    """
+    class Filter:
+        def filter(self, items, spec):
+            """
     def filter(self, items, spec):
         """
         Abstract methode to filter items
@@ -153,6 +202,14 @@ class Filter:
 
 
 class ColorSpecification(Specification):
+    """
+        check if a product is satisfied by color
+        Args:
+            product:
+
+        Returns:
+            bool
+    """
     def __init__(self, color):
         self.color = color
 
@@ -169,6 +226,10 @@ class ColorSpecification(Specification):
 
 
 class TypeSpecification(Specification):
+    """
+    class TypeSpecification(Specification):
+        def __init__(self, type_of):
+            """
     def __init__(self, type_of):
         self.type_of = type_of
 
@@ -185,6 +246,12 @@ class TypeSpecification(Specification):
 
 
 class SizeSpecification(Specification):
+    """
+    SizeSpecification class inherits from Specification to filter products by size
+
+    Attributes:
+        size: Expected size of the product to satisfy the specification
+    """
     def __init__(self, size):
         self.size = size
 
@@ -201,6 +268,9 @@ class SizeSpecification(Specification):
 
 
 class AndSpecification(Specification):
+    """
+    A composite specification that combines two specifications using a logical AND.
+    """
     def __init__(self, spec1: Specification, spec2: Specification):
         self.spec1 = spec1
         self.spec2 = spec2
@@ -218,7 +288,16 @@ class AndSpecification(Specification):
 
 
 class SpecificationFilter(Filter):
+    """
+    Filter items using a given specification.
 
+    Args:
+        items (Iterable): Collection of items to be filtered.
+        spec (Specification): Specification criteria for filtering items.
+
+    Returns:
+        Iterable: A generator yielding items that satisfy the specification.
+    """
     def filter(self, items: Iterable, spec: Specification) -> Iterable:
         """
         Filter items
@@ -235,11 +314,26 @@ class SpecificationFilter(Filter):
 
 
 class Color:
+    """
+    Class representing basic colors.
+
+    Attributes:
+        RED (str): Represents the color red.
+        BLUE (str): Represents the color blue.
+        GREEN (str): Represents the color green.
+    """
     RED = 'Red'
     BLUE = "Blue"
     GREEN = "Green"
 
 
 class Size:
+    """
+    Class to define size constants.
+
+    Attributes:
+        LARGE: Constant representing large size.
+        SMALL: Constant representing small size.
+    """
     LARGE = "Large"
     SMALL = "Small"
