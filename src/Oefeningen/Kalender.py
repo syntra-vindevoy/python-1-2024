@@ -1,8 +1,6 @@
-from typing import  Any
-
 #Global var
 Days = ["za", "Zo", "Ma", "Di", "Wo", "Do", "Vr"]
-Months: list[str | Any] = [
+Months: list[str] = [
     "Januari", "Februari", "Maart", "April", "Mei", "Juni", "Juli", "Augustus", "September", "Oktober", "November",
     "December"
 ]
