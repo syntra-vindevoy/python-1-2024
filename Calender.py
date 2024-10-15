@@ -1,7 +1,7 @@
 specifiek_jaar = 2024
 
 def schrikkeljaar (jaar : int):
-    if jaar / 4 and jaar == int or jaar / 400 and jaar == int:
+    if jaar // 4 or jaar // 400:
         return 29
     else:
         return 28
@@ -16,3 +16,4 @@ def months (y, m):
     if m == 4 or m == 6 or m == 9 or m == 11:
         return "30"
 
+print(schrikkeljaar(2023))
