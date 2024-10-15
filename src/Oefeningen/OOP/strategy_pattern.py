@@ -1,4 +1,5 @@
 import random
+from typing import Callable
 import uuid
 from abc import ABC, abstractmethod
 from datetime import datetime
@@ -20,6 +21,7 @@ class Ticket:
     def __str__(self):
         return f"Ticket({self.ticket_number}, {self.description}, {self.date_created}, {self.priority}))"
 
+# Strategy solution with high level functions
 class StrategyPattern(ABC):
     @abstractmethod
     def create_ordering(self, list_ticket:List[Ticket]) -> List[Ticket]:
@@ -46,6 +48,30 @@ class RandomStrategyPattern(StrategyPattern):
         random.shuffle(list_copy)
         return list_copy
 
+# Strategy solution with callable
+def fifo_strategy(list_ticket:List[Ticket]) -> List[Ticket]:
+    return list_ticket.copy()
+
+
+def lifo_strategy(list_ticket:List[Ticket]) -> List[Ticket]:
+    list_copy= list_ticket.copy()
+    list_copy.reverse()
+    return list_copy
+
+
+def prio_strategy(list_ticket:List[Ticket]) -> List[Ticket]:
+    list_copy= sorted(list_ticket, key=lambda ticket: ticket.priority, reverse=False)
+    return list_copy
+
+
+def random_strategy(list_ticket:List[Ticket]) -> List[Ticket]:
+    list_copy= list_ticket.copy()
+    random.shuffle(list_copy)
+    return list_copy
+
+
+
+
 class TicketStore:
     def __init__(self):
         self.tickets = []
@@ -56,9 +82,13 @@ class TicketStore:
     def proces_tickets(self, proces_strategy:StrategyPattern):
         if len(self.tickets)==0:
             return
-
         ticket_list = proces_strategy.create_ordering(self.tickets)
+        return ticket_list
 
+    def proces_tickets_func(self,func):
+        if len(self.tickets) == 0:
+            return
+        ticket_list = func(self.tickets)
         return ticket_list
 
 
@@ -84,6 +114,8 @@ if __name__ == '__main__':
     ticket_store = TicketStore()
     for t in range(1,10):
         ticket_store.add_ticket(TicketGenerator.generate_tickets(description=f"test{t}",prio=random.randint(1,10)))
+
+    #using Abstract class strategy pattern
     print_pretty(ticket_store.proces_tickets(RandomStrategyPattern()),"Random")
 
     print_pretty(ticket_store.proces_tickets(LifoStrategyPattern()),"Lifo")
@@ -91,3 +123,13 @@ if __name__ == '__main__':
     print_pretty(ticket_store.proces_tickets(FifoStrategyPattern()),"Fifo")
 
     print_pretty(ticket_store.proces_tickets(PrioStrategyPattern()),"Priority")
+
+
+    #High level functions strategy pattern
+    print_pretty(ticket_store.proces_tickets_func(random_strategy), "Random")
+
+    print_pretty(ticket_store.proces_tickets_func(lifo_strategy), "Lifo")
+
+    print_pretty(ticket_store.proces_tickets_func(fifo_strategy), "Fifo")
+
+    print_pretty(ticket_store.proces_tickets_func(prio_strategy), "Priority")
