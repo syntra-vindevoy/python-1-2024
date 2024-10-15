@@ -20,8 +20,3 @@ def draw_pie(segments, size):
         bob.left(180)
 
 draw_pie(8, 100)
-
-
-
-
-

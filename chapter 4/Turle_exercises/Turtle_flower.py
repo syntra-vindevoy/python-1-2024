@@ -108,11 +108,7 @@ def flower_2 (detail, length, parts):
         - After each arc, the `bob.left()` function is called to rotate and position the next petal.
         - The `arc_fixed_length` function is used to draw each arc.
 
-        Examples
-        --------
-        >>> flower_2(30, 100, 6)
-        This will draw a flower pattern with 6 petals, where each arc is divided into
-        30 segments and has a length of 100 units.
+
         """
     for _ in range (parts):
         for _ in range (2):
@@ -145,10 +141,6 @@ def flower (length, parts):
        - After creating a petal, the function calls `bob.left(360 / parts)` to position for the next petal.
        - The `arc` function is used to draw the arcs, and it requires a `radius` and an `angle`.
 
-       Examples
-       --------
-       >>> flower(100, 6)
-       This will draw a flower with 6 petals, where each arc has a radius of 100 units.
        """
     for _ in range (parts):
         for _ in range (2):
@@ -156,5 +148,5 @@ def flower (length, parts):
             bob.left (90)
         bob.left(360/parts)
 #flower(100, 10)
-flower_2(40, 200, 10)
+flower(100, 3)
 sleep(5)

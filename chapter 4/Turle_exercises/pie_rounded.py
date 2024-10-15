@@ -8,11 +8,11 @@ def polygon(corners, size):
         bob.forward(size)
         bob.left(360/corners)
 
-def circle (radius):
-    size = (pi * radius * 2) / 300
-    polygon (300, size)
+def circle (radius, detail):
+    size = (pi * radius * 2) / detail
+    polygon (detail, size)
 
-def pie_rounded (size, segments):
+def pie_rounded (size, segments, detail):
     for _ in range (segments):
         bob.forward(size)
         bob.left (180)
@@ -20,7 +20,7 @@ def pie_rounded (size, segments):
         bob.right(180-(360 / segments))
     bob.forward(size)
     bob.left(90)
-    circle(size)
+    circle(size, detail)
 
-pie_rounded (100,6)
+pie_rounded (100,6, 50)
 sleep (5)

@@ -11,4 +11,5 @@ def kerstboom (char, size):
         if size < 3:
             print ("Minimum size is 3")
 
-kerstboom ("z", 5)
+kerstboom ("S", 5)
+
