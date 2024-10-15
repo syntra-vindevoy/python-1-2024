@@ -31,6 +31,7 @@ def draw (*,days_to_print:int, first_day_to_print:int, month_to_print:int, year_
         if day_count % 6 == 0:
             output += "\n"
     print (output)
+
 def is_leap_year (year:int)->bool:
     """
     Calculate if year is a leap year
@@ -44,6 +45,32 @@ def is_leap_year (year:int)->bool:
 
 assert is_leap_year(2024) == True
 assert is_leap_year(2025) == False
+
+def calculate_day_of_week (day, month, year):
+    """
+        Calculate day of the week
+    Args:
+        day:
+        month:
+        year:
+
+    Returns:
+        day_of_week:
+    """
+    # January and February are treated as months 13 and 14 of the previous year
+    if month < 3:
+        month += 12
+        year -= 1
+
+    k = year % 100  # Year of the century
+    j = year // 100  # Zero-based century
+
+    f = day + ((13 * (month + 1)) // 5) + k + (k // 4) + (j // 4) - (2 * j)
+    day_of_week = f % 7
+    return day_of_week
+
+assert calculate_day_of_week(9, 10, 2025) == 5
+
 
 def days_in_month (month_to_display:int, year:int) -> int:
     """
@@ -65,27 +92,6 @@ assert days_in_month(2, 2024) == 29
 assert days_in_month(2, 2023) == 28
 assert days_in_month(1, 2023) == 31
 assert days_in_month(4, 2023) == 30
-
-
-def calculate_day_of_week (day, month, year)->int:
-    total_day=-1
-
-    for y in range(1900, year):
-        if is_leap_year (y):
-            total_day += 366
-        else:
-            total_day += 365
-
-    for m in range(1, month ):
-        total_day += days_in_month(m,year)
-
-    total_day += day
-    return total_day % 7 +1
-
-assert calculate_day_of_week(9, 10, 2025) == 4
-assert calculate_day_of_week(9, 10, 2025) == 4
-assert calculate_day_of_week(1, 2, 2018) == 4
-
 
 
 def main ():
