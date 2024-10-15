@@ -3,17 +3,7 @@ from typing import  Any
 #Global var
 Days = ["za", "Zo", "Ma", "Di", "Wo", "Do", "Vr"]
 Months: list[str | Any] = [
-    "Januari",
-    "Februari",
-    "Maart",
-    "April",
-    "Mei",
-    "Juni",
-    "Juli",
-    "Augustus",
-    "September",
-    "Oktober",
-    "November",
+    "Januari", "Februari", "Maart", "April", "Mei", "Juni", "Juli", "Augustus", "September", "Oktober", "November",
     "December"
 ]
 
@@ -130,7 +120,9 @@ assert days_in_month(4, 2023) == 30
 def main ():
     month_to_display = 2
     year_to_display = 2018
-    draw (days_to_print=days_in_month(month_to_display, year_to_display), month_to_print=month_to_display, year_to_print=year_to_display, first_day_to_print=calculate_day_of_week (year_to_display, month_to_display, 1))
+    draw (days_to_print=days_in_month(month_to_display, year_to_display),
+          month_to_print=month_to_display, year_to_print=year_to_display,
+          first_day_to_print=calculate_day_of_week (year_to_display, month_to_display, 1))
 
 
 if __name__ == '__main__':
