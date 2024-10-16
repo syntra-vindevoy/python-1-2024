@@ -78,15 +78,11 @@ assert is_leap_year(2024) == True
 assert is_leap_year(2025) == False
 
 def calculate_day_of_week (day, month, year):
-    if month == 1 or month == 2:
-        month += 12
-        year -= 1
+    t = [0, 3, 2, 5, 0, 3, 5, 1, 4, 6, 2, 4]
+    year -= month < 3
+    v = (year + year // 4 - year // 100 + year // 400 + t[month - 1] + day) % 7
 
-    K = year % 100
-    J = year // 100
-
-    h = (day + (13 * (month + 1)) // 5 + K + (K // 4) + (J // 4) - 2 * J) % 7
-    return h
+    return v
 
 print(calculate_day_of_week(1, 3, 2024))
 
@@ -114,11 +110,11 @@ assert days_in_month(4, 2023) == 30
 
 
 def main ():
-    month_to_display = 1
-    year_to_display = 2025
+    month_to_display = 6
+    year_to_display = 1988
     draw_intented (days_to_print=days_in_month(month_to_display, year_to_display),
           month_to_print=month_to_display, year_to_print=year_to_display,
-          first_day_to_print=calculate_day_of_week (1, month_to_display, year_to_display)-1)
+          first_day_to_print=calculate_day_of_week (1, month_to_display, year_to_display))
 
 
 if __name__ == '__main__':
