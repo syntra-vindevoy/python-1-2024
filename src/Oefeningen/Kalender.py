@@ -1,5 +1,6 @@
 #Global var
-Days = ["za", "Zo", "Ma", "Di", "Wo", "Do", "Vr"]
+#Days = ["za", "Zo", "Ma", "Di", "Wo", "Do", "Vr"]
+Days = [ "Ma", "Di", "Wo", "Do", "Vr","za", "Zo"]
 Months: list[str] = [
     "Januari", "Februari", "Maart", "April", "Mei", "Juni", "Juli", "Augustus", "September", "Oktober", "November",
     "December"
@@ -32,6 +33,36 @@ def draw (*,days_to_print:int, first_day_to_print:int, month_to_print:int, year_
             output += "\n"
     print (output)
 
+
+def draw_intented (*, days_to_print: int, first_day_to_print: int, month_to_print: int, year_to_print: int) -> None:
+    def make_banner_days (first_day: int):
+        """
+        Make a string with day starting from first day
+        Args:
+            first_day:
+
+        Returns:
+            output:
+        """
+        output_banner = ""
+        for i in range (0, len (Days)):
+            output_banner += f"{Days[i]} "
+        return output_banner
+
+    # Draw calendar month
+    line_counter= first_day_to_print
+    print (f"Month {Months[month_to_print - 1]} Year {year_to_print}")
+    output = make_banner_days (first_day_to_print) + "\n"
+    output += "   " * (first_day_to_print - 1)
+    for day_count in range (1, days_to_print+1):
+        output += f"{day_count:02d} "
+        if line_counter % 7 == 0:
+                output += "\n"
+        line_counter += 1
+    print (output)
+
+
+
 def is_leap_year (year:int)->bool:
     """
     Calculate if year is a leap year
@@ -57,7 +88,7 @@ def calculate_day_of_week (day, month, year):
     h = (day + (13 * (month + 1)) // 5 + K + (K // 4) + (J // 4) - 2 * J) % 7
     return h
 
-assert calculate_day_of_week(1, 3, 1980) == 0
+print(calculate_day_of_week(1, 3, 2024))
 
 
 def days_in_month (month_to_display:int, year:int) -> int:
@@ -83,11 +114,11 @@ assert days_in_month(4, 2023) == 30
 
 
 def main ():
-    month_to_display = 3
-    year_to_display = 1980
-    draw (days_to_print=days_in_month(month_to_display, year_to_display),
+    month_to_display = 1
+    year_to_display = 2025
+    draw_intented (days_to_print=days_in_month(month_to_display, year_to_display),
           month_to_print=month_to_display, year_to_print=year_to_display,
-          first_day_to_print=calculate_day_of_week (1, month_to_display, year_to_display))
+          first_day_to_print=calculate_day_of_week (1, month_to_display, year_to_display)-1)
 
 
 if __name__ == '__main__':
