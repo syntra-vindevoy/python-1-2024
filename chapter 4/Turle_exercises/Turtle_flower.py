@@ -19,32 +19,7 @@ def polyline(n, length, angle):
         bob.left(angle)
 
 def arc(radius, angle):
-    """
-        Calculates the arc length of a circle and divides it into smaller segments.
-        Calls the `polyline` function to handle drawing or processing these segments.
-
-        Parameters
-        ----------
-        radius : float
-            The radius of the circle.
-        angle : float
-            The angle of the arc in degrees.
-
-        Returns
-        -------
-        None
-            The function doesn't return anything but calls `polyline` to handle
-            the drawing or processing of the arc in segments.
-
-        Notes
-        -----
-        - The arc is divided into `detail` number of small segments (default: 30).
-        - The arc length is calculated using the formula:
-          `arc_length = 2 * pi * radius * (angle / 360)`.
-        - The `polyline` function is expected to handle the logic for visualizing
-          or processing each small segment of the arc.
-
-        """
+    #calculates an arc piece and divides it into smaller pieces to it draw using polyline function
     arc_length = 2 * pi * radius * angle / 360
     detail = 30
     length_piece = arc_length / detail
@@ -52,32 +27,7 @@ def arc(radius, angle):
     polyline(detail, length_piece, step_angle)
 
 def arc_fixed_length(detail, length, angle):
-    """
-     Divides an arc of fixed length into smaller segments and calls `polyline` to handle the segments.
-
-     Parameters
-     ----------
-     detail : int
-         The number of segments to divide the arc into.
-     length : float
-         The total length of the arc.
-     angle : float
-         The total angle of the arc in degrees.
-
-     Returns
-     -------
-     None
-         The function doesn't return anything but calls `polyline` to handle
-         the drawing or processing of the arc segments.
-
-     Notes
-     -----
-     - The arc is divided into `detail` number of small segments.
-     - Each segment will have a length of `step_length = length / detail`.
-     - Each segment will subtend an angle of `step_angle = angle / detail`.
-     - The `polyline` function is expected to handle the logic for visualizing
-       or processing the segments of the arc.
-     """
+    #divides an arc of a defined length and angle into a defined number of pieces to draw it using polyline function
     step_length = length / detail
     step_angle = angle / detail
     polyline(detail, step_length, step_angle)
@@ -147,6 +97,6 @@ def flower (length, parts):
             arc(radius = length, angle = 90)
             bob.left (90)
         bob.left(360/parts)
-#flower(100, 10)
-flower(100, 3)
+flower(100, 10)
+#flower(100, 3)
 sleep(5)
