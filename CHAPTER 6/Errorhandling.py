@@ -3,7 +3,7 @@
 def fac(n: int) -> int:   # def fac(n: int | float) -> pipeline symbool
     if type(n) != int:
         if type(n) != float:
-        raise TypeError("fac() only accepts integer arguments")
+            raise TypeError("fac() only accepts integer arguments")
 
 
     if n < 0:
