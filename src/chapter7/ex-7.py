@@ -110,36 +110,46 @@ def check_word(word, available_letters, required_letter):
 
 def word_score(word, available_letters):
     """
-    Calculate the score of an acceptable word in the Spelling Bee puzzle.
+        Calculate the score of an acceptable word in the Spelling Bee puzzle.
 
-    Parameters:
-    word (str): The word to score.
-    available_letters (str): A string of seven available letters.
+        Parameters:
+        word (str): The word to score.
+        available_letters (str): A string of available letters.
 
-    Returns:
-    int: The score of the word.
 
-    Doctests:
-    >>> word_score('card', 'ACDLORT')
-    1
-    >>> word_score('color', 'ACDLORT')
-    5
-    >>> word_score('cartload', 'ACDLORT')
-    15
-    """
-    score=0
-    word_length = len(word)
-    if word_length >= 4:
-        score = 1 + word_length-1
-    else:
+        Returns:
+        int: The score of the word, or 0 if the word is not acceptable.
+
+        Doctests:
+        >>> word_score('card', 'ACDLORT')
+        4
+        >>> word_score('color', 'ACDLORT')
+        5
+        >>> word_score('cartload', 'ACDLORT')
+        15
+        """
+    required_letter="R"
+    # Ensure the word is at least 4 letters long
+    if len (word) < 4:
         return 0
-    sub_total=0
-    for letter in available_letters:
-        if letter in word:
-            sub_total=+1
-    if sub_total >= word_length:
-        score +=7
 
+    # Ensure all letters in the word are in the available letters list
+    word_upper = word.upper ()
+    available_letters_set = set (available_letters)
+    for letter in word_upper:
+        if letter not in available_letters_set:
+            return 0
+
+    # Ensure the word contains the required letter
+    if required_letter.upper () not in word_upper:
+        return 0
+
+    # Calculate the basic score (1 point per letter)
+    score = len (word)
+
+    # Add bonus if the word uses all available letters at least once
+    if all (letter in word_upper for letter in available_letters):
+        score += 7
 
     return score
 
