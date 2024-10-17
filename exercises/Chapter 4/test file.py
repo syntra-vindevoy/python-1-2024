@@ -1,25 +1,113 @@
 import turtle
-import math
 
-# Function to draw a polyline
-def polyline(n, length, angle):
-    """Draws n line segments with given length and angle between them."""
-    for _ in range(n):
-        turtle.forward(length)  # Move forward by the given length
-        turtle.left(angle)      # Turn left by the given angle
+# Set up the screen
+screen = turtle.Screen()
+screen.bgcolor("white")
 
-# Function to draw an arc
-def arc(radius, angle):
-    """Draws an arc with the given radius and angle."""
-    arc_length = 2 * math.pi * radius * angle / 360  # Calculate the total arc length
-    n = 100                                          # Number of segments (higher value gives a smoother curve)
-    length = arc_length / n                         # Length of each segment
-    step_angle = angle / n                          # Angle between each segment
-    polyline(n, length, step_angle)                 # Draw the polyline approximation of the arc
+# Create turtle object
+pen = turtle.Turtle()
+pen.speed(10)
+pen.pensize(3)
 
-# Example usage
-turtle.speed(1)  # Slow down the turtle for better visualization
-arc(80, 100)    # Draw an arc with radius 100 and 180 degrees (a semicircle)
 
-# Keep the window open until clicked
-turtle.done()
+# Function to draw the body of the car
+def draw_car_body():
+    pen.penup()
+    pen.goto(-200, -50)  # Starting point for the car body
+    pen.pendown()
+
+    # Draw the top of the car (roof)
+    pen.setheading(0)
+    pen.forward(400)  # length of car body
+    pen.left(90)
+    pen.forward(50)  # height of roof
+    pen.left(90)
+    pen.forward(400)
+    pen.left(90)
+    pen.forward(50)
+
+    # Draw the front windshield
+    pen.penup()
+    pen.goto(-150, 0)
+    pen.pendown()
+    pen.setheading(40)
+    pen.forward(120)
+
+    # Draw the rear windshield
+    pen.penup()
+    pen.goto(150, 0)
+    pen.pendown()
+    pen.setheading(140)
+    pen.forward(120)
+
+
+# Function to draw the wheels
+def draw_wheel(x, y):
+    pen.penup()
+    pen.goto(x, y)
+    pen.pendown()
+    pen.color("black")
+    pen.begin_fill()
+    pen.circle(30)  # Draw the wheel (a circle)
+    pen.end_fill()
+
+
+# Function to draw the windows
+def draw_windows():
+    pen.penup()
+    pen.goto(-130, 20)
+    pen.pendown()
+    pen.setheading(0)
+    pen.forward(80)  # Front window
+
+    pen.penup()
+    pen.goto(50, 20)
+    pen.pendown()
+    pen.forward(80)  # Rear window
+
+
+# Function to draw the spoiler
+def draw_spoiler():
+    pen.penup()
+    pen.goto(150, 50)
+    pen.pendown()
+    pen.setheading(90)
+    pen.forward(20)
+    pen.setheading(180)
+    pen.forward(40)
+    pen.setheading(270)
+    pen.forward(20)
+
+
+# Function to draw headlights
+def draw_headlights():
+    pen.penup()
+    pen.goto(-200, -50)
+    pen.pendown()
+    pen.color("yellow")
+    pen.begin_fill()
+    pen.circle(10)
+    pen.end_fill()
+
+    pen.penup()
+    pen.goto(200, -50)
+    pen.pendown()
+    pen.color("yellow")
+    pen.begin_fill()
+    pen.circle(10)
+    pen.end_fill()
+
+
+# Draw the simplified GTR car
+draw_car_body()  # Body of the car
+draw_wheel(-150, -80)  # Rear wheel
+draw_wheel(150, -80)  # Front wheel
+draw_windows()  # Windows of the car
+draw_spoiler()  # Rear spoiler
+draw_headlights()  # Headlights
+
+# Hide the pen and finish the drawing
+pen.hideturtle()
+
+# Keep the turtle window open
+screen.mainloop()
