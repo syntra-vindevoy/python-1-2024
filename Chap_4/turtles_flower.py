@@ -28,7 +28,7 @@ def main():
     flower_turtle.speed(10)
 
     # Draw the flower
-    draw_flower(flower_turtle, num_petals=12, radius=300)  # Fixed the argument order
+    draw_flower(flower_turtle, num_petals=10, radius=300)  # Fixed the argument order
 
     # Hide the turtle and display the window
     flower_turtle.hideturtle()

@@ -37,10 +37,10 @@ def pentagon(size):
     #     bob.left(72)
     polygon(size=size, corners=5)
 
-def triangle(size, corners2=9):
+def triangle(size, corners2=6):
     for _ in range(corners2):
         polygon(size=size, corners=3)
-        bob.right(360 / corners2*2)
+        bob.right(360 / corners2)
 
 def circle(radius):
     circumference=2*3.14*radius
@@ -50,27 +50,27 @@ def circle(radius):
 
 
 
-def rhombus(side_length, angle):
-    # Calculate internal angles
-    angle_rad = math.radians(angle)
-    other_angle = 180 - angle
-
-    # Setting up the turtle
-    bob.speed(1)  # Set the speed to 1 for visualization, can use 0 for fastest
-
-    for _ in range(2):
-        bob.forward(side_length)
-        bob.left(angle)
-        bob.forward(side_length)
-        bob.left(other_angle)
-
-    turtle.done()
+# def rhombus(side_length, angle):
+#     # Calculate internal angles
+#     angle_rad = math.radians(angle)
+#     other_angle = 180 - angle
+#
+#     # Setting up the turtle
+#     bob.speed(1)  # Set the speed to 1 for visualization, can use 0 for fastest
+#
+#     for _ in range(2):
+#         bob.forward(side_length)
+#         bob.left(angle)
+#         bob.forward(side_length)
+#         bob.left(other_angle)
+#
+#     turtle.done()
 
 
 
 
 # Example usage:
-rhombus(100, 60)
+#rhombus(100, 60)
 
 triangle(100)
 #pentagon(200)
