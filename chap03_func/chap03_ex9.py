@@ -1,4 +1,4 @@
-#Exercise 9 - Write a func to calc the faculty of a number without recursive
+#Exercise 9 - Write a func to calc the faculty of a number without recursive --> check out tail recursion!!!
 #Also optimizing is investigated, each iteration of the fac'x' is more memory efficient
 import numpy
 from functools import reduce
