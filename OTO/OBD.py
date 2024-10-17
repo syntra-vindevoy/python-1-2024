@@ -1,5 +1,8 @@
 ### Eerst een dictionary maken met alle elementen
 #nested dict opzoeken
+# yamal file bekijken (config.yamal)
+
+
 my_dict_obd = {
     "P0001": {
         "Description:": "Fuel Volume Regulator Control Circuit/Open",
@@ -15,26 +18,5 @@ my_dict_obd = {
 }
 
 
-print(my_dict_obd["P0001"]["Symptoms:"])
-#----------------------------------------------------------------------------
-
-### Opvragen bepaald obd code
-
-obdcode = input("Enter OBD Code: ")
-
-
-#----------------------------------------------------------------------------
-
-### Controleren of de code wel in de lijst staat
-
-if obdcode in my_dict_obd:
-    print(my_dict_obd[obdcode])
-else:
-    print("Invalid OBD Code")
-
-#----------------------------------------------------------------------------
-
-
-
-
+print(my_dict_obd["P0001"]["Description:"])
 
