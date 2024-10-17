@@ -8,7 +8,7 @@ def fibo(n:int) -> int:
     fibo_1 = 1
 
     for _ in range(2, n):
-        #fibo_0, fibo_1 = fibo_1, (fibo_0 + fibo_1)
+        #fibo_0, fibo_1 = fibo_1, (fibo_0 + fibo_1) --> Tuple solution
         tmp = fibo_0 + fibo_1
         fibo_0 = fibo_1
         fibo_1 = tmp
