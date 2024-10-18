@@ -6,44 +6,8 @@ Months: list[str] = [
     "December"
 ]
 
-def draw (*,days_to_print:int, first_day_to_print:int, month_to_print:int, year_to_print:int)->None:
-    """
-    Draws a calendar for the specified month and year.
 
-    Args:
-        days_to_print: The number of days in the month to be printed.
-        first_day_to_print: The index of the first day of the month.
-        month_to_print: The month to be printed (1-based index).
-        year_to_print: The year to be printed.
-    """
-    def make_banner_days (first_day: int):
-        """
-        Make a string with day starting from first day
-        Args:
-            first_day:
-
-        Returns:
-            output:
-        """
-        output_banner = ""
-        for i in range (first_day, len (Days)):
-            output_banner += f"{Days[i]} "
-        for i in range (0, first_day):
-            output_banner += f"{Days[i]} "
-        return output_banner
-
-    #Draw calendar month
-
-    print (f"Month {Months[month_to_print - 1]} Year {year_to_print}")
-    output = make_banner_days (first_day_to_print) + "\n"
-    for day_count in range (1, days_to_print):
-        output += f"{day_count:02d} "
-        if day_count % 7 == 0:
-            output += "\n"
-    print (output)
-
-
-def draw_intented (*, days_to_print: int, first_day_to_print: int, month_to_print: int, year_to_print: int) -> None:
+def draw_intented (*, days_to_print: int, month_to_print: int, year_to_print: int) -> None:
     """
     Args:
         days_to_print: The total number of days in the month to print.
@@ -66,6 +30,7 @@ def draw_intented (*, days_to_print: int, first_day_to_print: int, month_to_prin
         return output_banner
 
     # Draw calendar month
+    first_day_to_print = calculate_day_of_week (1, month_to_print, year_to_print)
     line_counter= first_day_to_print
     print (f"Month {Months[month_to_print - 1]} Year {year_to_print}")
     output = make_banner_days (first_day_to_print) + "\n"
@@ -118,9 +83,6 @@ def calculate_day_of_week (day, month, year):
 
     return v
 
-print(calculate_day_of_week(1, 3, 2024))
-
-
 def days_in_month (month_to_display:int, year:int) -> int:
     """
     Args:
@@ -154,12 +116,12 @@ def main ():
     Returns:
       None. Displays the calendar to the console output.
     """
-    month_to_display = 6
-    year_to_display = 1988
-    draw_intented (days_to_print=days_in_month(month_to_display, year_to_display),
-          month_to_print=month_to_display, year_to_print=year_to_display,
-          first_day_to_print=calculate_day_of_week (1, month_to_display, year_to_display))
 
+    year_to_display = 2024
+    for month_to_display in range (1, 13):
+        draw_intented (days_to_print=days_in_month (month_to_display, year_to_display),
+                       month_to_print=month_to_display, year_to_print=year_to_display)
+        print ("\n")
 
 if __name__ == '__main__':
     main ()
