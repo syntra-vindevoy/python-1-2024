@@ -1,6 +1,6 @@
 from math import log
 
-def russian_peasant_alt(a,b):
+def russian_peasant_alt(a,b) -> float:
     if a == 0:
         return 0
 
@@ -15,6 +15,7 @@ def russian_peasant_alt(a,b):
             result += b
         a //= 2
         b *= 2
+    print (result)
     return result * negative / factor
 
 def check_negative (a,b):
@@ -44,7 +45,7 @@ def use_floats_recursion (a,b,factor=1):
         b *= 10
         factor *= 10
     return use_floats_recursion(int(a),int(b),factor)
-
+print (russian_peasant_alt(1,2))
 assert russian_peasant_alt(1, 8) == 8
 assert russian_peasant_alt( 8, 0) == 0
 assert russian_peasant_alt( 7, 3) == 21
@@ -55,7 +56,7 @@ assert russian_peasant_alt(-5, -6) == 30
 assert russian_peasant_alt(0, -7) == 0
 assert russian_peasant_alt(5.5, 10) == 55
 assert russian_peasant_alt(-5.5, 10) == -55
-#assert russian_peasant_alt(8.45, -2.58) == -21.801
+assert russian_peasant_alt(1.1, 2) == 2.2
 try:
     russian_peasant_alt("a", 5)
 except SyntaxError:
