@@ -34,16 +34,18 @@ def check_string (a,b):
     if isinstance(a, str) or isinstance(b, str):
         raise SyntaxError ("Values can not be strings")
 
-def if_floats (a,b,factor=1):
-    if (a.is_integer()) and (b.is_integer()): #checks if a float is actually an integer
-        return a, b, factor
-    if a % 1 != 0:
-        a *= 10
-        factor *= 10
-    if b % 1 != 0:
-        b *= 10
-        factor *= 10
-    return if_floats (a, b,factor)
+def if_floats (a,b):
+    dec = 0
+    dec_a = len(str(a)) - len(str(int(a)))
+    dec_b = len(str(b)) - len(str(int(b)))
+    if dec_a != 0:
+        dec += dec_a -1
+        a *= 10 ** (dec_a -1)
+    if dec_b != 0:
+        dec += dec_b -1
+        b *= 10 ** (dec_b -1)
+    factor = 10 ** dec
+    return a, b, factor
 
 
 assert russian_peasant_alt(1, 8) == 8
