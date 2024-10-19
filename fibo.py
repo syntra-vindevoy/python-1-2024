@@ -35,19 +35,7 @@ def fibo_while(n: int) -> int:
     return a
 
 
-def assert_function(func):
-    assert func(0) == 0
-    assert func(1) == 1
-    assert func(2) == 1
-    assert func(3) == 2
-    assert func(4) == 3
-    assert func(5) == 5
-    assert func(6) == 8
-    assert func(7) == 13
-    assert func(8) == 21
-
-
-def fibo_tuple(n: int, first_item: int = 0, last_item: int = 1) -> (int, int):
+def fibo_tuple(n: int, first_item: int = 0, last_item: int = 1) -> (int,int): 
     if n < 2:
         return first_item, last_item
     return fibo_tuple(n - 1, last_item, last_item + first_item)
@@ -67,6 +55,32 @@ def fibo_list_get(length: int = 10, fibo_list=None) -> list[int]:
         fibo_list.append(fibo_list[-1] + fibo_list[-2])
     return fibo_list
 
+def fibo_item_get(position: int = 5):
+    if position == 0: return 0 # fibo starts with 2 items, this corrects the problem
+    return fibo_list_get(position+1)[-1]
+
+
+def assert_function(func):
+    assert func(0) == 0
+    assert func(1) == 1
+    assert func(2) == 1
+    assert func(3) == 2
+    assert func(4) == 3
+    assert func(5) == 5
+    assert func(6) == 8
+    assert func(7) == 13
+    assert func(8) == 21
+
+def print_function(func):
+    print(func(0))
+    print(func(1))
+    print(func(2))
+    print(func(3))
+    print(func(4))
+    print(func(5))
+    print(func(6))
+    print(func(7))
+    print(func(8))
 
 def main():
     # print(fibo_recursion(8))
@@ -74,7 +88,7 @@ def main():
     assert_function(fibo_tail_recursion)
     assert_function(fibo_while)
     assert_function(fibo_recursion_draft)
-    assert_function(fibo)
+
     assert fibo_tuple(0) == (0, 1)
     assert fibo_tuple(1) == (0, 1)
     assert fibo_tuple(2) == (1, 1)
@@ -85,7 +99,13 @@ def main():
     assert fibo_list_get(3) == [0, 1, 1]
     assert fibo_list_get(4) == [0, 1, 1, 2]
     assert fibo_list_get(5) == [0, 1, 1, 2, 3]
-    print(fibo_list_get(10))
+    
+    assert_function(fibo)
+    
+    
+    assert_function(fibo_item_get)
+    print(fibo_item_get(0))
+  
 
 
 if __name__ == '__main__':
