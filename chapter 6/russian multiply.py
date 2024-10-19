@@ -1,13 +1,14 @@
-def russian_peasant_calc (a:int, b:int, negative, result = 0):
-    if a % 2 != 0:
-        result += b
-    if a < 2:
-        result *= negative #turns the value into a negative number if one the starting values was negative
-        return result
-    a //= 2
-    b *= 2
-    return russian_peasant_calc(a, b, negative, result)
+def russian_peasant_calc (a:int, b:int) -> int:
+    if a == 0:
+        return 0
+    elif a < 2:
+        return b
+    elif a % 2 != 0:
+        return b + russian_peasant_calc(a // 2, b * 2)
+    else:
+        return russian_peasant_calc(a // 2, b * 2)
 
+print (russian_peasant_calc(3,5))
 def russian_peasant (a:int, b:int):
     negative = 1
     if isinstance(a, str) or isinstance(b, str):
@@ -25,9 +26,8 @@ def russian_peasant (a:int, b:int):
         else:
             b *= -1
         negative = -1
-    return russian_peasant_calc(a, b, negative = negative)
+    return russian_peasant_calc(a, b) * negative
 
-assert russian_peasant(5, 2) == 10
 assert russian_peasant(7,3) == 21
 assert russian_peasant(45, 89) == 4005
 assert russian_peasant(-3, 5) == -15
