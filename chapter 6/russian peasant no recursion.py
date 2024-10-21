@@ -73,3 +73,15 @@ except SyntaxError:
 assert failed, "Values can not be strings"
 failed = False
 
+def ask_input():
+    a = input("\nLet's try the Russian Peasant multiplication method. \n\n" "Enter is the first number: ")
+    b = input("Enter is the second number: ")
+    try:
+        a = float (a)
+        b = float (b)
+    except ValueError:
+        print ("\nPlease enter only whole or decimal numbers!")
+        return ask_input()
+    print (f"The result of the multiplication is: {russian_peasant_alt(float(a),float(b))}")
+ask_input()
+
