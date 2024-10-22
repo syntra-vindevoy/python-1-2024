@@ -30,7 +30,7 @@ def print_calendar(year: int, mont: int) -> None:
     weeks_in_month = 6  # different for each month, needs revision
     start = 1 - first_day_of_week + 1
     for i in range(weeks_in_month):
-        # week_number(year, mont, day)
+        # weeknum = week_number(year, mont, 1)
         print_one_line(start, start + 7)  # needs extra parameter for weeknumber
         start += 7
 
