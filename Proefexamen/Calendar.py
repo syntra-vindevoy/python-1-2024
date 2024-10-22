@@ -10,7 +10,7 @@ def print_calendar(year=int, month=int):
 
     line = (dow - 1) * "   "
     for i in range (1, dom + 1):
-        line += str(f"{i:2} ")  #aan chat gpt gevraagd hoe ik de dagen kon uitlijnen
+        line += str(f"{i:2} ")
         if (i-1 + dow) % 7 == 0:
             line += "\n"
     print (line)
