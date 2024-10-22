@@ -2,7 +2,7 @@ from dom import *  # importing our days of month
 
 
 def day_number(year: int, month: int, day: int) -> int:
-    pass
+    
 
 
 def main():
