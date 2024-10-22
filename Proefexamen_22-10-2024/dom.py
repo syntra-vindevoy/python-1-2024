@@ -3,20 +3,18 @@
 from leapyear import *
 
 def days_of_month(year: int, month: int) -> int:
-    # January == 1 !
-    if month in [4, 6, 9, 11]:  # == 4 or month == 6 or month == 9 or month == 11:  # January
+    # Controleer of de maand geldig is
+    if month < 1 or month > 12:
+        raise ValueError("Invalid month. Month must be between 1 and 12.")
+
+    # Aantal dagen per maand
+    if month in [4, 6, 9, 11]:  # April, Juni, September, November
         return 30
-    elif month == 2:  # February
-        if is_leap_year(year):
-            return 29
-        else:
-            return 28
+    elif month == 2:  # Februari
+        return 29 if is_leap_year(year) else 28
+    else:  # Januari, Maart, Mei, Juli, Augustus, Oktober, December
+        return 31
 
-        # elif :  # April
-    return 31
-
-    def days_in_month2(month: int, year: int) -> int:
-        return [31, 28 + is_leap_year(year), 31, 30, 31, 30, 31, 31, 30, 31, 30, 31][month - 1]
 
 def main():
     # Leap year
