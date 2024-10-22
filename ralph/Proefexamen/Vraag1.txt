@@ -1,0 +1,3 @@
+Oplossing logischa schakeling 1: 1
+oplossing logische schakeling 2: 0
+Oplossing logische schakeling 3: 1
