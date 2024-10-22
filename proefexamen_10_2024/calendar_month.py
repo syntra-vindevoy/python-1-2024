@@ -1,9 +1,6 @@
-from leapyear import *
-from dom import *
-from dow import *
 from date_string import *
-from day_number import *
-from week_number import *
+from dow import *
+from dom import *
 
 
 def print_month(year:int, month:int):
