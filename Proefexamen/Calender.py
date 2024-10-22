@@ -2,7 +2,7 @@ from Proefexamen.dom import days_of_month
 from day_number import day_number
 from date_string import name_of_month
 
-def calender(year: int, month: int):
+def month_calender(year: int, month: int):
 
     start_day = first_day(year, month)
     num_days = days_of_month(year, month)
@@ -17,9 +17,12 @@ def calender(year: int, month: int):
 
     print("\n")
 
+def year_calender(year):
+    for _ in range(1, 13):
+        print(month_calender(year, _))
+
 
 def first_day(year, month):
-
     f_day = day_number(year, month, 1) % 7
 
     return f_day
@@ -28,7 +31,7 @@ def first_day(year, month):
 
 
 def main():
-    calender(2024, 10)
+    year_calender(2024)
 
     assert first_day(2024, 1) == 1
     assert first_day(2024, 10) == 2
