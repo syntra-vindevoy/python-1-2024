@@ -23,10 +23,10 @@ def print_month(year:int, month:int):
         if i <= start_skips:
             print("   ", end="")
         else:
-            if i % 7 == 0:
+            if (i % 7 == 0) or (i == total_days):
                 print(f"{i - start_skips:^3}")
             else:
-
                 print(f"{i - start_skips:^3}", end="")
 
-print_month(2024, 10)
+if __name__ == "__main__":
+    print_month(2024, 10)
