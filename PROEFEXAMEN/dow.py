@@ -5,7 +5,22 @@ def day_of_the_week(year: int, month: int, day: int) -> int:
 
     if dow == 0:
         dow = 7
+    """
 
+        This function calculates the day of the week for any given date specified by year, month, and day. 
+        
+        Made a change to the old version because in Europe monday is day 1 & sunday is day 7
+            ORIGINAL version: Sunday was day 0 & Saturday was day 6
+            NEW version: Monday is now day 1 & Sunday is day 7
+                -> dow == 0 case is adjusted to 7 to match a common convention where Sunday is represented as 7
+
+        Notes:
+            Versie: 1.0.0
+            Autor: BESA03
+            Date: 2024-10-22
+           
+
+        """
     return dow
 
 

@@ -4,7 +4,16 @@ from leapyear import *
 
 def days_of_month(year: int, month: int) -> int:
     # January == 1 !
-    pass
+    if month == 4 or month == 6 or month == 9 or month == 11:
+        return 30
+    elif month == 2:
+        if is_leap_year(year):
+            return 29
+        else:
+            return 28
+    return 31
+
+
 
 
 def main():
