@@ -4,6 +4,31 @@ def days_of_month(year: int, month: int) -> int:
     odd_months = {1, 3, 5, 7, 8, 10, 12}
 
     if month in odd_months:
+        def day_of_the_week(year: int, month: int, day: int) -> int:
+            """
+            Bepaalt de dag van de week voor een gegeven datum.
+
+            Deze functie is een aangepaste versie van de originele functie van onze Japanse vriend.
+            In deze versie wordt maandag beschouwd als dag 1 van de week en zondag als dag 7.
+
+            Args:
+                year (int): Het jaar van de datum (bijvoorbeeld 2022).
+                month (int): De maand van de datum (1-12).
+                day (int): De dag van de maand (1-31).
+
+            Returns:
+                int: Een geheel getal dat de dag van de week vertegenwoordigt,
+                     waarbij maandag = 1 en zondag = 7.
+            """
+            offset = [0, 3, 2, 5, 0, 3, 5, 1, 4, 6, 2, 4]
+            year -= month < 3
+            dow = (year + year // 4 - year // 100 + year // 400 + offset[month - 1] + day) % 7
+
+            if dow == 0:
+                dow = 7
+
+            return dow
+
         return 31
     elif month == 2 and is_leap_year(year):
         return 29
