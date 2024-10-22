@@ -16,10 +16,9 @@ def print_calendar(year: int, mont: int) -> None:
         print(ds.name_of_day(i), end=' ')
     print()
 
-    def print_one_line(start: int, end: int):
+    def print_one_line(start: int, end: int):  # needs extra parameter to find weeknumber
         print('[wn]  ', end=' ')
         for i in range(start, end):
-
             if i < 1:
                 print('  ', end=' ')
             elif i > dom.days_of_month(year, mont):
@@ -31,7 +30,8 @@ def print_calendar(year: int, mont: int) -> None:
     weeks_in_month = 6  # different for each month, needs revision
     start = 1 - first_day_of_week + 1
     for i in range(weeks_in_month):
-        print_one_line(start, start + 7)
+        # week_number(year, mont, day)
+        print_one_line(start, start + 7)  # needs extra parameter for weeknumber
         start += 7
 
 
