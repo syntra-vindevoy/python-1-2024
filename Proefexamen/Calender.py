@@ -1,0 +1,40 @@
+from Proefexamen.dom import days_of_month
+from day_number import day_number
+from date_string import name_of_month
+
+def calender(year: int, month: int):
+
+    start_day = first_day(year, month)
+    num_days = days_of_month(year, month)
+
+    print(f"{name_of_month(month)}: {year}\n\nMa Di Wo Do Vr Za Zo")
+    print("   " * start_day, end="")
+
+    for day in range(1, num_days + 1):
+        print(f"{day:2}", end=" ")
+        if (start_day + day) % 7 == 0:
+            print()
+
+    print("\n")
+
+
+def first_day(year, month):
+
+    f_day = day_number(year, month, 1) % 7
+
+    return f_day
+
+
+
+
+def main():
+    calender(2024, 10)
+
+    assert first_day(2024, 1) == 1
+    assert first_day(2024, 10) == 2
+    assert first_day(2024, 6) == 6
+
+
+
+if __name__ == "__main__":
+    main()
