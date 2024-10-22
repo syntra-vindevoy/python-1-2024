@@ -35,29 +35,34 @@ def fibo_while(n: int) -> int:
     return a
 
 
-def fibo_tuple(n: int, first_item: int = 0, last_item: int = 1) -> (int,int): 
+def fibo_tuple(n: int, first_item: int = 0, last_item: int = 1) -> (int, int):
     if n < 2:
         return first_item, last_item
     return fibo_tuple(n - 1, last_item, last_item + first_item)
 
 
 def fibo(n: int = 5):
-    if n == 0: return 0
-    if n == 1: return 1
+    if n == 0:
+        return 0
+    if n == 1:
+        return 1
     _, last_item = fibo_tuple(n)
     return last_item
 
 
 def fibo_list_get(length: int = 10, fibo_list=None) -> list[int]:
     fibo_list = [0, 1]
-    if length <= 2: return fibo_list
+    if length <= 2:
+        return fibo_list
     for i in range(length - 2):
         fibo_list.append(fibo_list[-1] + fibo_list[-2])
     return fibo_list
 
+
 def fibo_item_get(position: int = 5):
-    if position == 0: return 0 # fibo starts with 2 items, this corrects the problem
-    return fibo_list_get(position+1)[-1]
+    if position == 0:
+        return 0  # fibo starts with 2 items, this corrects the problem
+    return fibo_list_get(position + 1)[-1]
 
 
 def assert_function(func):
@@ -71,6 +76,7 @@ def assert_function(func):
     assert func(7) == 13
     assert func(8) == 21
 
+
 def print_function(func):
     print(func(0))
     print(func(1))
@@ -81,6 +87,7 @@ def print_function(func):
     print(func(6))
     print(func(7))
     print(func(8))
+
 
 def main():
     # print(fibo_recursion(8))
@@ -99,14 +106,12 @@ def main():
     assert fibo_list_get(3) == [0, 1, 1]
     assert fibo_list_get(4) == [0, 1, 1, 2]
     assert fibo_list_get(5) == [0, 1, 1, 2, 3]
-    
+
     assert_function(fibo)
-    
-    
+
     assert_function(fibo_item_get)
     print(fibo_item_get(0))
-  
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
