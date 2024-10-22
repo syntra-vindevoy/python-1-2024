@@ -5,11 +5,17 @@ from dom import days_of_month  # importing our days of month
 #     return day_of_year
 
 def day_number(year: int, month: int, day: int) -> int:
-    day_of_year = sum(days_of_month[year][:month - 1]) + day
-    return day_of_year
+    total_days = 0
+    for m in range(1, month):
+        total_days += days_of_month(year, m)
+
+    total_days += day
+
+    return total_days
 
 def main():
     assert day_number(2020, 1, 1) == 1
+    assert day_number(2020, 1, 30) == 30
     assert day_number(2020, 2, 1) == 32
     assert day_number(2020, 3, 1) == 61
     assert day_number(2020, 12, 31) == 366
