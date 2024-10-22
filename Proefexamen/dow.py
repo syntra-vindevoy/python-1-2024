@@ -1,6 +1,6 @@
 def day_of_the_week(year: int, month: int, day: int) -> int:
     """
-    Determines the day of the week for our Japanese friend based on a given date.
+    Determines the day of the week from our Japanese friend based on a given date.
 
     This function has been adjusted to conform to the European convention,
     where Monday is considered the first day of the week (day 1) and Sunday is
