@@ -11,4 +11,4 @@ def triangle(char, height):
 
 
 # Example usage:
-triangle('L', 5)
+triangle('L', 8)
