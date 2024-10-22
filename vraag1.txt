@@ -1,0 +1,4 @@
+Vraag 1: logische schakeling
+-1
+-0
+-1
