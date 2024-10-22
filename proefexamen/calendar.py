@@ -25,18 +25,16 @@ def print_calendar(year: int, mont: int) -> None:
 
         print()
 
-    weeks_in_month = 6
+    weeks_in_month = 6  # is different for each month, needs revision
     start = 1 - first_day_of_week + 1
     for i in range(weeks_in_month):
-        # print_one_line(0, 7)
         print_one_line(start, start + 7)
         start += 7
 
 
 def main():
-    print_calendar(2022, 10)
-    print_calendar(2022, 11)
-    print_calendar(2022, 12)
+    for i in range(1, 13):
+        print_calendar(2022, i)
 
 
 if __name__ == "__main__":
