@@ -1,11 +1,12 @@
 import date_string as ds
-import dow
+from dow import day_of_the_week
 import dom
+from day_number import day_number
 from proefexamen.dom import days_of_month
 
 
 def print_calendar(year: int, mont: int) -> None:
-    first_day_of_week = dow.day_of_the_week(year, mont, 1)
+    first_day_of_week = day_of_the_week(year, mont, 1)
     # print(f"eerste dag van de maand: dag {first_day_of_week} {ds.name_of_day(first_day_of_week)}")
 
     print(f'\n{ds.name_of_month(mont)} {year}')
@@ -22,10 +23,9 @@ def print_calendar(year: int, mont: int) -> None:
                 print(f'  ', end=' ')
             else:
                 print(f'{i:2}', end=' ')
-
         print()
 
-    weeks_in_month = 6  # is different for each month, needs revision
+    weeks_in_month = 6  # different for each month, needs revision
     start = 1 - first_day_of_week + 1
     for i in range(weeks_in_month):
         print_one_line(start, start + 7)
