@@ -1,9 +1,17 @@
 # This import is allowed as it's our own function we wrote in leapyear.py
-from leapyear import *
+from leapyear import is_leap_year
 
 
 def days_of_month(year: int, month: int) -> int:
-    # January == 1 !
+    if month in (4,6,9,11):
+        return 30
+    elif month == 2:
+        if is_leap_year(year):
+            return 29
+        else:
+            return 28
+    else:
+        return 31
     pass
 
 
