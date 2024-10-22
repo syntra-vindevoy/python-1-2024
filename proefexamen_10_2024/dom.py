@@ -1,5 +1,5 @@
 # This import is allowed as it's our own function we wrote in leapyear.py
-from leapyear import is_leap_year
+from leapyear import *
 
 
 def days_of_month(year: int, month: int) -> int:
