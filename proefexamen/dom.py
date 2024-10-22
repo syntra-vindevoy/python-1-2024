@@ -1,14 +1,12 @@
 # This import is allowed as it's our own function we wrote in leapyear.py
-from leapyear import *
-
+from leapyear import is_leap_year
 
 def days_of_month(year: int, month: int) -> int:
     # January == 1 !
-    pass
-
+    return [31, 28 + is_leapyear(year), 31, 30, 31, 30, 31, 31, 30, 31, 30, 31][month - 1]
 
 def main():
-    # Leap year
+
     assert days_of_month(2020, 1) == 31  # Jan
     assert days_of_month(2020, 2) == 29  # Feb
     assert days_of_month(2020, 3) == 31  # Mar
