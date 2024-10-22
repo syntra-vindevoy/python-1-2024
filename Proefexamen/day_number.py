@@ -14,16 +14,16 @@ def day_number(year: int, month: int, day: int) -> int:
     return total_days
 
 def main():
-    assert day_number(2020, 1, 1) == 1
-    assert day_number(2020, 1, 30) == 30
-    assert day_number(2020, 2, 1) == 32
-    assert day_number(2020, 3, 1) == 61
-    assert day_number(2020, 12, 31) == 366
+    assert day_number(2024, 1, 1) == 1
+    assert day_number(2024, 1, 30) == 30
+    assert day_number(2024, 2, 1) == 32
+    assert day_number(2024, 3, 1) == 61
+    assert day_number(2024, 12, 31) == 366
 
-    assert day_number(2022, 1, 1) == 1
-    assert day_number(2022, 2, 1) == 32
-    assert day_number(2022, 3, 1) == 60
-    assert day_number(2022, 12, 31) == 365
+    assert day_number(2026, 1, 1) == 1
+    assert day_number(2026, 2, 1) == 32
+    assert day_number(2026, 3, 1) == 60
+    assert day_number(2026, 12, 31) == 365
 
 
 if __name__ == "__main__":
