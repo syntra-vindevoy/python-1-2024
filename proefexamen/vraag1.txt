@@ -1,0 +1,8 @@
+1. A=0,B=1,C=1
+ Antwoord: 1
+
+2. A=1,B=0,C=1
+ Antwoord:
+
+3. A=1,B=1,C=0
+ Antwoord:
