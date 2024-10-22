@@ -1,9 +1,12 @@
-from dom import *  # importing our days of month
+from dom import days_of_month  # importing our days of month
 
 
 def day_number(year: int, month: int, day: int) -> int:
-    pass
-
+    days = 0
+    for i in range (1, month):
+        days += days_of_month(month = i, year = year)
+    days += day
+    return days
 
 def main():
     assert day_number(2020, 1, 1) == 1
