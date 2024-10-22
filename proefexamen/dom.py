@@ -3,7 +3,7 @@ from leapyear import is_leap_year
 
 def days_of_month(year: int, month: int) -> int:
     # January == 1 !
-    return [31, 28 + is_leapyear(year), 31, 30, 31, 30, 31, 31, 30, 31, 30, 31][month - 1]
+    return [31, 28 + is_leap_year(year), 31, 30, 31, 30, 31, 31, 30, 31, 30, 31][month - 1]
 
 def main():
 
