@@ -11,10 +11,9 @@ def week_number(year: int, month: int, day: int):
             total_days += 365
 
     for m in range(1, month):
-        total_days += days_in_mon(m, year)
+        total_days += days_of_month(m, year)
 
     total_days += day
-
     return total_days % 7 + 1
 
 def main():

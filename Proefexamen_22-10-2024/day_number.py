@@ -1,25 +1,9 @@
-from leapyear import is_leap_year
-from dom import days_of_month  # importing our days of month
+from dom import *  # importing our days of month
 
 
 def day_number(year: int, month: int, day: int) -> int:
-    total_days = 0
+    pass
 
-    # Tel alle dagen van volledige jaren tot het opgegeven jaar
-    for y in range(2020, year):
-        if is_leap_year(y):
-            total_days += 366  # Schrikkeljaar
-        else:
-            total_days += 365  # Geen schrikkeljaar
-
-    # Tel alle dagen van volledige maanden in het opgegeven jaar tot de opgegeven maand
-    for m in range(1, month):
-        total_days += days_of_month(year, month)
-
-    # Voeg de dagen van de huidige maand toe
-    total_days += day
-
-    return total_days
 
 def main():
     assert day_number(2020, 1, 1) == 1
