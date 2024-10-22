@@ -5,9 +5,6 @@ from date_string import *
 from day_number import *
 from week_number import *
 
-def number_of_lines(year:int, month:int) -> int:
-    pass
-
 
 def print_month(year:int, month:int):
     print(f"{name_of_month(month)} {year}")
