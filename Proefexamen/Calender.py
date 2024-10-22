@@ -28,8 +28,6 @@ def first_day(year, month):
     return f_day
 
 
-
-
 def main():
     year_calender(2024)
 
@@ -37,8 +35,5 @@ def main():
     assert first_day(2024, 10) == 2
     assert first_day(2024, 6) == 6
 
-
-
 if __name__ == "__main__":
     main()
-    
