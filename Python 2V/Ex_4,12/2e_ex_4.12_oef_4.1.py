@@ -4,7 +4,6 @@
 Exercise 4.1
 Download the code in this chapter from http://thinkpython2.com/code/polygon.py
 
-
 1.  Draw a stack diagram that shows the state of the program while executing
     circle(bob, radius). You can do the arithmetic by hand or add print statement
     to the code.
@@ -19,10 +18,8 @@ Download the code in this chapter from http://thinkpython2.com/code/polygon.py
 import turtle
 import math
 
-
 def polyline(t, n, length, angle):
     """Draws n line segments.
-
     t: Turtle object
     n: number of line segments
     length: length of each segment
@@ -32,10 +29,8 @@ def polyline(t, n, length, angle):
         t.fd(length)
         t.lt(angle)
 
-
 def arc(t, r, angle):
     """Draws an arc with the given radius and angle.
-
     t: Turtle
     r: radius
     angle: angle subtended by the arc, in degrees
@@ -50,7 +45,6 @@ def arc(t, r, angle):
     t.lt(step_angle / 2)
     polyline(t, n, step_length, step_angle)
     t.rt(step_angle / 2)
-
 
 def circle(t, r):
     """Draws a circle with the given radius.
@@ -75,9 +69,7 @@ circle(bob, radius)
 turtle.mainloop()
 
 # stack diagram
-
 '''
-
 __main__ :
     bob    ---> turtle.Turtle()
     radius ---> 100

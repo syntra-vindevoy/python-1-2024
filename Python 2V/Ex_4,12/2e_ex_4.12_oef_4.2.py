@@ -1,7 +1,6 @@
 """
 Python V2 _ Chap 4 _ Exercise 4.1
 """
-
 import math
 import turtle
 
