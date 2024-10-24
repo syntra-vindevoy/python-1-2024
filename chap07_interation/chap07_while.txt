@@ -9,3 +9,21 @@ while a < 5:
     fdfdfdf
     ddfdfdf
     a += 1
+
+You can jump out of the while when:
+- bool condition is not met anymore
+- return (can only be used inside a function
+    - return jumps out of the function (not only the while)
+    - lower code in the function will NOT be executed
+- break: stops the execution of the while, the rest of the function code is still executed
+    - can also be used outside of a function
+- continue:
+    - doesn't jump out of the while loop
+    - jumps back to the start of the while loop and checks the bool condition
+    - code below the continue is NOT executed anymore
+
+for an infinite while:
+while True:
+    fdfdfd
+    dfdfdf
+    dfdfdf
