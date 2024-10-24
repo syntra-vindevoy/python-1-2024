@@ -1,0 +1,11 @@
+while <bool condition>:
+    code
+    code
+    code
+    change <bool condition>
+
+
+while a < 5:
+    fdfdfdf
+    ddfdfdf
+    a += 1
