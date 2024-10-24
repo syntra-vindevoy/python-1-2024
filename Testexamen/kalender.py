@@ -8,6 +8,8 @@ def print_month(year: int, month: int):
     print(f"    {name_of_month(month)} {year}")
     print()  # Blank line
 
+for i in range(1,days_of_month(year,month)+1)
+
     # Print the days of the week using name_of_day
     for i in range(1, 8):  # Loop through days 1 to 7
         print(name_of_day(i), end=" ")  # Print day name without newline
