@@ -15,17 +15,9 @@ def next_number(previous_number: int) -> int:
         else:
             count += 1
 
-        if i == len_previous - 1 or previous_number[i] != previous_number[i + 1]:
+        if (i == len_previous - 1) or (previous_number[i] != previous_number[i + 1]):
             result += str(count) + previous_number[i]
     return int(result)
-
-
-def print_sequence(n: int) -> None:
-    result = 1
-    print(result, end=" ")
-    for i in range(n - 1):
-        result = next_number(result)
-        print(result, sep=" ", end=" ")
 
 
 def get_sequence(n: int) -> list:
@@ -60,8 +52,7 @@ def main():
 if __name__ == "__main__":
 
     tests()
-    print_sequence(5)
-    print()
+
     print(get_nth_item(5))
     print(get_sequence(5))
 
