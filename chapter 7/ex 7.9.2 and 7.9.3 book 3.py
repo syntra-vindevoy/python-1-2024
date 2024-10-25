@@ -22,3 +22,18 @@ def uses_only(word, available):
     return True
 assert uses_only("banana", "ban") == True
 assert uses_only("apple", "apl") == False
+
+
+def uses_all(word, required):
+    """Checks whether a word uses all required letters."""
+    word = word.lower()
+    required = required.lower()
+    for letter in required:
+        if letter in word:
+            None
+        else:
+            return False
+    return True
+assert uses_all("banana", "ban") == True
+assert uses_all("apple", "api") == False
+
