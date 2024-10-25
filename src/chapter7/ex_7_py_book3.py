@@ -1,3 +1,7 @@
+"""
+Oplossingen python 3 oefeningen
+"""
+
 def uses_none(word, forbidden):
     """Checks whether a word avoid forbidden letters.
 
