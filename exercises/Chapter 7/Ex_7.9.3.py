@@ -8,7 +8,7 @@ def uses_only(word, available):
     """
 
     for letter in word:
-        if letter not in available:
+        if letter.lower() not in available.lower():
             return False
     return True
 
