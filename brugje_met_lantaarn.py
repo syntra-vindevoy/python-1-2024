@@ -1,4 +1,5 @@
 def generate_all_combinations():
+    # mistake in logic, one person can return more than one time...
     base = [1, 2, 5, 10]
     solutions = []
     time_spent = 0
