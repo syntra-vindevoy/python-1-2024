@@ -15,10 +15,8 @@ def uses_only(word, available):
     word = word.lower()
     available = available.lower()
     for letter in word:
-        if letter in available:
-            None
-        else:
-            return False
+        if letter not in available:
+           return False
     return True
 assert uses_only("banana", "ban") == True
 assert uses_only("apple", "apl") == False
@@ -29,9 +27,7 @@ def uses_all(word, required):
     word = word.lower()
     required = required.lower()
     for letter in required:
-        if letter in word:
-            None
-        else:
+        if letter not in word:
             return False
     return True
 assert uses_all("banana", "ban") == True

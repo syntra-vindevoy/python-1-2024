@@ -1,20 +1,5 @@
-def uses_all(word, required):
-    """Checks whether a word uses all required letters."""
-    word = word.lower()
-    required = required.lower()
-    for letter in required:
-        if letter not in word:
-            return False
-    return True
-
-def uses_only(word, available):
-    """Checks whether a word uses only the available letters."""
-    word = word.lower()
-    available = available.lower()
-    for letter in word:
-        if letter not in available:
-            return False
-    return True
+from ex2_3_4_book_3 import uses_all
+from ex2_3_4_book_3 import uses_only
 
 def check_word(word, available, required):
     """Check whether a word is acceptable."""
