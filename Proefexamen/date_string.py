@@ -1,5 +1,6 @@
 def name_of_day(day: int) -> str:
-    return ["Ma", "Di", "Wo", "Do", "Vr", "Za", "Zo"][day - 1]
+    list_day = ["Ma", "Di", "Wo", "Do", "Vr", "Za", "Zo"]
+    return list_day[day - 1]
 
 
 def name_of_month(month: int) -> str:

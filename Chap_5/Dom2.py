@@ -51,7 +51,7 @@ def main():
 
 if __name__ == "__main__":
     main()
-print(day_of_the_week(2024, 10, 15))
+print(day_of_the_week(2024, 10, 23))
 
 x=6
 y=3
