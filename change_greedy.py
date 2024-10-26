@@ -33,8 +33,10 @@ def print_amount(amount: int) -> None:
 
 
 def tests():
+    assert payment(500) == {500: 1, 100: 0, 50: 0, 20: 0, 10: 0, 5: 0, 2: 0, 1: 0}
     assert payment(620) == {500: 1, 100: 1, 50: 0, 20: 1, 10: 0, 5: 0, 2: 0, 1: 0}
     assert payment(999) == {500: 1, 100: 4, 50: 1, 20: 2, 10: 0, 5: 1, 2: 2, 1: 0}
+    assert payment(456) == {500: 0, 100: 4, 50: 1, 20: 0, 10: 0, 5: 1, 2: 0, 1: 1}
 
 
 def main():
