@@ -587,6 +587,25 @@ def name_lower(text: str):
 
 is a prime?
 
+
+## Newton square root
+
+
+y = (x+a/x)/2
++ a = getal waarvan je wortel zoekt
++ x = gok van de uitkomst
++ y = uitkomst
+
+```python
+while True:
+	print(x)
+	y = (x + a/x) / 2
+		if y == x:
+			break
+	x = y
+```
+
+
 ## cartalk puzzlers
 + oefening 1 (versie 2)
 + priemgetal
