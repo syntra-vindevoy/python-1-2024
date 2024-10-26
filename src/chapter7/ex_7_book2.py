@@ -12,7 +12,7 @@ print("a  mysqrt(a) math.sqrt(a)  diff")
 for i in range(1,10):
     mx:float=my_sqrt(i)
     m:float=math.sqrt(i)
-    print(f"{a} {mx:.8f}    {m:.8f}     {mx-m:.8f}")
+    print (f"{i} {mx:.8f}    {m:.8f}     {mx - m:.8f}")
 
 
 # Cardtalk puzzelers money machine
