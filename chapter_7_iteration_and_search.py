@@ -1,15 +1,15 @@
-def for_with_string(text: str):
-    for i in text:
-        print(i, end=" ")
-    print()  # finishing on new line
 
-
-def name_lower(text: str):
-    text.lower()
+def next_number(previous_number:int)->int:
+    # 1, 11
+    # 11, 21
+    # 21, 1211
+    # 1211, 111221
+    # 111221, 312211
+    for i in number_string:
 
 
 def main():
-    for_with_string("Hello")
+    pass
 
 
 if __name__ == "__main__":
