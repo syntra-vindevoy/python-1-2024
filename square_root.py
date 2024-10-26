@@ -6,7 +6,6 @@ def square_root(number, estimate):
         result = (estimate + number / estimate) / 2
         if result == estimate:
             return estimate
-            break
         estimate = result
         # print(f"estimate: {estimate}")
 
