@@ -25,6 +25,9 @@ def move_right(
     return [new_situation_left, new_situation_right, new_time_spent]
 
 
+assert move_right(1, 2, [[1, 2, 5, 10], [], 0]) == [[5, 10], [1, 2], 2]
+
+
 def move_left(
     person: int,
     start_situation: list[list[int], list[int], int],
@@ -40,6 +43,9 @@ def move_left(
     new_time_spent += person
 
     return [new_situation_left, new_situation_right, new_time_spent]
+
+
+assert move_left(1, [[5, 10], [1, 2], 2]) == [[5, 10, 1], [2], 3]
 
 
 def generate_new_situations_moving_to_right(situation, situations):
@@ -69,8 +75,6 @@ def main():
 
 
 def tests():
-    assert move_right(1, 2, [[1, 2, 5, 10], [], 0]) == [[5, 10], [1, 2], 2]
-    assert move_left(1, [[5, 10], [1, 2], 2]) == [[5, 10, 1], [2], 3]
     pass
 
 
