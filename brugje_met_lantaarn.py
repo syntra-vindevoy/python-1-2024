@@ -27,6 +27,8 @@ def calculate_time_spent(person1, person2, person3, person4):
 
 
 def main():
+    # oplossing houd geen rekening met feit dat eenzelfde persoon meerdere malen kan terugkeren
+
     list_combinations = generate_all_combinations()
     list_times_per_combination = []
 
