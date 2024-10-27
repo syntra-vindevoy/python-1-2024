@@ -4,8 +4,8 @@ def eval_loop ():
     x = input ("Give your input (To stop enter 'done'): ")
     while x != "done":
         try:
-            eval(x)
-            print(f"The result is: {eval(x)}")
+            result = eval (x)
+            print(f"The result is: {result}")
 
         except (ZeroDivisionError, TypeError, NameError, SyntaxError):
             print("No valid input")
