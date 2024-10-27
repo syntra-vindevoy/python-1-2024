@@ -48,13 +48,6 @@ def move_left(
 assert move_left(1, [[5, 10], [1, 2], 2]) == [[5, 10, 1], [2], 3]
 
 
-def generate_new_situations_moving_to_right(situation, situations):
-    for i in range(len(situation[0])):
-        for j in range(i + 1, len(situation[0])):
-            new_situation = move_right(situation[0][i], situation[0][j], situation)
-            situations.append(new_situation)
-
-
 def remove_situation(situation, situations):
     situations.remove(situation)
 
@@ -65,13 +58,6 @@ def main():
 
     situation = [situation_left, situation_right, 0]
     situations = [situation]
-
-    for situation in situations:
-        generate_new_situations_moving_to_right(situation, situations)
-        remove_situation(situation, situations)
-
-    for s in situations:
-        print(s)
 
 
 def tests():
