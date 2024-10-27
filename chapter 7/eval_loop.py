@@ -12,4 +12,5 @@ def eval_loop ():
 
         return eval_loop()
 
-eval_loop ()
+if __name__ == "__main__":
+    eval_loop()
