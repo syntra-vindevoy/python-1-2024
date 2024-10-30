@@ -37,7 +37,7 @@ def print_primes(primes):
 
 
 # Example Usage
-limit = 100000000
+limit = 100
 primes = sieve_of_eratosthenes(limit)
 print(f"Prime numbers up to {limit} are:")
 print_primes(primes)
