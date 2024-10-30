@@ -59,12 +59,15 @@ res = (print_numbers3(cal))
 num = 6
 
 def print_numbers4(f):
+    g = 0
     for i in range(1, 11):
-        e = i * f
-        #print(f" {i} * {f} = {e}")
+        g = i * f
+        print(f" {i} * {f} = {g}")
 # is only for the outcome
-    return e
-#print(f" the end of the table of {num} = {print_numbers4(num)}")
+    return g
+
+res3 = print_numbers4(num)
+print(f" the end of the table of {num} = {res3}")
 
 #   Display numbers from a list using a loop
 #--------------------------------------------
@@ -158,7 +161,7 @@ num2 = 4
 # rev = print_numbers10(num1)
 # print(rev)
 #
-max_row = 5
+
 def print_numbers11(max_row):
     for i in range(1, max_row):
         print("* "* i)
@@ -169,31 +172,31 @@ def print_numbers11(max_row):
                 if j == 0:
                     return
 
-print_numbers11(max_row)
+print_numbers11(max_row= 5)
 
 input_number = 6
-def print_numbers12(input_number):
-    for i in range(1, input_number + 1):
+def print_numbers12(h):
+    for i in range(1, h + 1):
         cube = i ** 3
         #print(f"the cube of {i} = {cube}")
-        if i == input_number:
+        if i == h:
             return cube
 
 res2 = print_numbers12(input_number)
-#print(res2)
+print(res2)
 
 numbera = 9
 start = 2
 
-def print_numbers13(start, numbera):
+def print_numbers13(a, b):
     total = 0
-    for i in range(0, numbera):
-        if i < numbera - 1:
-            print(start ,end=" + ")
+    for i in range(0, b):
+        if i < b - 1:
+            print(a ,end=" + ")
         else:
-            print(start,  end=" ")
-        total += start
-        start = (start * 10) + 2
+            print(a,  end=" ")
+        total += a
+        a = (a * 10) + 2
     return total
 
 res5 = print_numbers13(start, numbera)
