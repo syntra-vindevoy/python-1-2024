@@ -1,4 +1,5 @@
 import uuid
+
 class Item:
     def __init__ (self, title, author, price, page_count):
         self.id = uuid.uuid4 ()
@@ -46,12 +47,14 @@ class Comic (Item):
 
 class BookStore[T:(Book, Comic)]:
     def __init__ (self):
-        self.books: set[T] = []
+        self.books: set[T] = set[T] ()
 
     def add_item (self, book: T):
-        if isinstance (book, Item) and book is not None:
-            if not self.books.__contains__ (book):
-                self.books.append (book)
+        if isinstance (book, (Book, Comic)):
+            if book not in self.books:
+                self.books.add (book)
+            else:
+                raise Exception (f"Book already exists {book.id}")
         else:
             raise TypeError ("Not a valid book or comic")
 
@@ -97,6 +100,20 @@ if __name__ == '__main__':
 
     for book in book_store.get_all_books ():
         print (f"{book}")
+
+    a = Comic (title="Comicsupernovatest", comic_genre="Fantasy", author="benoit", price=5.5, page_count=200)
+    b = Comic (title="Comicsupernovatest", comic_genre="Fantasy", author="benoit", price=5.5, page_count=200)
+    b.id = a.id
+    book_store.add_item (a)
+    try:
+        book_store.add_item (b)
+    except Exception as X:
+        print (X)
+
+    try:
+        book_store.add_item (())
+    except Exception as X:
+        print (X)
 
     print (book_store)
     print (book_store.get_all_books_type (Book))
