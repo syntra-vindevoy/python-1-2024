@@ -1,5 +1,7 @@
+import uuid
 class Item:
     def __init__ (self, title, author, price, page_count):
+        self.id = uuid.uuid4 ()
         self.title = title
         self.author = author
         self.price = price
@@ -10,6 +12,12 @@ class Item:
 
     def __repr__ (self):
         return f"{self.title} by {self.author} costs {self.price}  {self.page_count} "
+
+    def __eq__ (self, other):
+        return self.id == other.id
+
+    def __hash__ (self):
+        return hash (self.id)
 
 
 class Book (Item):
@@ -38,11 +46,12 @@ class Comic (Item):
 
 class BookStore[T:(Book, Comic)]:
     def __init__ (self):
-        self.books: list[T] = []
+        self.books: set[T] = []
 
     def add_item (self, book: T):
         if isinstance (book, Item) and book is not None:
-            self.books.append (book)
+            if not self.books.__contains__ (book):
+                self.books.append (book)
         else:
             raise TypeError ("Not a valid book or comic")
 
