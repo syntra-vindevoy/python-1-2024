@@ -11,3 +11,4 @@ def is_reverse(word1, word2):
     return True
 
 assert is_reverse( "sprint", "tnirps")==True
+
