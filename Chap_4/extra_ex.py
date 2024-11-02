@@ -1,7 +1,7 @@
 
 #Write a program to create a function that takes two arguments, name and age,
 # and print their value.
-def names(names, age):
+def names(name, age):
     print(names, age)
 
 names("John","23")

@@ -40,7 +40,7 @@ print_numbers2(1)
 # Calculate sum of all numbers from 1 to a given number
 #------------------------------------------------------
 
-cal = 64
+cal = 5
 # run loop n times
 # stop: n+1 (because range never include stop number in result)
 def print_numbers3(d):
@@ -50,7 +50,7 @@ def print_numbers3(d):
         s += i
     return s
 res = (print_numbers3(cal))
-#print(res)
+print(res)
 
 
 # Print multiplication table of a given number
@@ -185,7 +185,7 @@ def print_numbers12(h):
 res2 = print_numbers12(input_number)
 print(res2)
 
-numbera = 9
+number_a = 9
 start = 2
 
 def print_numbers13(a, b):
@@ -199,6 +199,6 @@ def print_numbers13(a, b):
         a = (a * 10) + 2
     return total
 
-res5 = print_numbers13(start, numbera)
+res5 = print_numbers13(start, number_a)
 print( "=", res5)
 
