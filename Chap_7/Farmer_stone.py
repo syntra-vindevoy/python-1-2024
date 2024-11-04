@@ -37,6 +37,7 @@ def farmer_stone(target):
     for weight in weights:
         # Check the possible placement of each weight
         if target % (weight * 3) == weight:  # Place weight on the left side
+            print(target % (weight * 3))
             solution.append(f"Left: {weight}kg")
             target -= weight
         elif target % (weight * 3) == (weight * 2) % (weight * 3):  # Place weight on the right side
@@ -55,3 +56,7 @@ placements = farmer_stone(target_weight)
 print(f"To weigh {target_weight}kg, place the weights as follows:")
 for placement in placements:
     print(placement)
+
+
+
+
