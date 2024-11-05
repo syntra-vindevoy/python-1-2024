@@ -2,6 +2,7 @@
 
 from leapyear import *
 
+
 def days_of_month(year: int, month: int) -> int:
     # Controleer of de maand geldig is
     if month < 1 or month > 12:

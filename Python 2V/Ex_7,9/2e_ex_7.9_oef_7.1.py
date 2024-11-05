@@ -1,5 +1,4 @@
 import math
-
 def mysqrt(a, epsilon=0.00001):
     """
     Bereken de vierkantswortel van 'a' met Newton-Raphson methode.

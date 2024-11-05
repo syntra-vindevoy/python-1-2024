@@ -19,7 +19,6 @@ def day_number(year: int, month: int, day: int) -> int:
 
     return total_days
 
-
 def main():
     assert day_number(2020, 1, 1) == 1
     assert day_number(2020, 2, 1) == 32
