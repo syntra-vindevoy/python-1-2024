@@ -626,4 +626,17 @@ while True:
 
 ``de zeef van erastostenes
 
-			
+
+
+## les dd 05/11/24 : github
+sourcetree (windows, niet voor linux)
+github, gitlab, azure devops(bedrijf)
+gitlab:
++ zoveel repo's private of public
++ per repo max x aantal gebruikers
+github:
++ beperkt aantal prive
++ onbeperkt aantal gebruikers
++ vooral open source projecten
+
+
