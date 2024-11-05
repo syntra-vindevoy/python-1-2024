@@ -8,7 +8,7 @@
         "type": "tabs",
         "children": [
           {
-            "id": "82ca964c326f469d",
+            "id": "5c2eaeeb6f4d6e86",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -19,18 +19,6 @@
               },
               "icon": "lucide-file",
               "title": "syntra"
-            }
-          },
-          {
-            "id": "5c2eaeeb6f4d6e86",
-            "type": "leaf",
-            "state": {
-              "type": "release-notes",
-              "state": {
-                "currentVersion": "1.7.4"
-              },
-              "icon": "lucide-file",
-              "title": "Release Notes 1.7.4"
             }
           }
         ]
@@ -175,14 +163,14 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "82ca964c326f469d",
+  "active": "5c2eaeeb6f4d6e86",
   "lastOpenFiles": [
+    "syntra.md",
     "github.py",
     "square_root.py",
     "test.txt",
     "New Tekstdocument.txt",
     "index.md",
-    "syntra.md",
     "hogent.md",
     "code/lab/python/cli/try_streamlit.py",
     "code/lab/python/python.md",
@@ -201,7 +189,6 @@
     "Verkiezingen.pdf",
     "code/csharp/_md/MapperA.cs.md",
     "code/python/tkinter_xlwings_excel/D_sources/source.py",
-    "code/python/tkinter_xlwings_excel/D_sources/D_source.py",
     "code/csharp/CSharp.md",
     "code/csharp/_md/Startup.cs.md",
     "code/csharp/_md/Mapper vs Repository.md",
