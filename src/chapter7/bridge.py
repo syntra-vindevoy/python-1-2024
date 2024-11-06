@@ -54,18 +54,47 @@ TIME_PERSONS = {
     "D": 10,}
 
 def convert_to_dict(side):
+    """
+    Args:
+        side: List of persons whose time data needs to be converted.
+
+    Returns:
+        A dictionary where each key is a person from the input list and the value is their corresponding time data from TIME_PERSONS.
+    """
     my_dict = {}
     for person in side:
         my_dict[person] = (TIME_PERSONS[person])
     return my_dict.items()
 
 def get_fastest(side:[],count)->[]:
+    """
+    Args:
+        side: List of tuples where each tuple contains an item and a corresponding value
+        count: Number of fastest items to return
+
+    Returns:
+        List of fastest items sorted by their corresponding value in ascending order
+    """
     return [item[0] for item in sorted(convert_to_dict(side), key=lambda item: item[1])[:count]]
 
 def get_slowest(side:[],count)->[]:
+    """
+    Args:
+        side (list): A list of tuples where each tuple contains an item and its corresponding speed.
+        count (int): The number of slowest items to retrieve.
+
+    Returns:
+        list: A list of items corresponding to the slowest speeds.
+    """
     return [item[0] for item in sorted(convert_to_dict(side), reverse=True, key=lambda item: item[1])[:count]]
 
 def move_too(pers_to_move:[], from_side:[], too_side:[]):
+    """
+    Args:
+        pers_to_move: List of persons to be moved.
+        from_side: List representing the starting side.
+        too_side: List representing the destination side.
+    """
     for person in pers_to_move:
         from_side.remove(person)
         too_side.append(person)
@@ -73,6 +102,33 @@ def move_too(pers_to_move:[], from_side:[], too_side:[]):
 
 
 def main():
+    """
+    Main function that simulates moving persons across two sides while keeping track of the total time spent.
+
+    The simulation uses a while loop to move persons from one side to the other until there are no persons left to move.
+    The side variable alternates between 0 and 1 to determine the direction of movement.
+        - If side is 1, the fastest person(s) on the right side are moved to the left.
+        - If side is 0, the slowest person(s) on the left side are moved to the right.
+
+    During each iteration:
+        - If side is 1, the get_fastest function retrieves the fastest persons from the right side.
+        - If side is 0, the get_slowest function retrieves the slowest persons from the left side.
+        - The move_too function moves the selected persons to the opposite side.
+        - The total_time variable is incremented by the time associated with each person in the fastest list.
+
+    Prints the state of both sides after each move and finally prints the total time.
+
+    Variables:
+        right_side (list): Initially empty list representing persons on the right side.
+        left_side (list): List of persons on the left side, initialized with the keys from TIME_PERSONS.
+        total_time (int): Accumulator for the total time taken for all movements.
+        side (int): Indicator of the current side to move from (0 for left to right, 1 for right to left).
+
+    Functions:
+        get_fastest: Retrieves the fastest persons from the given side.
+        get_slowest: Retrieves the slowest persons from the given side.
+        move_too: Moves persons from one side to the other.
+    """
     right_side= []
     left_side = list(TIME_PERSONS.keys())
     total_time = 0
