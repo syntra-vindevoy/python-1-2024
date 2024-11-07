@@ -626,4 +626,132 @@ while True:
 
 ``de zeef van erastostenes
 
-			
+
+
+## les dd 05/11/24 : github
+sourcetree (windows, niet voor linux)
+github, gitlab, azure devops(bedrijf)
+gitlab:
++ zoveel repo's private of public
++ per repo max x aantal gebruikers
+github:
++ beperkt aantal prive
++ onbeperkt aantal gebruikers
++ vooral open source projecten
+
+open source: github
+prive: gitlab
+
+gitlab:
++ owner 
+	+ mag alles doen
++ maintainer
+	+ mag evenveel als owner
+	+ niet deleten
++ developer
+	+ iemand die code schrijft
++ reporter
+	+ kan code zien, kan niet pushen in repo
++ guest = laagste
+
+
+werkwijze
++ binnenhalen van server
++ zelf maken
+
+repo bij gitlab = project
+deployment target
++ aanmaken van benodigde files
+
+\*\* bold
+\* italic
+
+licenties
++ zie populars
++ MIT License: no warranty
++ GNU: alles moet open zijn en vrij te gebruiken
+
+git clone
+
+ssh
++ public key wordt uitgewisseld
++ private 
++ gebruikt geen paswoorden
+of https (s is zelfde als ssh)
++ gebruikt paswoorden
+
+izimi
+
+git init initial branch main
+git status
++ untracked file
+git add .
+git status 
++ change nog te commiten
+git commit -m blablabla
+
+git 
+
+git flow, vincent driessen
+https://nvie.com/posts/a-successful-git-branching-model/
+
+branchen is weggaan, mergen is teruggaan
+pull-request (merge-request)
++ code is af, maar er moet eerst iemand anders naar kijken
+
+pushen is naar de server sturen
+
+release_branch:
++ code die getest wordt door gebruiker
+master_branch
++ productie-code
+fix
++ bugfix 
+	+ fix van develop
++ hotfix 
+	+ fix van master
+
+tags 
+
+origin = server
+
+new branch from main, "develop"
+eerste push
+
+new branch from develop, "change"
+
+.idea: pycharm settings
+
+nooit in git steken:
++ paswoorden
++ logfiles
++ .idea
++ builds
+
+.gitignore
++ .idea/
++ .vscode/
++ \*.log
++ \_\_pycache\_\_
+groen: 
++ geadd, 
++ nog niet gecommit
+
+terugkeren
++ of git checkout
++ of git merge -> mergerequest (pullrequest)
+
+delete source branch (commits wordt bewaard)
+
+tussentijdse commits verwijderen : squashen
+beter niet doen indien niet nodig, niet gevraagd
+
+zijn er wijzigingen? git fetch
+(icoontje, fetch all remotes)
+
+update = pull (?)
+
+rebase: werk ik op laatste versie?
+
+blauw pijltje, iets op server wat niet in deze versie zit.
+
