@@ -12,18 +12,23 @@ def next_month_start_weeks (year, month):
     return 5
 
 def month_start_week (year, month):
-    total_weeks = 1
+    if day_of_the_week (year, 1, 1) <= 4:
+        #The first week of january has to be at least 4 days long, else it is the last week of the previous year
+        total_weeks = 1
+    else: total_weeks = 0
+
     for i in range(1, month):
         total_weeks += next_month_start_weeks(year, i) - 1#to not double count the first week of the month
     return total_weeks
 
-assert month_start_week(2018, 1) == 1
-assert month_start_week(2016, 5) == 18
-assert month_start_week(2020, 12) == 49
-assert next_month_start_weeks (2018, 4) == 6
-assert next_month_start_weeks (2024, 2) == 5
-assert next_month_start_weeks (2024, 12) == 6
-assert next_month_start_weeks (2024, 6) == 6
-assert next_month_start_weeks(2022,7) == 6
-assert next_month_start_weeks(2022, 2) == 5
-assert next_month_start_weeks(2020,2) == 5
+if __name__ == '__main__':
+    assert month_start_week(2018, 1) == 1
+    assert month_start_week(2016, 5) == 17
+    assert month_start_week(2020, 12) == 49
+    assert next_month_start_weeks (2018, 4) == 6
+    assert next_month_start_weeks (2024, 2) == 5
+    assert next_month_start_weeks (2024, 12) == 6
+    assert next_month_start_weeks (2024, 6) == 6
+    assert next_month_start_weeks(2022,7) == 6
+    assert next_month_start_weeks(2022, 2) == 5
+    assert next_month_start_weeks(2020,2) == 5
