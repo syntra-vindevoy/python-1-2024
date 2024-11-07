@@ -6,3 +6,5 @@ result = tuple([x * y for x, y in zip(a, b)])
 print(result)
 
 print(zip(a, b))
+
+## test
