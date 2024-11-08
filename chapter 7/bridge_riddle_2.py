@@ -1,6 +1,5 @@
 def split_in_pairs (left):
     pairs = []
-
     for i in range(len(left)):
         for j in range(i + 1, len(left)):
             pairs.append((left[i], left[j]))
