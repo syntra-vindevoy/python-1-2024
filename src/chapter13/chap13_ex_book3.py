@@ -6,6 +6,11 @@ Write a function called replace_all that takes as arguments a pattern string, a 
 
 To test your function, read the file photos/notes.txt, replace 'photos' with 'images', and write the result to the file photos/new_notes.txt.
 """
+import hashlib
+import os
+import shelve
+
+import yaml
 
 
 def replace_all (pattern, replacement, filename):
@@ -39,14 +44,17 @@ def add_word (word, shelf):
 In a large collection of files, there may be more than one copy of the same file, stored in different directories 
 or with different file names. The goal of this exercise is to search for duplicates. As an example, 
 we’ll work with image files in the photos directory.
+
 Here’s how it will work:
 We’ll use the walk function from Walking directories to search this directory for files that end with one of
 the extensions in config['extensions'].
+
 For each file, we’ll use md5_digest from Checking for equivalent files to compute a digest of the contents.
 Using a shelf, we’ll make a mapping from each digest to a list of paths with that digest.
 Finally, we’ll search the shelf for any digests that map to multiple files.
 If we find any, we’ll use same_contents to confirm that the files contain the same data.
 I’ll suggest some functions to write first, then we’ll bring it all together.
+
 To identify image files, write a function called is_image that takes a path and a list of file extensions, 
 and returns True if the path ends with one of the extensions in the list. Hint: Use os.path.splitext – 
 or ask a virtual assistant to write this function for you.
@@ -70,3 +78,59 @@ for digest, paths in db.items():
         print(paths)
 You should find one pair of files that have the same digest. Use same_contents to check whether they contain the same data.
 """
+
+
+def is_image (path, extensions):
+    return os.path.splitext (path)[1].lower ()[1:] in extensions
+
+
+assert is_image ("photos/feb-2023/photo1.jpg", ["jpg", "jpeg"])
+
+
+def add_path (path, shelf):
+    digest = md5_digest (path)
+    if digest in shelf:
+        shelf[path].append (path)
+    else:
+        shelf[path] = [digest]
+
+
+config_filename = 'config.yaml'
+
+
+def walk_images (directory, config, db):
+    for name in os.listdir (directory):
+        path = os.path.join (directory, name)
+        if is_image (path, config):
+            add_path (path, db)
+        elif os.path.isdir (path):
+            walk_images (path, config, db)
+
+
+def load_config ():
+    reader = open (config_filename)
+    config = yaml.safe_load (reader).get ('extensions')
+    db = shelve.open ('photos/digests', 'n')
+    db.clear ()
+    return config, db
+
+
+def md5_digest (filename):
+    data = open (filename, 'rb').read ()
+    md5_hash = hashlib.md5 ()
+    md5_hash.update (data)
+    digest = md5_hash.hexdigest ()
+    return digest
+
+
+def searches_for_same_digets (digets, digets2) -> {}:
+    pass
+
+
+if __name__ == '__main__':
+    doublets = {}
+    config, db = load_config ()
+    walk_images ('photos', config, db)
+    for paths, digest in db.items ():
+        print (paths)
+    db.close ()
