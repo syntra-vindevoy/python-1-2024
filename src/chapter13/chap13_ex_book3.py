@@ -123,14 +123,22 @@ def md5_digest (filename):
     return digest
 
 
-def searches_for_same_digets (digets, digets2) -> {}:
-    pass
-
+def searches_for_same_digets (items_digets) -> {}:
+    dict_return = {}
+    for paths, diget in items_digets.items ():
+        for paths2, diget2 in items_digets.items ():
+            if diget2 == paths2 and dict_return.get (paths) is None:
+                dict_return[paths] = paths2
+    return dict_return
 
 if __name__ == '__main__':
-    doublets = {}
+    items = {}
     config, db = load_config ()
     walk_images ('photos', config, db)
-    for paths, digest in db.items ():
-        print (paths)
+    print ("All photos")
+    for path, digest in db.items ():
+        items[digest[0]] = path
+    print ("all doubles")
+    for path, digest in searches_for_same_digets (items):
+        print (path, digest)
     db.close ()
