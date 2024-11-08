@@ -36,7 +36,13 @@ It should sort the letters of the word to make a key, then check whether the key
 
 
 def add_word (word, shelf):
-    pass
+    sorted_word = ''.join (sorted (word))
+    if sorted_word in shelf:
+        shelf[sorted_word].append (word)
+    else:
+        shelf[sorted_word] = [word]
+
+
 
 
 """
