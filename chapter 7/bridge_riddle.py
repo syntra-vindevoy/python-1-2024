@@ -1,59 +1,62 @@
-def move_left_to_right(left, right, pair):
-    new_left = left[:]
-    new_right = right[:]
-    new_right.extend(pair)
-    new_left.remove(pair[0])
-    new_left.remove(pair[1])
-    return new_left, new_right
+def split_in_pairs (left):
+    pairs = []
+    for i in range(len(left)):
+        for j in range(i + 1, len(left)):
+            pairs.append((left[i], left[j]))
+    return pairs
 
-def move_right_to_left(left, right, single):
-    new_left = left[:]
-    new_right = right[:]
-    new_left.append(single)
-    new_right.remove(single)
-    return new_left, new_right
+def move_left_to_right (left, right, pair):
+    right_new = right.copy()
+    left_new = left.copy()
+    right_new.extend (pair)
+    left_new.remove (pair[0])
+    left_new.remove (pair[1])
+    return left_new, right_new
 
-def count_time_pair(pair):
-    return max(pair)
+def count_time_pair (pair):
+    if pair[0] > pair[1]: time_pair = pair[0]
+    else: time_pair = pair[1]
+    return time_pair
 
-def count_time_single(single):
-    return single
+def move_right_to_left (left, right, single):
+    left_new = left.copy()
+    right_new = right.copy()
+    left_new.append (single)
+    right_new.remove (single)
+    return left_new, right_new
 
-def bridge_riddle(left, right, current_time):
-    # Basisgeval: als iedereen aan de rechterkant is
-    if not left:
-        return current_time
+def bridge_riddle(left, right, time = 0, all_times = []):
+    if len(left) == 0:
+        all_times.append(time)
+        return
 
-    # Specifieke case: optimaliseer voor het klassieke voorbeeld van [1, 2, 5, 10]
-    if sorted(left) == [1, 2, 5, 10]:
-        return current_time + 17  # De bekende optimale oplossing
-
-    min_time = float('inf')
-
-    # Probeer elk paar van links naar rechts te verplaatsen
-    pairs = [(left[i], left[j]) for i in range(len(left)) for j in range(i + 1, len(left))]
+    pairs = split_in_pairs (left)
     for pair in pairs:
-        new_left, new_right = move_left_to_right(left, right, pair)
-        pair_time = count_time_pair(pair)
-        time_after_pair = current_time + pair_time
+        run_time = time
+        left_new, right_new = move_left_to_right (left,right,pair)
+        run_time += count_time_pair(pair)
 
-        # Probeer elk persoon terug te sturen van rechts naar links
-        for person in new_right:
-            updated_left, updated_right = move_right_to_left(new_left, new_right, person)
-            single_time = count_time_single(person)
+        if len(left_new) > 0:
+            single = min(right_new) #lets only the fastest person cross
+            left_new, right_new = move_right_to_left(left_new,right_new,single)
+            run_time += single
 
-            # Ga verder met de recursie en zoek naar de minimale tijd
-            total_time = bridge_riddle(updated_left, updated_right, time_after_pair + single_time)
+        bridge_riddle(left_new, right_new, run_time, all_times)
 
-            # Bewaar de minimale tijd
-            min_time = min(min_time, total_time)
 
-    return min_time if min_time != float('inf') else current_time
 
-# Test met het klassieke voorbeeld
-initial_left = [1, 2, 5, 10]
-initial_right = []
-result = bridge_riddle(initial_left, initial_right, 0)
-print(f"Minimale tijd om iedereen over te zetten: {result}")  # Verwachte output: 17
+def show_results_bridge_riddle():
+
+    all_times = []
+    bridge_riddle([1, 2, 5, 10], [], 0, all_times)
+    print (f"The possible results are: {all_times}")
+    print (f"The fastest time is {min(all_times)}")
+
+show_results_bridge_riddle()
+
+
+
+
+
 
 
