@@ -25,9 +25,10 @@ def move_right_to_left (left, right, single):
     right_new.remove (single)
     return left_new, right_new
 
-def bridge_riddle(left, right, time = 0, all_times = []):
+def bridge_riddle(left, right, time = 0, all_times = [], steps = ""):
     if len(left) == 0:
         all_times.append(time)
+        print (f"Time = {time} , Steps : {steps}")
         return
 
     pairs = split_in_pairs (left)
@@ -35,14 +36,16 @@ def bridge_riddle(left, right, time = 0, all_times = []):
         run_time = time
         left_new, right_new = move_left_to_right (left,right,pair)
         run_time += count_time_pair(pair)
+        new_steps = steps + f"{pair} cross over, "
 
         if len(left_new) > 0:
             single = min(right_new) #lets only the fastest person cross
             left_new, right_new = move_right_to_left(left_new,right_new,single)
             run_time += single
+            new_steps += f"{single} returns "
 
-        bridge_riddle(left_new, right_new, run_time, all_times)
 
+        bridge_riddle(left_new, right_new, run_time, all_times, new_steps)
 
 
 def show_results_bridge_riddle():
