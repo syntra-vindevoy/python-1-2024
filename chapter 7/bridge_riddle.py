@@ -42,15 +42,14 @@ def bridge_riddle(left, right, time = 0, steps = ""):
                 run_time_new = run_time + single
                 new_steps_temp = new_steps + f"{single} returns "
 
-                result = bridge_riddle(left_temp, right_temp, run_time_new, new_steps_temp)
+                bridge_riddle(left_temp, right_temp, run_time_new, new_steps_temp)
         else:
-            result = bridge_riddle(left_new, right_new, run_time, new_steps)
+            bridge_riddle(left_new, right_new, run_time, new_steps)
     return
 
 
 def show_results_bridge_riddle():
 
-    all_times = []
     bridge_riddle([1, 2, 5, 10], [], 0)
 
 
