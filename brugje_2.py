@@ -34,12 +34,17 @@ def move_one_person_to_left(situation, person):
 def main():
     situation = START_SITUATION.copy()
     situations = [situation]
-    for situation in situations:
+
+    situations_temp = situations.copy()
+    for situation in situations_temp:
         situations.append(move_two_persons_to_right(situation.copy(), 1, 2))
         situations.remove(situation)
-    for situation in situations:
+
+    situations_temp = situations.copy()
+    for situation in situations_temp:
         situations.append(move_one_person_to_left(situation.copy(), 1))
         situations.remove(situation)
+
     print(situations)
 
 
