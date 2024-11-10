@@ -25,35 +25,34 @@ def move_right_to_left (left, right, single):
     right_new.remove (single)
     return left_new, right_new
 
-def bridge_riddle(left, right, time = 0, all_times = [], steps = ""):
+def bridge_riddle(left, right, time = 0, steps = ""):
     if len(left) == 0:
-        all_times.append(time)
         print (f"Time = {time} , Steps : {steps}")
         return
 
     pairs = split_in_pairs (left)
     for pair in pairs:
-        run_time = time
         left_new, right_new = move_left_to_right (left,right,pair)
-        run_time += count_time_pair(pair)
+        run_time = time + count_time_pair(pair)
         new_steps = steps + f"{pair} cross over, "
 
         if len(left_new) > 0:
-            single = min(right_new) #lets only the fastest person cross
-            left_new, right_new = move_right_to_left(left_new,right_new,single)
-            run_time += single
-            new_steps += f"{single} returns "
+            for single in right_new:
+                left_temp, right_temp = move_right_to_left(left_new,right_new,single)
+                run_time_new = run_time + single
+                new_steps_temp = new_steps + f"{single} returns "
 
-
-        bridge_riddle(left_new, right_new, run_time, all_times, new_steps)
+                result = bridge_riddle(left_temp, right_temp, run_time_new, new_steps_temp)
+        else:
+            result = bridge_riddle(left_new, right_new, run_time, new_steps)
+    return
 
 
 def show_results_bridge_riddle():
 
     all_times = []
-    bridge_riddle([1, 2, 5, 10], [], 0, all_times)
-    print (f"The possible results are: {all_times}")
-    print (f"The fastest time is {min(all_times)}")
+    bridge_riddle([1, 2, 5, 10], [], 0)
+
 
 show_results_bridge_riddle()
 
