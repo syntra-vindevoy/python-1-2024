@@ -59,15 +59,6 @@ def get_all_situations_moving_to_left(situations):
     return situations_new
 
 
-def check_solutions(situations):
-    for s in situations:
-        if s["left"] == [] and s["right"] == [1, 2, 5, 10]:
-            print("Solution found:")
-            pprint(s)
-            return True
-    return False
-
-
 def filter_fastest_solutions(situations):
     fastest_time = min([s["time_spent"] for s in situations])
     return [s for s in situations if s["time_spent"] == fastest_time]
@@ -89,7 +80,7 @@ def main():
     situations = get_all_situations_moving_to_left(situations)
 
     situations = get_all_situations_moving_to_right(situations)
-    # print_all_situations(situations)
+    print_all_situations(situations)
 
     print()
     print("these are the fastest solutions:")
