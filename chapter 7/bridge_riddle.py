@@ -53,9 +53,8 @@ def bridge_riddle(left, right, time = 0, steps = "", all_times = [], min_time = 
 
 
 def show_results_bridge_riddle():
-
-    bridge_riddle([10, 5, 1, 2], [], 0)
-    all_times, min_time = bridge_riddle([1, 2, 5, 10], [], 0)
+    people = [10,5,2,1]
+    all_times, min_time = bridge_riddle(people, [], 0)
     print (f"The fastest time is {min(all_times)}")
     print (f"The fastest time is {min(min_time)}")
     print (f"This is the progress made towards the fastest time: {min_time}")
