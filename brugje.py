@@ -51,9 +51,7 @@ def get_all_situations_moving_to_right(situations):
 def get_all_situations_moving_to_left(situations):
     situations_new = []
     for s in situations:
-        for c in get_combinations_move_to_left(
-            s
-        ):  # can be refactored, cominations is not needed
+        for c in get_combinations_move_to_left(s):
             new_situation = move_to_left(s, c)
             situations_new.append(new_situation)
     return situations_new
@@ -80,7 +78,7 @@ def main():
     situations = get_all_situations_moving_to_left(situations)
 
     situations = get_all_situations_moving_to_right(situations)
-    print_all_situations(situations)
+    # print_all_situations(situations)
 
     print()
     print("these are the fastest solutions:")
