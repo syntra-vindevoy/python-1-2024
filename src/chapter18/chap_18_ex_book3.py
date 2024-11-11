@@ -1,4 +1,7 @@
-def fibonacci(n):
+from src.chapter6.fibonacci import fibonacci
+
+
+def fibonacNoneci(n):
     if n == 0:
         return 0
 
