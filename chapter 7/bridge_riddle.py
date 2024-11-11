@@ -25,9 +25,13 @@ def move_right_to_left (left, right, single):
     right_new.remove (single)
     return left_new, right_new
 
-def bridge_riddle(left, right, time = 0, steps = ""):
+def bridge_riddle(left, right, time = 0, steps = "", all_times = [], min_time = [100]):
     if len(left) == 0:
         print (f"Time = {time} , Steps : {steps}")
+        all_times.append(time) #keeps a record of all the times
+
+        if time < min(min_time): #only keeps a record of the faster time every loop
+            min_time.append(time)
         return
 
     pairs = split_in_pairs (left)
@@ -45,13 +49,16 @@ def bridge_riddle(left, right, time = 0, steps = ""):
                 bridge_riddle(left_temp, right_temp, run_time_new, new_steps_temp)
         else:
             bridge_riddle(left_new, right_new, run_time, new_steps)
-    return
+    return all_times, min_time
 
 
 def show_results_bridge_riddle():
 
-    bridge_riddle([1, 2, 5, 10], [], 0)
-
+    bridge_riddle([10, 5, 1, 2], [], 0)
+    all_times, min_time = bridge_riddle([1, 2, 5, 10], [], 0)
+    print (f"The fastest time is {min(all_times)}")
+    print (f"The fastest time is {min(min_time)}")
+    print (f"This is the progress made towards the fastest time: {min_time}")
 
 show_results_bridge_riddle()
 
