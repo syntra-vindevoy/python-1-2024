@@ -30,7 +30,7 @@ def get_combinations_move_to_right(situation):
 
 
 def get_combinations_move_to_left(situation):
-    return combinations(situation["right"], 1)
+    return situation["right"]
 
 
 def print_all_situations(situations):
@@ -54,7 +54,7 @@ def get_all_situations_moving_to_left(situations):
         for c in get_combinations_move_to_left(
             s
         ):  # can be refactored, cominations is not needed
-            new_situation = move_to_left(s, c[0])
+            new_situation = move_to_left(s, c)
             situations_new.append(new_situation)
     return situations_new
 
