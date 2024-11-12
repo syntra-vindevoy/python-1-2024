@@ -821,4 +821,30 @@ main beveiligen
 "dont start(/work on) something without ticket"
 buzilla (gratis)
 
+vroeger: waterfall development
+nu: sprints, user-driven development
 
+Jira
+
+ScrumPoker
+Fibonacci waarde geven aan opdracht
+
+tags
++ Cosmetic: 
+	+ kleurtje verandere, tekst veranderen
++ Hotfix x
++ Feature x
++ Important
++ investigate
++ Merge Request
++ Bugfix x
++ Improvement (refactoring)
+
+
+## statusboard
+backlog
++ alles wat ooit eens kan gedaan worden
+ready
+in progress
+in review
+done
