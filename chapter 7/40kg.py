@@ -50,21 +50,21 @@ def try_any_weight():
 
 def show_on_scale(n):
     possibilities, combin = weight_40kg_problem()
-    print (possibilities)
-    print (combin)
+
     if n not in possibilities: print (f"{n} is not a number from 1 to 40")
     else:
         for x in combin:
-            z = len(x)
-            result = 0
-            while z > 0:
-                result += x[z - 1]
-                z -= 1
-                print (result)
-            if result == n:
-                weights_to_use = x
+            result = sum (x)
+            if result == n: weights_to_use = x
 
 
-        print (weights_to_use)
-show_on_scale(10)
+    scale_left = []
+    scale_right = []
+    for i in weights_to_use:
+        if i > 0: scale_right.append(i)
+        else: scale_left.append(-i)
 
+    print (f"To weigh {n}, put it on the left side of the scale")
+    print (f"{scale_left}-----{scale_right}")
+
+show_on_scale(7)
