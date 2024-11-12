@@ -37,13 +37,34 @@ def weight_40kg_problem():
     no_doubles.sort()
     all_positive.sort()
 
-    return all_positive
+    return all_positive, all_combinations
 
 def try_any_weight():
-    possibilities = weight_40kg_problem()
+    possibilities, combi = weight_40kg_problem()
     print ("\nThis function checks if any weight from 0 to 40 can be measured using pieces of 1, 3, 9 and 27")
     n = input("Please enter a weight from 0 to 40: ")
     n = int(n)
     if n in possibilities or n == 0: print (f"{n} is possible")
     else: print (f"{n} is not possible")
-try_any_weight()
+#try_any_weight()
+
+def show_on_scale(n):
+    possibilities, combin = weight_40kg_problem()
+    print (possibilities)
+    print (combin)
+    if n not in possibilities: print (f"{n} is not a number from 1 to 40")
+    else:
+        for x in combin:
+            z = len(x)
+            result = 0
+            while z > 0:
+                result += x[z - 1]
+                z -= 1
+                print (result)
+            if result == n:
+                weights_to_use = x
+
+
+        print (weights_to_use)
+show_on_scale(10)
+
