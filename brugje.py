@@ -62,6 +62,11 @@ def filter_fastest_solutions(situations):
     return [s for s in situations if s["time_spent"] == fastest_time]
 
 
+def filter_slowest_solutions(situations):
+    slowest_time = max([s["time_spent"] for s in situations])
+    return [s for s in situations if s["time_spent"] == slowest_time]
+
+
 def main():
     situation_start = {
         "left": [1, 2, 5, 10],
@@ -83,6 +88,10 @@ def main():
     print()
     print("these are the fastest solutions:")
     print_all_situations(filter_fastest_solutions(situations))
+
+    # print()
+    # print("these are the slowest solutions:")
+    # print_all_situations(filter_slowest_solutions(situations))
 
 
 if __name__ == "__main__":

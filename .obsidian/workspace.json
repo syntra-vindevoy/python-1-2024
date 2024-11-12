@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "syntra.md",
+                "file": "obsidian/syntra.md",
                 "mode": "source",
                 "source": false
               },
@@ -166,6 +166,11 @@
   "active": "5c2eaeeb6f4d6e86",
   "lastOpenFiles": [
     "syntra.md",
+    "obsidian/syntra.md",
+    "obsidian/Untitled.md",
+    "obsidian/Pasted image 20241112184008.png",
+    "obsidian",
+    "Pasted image 20241112184008.png",
     "github.py",
     "square_root.py",
     "test.txt",
@@ -188,7 +193,6 @@
     "calendar/~syncthing~calendar_archive.md.tmp",
     "Verkiezingen.pdf",
     "code/csharp/_md/MapperA.cs.md",
-    "code/python/tkinter_xlwings_excel/D_sources/source.py",
     "code/csharp/CSharp.md",
     "code/csharp/_md/Startup.cs.md",
     "code/csharp/_md/Mapper vs Repository.md",
@@ -198,7 +202,6 @@
     "run.md",
     "uilen.md",
     "calendar/calendar.md",
-    "Draft.md",
-    "code/python/_learning/cs50_python/harvard cs50 python course notes.md"
+    "Draft.md"
   ]
 }

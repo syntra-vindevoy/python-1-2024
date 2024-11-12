@@ -755,3 +755,31 @@ rebase: werk ik op laatste versie?
 
 blauw pijltje, iets op server wat niet in deze versie zit.
 
+
+
+## git 
+![[Pasted image 20241112184008.png]]
+master 
++ = productie
++ alles moet klaar zijn, volledig werkende functie
+develop
++ in ontwikkeling
++ kan uitgeprobeerd worden
+releasebranch
+* doen we niet, tags is handiger
+	* kan door gebruiker x getest worden.
+
+bij problemen: je kan git checkout tag doen --> "build wordt terug gezet"
+
+major minor revision
++ major
+	+ breaking change 
+	+ oude code werkt niet meer
++ minor
+	+ nieuwe features toevoegen
++ revision
+	+ geen nieuwe feature, maar aanpassing
+
+
+alembic / django
+liquibase? can code vergelijken

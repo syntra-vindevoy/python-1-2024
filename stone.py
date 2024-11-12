@@ -128,7 +128,7 @@ def get_solution_version5(n):
 
 
 def get_solution_version6(n):
-    """ 
+    """
     trinair met while loop en list ipv string
     """
     if n == 0:
@@ -144,10 +144,9 @@ def get_solution_version6(n):
     return trinary
 
 
-
 def get_solution_version7(n):
     """
-    voor duidelijkere weergaven van de gewichten 
+    voor duidelijkere weergaven van de gewichten
     """
     power = -1
     if n == 0:
@@ -162,6 +161,7 @@ def get_solution_version7(n):
             n += 1
         trinary.insert(0, remainder * 3 ** (power))
     return trinary
+
 
 # met trinair stelsel en tail recursion
 def get_solution_version8(n):
@@ -180,9 +180,23 @@ def get_solution_version8(n):
     return helper(n, 0, [])
 
 
-
 # 27, 9, 3, 1 werd verwijderd om rekentijd niet te beinvloeden.
 def get_solution_version9(n):
+    def helper(n, trinary):
+        if n == 0:
+            return trinary
+        remainder = n % 3
+        n = n // 3
+        if remainder == 2:
+            remainder = -1
+            n += 1
+        trinary.insert(0, remainder)
+        return helper(n, trinary)
+
+    return helper(n, [])
+
+
+def get_solution_version10(n):  # zo kort mogelijke versie, nog te proberen
     def helper(n, trinary):
         if n == 0:
             return trinary
