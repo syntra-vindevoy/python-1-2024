@@ -1,7 +1,6 @@
 def fact (n: int, t: int = 1) -> int:
     if n < 2:
         return t
-
     return fact (n - 1, n * t)
 
 
