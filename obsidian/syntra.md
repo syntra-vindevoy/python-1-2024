@@ -796,5 +796,29 @@ als push naar server en er is een conflict,
 1 conda omgeving per applicatie
 al wie er aan werkt moet die omgeving gebruiken.
 
+stashen
++ tijdelijk committen
++ "soort anonieme branch"
+
+cherrypicken
++ bepaalde files uitkiezen
+
+squashen is samenvoegen
+* pletten van commits tot één commit
+
+portainer.io
+
+## github
+niewe repo: issue-demo
+main > "develop" branch aanmaken from main
+main beveiligen
++ Branches
+	+ add classic
+		+ lock branch: branch is read-only users cannot push (owner kan het wel)
+		+ require a pull request before merging
+			+ require approvals: moet er iemand goedkeuren?
+
+"dont start(/work on) something without ticket"
+buzilla (gratis)
 
 

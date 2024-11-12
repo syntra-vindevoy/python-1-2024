@@ -20,6 +20,18 @@
               "icon": "lucide-file",
               "title": "syntra"
             }
+          },
+          {
+            "id": "d2470e474892fb34",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.7.6"
+              },
+              "icon": "lucide-file",
+              "title": "Release Notes 1.7.6"
+            }
           }
         ]
       }
@@ -165,6 +177,9 @@
   },
   "active": "5c2eaeeb6f4d6e86",
   "lastOpenFiles": [
+    "obsidian/branches_overview.png",
+    "test.txt~",
+    "test.txt",
     "syntra.md",
     "obsidian/syntra.md",
     "obsidian/Untitled.md",
@@ -173,7 +188,6 @@
     "Pasted image 20241112184008.png",
     "github.py",
     "square_root.py",
-    "test.txt",
     "New Tekstdocument.txt",
     "index.md",
     "hogent.md",
@@ -191,7 +205,6 @@
     "Verkiezingen.md",
     "calendar/~syncthing~calendar.md.tmp",
     "calendar/~syncthing~calendar_archive.md.tmp",
-    "Verkiezingen.pdf",
     "code/csharp/_md/MapperA.cs.md",
     "code/csharp/CSharp.md",
     "code/csharp/_md/Startup.cs.md",
@@ -201,7 +214,6 @@
     "code/vscode/vscode.md",
     "run.md",
     "uilen.md",
-    "calendar/calendar.md",
-    "Draft.md"
+    "calendar/calendar.md"
   ]
 }
