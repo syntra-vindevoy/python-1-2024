@@ -783,3 +783,18 @@ major minor revision
 
 alembic / django
 liquibase? can code vergelijken
+
+rebase: 
++ vb 6 kwam van 2,
++ 2+5 zijn gemerged naar 2 (2+5)
++ met rebase vraag je om om 6 te baseren op 2+5 ipv op 2
+
+als push naar server en er is een conflict, 
++ altijd zien dat er gerebased wordt voor.
+
+
+1 conda omgeving per applicatie
+al wie er aan werkt moet die omgeving gebruiken.
+
+
+
