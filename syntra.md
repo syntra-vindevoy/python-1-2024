@@ -755,3 +755,4 @@ rebase: werk ik op laatste versie?
 
 blauw pijltje, iets op server wat niet in deze versie zit.
 
+#nummertje  bijschrijven in commit verwijzend naar issues
