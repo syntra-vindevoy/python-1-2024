@@ -69,12 +69,12 @@ def generate_calendar(year):
     print(f"Calendar Year: {year}\n")
     for month_index, (month, days_count) in enumerate(months):
         print(f"{month} {year}".center(27, ' '))
-        print(f"{'Wk':>2} {' '.join(days)}")
+        print(f"{'Wk':>3}  {' '.join(days)}")
 
         week_number = calculate_week_number(year, month_index + 1, 1)
 
         # Align first line
-        print(f"{week_number:2} {'   ' * start_day}", end=" ")
+        print(f"[{week_number:2}] {'   ' * start_day}", end="")
 
         for day in range(1, days_count + 1):
             print(f"{day:2}", end=" ")
@@ -83,7 +83,7 @@ def generate_calendar(year):
                 print()
                 if day != days_count:  # Prevent incrementing week number for the start of next month
                     week_number = calculate_week_number(year, month_index + 1, day + 1)
-                print(f"{week_number:2} ", end="")
+                print(f"[{week_number:2}] ", end="")
         print("\n")
 
 
