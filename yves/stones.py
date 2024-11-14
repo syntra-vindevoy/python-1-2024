@@ -3,14 +3,29 @@ from itertools import combinations, product
 from sortedcontainers import SortedDict
 
 def main():
-    weights = SortedDict(
-                {
-                    sum([choice[i] * (3 ** i) for i in range(4)]): choice
-                    for choice in list(product([-1, 0, 1], repeat=4))
-                    if sum([choice[i] * (3 ** i) for i in range(4)]) > 0
-                })
+    weights = SortedDict()
+    stones = [1, 3, 9, 27]
+
+    for stone in stones:
+        for p in list(weights.keys()):
+            weights[stone + p] = [p, stone]
+            weights[stone - p] = [-p, stone]
+
+        weights[stone] = [stone]
+
 
     print(weights)
+
+
+# def main():
+#     weights = SortedDict(
+#                 {
+#                     sum([choice[i] * (3 ** i) for i in range(4)]): choice
+#                     for choice in list(product([-1, 0, 1], repeat=4))
+#                     if sum([choice[i] * (3 ** i) for i in range(4)]) > 0
+#                 })
+#
+#     print(weights)
 
 # def main():
 #     weights = SortedDict()
@@ -29,7 +44,7 @@ def main():
 #
 #     print(weights)
 #
-
+#
 # def main():
 #     weights = {}
 #     stones = [1, 3, 9, 27]
@@ -55,6 +70,6 @@ def main():
 #
 #     print(len(weights))
 #     print(weights)
-
+#
 if __name__ == "__main__":
     main()
