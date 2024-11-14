@@ -3,12 +3,12 @@ from dom import *  # importing our days of month
 
 def day_number(year: int, month: int, day: int) -> int:
 
-    number_of_day = 0
+    number_of_day = 0               #Instead of init, add here number of days of current month
 
     for i in range(1, month, 1):
         number_of_day += days_of_month(year, i)
 
-    number_of_day += day
+    number_of_day += day            #If you didn't init in the beginning, you can omit this line
 
     return number_of_day
 
