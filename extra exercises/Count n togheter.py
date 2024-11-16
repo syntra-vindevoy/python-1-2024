@@ -1,5 +1,27 @@
-def count_n(n):
 
+
+def count_n(n):
+    """
+    calculates a running sum of any given number
+
+    parameters
+    ----------
+    n: int
+        can be any number
+
+    returns
+    -------
+    result: int
+        return the result of the running sum
+
+    author
+    ------
+        Chiel
+
+    date
+    ----
+        16-11-2024
+    """
     first = n
     result = 0
 
