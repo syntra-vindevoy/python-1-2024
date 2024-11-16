@@ -1,4 +1,30 @@
 def lowest_currency(amount: float | int):
+    """
+
+    Function to determine the lowest amount of physical currency for a given any given amount.
+
+    parameters
+    ----------
+
+    amount: float | int
+        Any given amount of money
+
+    returns
+    -------
+
+    result: list
+        a list with the amount needed of each available currency
+
+    author
+    ------
+        Chiel
+
+    date
+    ----
+        16-11-2024
+
+    """
+
     currencies = [500 ,200, 100, 50, 20, 10, 5, 2, 1, 0.5, 0.2, 0.1, 0.05, 0.02, 0.01]
 
     result = []
