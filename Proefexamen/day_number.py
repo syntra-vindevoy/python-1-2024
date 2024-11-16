@@ -3,12 +3,12 @@ from leapyear import is_leap_year
 
 def day_number(year: int, month: int, day: int) -> int:
 
-    total_days = 0
+    total_days = day
 
     for _ in range(1, month):
         total_days += days_of_month(year, _)
 
-    total_days += day
+    #total_days += day
 
     return total_days
 

@@ -1,6 +1,7 @@
 from Proefexamen.dom import days_of_month
 from day_number import day_number
 from date_string import name_of_month
+from date_string import name_of_day
 
 def month_calender(year: int, month: int):
 
@@ -15,7 +16,7 @@ def month_calender(year: int, month: int):
         if (start_day + day) % 7 == 0:
             print()
 
-    print("\n")
+    print()
 
 def year_calender(year):
     for _ in range(1, 13):
