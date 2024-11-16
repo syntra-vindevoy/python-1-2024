@@ -19,4 +19,15 @@ def dec_to_roman(n: int):
 
     return extra + roman_number
 
-print (dec_to_roman(662))
+
+def higher_numbers_print (n):
+    #This function is to "simplify" the visual of high roman numbers, using only roman numbers
+    if n < 2000:
+        print( "This is only meant for numbers greater than 2000.")
+        return
+    n_rest = dec_to_roman(n % 1000)
+    times_m = dec_to_roman(n // 1000)
+    print(f"{times_m} times M + {n_rest}" if n % 1000 != 0 else f"{times_m} times M")
+    return
+
+higher_numbers_print (70521)
