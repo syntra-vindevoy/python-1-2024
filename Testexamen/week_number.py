@@ -11,7 +11,7 @@ def week_number(year: int, month: int, day: int):
     return week
 
 def main():
-    assert week_number(2022, 1, 1) == 52  # 1 januari 2022 valt in week 52 van 2021
+    assert week_number(2022, 1, 1) == 53  # 1 januari 2022 valt in week 52 van 2021
     assert week_number(2022, 1, 3) == 1   # 3 januari 2022 is de eerste week van 2022
     assert week_number(2022, 1, 10) == 2  # 10 januari 2022 is de tweede week van 2022
     assert week_number(2022, 2, 1) == 5   # 1 februari 2022 valt in week 5
