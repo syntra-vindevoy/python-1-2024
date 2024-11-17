@@ -2,7 +2,6 @@ import sys
 import random
 from enum import Enum
 
-
 def play_rps():
 
     class rps(Enum):

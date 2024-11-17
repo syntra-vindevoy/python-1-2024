@@ -10,7 +10,7 @@ def print_month(year: int, month: int):
     print()  # Blank line
 
     # Print the days of the week using name_of_day
-    print("W  ", end="")  # Add a column header for week numbers
+    print(" W ", end="")  # Add a column header for week numbers
     for i in range(1, 8):  # Loop through days 1 to 7
         print(name_of_day(i), end=" ")
     print()  # Newline after days of the week
