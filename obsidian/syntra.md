@@ -848,3 +848,15 @@ ready
 in progress
 in review
 done
+
+
+ghantt charts --> altair uitproberen
+
+MVC model view controller
+
+mach-loop, oefenen in laagvliegen in schotland
+
+50% applicatie
+50% eigen inbreng
+
+code with me
