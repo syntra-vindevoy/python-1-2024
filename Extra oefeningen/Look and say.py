@@ -21,7 +21,7 @@ def look_and_say_sequence(n):
                 count = 1  # Reset count for the new digit
 
         next_term += str(count) + prev_term[-1]  # Append the last group
-        sequence.append(next_term)
+        sequence = sequence + [next_term]
 
     return sequence
 
