@@ -2,11 +2,13 @@
 from leapyear import *
 
 
-def days_of_month(year: int, month: int) -> int:
+def days_of_month(year: int , month: int) -> int:
     # January == 1 !
-    pass
+    if month > 12:
+        raise SyntaxError('invalid month')
+    return [0, 31, 28 + is_leap_year(year), 31, 30, 31, 30, 31, 31, 30, 31, 30, 31][month]
 
-
+print (days_of_month(2020, 5))
 def main():
     # Leap year
     assert days_of_month(2020, 1) == 31  # Jan
