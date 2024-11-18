@@ -33,6 +33,8 @@ def day_of_the_week(year: int, month: int, day: int) -> int:
         - Uses a modified version of Zeller's congruence algorithm
         - January and February are treated as months 13 and 14 of the previous year
         - The function returns 1-7 instead of 0-6 to align with ISO 8601 standard
+    Author:
+    Date:
     """
     offset = [0, 3, 2, 5, 0, 3, 5, 1, 4, 6, 2, 4]
     year -= month < 3
