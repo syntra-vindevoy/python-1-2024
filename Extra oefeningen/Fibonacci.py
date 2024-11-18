@@ -21,6 +21,7 @@ def fibo(n: int) -> int:
 #New fibo_1 gets the sum of the old fibo_0 and fibo_1.
     return fibo_0 + fibo_1
 
+print(fibo(5))
 assert fibo(0) == 0
 assert fibo(1) == 1
 assert fibo(2) == 1

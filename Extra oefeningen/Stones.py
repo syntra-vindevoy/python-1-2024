@@ -11,6 +11,5 @@ def main():
 
         weights[stone] = [stone]
 
-
     print(weights)
 
