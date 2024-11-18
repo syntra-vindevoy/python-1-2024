@@ -27,3 +27,4 @@ def look_and_say_sequence(n):
 
 # Let's generate the first 6 terms of the sequence
 print(look_and_say_sequence(12))
+#test
