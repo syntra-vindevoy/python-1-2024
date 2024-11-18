@@ -11,6 +11,8 @@ print(round(21.6))      #When > .5 --> rounding up
                         #When == .5
 print(round(21.5))      #Both give 22 --> round of .5 will go to the nearest even number
 print(round(22.5))
+print(int(21.9))        #Making an Int of a Real doesn't do any round operation on them, it just drops the numbers after the comma
+print(int(22.5))
 print("#" * 50)
 
 pi = math.pi
