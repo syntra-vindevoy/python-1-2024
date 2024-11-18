@@ -2,6 +2,8 @@ def is_leap_year(year: int) -> bool:
     return year % 4 == 0 and year % 100 != 0 or year % 400 == 0
 
 
+
+
 def main():
     # Not dividable by 4
     assert is_leap_year(2021) is False
