@@ -1,5 +1,5 @@
 def dec_to_roman(n: int):
-    roman = ["I", "V", "X", "L", "C", "D", "M", "O", "K" ]
+    roman = ["I", "V", "X", "L", "C", "D", "M"]
     roman_number = ""
     start = 0
 
@@ -20,14 +20,15 @@ def dec_to_roman(n: int):
     return extra + roman_number
 
 
-def higher_numbers_print (n):
+def higher_roman_numbers (n):
     #This function is to "simplify" the visual of high roman numbers, using only roman numbers
     if n < 2000:
-        print( "This is only meant for numbers greater than 2000.")
-        return
+        return "This is only meant for numbers greater than 2000."
+
     n_rest = dec_to_roman(n % 1000)
     times_m = dec_to_roman(n // 1000)
-    print(f"{times_m} times M + {n_rest}" if n % 1000 != 0 else f"{times_m} times M")
-    return
+    return f"{times_m} times M + {n_rest}" if n % 1000 != 0 else f"{times_m} times M"
 
-higher_numbers_print (70521)
+if __name__ == "__main__":
+    print(higher_roman_numbers (7521))
+    print(dec_to_roman(8145))

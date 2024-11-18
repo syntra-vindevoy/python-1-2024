@@ -40,5 +40,5 @@ if __name__ == "__main__":
     assert dec_to_binary_rec(-56) == "Decimal number has to be a positive integer"
     assert dec_to_binary_rec(4.9) == "Decimal number has to be a positive integer"
     
-    print (dec_to_binary_loop(52))
+    print (dec_to_binary_loop(8))
     print (dec_to_binary_rec(47))
