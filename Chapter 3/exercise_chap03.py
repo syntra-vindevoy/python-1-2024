@@ -12,14 +12,14 @@ def main():
 
 # exercise 2 chap 3 false output
 
-def pyramid (char , height):
+def pyramid (character, height):
     for i in range(1, height + 1):
         num_chars = 2 * i - 1
-        total_width = len(char) * num_chars
-        spaces ='' * ((len(char) * height - total_width) // 2)
-        row = char * num_chars
+        total_width = len(character) * num_chars
+        spaces ='' * ((len(character) * height - total_width) // 2)
+        row = character * num_chars
         print(spaces + row)
-pyramid('L', 5)
+pyramid('*', 5)
 
 # exercise 2 chap 3 good output
 
@@ -34,14 +34,13 @@ def triangle(char, height):
 
         # Print the row
         print(row)
-triangle('L', 9)
+triangle('°', 10)
 
 # test return function
 
 def check_even(number):
-    if number % 2 == 0:
-        return True
-    return False
+    return number % 2 == 0
+
 print(check_even(7))
 
 # exercise 3 chap 03
@@ -88,5 +87,9 @@ def rectangle_plus (plus, minus, horizminus, spatie):
             print(row2 * aantal_horizontaal)
         print(row1 * aantal_horizontaal)
 
-for _ in range(aantal_verticaal):
-    rectangle_plus ('+', '-', '|', ' ')
+#for _ in range(aantal_verticaal):
+    #rectangle_plus ('+', '-', '|')
+
+for j in range (1,8):
+    print (j, end= '')
+
