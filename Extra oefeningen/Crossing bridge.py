@@ -41,7 +41,6 @@ def solve(left, right, total_time, crossings):  # Recursive function to solve th
 
                 solve(left.copy(), right.copy(), total_time, crossings.copy())  # Recurse with the updated state
 
-
 def main():  # Main function to start the process
     global solutions  # Access the global solutions dictionary
 
@@ -52,14 +51,23 @@ def main():  # Main function to start the process
 
     solutions = dict(sorted(solutions.items(), key=lambda item: item[0]))  # Sort solutions by total time
 
+    print("\nAll solutions:")
     for solution in solutions:  # Iterate over each total time in the solutions
-        print("solutions in", solution, "seconds")  # Print the total time
+        print(f"Solutions in {solution} seconds:")  # Print the total time
 
         cr_counter = 0  # Initialize a crossing counter
         for crossing in solutions[solution]:  # Iterate over each crossing sequence
             cr_counter += 1  # Increment the crossing counter
-            print("Cross", cr_counter, ":", crossing)  # Print the crossing sequence
+            print(f"Cross {cr_counter}:", crossing)  # Print the crossing sequence
+
+    # Print the fastest solution
+    fastest_time = min(solutions.keys())  # Find the smallest key (fastest time)
+    print("\nFastest solution:")
+    print(f"In {fastest_time} seconds:")
+    for crossing in solutions[fastest_time]:  # Iterate over the fastest crossing sequence
+        print(crossing)
 
 
 if __name__ == "__main__":  # Entry point of the script
     main()  # Call the main function
+
