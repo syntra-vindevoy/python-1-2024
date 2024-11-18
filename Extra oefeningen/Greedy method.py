@@ -20,7 +20,7 @@ def greedy_method(bedrag, munten_en_briefjes):
 print(greedy_method(bedrag, munten_en_briefjes))
 
 munten_en_briefjes = [100, 50, 20, 10, 5, 2, 1]  # Muntjes en briefjes
-bedrag = 105
+bedrag = 569
 
 
 def recursive_method(bedrag, munten_en_briefjes, index=0):
@@ -40,6 +40,5 @@ def recursive_method(bedrag, munten_en_briefjes, index=0):
         resultaat[waarde] = aantal
 
     return resultaat
-
 
 print(recursive_method(bedrag, munten_en_briefjes))
