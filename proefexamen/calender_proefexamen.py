@@ -12,7 +12,8 @@ def prt_calender(year, month, day):
     print(f"Ma Di Wo Do Vr Za Zo")
     print("   " * start_position, end="")
     for i in range(1, days_of_month(year, month) + 1):
-        print(i, end=" ")
+        #print(i, end=" ")
+        print(f"{i:2}", end=" ")  # Deze code werd gebruikt om de dagen lengte 2 mee te geven: {i:2}
         #print(f" {i}" if len(i) < 2 else f"{i}")
         if (day_of_the_week(year, month, day + d) % 7 == 0):
             print()
