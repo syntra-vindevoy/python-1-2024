@@ -1,5 +1,5 @@
-bot_name: str = 'Dave'
-print(f'Hello! My name is {bot_name}, how can I help you?')
+bot_name: str = 'Den Dave'
+print(f'{bot_name}: Hello! My name is {bot_name}, how can I help you?')
 
 def bot():
     while True:
