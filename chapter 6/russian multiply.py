@@ -1,8 +1,6 @@
-def russian_peasant_calc (a:int, b:int) -> int:
+def russian_peasant_calc (a:int, b:int) ->int :
     if a == 0:
         return 0
-    elif a < 2:
-        return b
     elif a % 2 != 0:
         return b + russian_peasant_calc(a // 2, b * 2)
     else:
@@ -18,14 +16,12 @@ def russian_peasant (a:int, b:int):
         raise ValueError("Values can not be floats")
 
     if a < 0 and b < 0:
-        a *= -1 #makes a a positive number
-        b *= -1 #makes b a positive number
+        a, b = abs(a), abs (b) #makes a and b positive numbers
+
     if (a < 0) ^ (b < 0): #only if one of the value is negative
-        if a < 0:
-            a *= -1
-        else:
-            b *= -1
+        a, b = abs(a), abs(b)
         negative = -1
+
     return russian_peasant_calc(a, b) * negative
 
 assert russian_peasant(7,3) == 21
