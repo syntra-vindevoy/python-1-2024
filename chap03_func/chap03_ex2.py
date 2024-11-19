@@ -3,7 +3,7 @@ from six import print_
 
 
 def print_right(text):
-    text = text.strip()         #ommits spaces at the beginnen and the end of the string
+    text = text.strip()         #ommits spaces at the beginning and the end of the string
     assert len(text) <= 40, "Max length of text is 40 char"
 
     #string_length = len(text)
