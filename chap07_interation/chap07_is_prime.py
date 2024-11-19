@@ -35,14 +35,3 @@ print(is_prime(19))
 print(is_prime(23))
 print(is_prime(27))
 
-
-
-
-
-
-
-
-
-
-
-
