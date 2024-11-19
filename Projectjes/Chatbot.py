@@ -7,7 +7,7 @@ def bot():
         if user_input in ['goodbye','see you', 'bye','quit','exit']:
             print(f'{bot_name}: Goodbye, have a great day!')
             break
-        elif user_input in ['hi','hello','goodday',]:
+        elif user_input in ['hi','hello','good day']:
             print(f'{bot_name}: Hi there, how can I help you?')
         elif user_input in ['+','add']:
             print(f'{bot_name}: let\'s do some additions, please enter two numbers.')
