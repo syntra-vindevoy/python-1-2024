@@ -35,7 +35,7 @@ def add1(x, y):
 
     print(a)
 
-a = 100                         #bad practice, but this a is a completely different a than the one in the function
+a = 100                         #bad practice, but this 'a' is a completely different 'a' than the one in the function
 
 print(a)
 
