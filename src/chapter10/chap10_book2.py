@@ -7,8 +7,6 @@ Then you can use the in operator as a fast way to check whether a string is in t
 If you did Exercise 10, you can compare the speed of this implementation with the list in operator
  and the bisection search.
  """
-from chapter8.chay8_ex_book2 import rotate_word
-
 
 def read_words():
     """
