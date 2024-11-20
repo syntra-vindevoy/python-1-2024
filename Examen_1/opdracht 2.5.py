@@ -1,5 +1,3 @@
-from functools import partial
-
 
 def opp_driehoek (h,b):
     return (h*b) / 2
@@ -20,7 +18,7 @@ if __name__ == "__main__":
 def opp_parabool (x1, x2):
     aantal_decimalen = 0
     n = 1
-    while aantal_decimalen < 6:
+    while aantal_decimalen < 4:
         total = 0
         dx = (x2 - x1) / n
         x_start = x1
@@ -31,7 +29,7 @@ def opp_parabool (x1, x2):
             x_start = x_end
             x_end = x_start + dx
         decimalen = total - total // 1
-        aantal_decimalen = len(str(decimalen))
+        aantal_decimalen = len(str(decimalen)) - 2
         n *= 2
     return total
 
