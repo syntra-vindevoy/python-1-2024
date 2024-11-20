@@ -30,9 +30,8 @@ def opp_parabool (x1, x2):
             total += partial
             x_start = x_end
             x_end = x_start + dx
-            decimalen = total - total // 1
-            aantal_decimalen = len(str(decimalen))
-        print (total)
+        decimalen = total - total // 1
+        aantal_decimalen = len(str(decimalen))
         n *= 2
     return total
 
