@@ -1,1 +1,0 @@
-<img src="oef%201.jpg">
