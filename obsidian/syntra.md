@@ -783,3 +783,80 @@ major minor revision
 
 alembic / django
 liquibase? can code vergelijken
+
+rebase: 
++ vb 6 kwam van 2,
++ 2+5 zijn gemerged naar 2 (2+5)
++ met rebase vraag je om om 6 te baseren op 2+5 ipv op 2
+
+als push naar server en er is een conflict, 
++ altijd zien dat er gerebased wordt voor.
+
+
+1 conda omgeving per applicatie
+al wie er aan werkt moet die omgeving gebruiken.
+
+stashen
++ tijdelijk committen
++ "soort anonieme branch"
+
+cherrypicken
++ bepaalde files uitkiezen
+
+squashen is samenvoegen
+* pletten van commits tot één commit
+
+portainer.io
+
+## github
+niewe repo: issue-demo
+main > "develop" branch aanmaken from main
+main beveiligen
++ Branches
+	+ add classic
+		+ lock branch: branch is read-only users cannot push (owner kan het wel)
+		+ require a pull request before merging
+			+ require approvals: moet er iemand goedkeuren?
+
+"dont start(/work on) something without ticket"
+buzilla (gratis)
+
+vroeger: waterfall development
+nu: sprints, user-driven development
+
+Jira
+
+ScrumPoker
+Fibonacci waarde geven aan opdracht
+
+tags
++ Cosmetic: 
+	+ kleurtje verandere, tekst veranderen
++ Hotfix x
++ Feature x
++ Important
++ investigate
++ Merge Request
++ Bugfix x
++ Improvement (refactoring)
+
+
+## statusboard
+backlog
++ alles wat ooit eens kan gedaan worden
+ready
+in progress
+in review
+done
+
+
+ghantt charts --> altair uitproberen
+
+MVC model view controller
+
+mach-loop, oefenen in laagvliegen in schotland
+
+50% applicatie
+50% eigen inbreng
+
+code with me
