@@ -53,7 +53,7 @@ soorten database
 	+ opens source
 	+ works on most sytems
 	+ uses standard sql
-+ multidimensionele databases
++ multi-dimensionele databases
 	+ vb tijd als extra dimensie
 + object oriented databases
 	+ overerving geïntegreerd
