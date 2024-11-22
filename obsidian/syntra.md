@@ -784,6 +784,11 @@ major minor revision
 alembic / django
 liquibase? can code vergelijken
 
+
+# Databanken
+12 lessen op dinsdag
+Luc Van De Putte ArcelorMittal (vroeger Sidmar)
+
 rebase: 
 + vb 6 kwam van 2,
 + 2+5 zijn gemerged naar 2 (2+5)
