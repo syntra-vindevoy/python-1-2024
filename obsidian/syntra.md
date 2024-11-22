@@ -785,9 +785,7 @@ alembic / django
 liquibase? can code vergelijken
 
 
-# Databanken
-12 lessen op dinsdag
-Luc Van De Putte ArcelorMittal (vroeger Sidmar)
+
 
 rebase: 
 + vb 6 kwam van 2,
@@ -865,3 +863,23 @@ mach-loop, oefenen in laagvliegen in schotland
 50% eigen inbreng
 
 code with me
+
+
+
+
+
+## Sidekicks
+### Wallrus-operator
+
+```python
+# Zonder walrus operator:
+length = len(my_list)
+if length > 10:
+    print(f"List is too long: {length} items")
+
+# Met walrus operator:
+if (length := len(my_list)) > 10:
+    print(f"List is too long: {length} items")
+```
+
+
