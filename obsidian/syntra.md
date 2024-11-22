@@ -860,3 +860,6 @@ mach-loop, oefenen in laagvliegen in schotland
 50% eigen inbreng
 
 code with me
+
+
+https://pimylifeup.com/raspberry-pi-postgresql/
