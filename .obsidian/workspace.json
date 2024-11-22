@@ -11,14 +11,10 @@
             "id": "6534bf29f0f6b600",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "obsidian/database.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "database"
+              "title": "New tab"
             }
           }
         ]
@@ -165,22 +161,28 @@
   },
   "active": "6534bf29f0f6b600",
   "lastOpenFiles": [
+    "examen_proef/calendar.py~",
+    "examen_proef/week_number.py",
+    "examen_proef/opgave_1.txt",
+    "examen_proef/opgave.pdf",
+    "examen_proef/leapyear.py",
+    "examen_proef/examen.zip",
+    "examen_proef/dow.py",
+    "examen_proef/dom.py",
+    "examen_proef/day_number.py",
+    "examen_proef/date_string.py",
+    "examen_proef/calendar.py",
     "obsidian/syntra.md",
     "obsidian/database.md",
-    "database.md",
     "obsidian/branch_overview.png",
+    "examen/opgave.md",
+    "database.md",
     "syntra.md",
     "obsidian/Untitled.md",
     "obsidian/Pasted image 20241112184008.png",
-    "obsidian",
     "Pasted image 20241112184008.png",
-    "github.py",
-    "square_root.py",
-    "test.txt",
-    "New Tekstdocument.txt",
     "index.md",
     "hogent.md",
-    "code/lab/python/cli/try_streamlit.py",
     "code/lab/python/python.md",
     "code/lab/python/adding python to path.md",
     "docs.python.org.md",
@@ -188,21 +190,15 @@
     "code/lab/vscode/vscode.md",
     "powershell.md",
     "powershell_linux.md",
-    "code/pipe.ahk2",
     "trading.md",
     "code/python/python.md",
     "Verkiezingen.md",
-    "calendar/~syncthing~calendar.md.tmp",
-    "calendar/~syncthing~calendar_archive.md.tmp",
-    "Verkiezingen.pdf",
     "code/csharp/_md/MapperA.cs.md",
     "code/csharp/CSharp.md",
     "code/csharp/_md/Startup.cs.md",
     "code/csharp/_md/Mapper vs Repository.md",
     "code/csharp/_md/DomainManager.cs.md",
     "code/csharp/_md/3TierModel.md",
-    "code/vscode/vscode.md",
-    "run.md",
-    "uilen.md"
+    "code/vscode/vscode.md"
   ]
 }

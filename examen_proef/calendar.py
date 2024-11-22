@@ -2,7 +2,7 @@ import date_string as ds
 from dow import day_of_the_week
 from week_number import week_number
 import dom
-from day_number import day_number
+
 
 # from proefexamen import days_of_month
 
@@ -18,7 +18,7 @@ def print_calendar(year: int, mont: int) -> None:
     print()
 
     def print_one_line(
-        start: int, end: int, wn
+            start: int, end: int, wn
     ):  # needs extra parameter to find weeknumber
         print(f"[{wn}]  ", end=" ")
         for i in range(start, end):
