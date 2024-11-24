@@ -11,6 +11,13 @@ root.title("Pygame in Tkinter")
 embed = tk.Frame(root, width=800, height=600)
 embed.pack()
 
+# Add a button to the Tkinter window
+def on_button_click():
+    print("Button clicked!")
+
+button = tk.Button(root, text="Click Me", command=on_button_click)
+button.pack()
+
 # Ensure the Tkinter window is fully initialized
 root.update()
 
