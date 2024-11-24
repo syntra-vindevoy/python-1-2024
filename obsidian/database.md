@@ -74,3 +74,18 @@ socratica > installation and overview
 
 
 lesmateriaal.voeten.com/database-ontwerpen-normaliseren
+
+
+
+## postgresql on linux
+
+```bash
+sudo apt update
+sudo apt install postgresql postgresql-contrib #?
+sudo systemctl start postgresql # gewoon starten
+sudo systemctl enable postgresql # startup
+sudo systelctl status postgresql 
+sudo -i -u postgres #access the prompt
+psql
+\q
+```
