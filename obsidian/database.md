@@ -79,6 +79,9 @@ lesmateriaal.voeten.com/database-ontwerpen-normaliseren
 
 ## postgresql on linux
 
+user:postgres
+pass:PG-##
+
 ```bash
 sudo apt update
 sudo apt install postgresql postgresql-contrib #?
@@ -88,4 +91,33 @@ sudo systelctl status postgresql
 sudo -i -u postgres #access the prompt
 psql
 \q
+
+\l #show databases
+
+psql -d test.db #access database
+
+CREATE TABLE tablename (
+    id SERIAL PRIMARY KEY,
+    column1 VARCHAR(50),
+    column2 INT
+);
+
+\dt; #lis all tables
+SELECT * FROM test; # show all records from db
+INSERT INTO test (id, name) VALUES (1, 'example_name'); #lijn toevoegen
+ALTER TABLE test RENAME COLUMN column1 TO name; # naam van kolom wijzigen
+
+SET name = 'name_1' WHERE ID = 1; # waarde aanpassen
+SELECT * FROM test
+
+SHOW port; # toon huidige poort
+SELECT current_user; #toon huidige user
+
+
+pg_isready -h localhost -p 5432
+
 ```
+
+
+postgres PG-##
+db_administrator PG-##
