@@ -1,7 +1,7 @@
-from examens.examen1.date_string import name_of_month, name_of_day
-from examens.examen1.dom import days_of_month
-from examens.examen1.dow import day_of_the_week
-from examens.examen1.week_number import week_number
+from examens.examen1_test.date_string import name_of_month, name_of_day
+from examens.examen1_test.dom import days_of_month
+from examens.examen1_test.dow import day_of_the_week
+from examens.examen1_test.week_number import week_number
 
 
 def print_month_calendar_with_week_numbers (year: int, month: int):

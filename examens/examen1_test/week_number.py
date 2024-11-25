@@ -1,5 +1,5 @@
-from examens.examen1.dom import days_of_month
-from examens.examen1.dow import day_of_the_week
+from examens.examen1_test.dom import days_of_month
+from examens.examen1_test.dow import day_of_the_week
 
 
 def week_number (year: int, month: int, day: int):
