@@ -1,6 +1,7 @@
+import os
+
 import cv2
 import numpy as np
-import os
 
 # Paths to the DNN models
 PROTOTXT_PATH = "deploy.prototxt.txt"
@@ -42,7 +43,6 @@ def main():
         if not ret:
             print("Cannot read frame!")
             break
-
         try:
             # Prepare the frame for detection
             (h, w) = frame.shape[:2]
