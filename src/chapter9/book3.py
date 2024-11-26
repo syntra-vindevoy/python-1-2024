@@ -41,3 +41,12 @@ def split_ip(ip: str):
 
 
 assert split_ip("192.168.1.1") == ("192", "168", "1", "1")
+
+# maak een lijst met steden = oudenaarde, drongen, sint-niklaas, gent, lede, dendermonde,wetteren
+# die steden verwijderd die beginnen met een klinker. Maar geen nieuwe lijst maken.
+
+vowels = ["a", "e", "i", "o", "u"]
+cities = ["Oudenaarde", "Opwijk", "Drongen", "Evergem", "Sint-Niklaas", "Gent", "Lede", "Dendermonde", "Wetteren",
+          "Aalter", "Ursel"]
+print(cities)
+print([city for city in cities if not city.lower().startswith(tuple(vowels))])
