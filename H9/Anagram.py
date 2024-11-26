@@ -3,3 +3,4 @@ def is_anagram(str1, str2):
 
 print(is_anagram("leven", "elven"))
 print(is_anagram("leven", "kerel"))
+print(is_anagram("kerel", "leven"))

@@ -3,3 +3,4 @@ def is_palindrom(str):
 
 print(is_palindrom("meetsysteem"))
 print(is_palindrom("kachel"))
+print(is_palindrom("level"))
