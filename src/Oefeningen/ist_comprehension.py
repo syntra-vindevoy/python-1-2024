@@ -20,6 +20,14 @@ if __name__ == '__main__':
 
     for func in func_list:
         print(func(fruits))
+    multiplication = [[i * j for j in range(1, 6)] for i in range(2, 5)]
+
+    print(multiplication)
+
+    # filtering even numbers from a list
+    even_numbers = [num for num in range(1, 10) if num % 2 == 0]
+
+    print(even_numbers)
 
     newlist = [x for x in range(10)]
     print(newlist)
