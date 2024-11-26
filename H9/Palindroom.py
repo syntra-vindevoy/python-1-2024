@@ -1,6 +1,6 @@
-def is_palindrom(str):
-    return ''.join(reversed(str)) == str
+def is_palindroom(str):
+    return ''.join(reversed(str.lower())) == str.lower()
 
-print(is_palindrom("meetsysteem"))
-print(is_palindrom("kachel"))
-print(is_palindrom("level"))
+print(is_palindroom("meetsysteem"))
+print(is_palindroom("kachel"))
+print(is_palindroom("Level"))
