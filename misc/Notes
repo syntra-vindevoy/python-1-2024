@@ -69,5 +69,20 @@ Globale variabelen moeten altijd in hoofdletter
 
 Lists
 
-Lists zijn sequencies. Gaat altijd met volgorde. Altijd plaatsgebonden, kunt niet zomaar string eruit halen.
+Lists zijn sequences. Gaat altijd met volgorde. Altijd plaatsgebonden, kunt niet zomaar string eruit halen.
 Integers en strings in variabelen zijn immutable.
+
+oef
+Maak een lijst met steden: steden = ['oudenaarde', 'zottegem', 'sint-niklaas', 'kortrijk', 'deinze', 'gent', 'wetteren', 'erpe-mere', 'aalst', 'ninove', 'aalter', 'opwijk'].
+Verwijder uit de lijst alle steden die beginnen met een klinker. Pop of remove gebruiken.
+
+oef
+is anagram maken
+
+oef
+is palindroom
+
+oef
+is voodoo
+
+[in 1 lijn!]
