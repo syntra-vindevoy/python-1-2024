@@ -4,13 +4,11 @@ print(steden)
 
 def is_vowel(char:str) -> bool:
     return char in "aeiouAEIOU"
-print(len(steden))
 
-for i in range((len(steden) - 1)):
-    stad = steden[i]
-    letter = stad[0]
-    print(stad, letter)
-    if is_vowel(letter):
-        print(i)
+i = len(steden)
+while i > 0:
+    i -= 1
+    if is_vowel(steden[i][0]):
+        steden.pop(i)
 
 print(steden)
