@@ -10,3 +10,4 @@ def russian_peasant(a: int, b: int) -> int:
         return russian_peasant(a * 2, b // 2)
 
 print(russian_peasant(543, 977))
+
