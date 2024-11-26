@@ -64,3 +64,10 @@ Globale variabelen moeten altijd in hoofdletter
 
 - Op oefenexamen: oppervlakte driehoek, oppervlakte rechthoek.
 - Oefening uit integraalrekening.
+
+-----------------------------------------26 november--------------------------------------------------------------------
+
+Lists
+
+Lists zijn sequencies. Gaat altijd met volgorde. Altijd plaatsgebonden, kunt niet zomaar string eruit halen.
+Integers en strings in variabelen zijn immutable.
