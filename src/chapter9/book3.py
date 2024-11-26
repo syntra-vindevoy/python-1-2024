@@ -6,6 +6,8 @@ of words separated by spaces. It should return a new string that contains the sa
 Hint: You can use the capitalize methods to capitalize the first word and convert the other words to lowercase.
 
 """
+
+
 def reverse_sentence(sentence):
     """
     Args:
@@ -26,3 +28,16 @@ try:
     raise AssertionError
 except AssertionError:
     pass
+
+
+# IP spliten
+
+def split_ip(ip: str):
+    if ip.count(".") != 3:
+        raise ValueError("Invalid IP address. Must be in the format of x.x.x.x")
+    else:
+        G, H, K, L = ip.split(".")
+        return G, H, K, L
+
+
+assert split_ip("192.168.1.1") == ("192", "168", "1", "1")
