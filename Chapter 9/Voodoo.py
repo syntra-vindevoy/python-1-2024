@@ -1,0 +1,1 @@
+#Voodoo woord = als je de eerste letter van een woord neemt en het achteraan zet, is dit hetzelfde woord. Schrijf de isvoodoo functie
