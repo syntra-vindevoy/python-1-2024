@@ -3,4 +3,4 @@ def is_voodoo(str):
 
 print(is_voodoo("voodoo"))
 print(is_voodoo("hello"))
-print(is_voodoo("lepe"))
+print(is_voodoo("kaka"))
