@@ -3,7 +3,7 @@ steden = ["oudenaarde", "zottegem", "sint-niklaas", "kortrijk", "deinze", "gent"
 print(steden)
 
 def is_vowel(char:str) -> bool:
-    return char in "aeiouAEIOU"
+    return char in "aeiouyAEIOUY"
 
 i = len(steden)
 while i > 0:
