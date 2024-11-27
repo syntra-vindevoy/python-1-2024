@@ -2,19 +2,20 @@ import itertools
 from itertools import combinations, product
 from sortedcontainers import SortedDict
 
+
 def main():
     weights = SortedDict()
     stones = [1, 3, 9, 27]
 
-    for stone in stones:
-        for p in list(weights.keys()):
-            weights[stone + p] = [p, stone]
-            weights[stone - p] = [-p, stone]
+    for s in stones:
+        for w in list(weights.keys()):
+            weights[s + w] = [w, s]
+            weights[s - w] = [-w, s]
 
-        weights[stone] = [stone]
-
+        weights[s] = [s]
 
     print(weights)
+
 
 
 # def main():
