@@ -34,3 +34,23 @@ print (a is b)
 a = [5,8,9,7,]
 a[1] = 10
 print(a)
+
+from statistics import median
+
+a = ["a", "b"]
+b = ["c", "d"]
+c = a + b
+print (c)
+d = ["a"]
+
+#a.append(b)
+#print (a)
+#a.extend(b)
+#print (a)
+print (a * 3)
+c = set (a) - set (d)
+print (c)
+c = list (c)
+print (c)
+
+print (median(c))
