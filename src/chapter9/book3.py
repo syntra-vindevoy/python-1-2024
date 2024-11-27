@@ -9,17 +9,24 @@ Hint: You can use the capitalize methods to capitalize the first word and conver
 
 
 def reverse_sentence(sentence):
-    """
-    Args:
-        sentence: A string input sentence to be reversed.
+    """Reverse the words in a string and capitalize the first.
 
-    Returns:
-        A new string where the words in the input sentence are reversed, made lowercase,
-        and capitalized only at the beginning.
+    >>> reverse_sentence('Reverse this sentence')
+    'Sentence this reverse'
+
+    >>> reverse_sentence('Python')
+    'Python'
+
+    >>> reverse_sentence('')
+    ''
+
+    >>> reverse_sentence('One for all and all for one')
+    'One for all and all for one'
     """
     lower_sentence = " ".join(sentence.lower().split()[::-1])
     lower_sentence = lower_sentence.capitalize()
     return lower_sentence
+
 
 assert reverse_sentence("Reverse this sentence") == "Sentence this reverse"
 assert reverse_sentence("This is a test") == "Test a is this"
@@ -30,9 +37,22 @@ except AssertionError:
     pass
 
 
-# IP spliten
+# IP splitsen
 
 def split_ip(ip: str):
+    """
+    Splits an IP address into its constituent parts.
+
+    This function takes an IPv4 address in string format and splits it into
+    four octets. The provided IP address must be in the format of x.x.x.x.
+
+    :param ip: The IP address to split, provided as a string.
+    :type ip: str
+    :return: A tuple containing four parts of the IP address.
+    :rtype: tuple
+
+    :raises ValueError: If the IP address format is invalid.
+    """
     if ip.count(".") != 3:
         raise ValueError("Invalid IP address. Must be in the format of x.x.x.x")
     else:
@@ -50,3 +70,50 @@ cities = ["Oudenaarde", "Opwijk", "Drongen", "Evergem", "Sint-Niklaas", "Gent", 
           "Aalter", "Ursel"]
 print(cities)
 print([city for city in cities if not city.lower().startswith(tuple(vowels))])
+
+
+def reverse_word(word: str) -> str:
+    """
+    Reverses the given word.
+
+    Takes a string input and returns its reverse.
+
+    :param word: The word to be reversed
+    :type word: str
+    :return: The reversed word
+    :rtype: str
+    """
+    return ''.join(reversed(word))
+
+
+def is_palindrome(word: str) -> bool:
+    """
+    Checks if a given word is a palindrome.
+
+    A palindrome is a word that reads the same backward as forward.
+    This function returns True if the input word is a palindrome,
+    otherwise, it returns False.
+
+    :param str word: The word to be checked.
+    :return: True if the word is a palindrome, False otherwise.
+    :rtype: bool
+    """
+    return word == word[::-1]
+
+
+assert is_palindrome("bob") == True
+assert is_palindrome("alice") == False
+assert is_palindrome("a") == True
+assert is_palindrome("") == True
+
+
+def total_length(words: []) -> int:
+    return sum([len(x) for x in words])
+
+
+def read_words() -> []:
+    with open("words.txt") as f:
+        return f.read().splitlines()
+
+
+assert total_length(read_words()) == 902728
