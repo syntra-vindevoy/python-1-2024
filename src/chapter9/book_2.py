@@ -1,5 +1,4 @@
 import random
-import time
 
 
 def nested_sum(list_of_lists):
@@ -18,8 +17,43 @@ def nested_sum(list_of_lists):
             total += j
     return total
 
+
 assert nested_sum([[1, 2], [3], [4, 5, 6]]) == 21
 
+
+def nested_sum_list_comprehension(list_of_lists: [[], ]) -> int:
+    """
+    Exercise 1 with list comprehension
+    Write a function called nested_sum that takes a list of lists of integers and adds up the elements
+    from all of the nested lists. For example:
+
+    >>> t = [[1, 2], [3], [4, 5, 6]]
+    >>> nested_sum(t)
+    21
+    """
+
+    return sum([y for row in list_of_lists for y in row])
+
+
+assert nested_sum_list_comprehension([[1, 2], [3], [4, 5, 6]]) == 21
+
+
+def cumsum_list_comprehension(list_of_lists):
+    """
+    Exercise 2
+    Write a function called cumsum that takes a list of numbers and returns the cumulative sum;
+    that is, a new list where the ith elneement is the sum of the first i+1 elements from the original list. For example:
+
+    >>> t = [1, 2, 3]
+    >>> cumsum(t)
+    [1, 3, 6]
+    """
+
+    current_sum = 0
+    return [current_sum := current_sum + number for number in list_of_lists]
+
+
+assert cumsum_list_comprehension([1, 2, 3]) == [1, 3, 6]
 
 
 def cumsum(list_of_lists):
@@ -40,10 +74,11 @@ def cumsum(list_of_lists):
         cumulative_sum.append(current_sum)
     return cumulative_sum
 
-assert cumsum([1, 2 , 3]) == [1, 3, 6]
+
+assert cumsum([1, 2, 3]) == [1, 3, 6]
 
 
-def middle (list_of_lists):
+def middle(list_of_lists):
     """
     Exercise 3
     Write a function called middle that takes a list and returns a new list that contains all
@@ -53,17 +88,17 @@ def middle (list_of_lists):
     >>> middle(t)
     [2, 3]
     """
-    if len (list_of_lists) < 3:
+    if len(list_of_lists) < 3:
         return []
     return list_of_lists[1:-1]
 
 
-assert middle ([1, 2, 3, 4]) == [2, 3]
-assert middle ([1, 2, 4]) == [2]
-assert middle ([1, 4]) == []
+assert middle([1, 2, 3, 4]) == [2, 3]
+assert middle([1, 2, 4]) == [2]
+assert middle([1, 4]) == []
 
 
-def chop (list_of_lists):
+def chop(list_of_lists):
     """
     Exercise 4
     Write a function called chop that takes a list, modifies it by removing the first and last elements,
@@ -74,28 +109,28 @@ def chop (list_of_lists):
     >>> t
     [2, 3]
     """
-    if len (list_of_lists) < 3:
-        list_of_lists.clear ()
+    if len(list_of_lists) < 3:
+        list_of_lists.clear()
         return
     del list_of_lists[0]
     del list_of_lists[-1]
     return None
 
 
-assert chop ([1, 2, 3, 4]) is None
+assert chop([1, 2, 3, 4]) is None
 list_of_lists = [1, 2, 3, 4]
-assert chop (list_of_lists) is None
+assert chop(list_of_lists) is None
 assert list_of_lists == [2, 3]
 
 list_of_lists = [2, 3, 4]
-assert chop (list_of_lists) is None
+assert chop(list_of_lists) is None
 assert list_of_lists == [3]
 list_of_lists = [3, 4]
-assert chop (list_of_lists) is None
+assert chop(list_of_lists) is None
 assert list_of_lists == []
 
 
-def is_sorted (list_of_lists):
+def is_sorted(list_of_lists):
     """
     Exercise 5   Write a function called is_sorted that takes a list as a parameter and returns True
     if the list is sorted in ascending order and False otherwise. For example:
@@ -104,17 +139,17 @@ def is_sorted (list_of_lists):
     >>> is_sorted(['b', 'a'])
     False
     """
-    for i in range (len (list_of_lists) - 1):
+    for i in range(len(list_of_lists) - 1):
         if list_of_lists[i] > list_of_lists[i + 1]:
             return False
     return True
 
 
-assert is_sorted ([1, 2, 3]) == True
-assert is_sorted ([1, 3, 2]) == False
+assert is_sorted([1, 2, 3]) == True
+assert is_sorted([1, 3, 2]) == False
 
 
-def is_anagram (word1, word2):
+def is_anagram(word1, word2):
     """
     Exercise 6
     Two words are anagrams if you can rearrange the letters from one to spell the other.
@@ -126,35 +161,35 @@ def is_anagram (word1, word2):
     return True
 
 
-def is_anagram2 (str1, str2):
+def is_anagram2(str1, str2):
     # Remove any spaces and convert to lowercase
-    str1 = str1.replace (" ", "").lower ()
-    str2 = str2.replace (" ", "").lower ()
+    str1 = str1.replace(" ", "").lower()
+    str2 = str2.replace(" ", "").lower()
 
     # Check if sorted characters of both strings are equal
-    return sorted (str1) == sorted (str2)
+    return sorted(str1) == sorted(str2)
 
 
-assert is_anagram ("anagram", "nagaram") == True
-assert is_anagram ("anagram", "nagarzm") == False
-assert is_anagram2 ("anagram", "nagaram") == True
-assert is_anagram2 ("anagram", "nagarzm") == False
+assert is_anagram("anagram", "nagaram") == True
+assert is_anagram("anagram", "nagarzm") == False
+assert is_anagram2("anagram", "nagaram") == True
+assert is_anagram2("anagram", "nagarzm") == False
 
 
-def has_duplicates (list_of_lists):
+def has_duplicates(list_int):
     """
     Exercise 7
     Write a function called has_duplicates that takes a list and returns True
     if there is any element that appears more than once. It should not modify the original list.
     """
-    for i in list_of_lists:
-        if list_of_lists.count (i) > 1:
+    for i in list_int:
+        if list_int.count(i) > 1:
             return True
     return False
 
 
-assert has_duplicates ([1, 2, 3, 4]) == False
-assert has_duplicates ([1, 2, 3, 4, 1]) == True
+assert has_duplicates([1, 2, 3, 4]) == False
+assert has_duplicates([1, 2, 3, 4, 1]) == True
 
 """
 Exercise 8
@@ -168,34 +203,34 @@ You can download my solution from https://thinkpython.com/code/birthday.py.
 """
 
 
-def has_duplicates (birthdays):
-    return len (birthdays) != len (set (birthdays))
+def has_duplicates(birthdays):
+    return len(birthdays) != len(set(birthdays))
 
 
-def has_duplicates2 (birthdays):
-    for i in range (len (birthdays)):
-        for j in range (i + 1, len (birthdays)):
+def has_duplicates2(birthdays):
+    for i in range(len(birthdays)):
+        for j in range(i + 1, len(birthdays)):
             if birthdays[i] == birthdays[j]:
                 return True
     return False
 
 
-def generate_birthdays (num_people):
-    return [random.randint (1, 365) for _ in range (num_people)]
+def generate_birthdays(num_people):
+    return [random.randint(1, 365) for _ in range(num_people)]
 
 
-def generate_birthdays2 (num_people):
+def generate_birthdays2(num_people):
     birthdays = []
-    for _ in range (num_people):
-        birthdays.append (random.randint (1, 365))
+    for _ in range(num_people):
+        birthdays.append(random.randint(1, 365))
     return birthdays
 
 
-def birthday_paradox (num_people, num_simulations):
+def birthday_paradox(num_people, num_simulations):
     duplicate_count = 0
-    for _ in range (num_simulations):
-        birthdays = generate_birthdays (num_people)
-        if has_duplicates (birthdays):
+    for _ in range(num_simulations):
+        birthdays = generate_birthdays(num_people)
+        if has_duplicates(birthdays):
             duplicate_count += 1
 
     return duplicate_count / num_simulations
@@ -203,51 +238,8 @@ def birthday_paradox (num_people, num_simulations):
 
 num_people = 23
 num_simulations = 10000
-probability = birthday_paradox (num_people, num_simulations)
-print (f"Probability of at least two people sharing a birthday in a group of {num_people} people: {probability:.2f}")
-
-"""
-Exercise 9
-Write a function that reads the file words.txt and builds a list with one element per word.
- Write two versions of this function, one using the append method and the other using the idiom t = t + [x].
- Which one takes longer to run? Why?
-
-Elapsed time: 0.01 seconds
-Elapsed time: 8.34 seconds
-"""
-
-
-def read_words () -> [str]:
-    words = []
-    with open ("words.txt", encoding='utf-8') as file:
-        for line in file:
-            word = line.strip ()
-            words.append (word)
-        return words
-
-
-start_time = time.perf_counter ()
-assert len (read_words ()) == 113783
-end_time = time.perf_counter ()
-
-elapsed_time = end_time - start_time
-print (f"Elapsed time: {elapsed_time:.2f} seconds")
-
-
-def read_words2 () -> [str]:
-    words = []
-    for line in open ('words.txt', encoding='utf-8'):
-        word = line.strip ()
-        words = words + [word]
-    return words
-
-
-start_time = time.perf_counter ()
-assert len (read_words2 ()) == 113783
-end_time = time.perf_counter ()
-
-elapsed_time = end_time - start_time
-print (f"Elapsed time: {elapsed_time:.2f} seconds")
+probability = birthday_paradox(num_people, num_simulations)
+print(f"Probability of at least two people sharing a birthday in a group of {num_people} people: {probability:.2f}")
 
 """
 Exercise 10
@@ -268,6 +260,8 @@ f the word is in the list and False if it’s not.
 
 Or you could read the documentation of the bisect module and use that! S
 """
+
+
 def binary_search(sequence, item):
     begin_index = 0
     end_index = len(sequence) - 1
@@ -286,9 +280,9 @@ def binary_search(sequence, item):
 
     return None
 
-sequence_a = [2,4,5,6,7,8,9,10,12,13,14]
-item_a = 3
 
+sequence_a = [2, 4, 5, 6, 7, 8, 9, 10, 12, 13, 14]
+item_a = 3
 
 """
 Exercise 11
@@ -297,22 +291,44 @@ Write a program that finds all the reverse pairs in the word list.
 """
 
 
-def reverse_pair (word1, word2):
+def reverse_pair(word1, word2):
     return word2 == word1[::-1]
 
 
-def search_for_reverse_pairs (words):
+assert reverse_pair("tiger", "gerti") == False
+assert reverse_pair("tiger", "regit") == True
+
+
+def search_for_reverse_pairs(words):
     reverse_pairs = []
     for word1 in words:
         for word2 in words:
-            if reverse_pair (word1, word2):
-                reverse_pairs.append ((word1, word2))
+            if reverse_pair(word1, word2):
+                reverse_pairs.append((word1, word2))
     return reverse_pairs
 
 
-assert reverse_pair ("tiger", "gerti") == False
-assert reverse_pair ("tiger", "regit") == True
-# assert len(search_for_reverse_pairs(read_words())) > 0
+assert search_for_reverse_pairs(["tiger", "gerti", "regit"]) == [("tiger", "regit"), ("regit", "tiger")]
+
+
+def search_for_reverse_pairs_lc(words):
+    """
+    Searches for all reverse pairs in a list of words.
+
+    The function identifies all pairs of words where one is the reverse
+    of the other. It uses a list comprehension to achieve this in a concise
+    manner.
+
+    :param words: List of words to search through.
+    :type words: list of str
+    :return: List of tuples containing reverse pairs of words.
+    :rtype: list of tuple of (str, str)
+    """
+    return [(w, sw) for w in words for sw in words if reverse_pair(w, sw)]
+
+
+assert search_for_reverse_pairs_lc(["tiger", "gerti", "regit"]) == [("tiger", "regit"), ("regit", "tiger")]
+
 """
 Exercise 12
 Two words “interlock” if taking alternating letters from each forms a new word. For example,
@@ -324,3 +340,5 @@ Can you find any words that are three-way interlocked; that is, every third lett
  starting from the first, second or third?
 
 """
+# Todo
+# WTF
