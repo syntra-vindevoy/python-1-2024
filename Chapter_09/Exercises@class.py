@@ -1,18 +1,12 @@
 from datetime import datetime
-# exercise 10.3 from book thinkpython
-
-t3 = [1, 2, 3, 4]
-def middle(list3):
-    return list3 [1:-1]
-print(middle(t3))
 
 # exercise 9.15 from thinkpython online
 def is_anagram(word1 :str, word2 :str) -> bool:
     return sorted(word1) == sorted(word2)
-#
+
 with open("words.txt", "r") as file:    # de manier voor het openen van een file
     words = file.read().split("\n")
-#
+
 # print ("number of words" , len(words))
 
 def method_1():
@@ -88,3 +82,16 @@ if __name__ == "__main__":
 # file = open("words.txt", "r")       # niet de manier voor het openen van files
 # words = file.read().split("\n")
 # file.close()
+
+#exercise 15.5 from thinkpython V3
+
+def total_length():
+    with open("words.txt", "r") as f:
+        words1 = f.read().splitlines() # splitlines zorgt voor het skippen van lege lijnen, zonder tekst.
+    # for words in word_list:
+    #     help = len(words)
+    #     print(sum(help))
+    total_length = sum(len(word) for word in words1)
+    print(total_length)
+print (total_length())
+
