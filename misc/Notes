@@ -73,16 +73,18 @@ Lists zijn sequences. Gaat altijd met volgorde. Altijd plaatsgebonden, kunt niet
 Integers en strings in variabelen zijn immutable.
 
 oef
-Maak een lijst met steden: steden = ['oudenaarde', 'zottegem', 'sint-niklaas', 'kortrijk', 'deinze', 'gent', 'wetteren', 'erpe-mere', 'aalst', 'ninove', 'aalter', 'opwijk'].
-Verwijder uit de lijst alle steden die beginnen met een klinker. Pop of remove gebruiken.
+is anagram maken (done)
 
 oef
-is anagram maken
-
-oef
-is palindroom
+is palindroom (done)
 
 oef
 is voodoo
 
 [in 1 lijn!]
+
+oef
+Maak een lijst met steden: steden = ['oudenaarde', 'zottegem', 'sint-niklaas', 'kortrijk', 'deinze', 'gent', 'wetteren', 'erpe-mere', 'aalst', 'ninove', 'aalter', 'opwijk'].
+Verwijder uit de lijst alle steden die beginnen met een klinker. Pop of remove gebruiken.
+
+
