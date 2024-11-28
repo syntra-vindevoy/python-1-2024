@@ -11,3 +11,6 @@ for stad in steden[::-1]:
         steden.remove(stad)
 
 print(f"De overgebleven steden zijn {steden}")
+
+#ChatGPT oplossing:
+#steden = [stad for stad in steden if stad[0].lower() not in vowels]
