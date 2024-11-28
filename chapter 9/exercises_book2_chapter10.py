@@ -1,3 +1,6 @@
+with open("words.txt", "r") as f:
+    words = f.read().split("\n")
+
 def nested_sum(numbers):
     sums = 0
     for n in numbers: sums += sum (n)
@@ -46,13 +49,18 @@ def in_bisect (n, words):
     lenght = len(words)
     if lenght == 1 and n != words[0]: return False
     middle = words[lenght//2]
-    if words[middle] == n: return True
+    if middle == n: return True
     elif n < middle:
         return in_bisect(n, words[:lenght//2])
     elif n > middle:
         return in_bisect(n, words[lenght//2:])
 
+print(in_bisect(5, [2,3,4,12,0,5,7,10,5454,5,8,93,3,54,54,978,87,543345,15,876]))
 
-print(in_bisect(3, [1,2,3,4,12,0,5,7,10,1,5454,5,8,93,3]))
-
-
+def reverse_pair():
+    rev_pair =[]
+    for word in words:
+        if word[::-1] in words:
+            rev_pair.append([word,word[::-1]])
+    return rev_pair
+print (reverse_pair())
