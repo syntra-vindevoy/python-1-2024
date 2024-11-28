@@ -20,4 +20,11 @@ def prt_calender(year, month, day):
         d += 1
     print()
 
+def print_year(year:int):
+    for i in range(1, 13):
+        prt_calender(year, i, days_of_month(year, i))
+        print("")
+
 prt_calender(2022, 12, 31)
+
+#print_year(2022)
