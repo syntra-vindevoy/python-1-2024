@@ -1,25 +1,4 @@
-# exercise 10.1 from book thinkpython
 from datetime import datetime
-
-t= [[1,2], [4,5,6], [3]]
-def nested_sum(list):
-    return sum(sum(sublist) for sublist in list)
-
-print(nested_sum(t))
-print (t[2])
-
-# exercise 10.2 from book thinkpython
-
-t2 = [1,2,3]
-def cumsum(list2):
-    result = []
-    current_sum = 0
-    for num in list2:
-        current_sum += num
-        result.append(current_sum)
-    return result
-print(cumsum(t2))
-
 # exercise 10.3 from book thinkpython
 
 t3 = [1, 2, 3, 4]
@@ -44,12 +23,28 @@ def method_1():
     return anagrams
 
 def method_2():
-    return [word for word in words if is_anagram(word, 'takes')]
+    return [word for word in words if is_anagram(word, 'takes')]  # -> list comprehension opzoeken
 
 def method_3():
     w = [word for word in words if "t" in word]
     w = [word for word in w if "s" in word]
     w = [word for word in w if "k" in word]
+    w = [word for word in w if "e" in word]
+    w = [word for word in w if "a" in word]
+
+    return [word for word in w if is_anagram(word,'takes')]
+
+def method_4():
+    w = [word for word in words if len(word) == 5 ]
+    return [word for word in w if is_anagram(word,'takes')]
+
+def method_5():
+    w = [word for word in words if len(word) == 5 ]
+    w = [word for word in w if "t" in word]
+    w = [word for word in w if "s" in word]
+    w = [word for word in w if "k" in word]
+    w = [word for word in w if "e" in word]
+    w = [word for word in w if "a" in word]
 
     return [word for word in w if is_anagram(word,'takes')]
 
@@ -72,6 +67,17 @@ if __name__ == "__main__":
     end = datetime.now()
     print(end - start)
 
+    start = datetime.now()
+    for _ in range(5):
+        method_4()
+    end = datetime.now()
+    print(end - start)
+
+    start = datetime.now()
+    for _ in range(5):
+        method_5()
+    end = datetime.now()
+    print(end - start)
 # for word in words:
 #     if is_anagram(word, "takes"):
 #         print(word)
@@ -82,5 +88,3 @@ if __name__ == "__main__":
 # file = open("words.txt", "r")       # niet de manier voor het openen van files
 # words = file.read().split("\n")
 # file.close()
-
-
