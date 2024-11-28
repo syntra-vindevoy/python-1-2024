@@ -1,0 +1,2 @@
+#maak een getal van 1 tot 10.000 en de computer moet raden welk getal het is
+#in hoeveel keer vindt de computer als hij het traagste vindt? foute gok - hoger of lager (telkens halveren tussen gegeven keuzes)
