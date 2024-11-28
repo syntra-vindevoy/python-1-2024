@@ -14,3 +14,7 @@ with open("words.txt") as f:
 for word in words:
     if is_anagram(word, "takes"):
         print(word)
+
+#list with anagrams
+anagrams = [word for word in words if is_anagram(word, "takes")]
+print(anagrams)
