@@ -11,9 +11,11 @@ assert is_voodoo("voodoo")
 assert is_voodoo("voo")
 assert not is_voodoo("oov")
 
-steden = ["Brussel", "Oudenaarde", "Zottegem", "Opwijk", "Sint-Niklaas", "Kortrijk", "Deinze", "Gent", "Aalst", "Erpe-Mere", "Ninove"]
 
-for stad in steden:
+steden = ["Brussel", "Oudenaarde", "Zottegem", "Opwijk", "Sint-Niklaas", "Kortrijk", "Deinze", "Gent", "Aalst",
+          "Erpe-Mere", "Ninove"]
+
+for stad in steden[::-1]:
     print("Ik controleer", stad)
     begin = stad[0].lower()
 
