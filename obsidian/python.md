@@ -1038,12 +1038,51 @@ t.sort() # ['a','b','c','d','e'] # voert sort uit op zichzelf
 unsorted_list = ['d','c','e','b','a']
 unsorted_list = unsorted_list.sort() # void functie, returnt None !!!
 
+
+
 ```
+
+lijsten filteren
+
+```python
+def cities_without_vowels_1(cities, vowels):
+    for city in cities[::-1]:
+        if city[0].lower() in vowels:
+            cities.remove(city)
+    return cities
+
+
+def cities_without_vowels_2(cities, vowels):
+    return [c for c in cities if c[0].lower() not in vowels]
+
+
+```
+
+```python
+cities = city for city in cities if city[0].lower() not in vowels
+```
+`
+
 
 
 autoformatter
 + ruff
 + black
 
+portainer (cfr: ipv docker)
+
+cubernetes of openshift: twee keer bepaalde container draaien
+
+with  
++ context manager 
++ wrapper met enter en exit method
++ veilig bij crashes
++ veilig bij databases : connecties
 
 
+```python
+reversed("word")
+```
+
+CRLF: end of line in windows (char13 en char10)
+char10 in unix
