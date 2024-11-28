@@ -11,6 +11,9 @@ assert is_anagram("stoep", "poets") == True
 with open("words.txt") as f:
     words = f.read().split("\n") #split so it removes the "\n" characters
 
+
+
+
 for word in words:
     if is_anagram(word, "takes"):
         print(word)
