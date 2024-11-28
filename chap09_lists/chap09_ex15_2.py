@@ -56,6 +56,15 @@ def method_5():
 
     return [word for word in w if is_anagram(word, "takes")]
 
+def method_6():
+    i = "takes"
+    w = [word for word in words if len(word) == len(i)]
+
+    for a in i:
+        w = [word for word in w if a in word]
+
+    return [word for word in w if is_anagram(word, i)]
+
 
 if __name__ == "__main__":
     start = datetime.now()
@@ -88,3 +97,10 @@ if __name__ == "__main__":
         method_5()
     end = datetime.now()
     print(end - start)
+
+    start = datetime.now()
+    for _ in range(100):
+        method_6()
+    end = datetime.now()
+    print(end - start)
+
