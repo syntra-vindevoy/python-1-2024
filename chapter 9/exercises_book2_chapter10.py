@@ -39,3 +39,20 @@ def has_duplicates(n):
         if n[i] in n[:i:]: return True
     return test
 print (has_duplicates([1, 2, 3, "g", 4, 5, "a", "g" ]))
+
+
+def in_bisect (n, words):
+    words.sort()
+    lenght = len(words)
+    if lenght == 1 and n != words[0]: return False
+    middle = words[lenght//2]
+    if words[middle] == n: return True
+    elif n < middle:
+        return in_bisect(n, words[:lenght//2])
+    elif n > middle:
+        return in_bisect(n, words[lenght//2:])
+
+
+print(in_bisect(3, [1,2,3,4,12,0,5,7,10,1,5454,5,8,93,3]))
+
+
