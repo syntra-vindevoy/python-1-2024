@@ -1,6 +1,6 @@
 from _datetime import datetime
 
-from src.ToDOList.domain.statut import Status
+from src.ToDOList.todo_with_db.domain.statut import Status
 
 
 class Todo:
@@ -62,10 +62,10 @@ class Todo:
         self.__priority = priority
 
     def __str__(self):
-        return f"{self.__title} - {self.__description} - {self.__due_date}"
+        return f"{self.__id_todo} - {self.__title} - {self.__description} - {self.__due_date} - {self.__status}"
 
     def __repr__(self):
-        return f"{self.__title} - {self.__description} - {self.__due_date}"
+        return f"{self.__id_todo} - {self.__title} - {self.__description} - {self.__due_date} - {self.__status}"
 
     def __eq__(self, other):
         return self.__id_todo == other.__id_todo
