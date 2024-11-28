@@ -17,3 +17,9 @@ if not os.path.exists('pg345.txt'):
     with open('pg345.txt', 'wb') as f:
         f.write(response.content)
 
+with open("pg345.txt", "r") as file:    # de manier voor het openen van een file
+    words = file.read().split("\n")
+
+print (words)
+print(type(words))
+
