@@ -32,7 +32,9 @@ def method_2():
 
 def method_3():
     w = [word for word in words if "t" in word]
+    w = [word for word in w if "a" in word]
     w = [word for word in w if "k" in word]
+    w = [word for word in w if "e" in word]
     w = [word for word in w if "s" in word]
 
     return [word for word in w if is_anagram(word, "takes")]
@@ -47,7 +49,9 @@ def method_4():
 def method_5():
     w = [word for word in words if len(word) == 5]
     w = [word for word in w if "t" in word]
+    w = [word for word in w if "a" in word]
     w = [word for word in w if "k" in word]
+    w = [word for word in w if "e" in word]
     w = [word for word in w if "s" in word]
 
     return [word for word in w if is_anagram(word, "takes")]
