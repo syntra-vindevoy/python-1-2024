@@ -22,5 +22,19 @@ print(len(s))
 with open("words.txt", "r") as f:
     words = f.read().splitlines()
 
-    s = sum([len(w) for w in words])
-    print(s)
+s = sum([len(w) for w in words])
+print(s)
+
+
+with open("words.txt", "r") as f:
+    words = f.read()
+
+words = words.replace("\n", "")
+print(len(words))
+
+
+with open("words.txt", "r") as f:
+    words = f.read()
+
+print(len(words) - words.count("\n"))
+
