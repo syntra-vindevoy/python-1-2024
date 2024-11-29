@@ -340,5 +340,24 @@ Can you find any words that are three-way interlocked; that is, every third lett
  starting from the first, second or third?
 
 """
-# Todo
-# WTF
+def interlock():
+    interlocks=[]
+    with open("words.txt") as f:
+        lines=f.read().splitlines()
+        for line in lines:
+            word1=""
+            word2=""
+            for i in range(0,len(line)-1):
+                if i%2  == 0:
+                    word1 += line[i]
+                else:
+                    word2 += line[i]
+            res1= [(l,word1) for l in lines if l in word1]
+            res2= [(l,word2) for l in lines if l in word2]
+            print(f"{word1} {word2} {res1} {res2}")
+            interlocks.append((res1,res2))
+    return interlocks
+
+if __name__ == '__main__':
+    print("Interlock")
+    print(interlock())

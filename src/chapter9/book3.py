@@ -70,6 +70,24 @@ cities = ["Oudenaarde", "Opwijk", "Drongen", "Evergem", "Sint-Niklaas", "Gent", 
           "Aalter", "Ursel"]
 print(cities)
 print([city for city in cities if not city.lower().startswith(tuple(vowels))])
+cities = ["Oudenaarde", "Opwijk", "Drongen", "Evergem", "Sint-Niklaas", "Gent", "Lede", "Dendermonde", "Wetteren",
+          "Aalter", "Ursel"]
+
+for i in range(len(cities) - 1, -1, -1):
+    t = cities[i]
+    if t[0].lower() in vowels:
+        cities.remove(t)
+print(cities)
+
+cities = ["Oudenaarde", "Opwijk", "Drongen", "Evergem", "Sint-Niklaas", "Gent", "Lede", "Dendermonde", "Wetteren",
+          "Aalter", "Ursel"]
+#must reverse
+for t in cities[::-1]:
+    if t in vowels:
+        cities.remove(t)
+
+steden = [stad for stad in cities if stad[0].lower() not in "aeuioy"]
+print(steden)
 
 
 def reverse_word(word: str) -> str:
@@ -107,13 +125,68 @@ assert is_palindrome("a") == True
 assert is_palindrome("") == True
 
 
+def is_voodoo(word: str):
+    return word[:1] == word[1:][::-1]
+
+
+def is_anagram(str1, str2):
+    # Remove any spaces and convert to lowercase
+    str1 = str1.replace(" ", "").lower()
+    str2 = str2.replace(" ", "").lower()
+
+    # Check if sorted characters of both strings are equal
+    return sorted(str1) == sorted(str2)
+
+
+def read_words_lc() -> [str]:
+    words = []
+    with open("words.txt", encoding='utf-8') as file:
+        return [word.strip() for word in file]
+
+
+"""
+anagrams
+"""
+
+
+def search_datagram_simple():
+    anagrams = []
+    words = read_words_lc()
+    #for v in words:
+    #    if is_anagram(v.lower(),"takes"):
+    #       anagrams.append((v,"takes"))
+    return [t for t in words if is_anagram(t.lower(), "takes")]
+
+
+def search_anagram():
+    anagrams = []
+    words = read_words_lc()
+    for v in words:
+        for word2 in words:
+            if is_anagram(v, word2) and v is not word2:
+                anagrams.append((v, word2))
+    return anagrams
+
+
+def search_anagram_lc():
+    words = read_words_lc()
+    res = [(w1, w1) for w1 in words for w2 in words if w1 != w2 and sorted(w1) == sorted(w2)]
+    return res
+
+#15.5
 def total_length(words: []) -> int:
     return sum([len(x) for x in words])
 
-
 def read_words() -> []:
-    with open("words.txt") as f:
+    with open("words.txt", encoding='utf-8') as f:
         return f.read().splitlines()
 
 
 assert total_length(read_words()) == 902728
+
+
+
+if __name__ == '__main__':
+    pass
+# data = search_anagram_lc()
+# print(data)

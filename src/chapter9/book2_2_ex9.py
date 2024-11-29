@@ -55,3 +55,27 @@ end_time = time.perf_counter()
 
 elapsed_time = end_time - start_time
 print(f"Elapsed time: {elapsed_time:.2f} seconds")
+
+def total_length(words: []) -> int:
+    return sum([len(x) for x in words])
+
+
+#15.5
+def read_words() -> []:
+    """
+    Reads words from a file named "words.txt" and returns them as a list.
+
+    The function opens the file "words.txt" and reads its content line by line,
+    splitting the lines into individual words. It returns these words as a list
+    of strings.
+
+    Returns:
+        list of str: A list containing all the words read from the file, each
+        word as a separate element within the list.
+    """
+    with open("words.txt", encoding='utf-8') as f:
+        return f.read().splitlines()
+
+
+assert total_length(read_words()) == 902728
+
