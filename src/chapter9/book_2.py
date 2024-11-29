@@ -262,7 +262,7 @@ Or you could read the documentation of the bisect module and use that! S
 """
 
 
-def binary_search(sequence, item):
+def binary_search(sequence, item)->int:
     begin_index = 0
     end_index = len(sequence) - 1
 
@@ -281,8 +281,8 @@ def binary_search(sequence, item):
     return None
 
 
-sequence_a = [2, 4, 5, 6, 7, 8, 9, 10, 12, 13, 14]
-item_a = 3
+
+
 
 """
 Exercise 11
@@ -360,4 +360,8 @@ def interlock():
 
 if __name__ == '__main__':
     print("Interlock")
-    print(interlock())
+  #  print(interlock())
+sequence_a = [2, 4, 5, 6, 7, 8, 9, 10, 12, 13, 14]
+item_a = 3
+print(binary_search(sequence_a, 9))
+print(binary_search(range(0,10001),550))
