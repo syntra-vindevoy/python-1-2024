@@ -1,23 +1,29 @@
-
 import random
+import statistics
 
-def hoger_lager():
-    x = random.randint(0, 10000)
-    y = random.randint(0, 10000)
+def hoger_lager(min, max):
+    x = random.randint(min, max)
+    y = random.randint(min, max)
     count = 0
-    min = 0
-    max = 10000
-    print (x,y)
     while x != y:
-        print (y)
+        print (f"probeer: {y}")
         count += 1
         if y > x:
             max = y
-            print ("lager")
-            y = random.randint(min, max)
-        elif y < x:
+            print ("lager!")
+        else:
             min = y
-            print ("hoger")
-            y = random.randint(min, max)
-    print (f"Het heeft {count} beurten geduurd")
-hoger_lager()
+            print ("hoger!")
+        y = random.randint(min, max)
+    print (f"Het heeft {count} beurten geduurd om {x} te vinden")
+    return count
+hoger_lager(0, 10000)
+
+
+result = []
+for i in range(1000):
+    result.append(hoger_lager(0, 10000))
+
+print (max(result))
+print (min(result))
+print (statistics.mean(result))
