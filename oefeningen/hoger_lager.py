@@ -8,6 +8,10 @@
 # opletten met grenswaarden en afrondingen
 
 
+import math
+from pprint import pprint
+
+
 def game(number: int):
     hint(
         0,
@@ -16,22 +20,32 @@ def game(number: int):
     )
 
 
-def hint(lower_limit: int, upper_limit: int, given_value: int, count=0):
+def hint(lower_limit: int, upper_limit: int, given_value: int, count: int = 0):
     midvalue = (lower_limit + upper_limit) / 2
     if given_value == midvalue:
-        return lower_limit, upper_limit
+        return lower_limit, upper_limit, given_value, count
     else:
         if given_value < midvalue:
-            upper_limit = midvalue
+            upper_limit = math.ceil(midvalue)
         elif given_value > midvalue:
-            lower_limit = midvalue
+            lower_limit = math.floor(midvalue)
         count += 1
         return hint(lower_limit, upper_limit, given_value, count)
 
 
 def main():
-    secret_value = 555
-    print(hint())
+    given_value = 1
+    solutions = []
+    max_value = 0
+    for i in range(1, 5000):
+        solutions.append(
+            hint(
+                lower_limit=0,
+                upper_limit=5000,
+                given_value=i,
+            )
+        )
+    pprint(solutions)
 
 
 if __name__ == "__main__":
