@@ -10,6 +10,7 @@
 
 import math
 from pprint import pprint
+import random
 
 
 def game(number: int):
@@ -21,31 +22,30 @@ def game(number: int):
 
 
 def hint(lower_limit: int, upper_limit: int, given_value: int, count: int = 0):
-    midvalue = (lower_limit + upper_limit) / 2
-    if given_value == midvalue:
-        return lower_limit, upper_limit, given_value, count
+    random_value = random.randint(lower_limit, upper_limit)
+    if given_value == random_value:
+        return count
     else:
-        if given_value < midvalue:
-            upper_limit = math.ceil(midvalue)
-        elif given_value > midvalue:
-            lower_limit = math.floor(midvalue)
+        if given_value < random_value:
+            upper_limit = math.ceil(random_value)
+        elif given_value > random_value:
+            lower_limit = math.floor(random_value)
         count += 1
         return hint(lower_limit, upper_limit, given_value, count)
 
 
 def main():
-    given_value = 1
     solutions = []
-    max_value = 0
-    for i in range(1, 10_000):
+    for i in range(100_000):
         solutions.append(
             hint(
                 lower_limit=0,
                 upper_limit=10_000,
-                given_value=i,
+                given_value=random.randint(0, 10_000),
             )
         )
     pprint(solutions)
+    pprint(f"gemiddeld: {sum(solutions)/len(solutions)}")
 
 
 if __name__ == "__main__":

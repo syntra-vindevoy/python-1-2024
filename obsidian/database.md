@@ -121,3 +121,23 @@ pg_isready -h localhost -p 5432
 
 postgres PG-##
 db_administrator PG-##
+
+# linux
+op linux
+
+
+marijnvandenholen@gmail.com
+PA-##
+
+postgres
+PG-##
+
+
+psql -h localhost -U postgres -d test
+
+## fishshell
+
+https://fishshell.com/
+
+
+
