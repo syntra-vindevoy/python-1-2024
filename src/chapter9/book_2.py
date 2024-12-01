@@ -323,7 +323,7 @@ Can you find any words that are three-way interlocked; that is, every third lett
 """
 
 
-def interlock_pair(word1, word2):
+def interlock_pair():
     interlocks = []
     try:
         with open("words.txt") as f:
@@ -345,6 +345,22 @@ def interlock_pair(word1, word2):
                         res2 = word2
                     if len(res1) > 0 and len(res2) > 0:
                         interlocks.append((line_word, res1, res2))
+    except FileNotFoundError:
+        print("The file 'words.txt' was not found.")
+    except IOError:
+        print("An error occurred trying to read 'words.txt'.")
+
+    return interlocks
+
+
+def interlock_varia(split_count):
+    interlocks = []
+    try:
+        with open("words.txt") as f:
+            lines = f.read().splitlines()
+            for line_word in lines:
+                pass
+        # Todd
     except FileNotFoundError:
         print("The file 'words.txt' was not found.")
     except IOError:
