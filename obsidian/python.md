@@ -1086,3 +1086,10 @@ reversed("word")
 
 CRLF: end of line in windows (char13 en char10)
 char10 in unix
+
+```python
+sys.exit() #makkelijk om deel van code niet uit te voeren
+
+```
+```
+```
