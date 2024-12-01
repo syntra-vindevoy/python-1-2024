@@ -1,4 +1,5 @@
 import logging
+from abc import ABC, abstractmethod
 from typing import Any
 
 import psycopg2
@@ -11,30 +12,36 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 
-class RepositoryInterface[T]:
-    def insert(self, t: T) -> None:
+class IRepository[T](ABC):
+    @abstractmethod
+    async def insert(self, t: T) -> None:
         pass
 
-    def all(self) -> list[T]:
+    @abstractmethod
+    async def all(self) -> list[T]:
         pass
 
-    def get(self, id) -> T | None:
+    @abstractmethod
+    async def get(self, id) -> T | None:
         pass
 
-    def delete(self, id) -> None:
+    @abstractmethod
+    async def delete(self, id) -> None:
         pass
 
-    def delete_all(self) -> None:
+    @abstractmethod
+    async def delete_all(self) -> None:
         pass
 
-    def all_filter(self, status: str) -> list[T] | list[Any]:
+    @abstractmethod
+    async def all_filter(self, status: str) -> list[T] | list[Any]:
         pass
 
-    def update(t: T) -> bool:
+    @abstractmethod
+    async def update(self, t: T) -> bool:
         pass
 
-    def close(self):
-        pass
+
 
 
 class RepositoryException(Exception):
@@ -45,7 +52,6 @@ class RepositoryException(Exception):
 
 
 class Repository:
-
     def __init__(self, dbname: str, user: str, password: str, host: str, port: str):
         try:
             logger.info("Connecting to the database")
@@ -60,7 +66,7 @@ class Repository:
         except Exception as e:
             raise RepositoryException(str(e))
 
-    def update(self, todo: Todo) -> bool:
+    async def update(self, todo: Todo) -> bool:
         try:
             cur = self.__conn.cursor()
             cur.execute("""
@@ -74,7 +80,7 @@ class Repository:
         except Exception as e:
             raise RepositoryException(str(e))
 
-    def insert(self, todo: Todo):
+    async def insert(self, todo: Todo):
         try:
             cur = self.__conn.cursor()
             cur.execute("""
@@ -88,7 +94,7 @@ class Repository:
         except Exception as e:
             raise RepositoryException(str(e))
 
-    def all(self) -> list[Todo]:
+    async def all(self) -> list[Todo]:
         try:
             cur = self.__conn.cursor()
             cur.execute("SELECT * FROM todos;")
@@ -105,7 +111,7 @@ class Repository:
         except Exception as e:
             raise RepositoryException(str(e))
 
-    def get(self, id) -> Todo | None:
+    async def get(self, id) -> Todo | None:
         try:
             cur = self.__conn.cursor()
             cur.execute("SELECT * FROM todos WHERE id = %s;", (id,))
@@ -119,7 +125,7 @@ class Repository:
         except Exception as e:
             raise RepositoryException(str(e))
 
-    def delete(self, id) -> None:
+    async def delete(self, id) -> None:
         try:
             cur = self.__conn.cursor()
             cur.execute("DELETE FROM todos WHERE id = %s;", (id,))
@@ -128,7 +134,7 @@ class Repository:
         except Exception as e:
             raise RepositoryException(str(e))
 
-    def delete_all(self) -> None:
+    async def delete_all(self) -> None:
         try:
             cur = self.__conn.cursor()
             cur.execute("DELETE FROM todos;")
@@ -137,7 +143,7 @@ class Repository:
         except Exception as e:
             raise RepositoryException(str(e))
 
-    def all_filter(self, status: Status) -> list[Todo] | list[Any]:
+    async def all_filter(self, status: Status) -> list[Todo] | list[Any]:
         try:
             cur = self.__conn.cursor()
             cur.execute("SELECT * FROM todos WHERE status = %s;", (status.value,))
