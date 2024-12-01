@@ -321,28 +321,43 @@ Can you find any words that are three-way interlocked; that is, every third lett
  starting from the first, second or third?
 
 """
-def interlock():
-    interlocks=[]
-    with open("words.txt") as f:
-        lines=f.read().splitlines()
-        for line in lines:
-            word1=""
-            word2=""
-            for i in range(0,len(line)-1):
-                if i%2  == 0:
-                    word1 += line[i]
-                else:
-                    word2 += line[i]
-            res1= [(l,word1) for l in lines if l in word1]
-            res2= [(l,word2) for l in lines if l in word2]
-            print(f"{word1} {word2} {res1} {res2}")
-            interlocks.append((res1,res2))
+
+
+def interlock_pair(word1, word2):
+    interlocks = []
+    try:
+        with open("words.txt") as f:
+            lines = f.read().splitlines()
+            for line_word in lines:
+                word1 = ""
+                word2 = ""
+                res1 = ""
+                res2 = ""
+                if len(line_word) > 2:
+                    for i in range(len(line_word)):
+                        if i % 2 == 0:
+                            word1 += line_word[i]
+                        else:
+                            word2 += line_word[i]
+                    if binary_search(lines, word1) is not None:  # Assuming binary_search returns None if not found
+                        res1 = word1
+                    if binary_search(lines, word2) is not None:
+                        res2 = word2
+                    if len(res1) > 0 and len(res2) > 0:
+                        interlocks.append((line_word, res1, res2))
+    except FileNotFoundError:
+        print("The file 'words.txt' was not found.")
+    except IOError:
+        print("An error occurred trying to read 'words.txt'.")
+
     return interlocks
 
 if __name__ == '__main__':
     print("Interlock")
-  #  print(interlock())
-sequence_a = [2, 4, 5, 6, 7, 8, 9, 10, 12, 13, 14]
-item_a = 3
-print(binary_search(sequence_a, 9))
-print(binary_search(range(0,10001),550))
+    inter = interlock_pair()
+    print(inter)
+    print(len(inter))
+# sequence_a = [2, 4, 5, 6, 7, 8, 9, 10, 12, 13, 14]
+# item_a = 3
+# print(binary_search(sequence_a, 9))
+# print(binary_search(range(0,10001),550))
