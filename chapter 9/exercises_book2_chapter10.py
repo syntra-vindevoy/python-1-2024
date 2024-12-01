@@ -53,6 +53,7 @@ def in_bisect (n, words):
     middle = words[lenght//2]
     if middle == n: return True
     elif n < middle:
+        lenght += 1 #verlies bij afronding opvangen
         return in_bisect(n, words[:lenght//2])
     elif n > middle:
         return in_bisect(n, words[lenght//2:])
@@ -83,18 +84,25 @@ def test_birthday_paradox(tries, number_of_students):
 #test_birthday_paradox(1000,23)
 
 def interlock():
-    for word in words:
-        new_word_1 = []
-        new_word_2 = []
-        count = 1
-        for letter in word:
-            if count % 2 == 0: new_word_1.append(letter)
-            else: new_word_2.append(letter)
-            count += 1
-        new_word_1 = "".join(new_word_1)
-        new_word_2 = "".join(new_word_2)
-        print (new_word_1, new_word_2)
+    interlocked_words = []
+    for word in words: #oude code vereenvoudigd door slicing
+        # new_word_1 = []
+        # new_word_2 = []
+        # count = 1
+        # for letter in word:
+        #     if count % 2 == 0: new_word_2.append(letter)
+        #     else: new_word_1.append(letter)
+        #     count += 1
+        # new_word_1 = ("".join(new_word_1))
+        # new_word_2 = ("".join(new_word_2))
+        new_word_1 = word[::2]
+        new_word_2 = word[1::2]
+        if in_bisect(new_word_1, words) and in_bisect(new_word_2, words):
+            interlocked_words.append([new_word_1, new_word_2, word])
+            print(len(interlocked_words))
+    print (interlocked_words)
 interlock()
+
 
 
 
