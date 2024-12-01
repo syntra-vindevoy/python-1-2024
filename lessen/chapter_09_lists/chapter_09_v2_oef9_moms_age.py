@@ -18,14 +18,21 @@ maximum_age_for_birth = 75
 maximum_age = 110
 
 solutions = []
-for my_age in range (0,maximum_age):
+for moms_age_at_birth in range(minimum_age_for_birth,maximum_age_for_birth):
     matching_ages = []
-    for moms_age_at_birth in range(minimum_age_for_birth,maximum_age_for_birth):
+    for my_age in range (0,maximum_age):
         moms_age = my_age + moms_age_at_birth
         if str(my_age).zfill(2) == str(moms_age).zfill(2)[::-1]:
-            matching_ages.append(my_age)
-    if matching_ages != []:
-        solutions.append(matching_ages)
+            matching_ages.append([my_age, moms_age])
+    solutions.append(matching_ages)
 
 for solution in solutions:
-    print(solution)
+    if len(solution) == 8:
+        match_8_solutions = solution
+        break
+
+print(solution)
+
+
+print(f"zesde keer op leeftijd van {solution[5]}")
+print(f"zevende keer op leeftijd van {solution[6]}")
