@@ -1,8 +1,10 @@
 import logging
 from abc import ABC, abstractmethod
-from typing import Any
+from typing import Any, Optional
 
-import psycopg2
+import asyncpg
+from asyncpg import PostgresError
+from psycopg2 import DatabaseError
 
 from src.ToDOList.todo_with_db.domain.statut import Status
 from src.ToDOList.todo_with_db.domain.todo import Todo
@@ -52,114 +54,98 @@ class RepositoryException(Exception):
 
 
 class Repository:
-    def __init__(self, dbname: str, user: str, password: str, host: str, port: str):
-        try:
-            logger.info("Connecting to the database")
-            self.__conn = psycopg2.connect(
-                dbname=dbname,
-                user=user,
-                password=password,
-                host=host,
-                port=port
-            )
-            logger.info("Connected to the database successfully")
-        except Exception as e:
-            raise RepositoryException(str(e))
+    def __init__(self, connection: asyncpg.connection):
+        self.__conn: asyncpg.connection = connection
+
 
     async def update(self, todo: Todo) -> bool:
         try:
-            cur = self.__conn.cursor()
-            cur.execute("""
-                UPDATE todos
-                SET title = %s, description = %s, due_date = %s, priority = %s, status = %s
-                WHERE id = %s;
-            """, (todo.title, todo.description, todo.due_date, todo.priority, todo.status.value, todo.id_todo))
-            self.__conn.commit()
-            cur.close()
+            await self.__conn.execute("""
+                       UPDATE todos
+                       SET title = $1, description = $2, due_date = $3, priority = $4, status = $5
+                       WHERE id = $6;
+                   """, todo.title, todo.description, todo.due_date, todo.priority, todo.status.value, todo.id_todo)
             return True
-        except Exception as e:
-            raise RepositoryException(str(e))
+        except PostgresError as e:
+            # Consider logging the exception
+            raise RepositoryException(f"Failed to update todo with id {todo.id_todo}: {str(e)}")
 
     async def insert(self, todo: Todo):
         try:
-            cur = self.__conn.cursor()
-            cur.execute("""
-                   INSERT INTO todos (title, description, due_date, priority, status)
-                   VALUES (%s, %s, %s, %s, %s) RETURNING id;
-               """, (todo.title, todo.description, todo.due_date, todo.priority, todo.status.value))
-            todo_id = cur.fetchone()[0]
-            self.__conn.commit()
-            cur.close()
+            todo_id = await self.__conn.fetchval("""
+                       INSERT INTO todos (title, description, due_date, priority, status)
+                       VALUES ($1, $2, $3, $4, $5) RETURNING id;
+                   """, todo.title, todo.description, todo.due_date, todo.priority, todo.status.value)
+
             return todo_id
-        except Exception as e:
+        except PostgresError as e:  # Replace with specific exception
             raise RepositoryException(str(e))
 
     async def all(self) -> list[Todo]:
         try:
-            cur = self.__conn.cursor()
-            cur.execute("SELECT * FROM todos;")
-            rows = cur.fetchall()
-            cur.close()
-            if rows is not None:
-                todos = []
-                for row in rows:
-                    todos.append(Todo(id_todo=row[0], priority=row[4], due_date=row[3], description=row[2],
-                                      title=row[1], status=row[5]))
-                return todos
-            else:
-                return []
-        except Exception as e:
-            raise RepositoryException(str(e))
+            rows = await self.__conn.fetch("SELECT * FROM todos")
 
-    async def get(self, id) -> Todo | None:
+            todos = [
+                Todo(id_todo=row[0], priority=row[4], due_date=row[3], description=row[2],
+                     title=row[1], status=row[5])
+                for row in rows
+            ]
+            return todos
+        except PostgresError as e:
+            raise RepositoryException(f"Error fetching all todos: {str(e)}")
+
+    async def get(self, id) -> Optional[Todo]:
         try:
-            cur = self.__conn.cursor()
-            cur.execute("SELECT * FROM todos WHERE id = %s;", (id,))
-            row = cur.fetchone()
-            cur.close()
+            stmt = await self.__conn.prepare("SELECT * FROM todos WHERE id = $1;")
+            row = await stmt.fetchrow(id)
             if row is None:
                 return None
-            return Todo(id_todo=row[0], priority=row[4], due_date=row[3], description=row[2], title=row[1],
-                        status=row[5])
-
-        except Exception as e:
-            raise RepositoryException(str(e))
+            return Todo(
+                id_todo=row['id'],
+                title=row['title'],
+                description=row['description'],
+                due_date=row['due_date'],
+                priority=row['priority'],
+                status=row['status']
+            )
+        except DatabaseError as e:
+            raise RepositoryException(f"An error occurred: {e}")
 
     async def delete(self, id) -> None:
         try:
-            cur = self.__conn.cursor()
-            cur.execute("DELETE FROM todos WHERE id = %s;", (id,))
-            self.__conn.commit()
-            cur.close()
-        except Exception as e:
+            await self.__conn.execute("DELETE FROM todos WHERE id = %s;", (id,))
+        except PostgresError as e:
             raise RepositoryException(str(e))
 
     async def delete_all(self) -> None:
         try:
-            cur = self.__conn.cursor()
-            cur.execute("DELETE FROM todos;")
-            self.__conn.commit()
-            cur.close()
-        except Exception as e:
-            raise RepositoryException(str(e))
+            # assuming async context management is possible
+            await self.__conn.execute("DELETE FROM todos;")
 
-    async def all_filter(self, status: Status) -> list[Todo] | list[Any]:
+        except PostgresError as e:
+            raise RepositoryException(f"An unexpected error occurred: {str(e)}")
+
+    async def all_filter(self, filters: dict) -> list[Todo]:
         try:
-            cur = self.__conn.cursor()
-            cur.execute("SELECT * FROM todos WHERE status = %s;", (status.value,))
-            rows = cur.fetchall()
-            cur.close()
-            if rows is not None:
-                todos = []
-                for row in rows:
-                    todos.append(
-                        Todo(id_todo=row[0], priority=row[3], due_date=row[3], description=row[2], title=row[1],
-                             status=row[5]))
-                return todos
-            else:
-                return []
-        except Exception as e:
-            raise RepositoryException(str(e))
+            query = "SELECT id AS id_todo, title, description, due_date, priority, status FROM todos WHERE "
+            conditions = []
+            values = []
+            for i, (field, value) in enumerate(filters.items(), start=1):
+                conditions.append(f"{field} = ${i}")
+                # Convert Status enums to their string values
+                if isinstance(value, Status):
+                    values.append(value.value)
+                else:
+                    values.append(value)
+            query += " AND ".join(conditions) + ";"
 
-    def close(self):
-        self.__conn.close()
+            rows = await self.__conn.fetch(query, *values)
+
+            todos = [
+                Todo(id_todo=row['id_todo'], title=row['title'], description=row['description'],
+                     due_date=row['due_date'], priority=row['priority'], status=row['status'])
+                for row in rows
+            ]
+            return todos
+        except Exception as e:
+            raise RepositoryException(f"An error occurred: {e}")

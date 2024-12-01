@@ -1,5 +1,8 @@
 sphinx
 sphinx_rtd_theme
 ghp-import
-pytest
+pytest~=7.4.4
 sphinx_simplepdf
+asyncpg~=0.29.0
+psycopg2~=2.9.9
+numpy~=2.1.3
