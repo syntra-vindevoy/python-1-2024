@@ -20,4 +20,5 @@ for x in range(1_000_000):
     if not is_palindrome(int_to_str(x+2)[1:5]):continue # x + 2 = middle 4 out of 6 digits are palindromic
     if not is_palindrome(int_to_str(x+3)):continue # x + 3 = all 6 digits are palindromic        
     print(x,x+1,x+2,x+3)
+print("finished")
 
