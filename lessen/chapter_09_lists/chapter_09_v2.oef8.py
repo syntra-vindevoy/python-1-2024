@@ -12,26 +12,48 @@ Write a Python program that tests all the six-digit numbers and prints any numbe
 
 """
 
-"""
-x = last 4 digits are palindromic
-x + 1 = last 5 digits are palindromic
-x + 2 = middle 4 out of 6 digits are palindromic
-x +3 = all 6 digits are palindromic
 
-what was x?
-"""
+def get_palindromes_in_range(lower, upper):
+    return [i for i in range(lower, upper) if str(i) == str(i)[::-1]]
 
 
 def get_4_digit_palindromes():
     get_palindromes_in_range(1000, 10000)
 
 
-def get_all_milages_with_4_digit_ending_palindromes():
+def get_all_mileages_containing_4_digit_palindromes():
+    solutions = []
+    solutions.extend(get_all_mileages_with_4_digit_ending_palindromes())
+    solutions.extend(get_all_mileages_with_4_digit_starting_palindromes())
+    solutions.extend(get_all_mileages_with_4_digit_mid_palindromes())
+    return solutions
+
+
+def get_all_mileages_with_4_digit_ending_palindromes():
     solutions = []
     palindromes = get_4_digit_palindromes()
     for prefix in range(0, 100):
         for palindrome in palindromes:
             solutions.append(str(prefix) + palindrome)
+    return solutions
+
+
+def get_all_mileages_with_4_digit_starting_palindromes():
+    solutions = []
+    palindromes = get_4_digit_palindromes()
+    for suffix in range(0, 100):
+        for palindrome in palindromes:
+            solutions.append(palindrome + str(suffix))
+    return solutions
+
+
+def get_all_mileages_with_4_digit_mid_palindromes():
+    solutions = []
+    palindromes = get_4_digit_palindromes()
+    for prefix in range(0, 10):
+        for suffix in range(0, 10):
+            for palindrome in palindromes:
+                solutions.append(str(prefix) + palindrome + str(suffix))
     return solutions
 
 
@@ -45,19 +67,43 @@ def get_all_milages_with_5_digit_ending_palindromes():
     for prefix in range(0, 10):
         for palindrome in palindromes:
             solutions.append(str(prefix) + palindrome)
+    return solutions
+
+
+def get_all_mileages_with_5_digit_starting_palindromes():
+    solutions = []
+    palindromes = get_5_digit_palindromes()
     for suffix in range(0, 10):
         for palindrome in palindromes:
             solutions.append(palindrome + str(suffix))
     return solutions
 
 
+def get_all_mileages_containing_5_digit_palindromes():
+    solutions = []
+    solutions.extend(get_all_milages_with_5_digit_ending_palindromes())
+    solutions.extend(get_all_mileages_with_5_digit_starting_palindromes())
+
+
 def get_6_digit_palindromes():
     get_palindromes_in_range(100000, 1000000)
 
 
-def get_palindromes_in_range(lower, upper):
-    return [i for i in range(lower, upper) if str(i) == str(i)[::-1]]
-
-
 def get_odometer():
+    """
+    check_1
+    x = last 4 digits are palindromic
+
+    check2
+    x + 1 = last 5 digits are palindromic
+
+    check3
+    x + 2 = middle 4 out of 6 digits are palindromic
+
+    check4
+    x + 3 = all 6 digits are palindromic
+
+    what was x?
+    """
+
     return odometer
