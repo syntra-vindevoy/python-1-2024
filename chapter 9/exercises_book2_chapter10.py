@@ -101,11 +101,24 @@ def interlock():
             interlocked_words.append([new_word_1, new_word_2, word])
             print(len(interlocked_words))
     print (interlocked_words)
-interlock()
+#interlock()
 
-
-
-
-
-
-
+def interlock_more():
+    interlocked_words = []
+    count = 0
+    total_words = len(words)
+    for word in words:
+        if len(word) < 5: continue
+        count += 1
+        new_word_1 = word[::5]
+        new_word_2 = word[1::5]
+        new_word_3 = word[2::5]
+        new_word_4 = word[3::5]
+        new_word_5 = word[4::5]
+        if (in_bisect(new_word_1, words) and in_bisect(new_word_2, words) and in_bisect(new_word_3, words) and
+                in_bisect(new_word_4, words) and in_bisect(new_word_5, words)):
+            interlocked_words.append([word, new_word_1, new_word_2, new_word_3, new_word_4, new_word_5])
+        if count % 100 == 0 or count == total_words: #print progress every x words
+            print (f"progress: {count/total_words*100:.2f}% and {len(interlocked_words)} interlocks found")
+    print (interlocked_words)
+interlock_more()
