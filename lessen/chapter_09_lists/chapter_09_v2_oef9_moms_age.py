@@ -34,5 +34,6 @@ for solution in solutions:
 print(solution)
 
 
-print(f"zesde keer op leeftijd van {solution[5]}")
-print(f"zevende keer op leeftijd van {solution[6]}")
+print(f"zesde keer op leeftijd van {solution[5][0]}")
+print(f"zevende keer op leeftijd van {solution[6][0]}")
+print(f"ik ben ouder dan {solution[5][0]} en jonger dan {solution[6][0]}")

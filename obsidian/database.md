@@ -116,6 +116,8 @@ SELECT current_user; #toon huidige user
 
 pg_isready -h localhost -p 5432
 
+
+\q #quit
 ```
 
 
