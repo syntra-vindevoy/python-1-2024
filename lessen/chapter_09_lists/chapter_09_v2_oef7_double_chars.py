@@ -21,7 +21,25 @@ def get_wordlist_from_file(file: str):
     return words
 
 
+def has_3_characterpairs(word):
+    previous_char = ""
+    pair_count = 0
+    for char in word:
+        if char == previous_char:
+            pair_count += 1
+            previous_char = ""
+            # om te vermijden dat een paar van 3 meerdere keren geteld wordt
+        else:
+            previous_char = char
+
+    return pair_count >= 3
+
+
 def has_3_consecutive_matching_chars(word):
+    """
+    opgave verkeerd begrepen
+    te mooi om te verwijderen :-)
+    """
     previous_char = ""
     streak = 1
     streak_max = 0
@@ -68,7 +86,7 @@ def main():
     end_asserts = datetime.now()
 
     for word in wordlist:
-        if has_3_consecutive_matching_chars(word):
+        if has_3_characterpairs(word):
             matching_words.append(word)
 
     end_time = datetime.now()
@@ -80,7 +98,8 @@ def main():
     )
     print("Finished:".ljust(ljust_length) + get_runtime_as_string(start_time, end_time))
 
-    print(matching_words)
+    for word in matching_words:
+        print(word)
 
     sys.exit()
 

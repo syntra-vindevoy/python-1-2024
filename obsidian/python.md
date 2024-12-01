@@ -1089,7 +1089,27 @@ char10 in unix
 
 ```python
 sys.exit() #makkelijk om deel van code niet uit te voeren
+```
 
+
+## paths
+
+```python
+def get_wordlist_from_file(file: str):
+    script_dir = os.path.dirname(__file__)
+    file_name = "words.txt"
+    file_path = os.path.join(script_dir, file_name)
+
+    with open(file_path, "r") as f:
+        words = f.read().split("\n")
+    return words
 ```
+
+## Print
+
+```python
+def print_list(list):
+    for i in list:
+        print(i)
 ```
-```
+
