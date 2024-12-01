@@ -24,12 +24,12 @@ total = end - start
 print(total)
 
 start1 = datetime.datetime.now()
-def fibo_recursive(n: int) -> int:
+def fib(n: int) -> int:
     if n < 2:
         return n
-    return fibo_recursive(n - 1) + fibo_recursive(n - 2)
+    return fib(n - 1) + fib(n - 2)
 
-print(fibo_recursive(40))
+print(fib(40))
 end1 = datetime.datetime.now()
 total1 = end1 - start1
 print(total1)
