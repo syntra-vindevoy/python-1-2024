@@ -1,5 +1,5 @@
 import random
-
+import itertools
 
 def nested_sum(list_of_lists):
     """
@@ -353,26 +353,52 @@ def interlock_pair():
     return interlocks
 
 
-def interlock_varia(split_count):
-    interlocks = []
-    try:
-        with open("words.txt") as f:
-            lines = f.read().splitlines()
-            for line_word in lines:
-                pass
-        # Todd
-    except FileNotFoundError:
-        print("The file 'words.txt' was not found.")
-    except IOError:
-        print("An error occurred trying to read 'words.txt'.")
+def interlock(word_list, word):
+    """Checks whether a word contains two interleaved words.
 
-    return interlocks
+    word_list: list of strings
+    word: string
+    """
+    evens = word[::2]
+    odds = word[1::2]
+    return binary_search(word_list, evens) and binary_search(word_list, odds)
+
+
+def interlock_general(word_list, word, n=3):
+    """Checks whether a word contains n interleaved words.
+
+    word_list: list of strings
+    word: string
+    n: number of interleaved words
+    """
+    for i in range(n):
+        inter = word[i::n]
+        if not binary_search(word_list, inter):
+            return False
+    return True
+
 
 if __name__ == '__main__':
+    with open("words.txt") as f:
+        word_list = f.read().splitlines()
+
+    for word in word_list:
+        if interlock(word_list, word):
+            print(word, word[::2], word[1::2])
+
+    for word in word_list:
+        if interlock_general(word_list, word, 3):
+            print(word, word[0::3], word[1::3], word[2::3])
+
+
     print("Interlock")
     inter = interlock_pair()
     print(inter)
     print(len(inter))
+
+    print("Interlock")
+
+
 # sequence_a = [2, 4, 5, 6, 7, 8, 9, 10, 12, 13, 14]
 # item_a = 3
 # print(binary_search(sequence_a, 9))
