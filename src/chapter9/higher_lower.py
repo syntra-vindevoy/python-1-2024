@@ -7,7 +7,7 @@ def binary_search(sequence, item)->(int,int):
     end_index = len(sequence) - 1
     counter=0
     while begin_index <= end_index:
-        midpoint = begin_index + (end_index - begin_index) // 2
+        midpoint = begin_index + round((end_index - begin_index) / 2)
         midpoint_value = sequence[midpoint]
         counter += 1
         if midpoint_value == item:
