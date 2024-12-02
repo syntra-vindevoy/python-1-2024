@@ -13,6 +13,7 @@ def middle(t):
 
 def main():
     print(middle(t))
+    print(t)
 
 if __name__ == "__main__":
     main()
