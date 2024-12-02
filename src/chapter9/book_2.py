@@ -241,25 +241,6 @@ num_simulations = 10000
 probability = birthday_paradox(num_people, num_simulations)
 print(f"Probability of at least two people sharing a birthday in a group of {num_people} people: {probability:.2f}")
 
-"""
-Exercise 10
-To check whether a word is in the word list, you could use the in operator,
-but it would be slow because it searches through the words in order.
-
-Because the words are in alphabetical order, we can speed things up with a bisection search
-(also known as binary search), which is similar to what you do when you look a word up in the dictionary
-(the book, not the data structure). You start in the middle and check to see whether the word you are looking for
- comes before the word in the middle of the list. If so, you search the first half of the list the same way.
- Otherwise you search the second half.
-
-Either way, you cut the remaining search space in half. If the word list has 113,809 words,
-it will take about 17 steps to find the word or conclude that it’s not there.
-
-Write a function called in_bisect that takes a sorted list and a target value and returns True i
-f the word is in the list and False if it’s not.
-
-Or you could read the documentation of the bisect module and use that! S
-"""
 
 
 def binary_search(sequence, item)->int:
@@ -340,28 +321,59 @@ Can you find any words that are three-way interlocked; that is, every third lett
  starting from the first, second or third?
 
 """
-def interlock():
-    interlocks=[]
-    with open("words.txt") as f:
-        lines=f.read().splitlines()
-        for line in lines:
-            word1=""
-            word2=""
-            for i in range(0,len(line)-1):
-                if i%2  == 0:
-                    word1 += line[i]
-                else:
-                    word2 += line[i]
-            res1= [(l,word1) for l in lines if l in word1]
-            res2= [(l,word2) for l in lines if l in word2]
-            print(f"{word1} {word2} {res1} {res2}")
-            interlocks.append((res1,res2))
+
+
+def interlock_pair():
+    interlocks = []
+    try:
+        with open("words.txt") as f:
+            lines = f.read().splitlines()
+            for line_word in lines:
+                word1 = ""
+                word2 = ""
+                res1 = ""
+                res2 = ""
+                if len(line_word) > 2:
+                    for i in range(len(line_word)):
+                        if i % 2 == 0:
+                            word1 += line_word[i]
+                        else:
+                            word2 += line_word[i]
+                    if binary_search(lines, word1) is not None:  # Assuming binary_search returns None if not found
+                        res1 = word1
+                    if binary_search(lines, word2) is not None:
+                        res2 = word2
+                    if len(res1) > 0 and len(res2) > 0:
+                        interlocks.append((line_word, res1, res2))
+    except FileNotFoundError:
+        print("The file 'words.txt' was not found.")
+    except IOError:
+        print("An error occurred trying to read 'words.txt'.")
+
+    return interlocks
+
+
+def interlock_varia(split_count):
+    interlocks = []
+    try:
+        with open("words.txt") as f:
+            lines = f.read().splitlines()
+            for line_word in lines:
+                pass
+        # Todd
+    except FileNotFoundError:
+        print("The file 'words.txt' was not found.")
+    except IOError:
+        print("An error occurred trying to read 'words.txt'.")
+
     return interlocks
 
 if __name__ == '__main__':
     print("Interlock")
-  #  print(interlock())
-sequence_a = [2, 4, 5, 6, 7, 8, 9, 10, 12, 13, 14]
-item_a = 3
-print(binary_search(sequence_a, 9))
-print(binary_search(range(0,10001),550))
+    inter = interlock_pair()
+    print(inter)
+    print(len(inter))
+# sequence_a = [2, 4, 5, 6, 7, 8, 9, 10, 12, 13, 14]
+# item_a = 3
+# print(binary_search(sequence_a, 9))
+# print(binary_search(range(0,10001),550))
