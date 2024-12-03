@@ -142,4 +142,38 @@ psql -h localhost -U postgres -d test
 https://fishshell.com/
 
 
+## Normalisatie
 
+### zero-form
++ list of all data
+
+### 1st form
++ all rows must be unique identifiable 
+	+ unique ID
++ each cell may only contain a single value
++ all cells must be atomic
+	+ no composite values
+
+### 2nd form
++ No partial dependencies
+	+ vb col 3 is dependent on col 2 -> nothing to do with unique id... : separate table
++ composite id? one-to-many -> other table
+
+### 3th form
++ no transitive dependencies
+	+ all fields must only be determinable by the primary/composite key, not by other keys (or cells)
+
+### Xth form - final check
++ things that change over time
++ many to many = opslitsen !
++ alle relaties checken in twee richtingen
+
+## Keys 
+* mogen geen betekenis hebben 
+* mogen nergens naar verwijzen.
+
+ERD entity relationship diagram
+
+
+
+Derek Banas postgresqltutorial full course 2022
