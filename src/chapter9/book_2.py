@@ -399,7 +399,3 @@ if __name__ == '__main__':
     print("Interlock")
 
 
-# sequence_a = [2, 4, 5, 6, 7, 8, 9, 10, 12, 13, 14]
-# item_a = 3
-# print(binary_search(sequence_a, 9))
-# print(binary_search(range(0,10001),550))
