@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "14f5324e11fea9a3",
+        "id": "27d3a879dd63a29a",
         "type": "tabs",
         "children": [
           {
-            "id": "6534bf29f0f6b600",
+            "id": "c27c80f2a11dd667",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -19,20 +19,6 @@
               },
               "icon": "lucide-file",
               "title": "database"
-            }
-          },
-          {
-            "id": "eaa1b278501f4be9",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "obsidian/python.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "python"
             }
           }
         ]
@@ -91,8 +77,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 221.5,
-    "collapsed": true
+    "width": 221.5
   },
   "right": {
     "id": "cd4a01c0c665e781",
@@ -177,20 +162,21 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "6534bf29f0f6b600",
+  "active": "c27c80f2a11dd667",
   "lastOpenFiles": [
+    "code_snippets/function_time_logging/execution_time.log",
+    "code_snippets/function_time_logging/function_time_logging.py",
+    "code_snippets/function_time_logging",
+    "code_snippets/function_timer/execution_time.log",
+    "execution_time.log",
+    "code_snippets/function_timer/function_time_logging.py",
+    "code_snippets/function_timer/function_timer.py",
+    "code_snippets/function_timer/exection_time.py",
+    "code_snippets/function_timer",
+    "code_snippets/execution_time/exection_time.py",
+    "code_snippets/execution_time",
     "obsidian/python.md",
     "obsidian/database.md",
-    "oefeningen/stone_yves.py",
-    "lessen/chapter_09_lists/chapter_09_v3_oef9_woordlengte van file.py",
-    "lessen/chapter_09_lists/read_from_file.py",
-    "lessen/chapter_09_lists/chapter_09_v2_oef9_moms_age.py",
-    "lessen/chapter_09_lists/chapter_09_v2_oef9_moms age.py",
-    "lessen/chapter_09_lists/chapter_09_v2_oef8_mileage.py",
-    "lessen/chapter_09_lists/chapter_09_v2_oef9.py",
-    "lessen/chapter_09_lists/chapter_09_v2.oef8_mileage.py",
-    "lessen/chapter_09_lists/chapter_09_v2_oef7_double_chars.py",
-    "lessen/chapter_09_lists/chapter_09_v2.oef8.py",
     "obsidian/syntra.md",
     "obsidian/branch_overview.png",
     "examen/opgave.md",
