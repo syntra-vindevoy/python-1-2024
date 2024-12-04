@@ -6,6 +6,27 @@ import asyncpg.connection
 from src.ToDOList.todo_with_db.domain.statut import Status
 from src.ToDOList.todo_with_db.domain.todo import Todo
 from src.ToDOList.todo_with_db.repository import Repository
+import yaml
+import hashlib
+
+
+def setup_connection_from_yaml():
+    with open('config.yml', 'r') as file:
+        config = yaml.safe_load(file)
+    return asyncpg.connect(
+        database=config['db']['database'],
+        user=config['db']['username'],
+        password=config['db']['password'],
+        host=config['db']['host'],
+        port=config['db']['port']
+    )
+
+def verify_sha1(original_string, hash_to_compare):
+    # Hash the original string
+    sha1_hash = hashlib.sha1(original_string.encode()).hexdigest()
+
+    # Compare the computed hash to the provided hash
+    return sha1_hash == hash_to_compare
 
 
 def setup_connection(dbname: str, user: str, password: str, host: str, port: str):
@@ -20,8 +41,7 @@ def setup_connection(dbname: str, user: str, password: str, host: str, port: str
 
 async def main():
     repo = Repository(await
-                      setup_connection(dbname="todolist", password="", host="192.168.0.20", port="32768",
-                                       user="progress"))
+                      setup_connection_from_yaml())
     await repo.delete_all()
 
     id = await repo.insert(Todo(due_date=datetime.datetime.now(), priority=1, description="test", title="fdfd"))
