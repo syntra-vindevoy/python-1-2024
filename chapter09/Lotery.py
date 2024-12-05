@@ -12,9 +12,25 @@ def check_number_lotery(lotery_number, total):
             max_number = search_number  #100
 
         search_number = ((max_number - min_number) // 2) + min_number  # 50
-        print(lotery_number, steps, search_number)
+    return (steps)
 
-check_number_lotery(12651, 100000)
+def longest_steps(total):
+    steps = 0
+    max = 0
+    list_lotery = []
+    for i in range(1, total +1):
+        steps = check_number_lotery(i, total)
+        if steps > max:
+            max = steps
+            list_lotery = [i]
+        elif steps == max:
+            list_lotery.append(i)
+    print(list_lotery, max)
+
+
+
+print(longest_steps(10))
+print(check_number_lotery(4, 10))
 
 #getal ingeven: pc moet raden of het nr juist is.
 #Hoeveel st appen zijn hiervoor nodig, voor hij het vind.
