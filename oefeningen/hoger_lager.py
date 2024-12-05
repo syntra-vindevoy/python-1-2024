@@ -35,14 +35,13 @@ def hint(lower_limit: int, upper_limit: int, given_value: int, count: int = 0):
 
 
 def main():
-    given_value = random.randint(1, 10_000)
     solutions = []
     max_value = 0
-    for i in range(1, 10_000):
+    for i in range(1, 10_001):
         solutions.append(
             hint(
                 lower_limit=0,
-                upper_limit=10_000,
+                upper_limit=10_001,
                 given_value=i,
             )
         )
