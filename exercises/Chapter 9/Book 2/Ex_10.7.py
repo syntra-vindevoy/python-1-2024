@@ -10,8 +10,18 @@ def has_duplicates(list):
                 return True
     return False
 
+def has_duplicates_2(list):
+    return len(list) != len(set(list))
+
+def has_duplicates_3(list):
+    for i in range(len(list) - 1):
+        if sorted(list)[i] == sorted(list)[i+1]:
+            return True
+
+    return False
+
 def main():
-    print(has_duplicates([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 7]))
+    print(has_duplicates_3([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]))
 
 if __name__ == '__main__':
     main()
