@@ -10,6 +10,7 @@
 
 import math
 from pprint import pprint
+import random
 
 
 def game(number: int):
@@ -34,7 +35,7 @@ def hint(lower_limit: int, upper_limit: int, given_value: int, count: int = 0):
 
 
 def main():
-    given_value = 1
+    given_value = random.randint(1, 10_000)
     solutions = []
     max_value = 0
     for i in range(1, 10_000):
@@ -45,8 +46,11 @@ def main():
                 given_value=i,
             )
         )
-    pprint(solutions)
+        if solutions[-1][-1] > max_value:
+            max_value = solutions[-1][-1]
 
+    pprint(solutions)
+    print(max_value)
 
 if __name__ == "__main__":
     main()

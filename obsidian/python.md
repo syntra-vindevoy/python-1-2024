@@ -1113,3 +1113,30 @@ def print_list(list):
         print(i)
 ```
 
+
+
+hoofdstuk lists : exercise 7 zoek of er een duplicate is
+	lijst sorteren > checken op opeenvolgende items
+	of set gebruiken
+
+lists : oefening 9 
++ \+ gebruiken voor lijst is trager dan append
++ listcomprehension is snelst
++ extend met list van één item
+
+
+opletten met 
++ x = x + 1
++ x += x + 1 -> geeft een oneindige loop
+## list comprehensions
+
+```python
+return [word for word in words]
+return [word.upper() for word in sorted(words)]
+# voor for staat wat gereturnd wordt in de lijst
+# na in staat wat je met de lijst van de iteratie kan doen.
+
+dc = {word: len(word) for word in words}
+# inverted dict, omgekeerde lijst uitproberen
+
+```

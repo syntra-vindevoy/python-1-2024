@@ -35,7 +35,8 @@
               "title": "python"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -177,8 +178,9 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "6534bf29f0f6b600",
+  "active": "eaa1b278501f4be9",
   "lastOpenFiles": [
+    "obsidian/database.md",
     "databases/0DBDA000",
     "databases/oef_ERD.xlsx",
     "databases/EE553000",
@@ -186,12 +188,10 @@
     "databases",
     "New folder",
     "obsidian/python.md",
-    "obsidian/database.md",
     "oefeningen/stone_yves.py",
     "lessen/chapter_09_lists/chapter_09_v3_oef9_woordlengte van file.py",
     "lessen/chapter_09_lists/read_from_file.py",
     "lessen/chapter_09_lists/chapter_09_v2_oef9_moms_age.py",
-    "lessen/chapter_09_lists/chapter_09_v2_oef9_moms age.py",
     "obsidian/syntra.md",
     "obsidian/branch_overview.png",
     "examen/opgave.md",
