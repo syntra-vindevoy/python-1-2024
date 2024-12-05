@@ -1140,3 +1140,43 @@ dc = {word: len(word) for word in words}
 # inverted dict, omgekeerde lijst uitproberen
 
 ```
+
+oggi ai artificial intelligence today python bubblesorting algorithm
++ bubble sort
++ merge sort
+	+ recursive
+	+ divide and conquer algoritm
++ selection sort
+	+ minimum zoeken in lijst, 
+	+ streep één lijn opschuiven
+	+ minimum swappen met eerste item (tupple)
++ quick sort
+	+ snelste tot nu toe
++ tim sort
+
+
+if "vo" in ...
+if any "vo" in ... 
+if all "vo" in ...
+"vindevolge".find("vo")
+"vindevolge".find("")
+"vindevolge".count("v",1)
+.upper()
+.lower()
+
+Ascii
+ISO 88-59-1 (toetsenbord) geen euroteken
+ISO 88-59-15 met euroteken
+op het web, unicode utf-8 utf-16
+
+Karsten, leraar volgend jaar, python advanced.
+
+%20 in url = spatie (hexadecimaal ascii nummer)
+
+hexadecimaal FF = 255 (maximaal voor ascii)
+
+geen karakter is kleiner
+
+"1" < "10"
+"2" > "10"
+

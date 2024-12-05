@@ -10,36 +10,48 @@
 
 import math
 from pprint import pprint
-import random
-
-
-def game(number: int):
-    hint(
-        0,
-        number,
-        number,
-    )
-
 
 def hint(lower_limit: int, upper_limit: int, given_value: int, count: int = 0):
     midvalue = (lower_limit + upper_limit) / 2
     if given_value == midvalue:
         return lower_limit, upper_limit, given_value, count
-    else:
-        if given_value < midvalue:
-            upper_limit = math.ceil(midvalue)
-        elif given_value > midvalue:
-            lower_limit = math.floor(midvalue)
-        count += 1
-        return hint(lower_limit, upper_limit, given_value, count)
+    
+    if given_value < midvalue:
+        upper_limit = math.ceil(midvalue)
+    elif given_value > midvalue:
+        lower_limit = math.floor(midvalue)
+    count += 1
 
+    return hint(lower_limit, upper_limit, given_value, count)
+
+
+def hint_2 (lower_limit: int, upper_limit: int, given_value: int, count: int = 0):
+    midvalue = (lower_limit + upper_limit) // 2
+    if given_value == midvalue:
+        return lower_limit, upper_limit, given_value, count
+    
+    if given_value < midvalue:
+        upper_limit = midvalue + 1
+    elif given_value > midvalue:
+        lower_limit = midvalue
+    count += 1
+
+    return hint(lower_limit, upper_limit, given_value, count)
 
 def main():
+
+
+    # print(hint(0, 10_001, 5_000))
+    # print(max([hint(1,10_000,i)for i in range(10_000)]))
+    # print(max([hint_2(1,10_000,i)for i in range(10_000)]))
+
+    '''
+    '''
     solutions = []
     max_value = 0
     for i in range(1, 10_001):
         solutions.append(
-            hint(
+            hint_2(
                 lower_limit=0,
                 upper_limit=10_001,
                 given_value=i,
@@ -51,5 +63,6 @@ def main():
     pprint(solutions)
     print(max_value)
 
+    
 if __name__ == "__main__":
     main()
