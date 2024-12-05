@@ -8,7 +8,7 @@ assert is_anagram("pot", "top") == True
 assert is_anagram("stop", "top") == False
 assert is_anagram("stoep", "poets") == True
 
-with open("words.txt") as f:
+with open("Book 2/words.txt") as f:
     words = f.read().split("\n") #split so it removes the "\n" characters
 
 
