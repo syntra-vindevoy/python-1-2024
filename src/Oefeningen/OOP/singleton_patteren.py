@@ -29,6 +29,21 @@ class Singleton:
 
 assert Singleton.get_instance() == Singleton.get_instance()
 
+class Singleton2:
+    _instance = None
+
+    @classmethod
+    def get_instance(cls, waarde=None):
+        if cls._instance is None:
+            cls._instance = cls(waarde)
+        return cls._instance
+
+    def __init__(self, waarde):
+        if not hasattr(self, "waarde"):
+            self.waarde = waarde
+
+
+
 # main method
 if __name__ == "__main__":
 
@@ -42,3 +57,11 @@ if __name__ == "__main__":
     # pick the instance of the class
     obj = Singleton.get_instance()
     print(obj)
+
+    # Gebruik
+    s1 = Singleton2.get_instance("Eerste")
+    s2 = Singleton2.get_instance("Tweede")
+
+    print(s1.waarde)  # Output: Eerste
+    print(s2.waarde)  # Output: Eerste
+    print(s1 is s2)  # Output: True

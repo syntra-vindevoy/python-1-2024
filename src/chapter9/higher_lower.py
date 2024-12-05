@@ -12,14 +12,13 @@ def binary_search(sequence, item)->(int,int):
         counter += 1
         if midpoint_value == item:
             return midpoint, counter
-
         elif item < midpoint_value:
             end_index = midpoint - 1
-
         else:
             begin_index = midpoint + 1
-
     return None
+
+
 
 def guess(nbr:int):
     pos, count = binary_search(range(1, 10001), nbr)
@@ -45,6 +44,9 @@ if __name__ == '__main__':
     for i in range(1,10001):
         _, count = binary_search(range(1, 10001), i)
         list_count.append(count)
+    l= range(1,10001)
+    print(max([ binary_search(l,i) for i in l]))
+    print(min([binary_search(l, i) for i in l]))
     print(f"Average  ={round(calculate_average(list_count))}")
 
 

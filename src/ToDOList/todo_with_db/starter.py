@@ -36,6 +36,7 @@ def setup_connection(dbname: str, user: str, password: str, host: str, port: str
         password=password,
         host=host,
         port=port
+
     )
 
 

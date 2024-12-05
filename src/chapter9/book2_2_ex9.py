@@ -28,7 +28,6 @@ print(f"Elapsed time: {elapsed_time:.2f} seconds")
 
 
 def read_words_lc() -> [str]:
-    words = []
     with open("words.txt", encoding='utf-8') as file:
         return [word.strip() for word in file]
 

@@ -189,7 +189,7 @@ def has_duplicates(list_int):
 
 
 assert has_duplicates([1, 2, 3, 4]) == False
-assert has_duplicates([1, 2, 3, 4, 1]) == True
+assert has_duplicates([1, 2, 3, 1]) == True
 
 """
 Exercise 8
