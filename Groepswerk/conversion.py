@@ -17,8 +17,6 @@ def spilt_string(string):
 # Split the words into three lists
 list1 = spilt_string(words)
 
-
-
 def convert_and_split(string_list):
     processed_list = []
 
@@ -43,10 +41,10 @@ def convert_and_split(string_list):
 
 
 # Process the list
-result = convert_and_split(list1)
+converted_list = convert_and_split(list1)
 
 
 if __name__ == "__main__":
     # Output processed list
     print(list1)
-    print(result)
+    print(converted_list)
