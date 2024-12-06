@@ -28,12 +28,12 @@ from datetime import datetime
 # target_number = int(input("Enter the target number (1 to 10000): "))
 # final_value = number_seacher(target_number, max_number, 0)
 # print("Final value:", final_value)  # Print the final value returned by the function
-import random
-
-# Generate a random number between 1 and 10000
-random_number = random.randint(1, 100000000)
-
-print("Random number generated:", random_number)
+# import random
+#
+# # Generate a random number between 1 and 10000
+# random_number = random.randint(1, 10000)
+#
+# print("Random number generated:", random_number)
 
 
 start = datetime.now()
@@ -55,11 +55,16 @@ def number_searcher(target_number, search_min, search_max, counter=0):
 
 
 # Input and function call
-max_number = 100000000
-target_number = random_number #int(input("Enter the target number (1 to 10000): "))
-final_value = number_searcher(target_number, 1, max_number)
-print("Final value:", final_value)
+
 
 end = datetime.now()
 
 print(f"Time taken: {end - start}")
+
+if __name__ == "__main__":
+    random_number = 1
+    max_number = 100000
+    target_number = random_number  # int(input("Enter the target number (1 to 10000): "))
+    final_value = number_searcher(target_number, 1, max_number)
+    print("Final value:", final_value)
+    print(max([number_searcher(i + 1, 1, max_number) for i in range(10000)]))

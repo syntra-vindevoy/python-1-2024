@@ -1,4 +1,4 @@
-from datetime import timedelta
+from datetime import timedelta, datetime
 import random
 
 t = [[1, 2], [3], [4, 5, 6]]
@@ -69,3 +69,43 @@ probability = estimate_probability(23)
 print(f"Estimated probability of at least two students sharing a birthday: {probability:.4f}")
 
 
+# 10.9
+
+with open("words.txt", "r") as f:
+    words = f.read().split()
+def method1(words :list[str]):
+    lst=[]
+
+
+    for word in words:
+        lst+= [word]
+
+def method2(words :list[str]):
+    lst=[]
+    for word in words:
+        lst.append(word)
+
+def method3(words :list[str]):
+    lst = [word for word in words] #[word.upper() for word in sorted(words)]
+    return lst
+
+times = 10000
+# start = datetime.now()
+# for _ in range(times):
+#     method1(words)
+# end = datetime.now()
+# print(f"Time taken: {(end - start).total_seconds()}")
+
+start = datetime.now()
+for _ in range(times):
+    method2(words)
+end = datetime.now()
+print(f"Time taken: {(end - start).total_seconds()}")
+
+start = datetime.now()
+for _ in range(times):
+    method3(words)
+end = datetime.now()
+print(f"Time taken: {(end - start).total_seconds()}")
+
+#dc = {word: len(word) for word in words}
