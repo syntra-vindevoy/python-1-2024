@@ -35,8 +35,7 @@
               "title": "python"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -178,20 +177,21 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "eaa1b278501f4be9",
+  "active": "6534bf29f0f6b600",
   "lastOpenFiles": [
-    "obsidian/database.md",
-    "databases/0DBDA000",
-    "databases/oef_ERD.xlsx",
-    "databases/EE553000",
-    "databases/~$oef_ERD.xlsx",
-    "databases",
-    "New folder",
+    "eindwerk/run/persistence/persitence.py",
+    "eindwerk/run/persistence",
+    "eindwerk/run/persistance/persitence.py",
     "obsidian/python.md",
-    "oefeningen/stone_yves.py",
-    "lessen/chapter_09_lists/chapter_09_v3_oef9_woordlengte van file.py",
-    "lessen/chapter_09_lists/read_from_file.py",
-    "lessen/chapter_09_lists/chapter_09_v2_oef9_moms_age.py",
+    "eindwerk/run/logic/model/__pycache__/employee.cpython-312.pyc",
+    "eindwerk/run/logic/model/__pycache__/company.cpython-312.pyc",
+    "eindwerk/run/logic/model/__pycache__",
+    "eindwerk/run/presentation/presentation.py",
+    "eindwerk/run/persistance/persitance.py",
+    "eindwerk/run/logic/logic.py",
+    "eindwerk/run/logic.py",
+    "eindwerk/run/persitance.py",
+    "obsidian/database.md",
     "obsidian/syntra.md",
     "obsidian/branch_overview.png",
     "examen/opgave.md",
