@@ -42,3 +42,7 @@ ssh_sftp_download('192.168.0.58',
                   'Documents/test/for.dat',
                   'C:/Syntra/python-1-2024/Groepswerk/TDS.dat'
                   )
+
+
+if __name__ == "__main__":
+    print(ssh_sftp_download)
