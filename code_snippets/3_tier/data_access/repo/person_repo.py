@@ -11,5 +11,9 @@ class PersonRepo:
     def get_all_persons(self) -> List[Person]:
         with open(self.file_path, "r") as file:
             return [Person(name=line.strip()) for line in file.readlines()]
+        
+    def add_person(self, name: str):
+        with open(self.file_path, "a") as file:
+            file.write(name + "\n")
 
 

@@ -7,13 +7,8 @@ class BusinessLogic:
         self.data_access = data_access
         self.person_repo = PersonRepo()
 
-    def process_data(self, data):
-        processed_data = data.upper()  # Example logic
-        self.data_access.append_data(processed_data)
-        return processed_data
-
-    def get_data(self):
-        return self.data_access.get_data()
-
     def get_all_persons(self):
         return self.person_repo.get_all_persons()
+    
+    def add_person(self, name):
+        self.person_repo.add_person(name)

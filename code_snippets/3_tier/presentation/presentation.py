@@ -1,26 +1,32 @@
+from time import sleep
+
 class Presentation:
     def __init__(self, business_logic):
         self.business_logic = business_logic
-
-    def process_data(self, value):
-        result = self.business_logic.process_data(value)
-        print(f"Processed result: {result}")
-
-    def get_storage_content(self):
-        return self.business_logic.get_data()
-
-    def print_storage_content(self):
-        print(f"content: {self.get_storage_content()}")
 
     def print_all_persons(self):
         persons = self.business_logic.get_all_persons()
         for person in persons:
             print(person.get_person_details())
 
+    def add_person(self, name:str):
+        self.business_logic.add_person(name)
+
     def run(self):
         running = True
         while running:
-            user_input = input("Enter a value: ")
-            self.process_data(user_input)
-            self.print_storage_content()
-            self.print_all_persons()
+            print("1. Print all persons")
+            print("2. Add a person")
+            choice = input("Enter your choice: ")
+
+            if choice == '1': self.print_all_persons()
+            elif choice == '2':
+                name = input("Enter the name of the person: ")
+                self.add_person(name)
+            elif choice == 'q':
+                running = False
+            else:
+                print("Invalid choice")
+        print("Exiting...")
+        sleep(2)
+            
