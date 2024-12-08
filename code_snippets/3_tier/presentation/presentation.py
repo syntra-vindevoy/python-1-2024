@@ -14,18 +14,26 @@ class Presentation:
         name = input("Enter the name of the person: ")
         self.business_logic.add_person(str(name.strip()))
 
+    def delete_person(self):
+        person_id = int(input("Enter the id of the person to delete: "))
+        self.business_logic.delete_person(person_id)
+
     def run(self):
         print()
         while self.running:
 
             menu_options = {
-                '1': {
+                'p': {
                     'description': "Print all persons", 
                     'action': self.print_all_persons
                     },
-                '2': {
+                'a': {
                     'description': "Add a person", 
                     'action': self.add_person
+                    },
+                'd': {
+                    'description': "Delete a person", 
+                    'action': self.delete_person
                     },
                 'q': {
                     'description': "Quit", 

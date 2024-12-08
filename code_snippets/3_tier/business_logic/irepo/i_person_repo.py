@@ -13,5 +13,7 @@ class IPersonRepo(ABC):
         pass
 
     @abstractmethod
-    def delete_employee(self, employee_id: int) -> None:
+    def delete_person(self, employee_id: int) -> None:
         pass
+
+

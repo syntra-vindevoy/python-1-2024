@@ -12,3 +12,6 @@ class BusinessLogic:
     
     def add_person(self, name:str):
         self.person_repo.add_person(name.title())
+
+    def delete_person(self, person_id:int):
+        self.person_repo.delete_person(person_id)
