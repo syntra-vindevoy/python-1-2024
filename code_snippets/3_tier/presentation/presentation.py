@@ -11,7 +11,8 @@ class Presentation:
             print(person.get_person_details())
 
     def add_person(self):
-        self.business_logic.add_person(input("Enter the name of the person: "))
+        name = input("Enter the name of the person: ")
+        self.business_logic.add_person(str(name.strip()))
 
     def run(self):
         print()

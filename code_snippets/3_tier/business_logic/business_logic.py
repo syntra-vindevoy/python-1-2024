@@ -10,5 +10,5 @@ class BusinessLogic:
     def get_all_persons(self):
         return self.person_repo.get_all_persons()
     
-    def add_person(self, name):
+    def add_person(self, name:str):
         self.person_repo.add_person(name.title())
