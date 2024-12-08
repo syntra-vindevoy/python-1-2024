@@ -18,3 +18,6 @@ class DataAccess:
     def get_data(self):
         with open(self.file_path, "r") as file:
             return [line.strip() for line in file.readlines()]
+        
+
+
