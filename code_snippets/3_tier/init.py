@@ -2,9 +2,9 @@
 
 # initializer
 
-from presentation import Presentation
-from business_logic import BusinessLogic
-from data_access import DataAccess
+from presentation.presentation import Presentation
+from business_logic.business_logic import BusinessLogic
+from data_access.data_access import DataAccess
 
 def initialize():
     data_access = DataAccess()

@@ -1,5 +1,5 @@
 
-from data_access import DataAccess# logic
+from data_access.data_access import DataAccess# logic
 
 class BusinessLogic:
     def __init__(self, data_access):
