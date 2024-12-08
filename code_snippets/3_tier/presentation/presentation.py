@@ -14,23 +14,34 @@ class Presentation:
         self.business_logic.add_person(input("Enter the name of the person: "))
 
     def run(self):
+        print()
         while self.running:
 
-            print("1. Print all persons")
-            print("2. Add a person")
-            print('q, Quit')
-
-            choice = input("Enter your choice: ")
-
-            actions = {
-                '1': self.print_all_persons,
-                '2': self.add_person,
-                'q': lambda: setattr(self, 'running', False)
+            menu_options = {
+                '1': {
+                    'description': "Print all persons", 
+                    'action': self.print_all_persons
+                    },
+                '2': {
+                    'description': "Add a person", 
+                    'action': self.add_person
+                    },
+                'q': {
+                    'description': "Quit", 
+                    'action': lambda: setattr(self, 'running', False)
+                    }
             }
 
-            action = actions.get(choice, lambda: print("Invalid choice"))
-            action()
+            for key, value in menu_options.items():
+                print(f"{key}. {value['description']}")
+            print()
+            choice = input("Enter your choice: ")
+            print()
 
-        print("Exiting...")
-        sleep(2)
+            action = menu_options.get(choice, {}).get('action', lambda: print("Invalid choice"))
+            action()
+            print()
+
+        print(f"Exiting...\n")
+        sleep(1)
             
