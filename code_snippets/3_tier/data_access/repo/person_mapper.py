@@ -4,7 +4,7 @@ import os
 from typing import List
 from business_logic.model.person import Person
 
-class PersonRepo:
+class PersonMapper:
     def __init__(self):
         self.file_path = os.path.join(os.path.dirname(__file__), "persons.csv")
         self.persons = self._load_persons()

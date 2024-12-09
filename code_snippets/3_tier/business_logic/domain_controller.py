@@ -1,10 +1,9 @@
 
-from data_access.repo.person_repo import PersonRepo
+from data_access.repo.person_mapper import PersonMapper
 
 class DomainController:
-    def __init__(self, data_access):
-        self.data_access = data_access
-        self.person_repo = PersonRepo()
+    def __init__(self, person_mapper: PersonMapper):
+        self.person_repo = person_mapper
 
     def get_all_persons(self):
         return self.person_repo.get_all_persons()
