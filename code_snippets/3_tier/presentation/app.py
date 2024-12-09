@@ -1,6 +1,6 @@
 from time import sleep
 
-class Presentation:
+class App:
     def __init__(self, business_logic):
         self.business_logic = business_logic
         self.running = True

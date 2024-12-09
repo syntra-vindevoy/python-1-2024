@@ -1,8 +1,7 @@
 
-from data_access.data_access import DataAccess# logic
 from data_access.repo.person_repo import PersonRepo
 
-class BusinessLogic:
+class DomainController:
     def __init__(self, data_access):
         self.data_access = data_access
         self.person_repo = PersonRepo()

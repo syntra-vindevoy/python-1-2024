@@ -2,18 +2,19 @@
 
 # initializer
 
-from presentation.presentation import Presentation
-from business_logic.business_logic import BusinessLogic
-from data_access.data_access import DataAccess
+from business_logic.interfaces.person_repo_interface import PersonRepoInterface
+from data_access.repo.person_repo import PersonRepo
+from business_logic.domain_controller import DomainController
+from presentation.app import App
 
 def initialize():
-    data_access = DataAccess()
-    business_logic = BusinessLogic(data_access)
-    presentation = Presentation(business_logic)
-    return presentation
+    person_repo: PersonRepoInterface = PersonRepo() 
+    domain_controller = DomainController(person_repo)
+    app = App(domain_controller)
+    return app
 
 if __name__ == "__main__":
-    presentation = initialize()
-    presentation.run()
+    app = initialize()
+    app.run()
 
 
