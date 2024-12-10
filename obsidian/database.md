@@ -177,3 +177,63 @@ ERD entity relationship diagram
 
 
 Derek Banas postgresqltutorial full course 2022
+
+
+## Data types
++ Boolean
+	+ True
+	+ False
+	+ Null
++ Text types
+	+ char(x)
+		+ exact 5
+		+ x = max number of chars
+	+ varchar(x)
+		+ max 5 characters
+	+ Text
++ Numeric types
+	+ numberic
+		+ <mark>integer</mark>
+	+ serials
+		+ smallserial
+		+ <mark>serial</mark>
+		+ bigserial
+	+ floats (meestal decimal en float)
+		+ <mark> decimal </mark\>
+			+ vast aantal decimalen
+		+ numeric
+		+ real
+		+ double precision
+		+ float
+			+ ongekend aantal decimalen
++ Date types
+	+ Date
+	+ Timestamp
+	+ Timestamp with timezone
+	+ time
+	+ time with timezone
+
+varchar -> character varying
+	char -> character
+
+id : serial
+foreign id: integer
+
+create table 
+alter table
+
+public refresh
+
+w3schools.com online cursus
+
+
+
+## Executing scripts from prompt
+
+```bash
+psql -h localhost -U postgres -d test
+```
+
+```sql
+\i path/to/other_script.sql
+```
