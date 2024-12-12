@@ -18,4 +18,3 @@ if __name__ == "__main__":
     higher = 10000
 
     print(max([btree_search(i + 1, 1, higher) for i in range(10000)]))
-
