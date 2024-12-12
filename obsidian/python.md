@@ -1180,3 +1180,49 @@ geen karakter is kleiner
 "1" < "10"
 "2" > "10"
 
+[stringmethods_w3_schools](https://www.w3schools.com/python/python_ref_string.asp)
+
+```python
+"txt".encode
+"txt".endswith # extansies
+"txt".expandtabs # aantal spaties bij tab
+"txt".isidentifier # geldig als naam van klasse?
+"txt".isprintable # asci char 7 kan niet afgedrukt worden
+
+
+
+```
+
+
+oefening
+
+words.txt
++ zoek alle woorden zonder e
++ (met dictionaries): 
+	+ wat is letter in meest aantal woorden
+	+ lettercombinatie voor meest aantal woorden
+	+ zoek een combinatie van 5 letters, en zoek combinatie van 5 verschillende letters die in minst aantal woorden voorkomt. (als een van die letters voorkomt wordt woord geschrapt) ( zie collectionsklasse->combinations)
+		+ challenge minder dan minuut
+		+ challenge minder dan 10 seconden
+		+ een combinatie van 5 characters als resultaat, er mogen geen klinkers inzitten
+
+--> tellen hoeveel woorden er zijn waarin letters niet gevonden worden.
+--> beginnen met max en verminderen
+
+zie five chars.py bij commit yves
+hint, er zit geen klinker bij
+
+9.2.excercise 3
+
+
+oefening caesar zie commit yves
+
+-1 = true
+0 = false
++1 = true
+
+exit code 
+0 ok
+1 error gedefineerd
+2 error gedefineerd
+process finished with exit code 0
