@@ -25,8 +25,6 @@ class PersonMapper:
         return self.persons
 
 
-
-
     def add_person(self, name: str):
 
         def _add_person_to_list(person: Person):

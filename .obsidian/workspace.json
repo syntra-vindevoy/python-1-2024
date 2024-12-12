@@ -34,8 +34,19 @@
               "icon": "lucide-file",
               "title": "python"
             }
+          },
+          {
+            "id": "5fe9b10bc375ee4c",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "New tab"
+            }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -177,8 +188,10 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "6534bf29f0f6b600",
+  "active": "5fe9b10bc375ee4c",
   "lastOpenFiles": [
+    "obsidian/python.md",
+    "obsidian/database.md",
     "code_snippets/classes & OO/abstract_class.py",
     "code_snippets/3_tier/calhost",
     "databases/Les_03_Queries/init_bieren.sql",
@@ -189,9 +202,6 @@
     "databases/Les_03_Queries/create_soorten.sql",
     "databases/Les_03_Queries",
     "databases/Les_03_Queries.zip",
-    "databases/Databanken & SQL - Les 01 - Introductie.pptx",
-    "obsidian/python.md",
-    "obsidian/database.md",
     "obsidian/syntra.md",
     "obsidian/branch_overview.png",
     "examen/opgave.md",
