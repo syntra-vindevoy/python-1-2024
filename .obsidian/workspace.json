@@ -39,10 +39,14 @@
             "id": "5fe9b10bc375ee4c",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "obsidian/python.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "python"
             }
           }
         ],
@@ -102,8 +106,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 221.5,
-    "collapsed": true
+    "width": 221.5
   },
   "right": {
     "id": "cd4a01c0c665e781",
@@ -190,6 +193,7 @@
   },
   "active": "5fe9b10bc375ee4c",
   "lastOpenFiles": [
+    "code_snippets/control_with_bash.py",
     "obsidian/python.md",
     "obsidian/database.md",
     "code_snippets/classes & OO/abstract_class.py",
