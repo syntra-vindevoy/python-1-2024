@@ -21,6 +21,7 @@ def time_execution(func):
 def get_char_combinations():
     return {''.join(comb):0 for comb in combinations(ALPHABET, 5)}
 
+
 def get_wordlist_from_file(file: str):
     script_dir = os.path.dirname(__file__)
     file_name = "words.txt"
