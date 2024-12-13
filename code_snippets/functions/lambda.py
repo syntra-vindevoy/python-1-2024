@@ -1,16 +1,17 @@
 
 '''
-UNFISIHED CODE
+UNFINISHED CODE
 '''
 
-def test_lambda(value:int):
-    return lambda x: x + value
 
+def add(x,y):
+    return(x+y)
+print(add(1,2))
 
-def main():
-    add_10 = test_lambda(10)
-    print(add_10(5))  # 15
+def add(x,y):return(x+y)
+print(add(1,2))
 
+add_lambda = lambda x, y: x + y
+print(add_lambda(1,2))
 
-if __name__ == "__main__":
-    main()
+print((lambda x,y:x+y)(1,2))
