@@ -50,5 +50,5 @@ def scan_ip_range(ip_prefix, host_start, host_end):
 
 if __name__ == '__main__':
     start_time = time.time()
-    scan_ip_range("192.168.0", 150, 254)
+    scan_ip_range("192.168.0", 174, 254)
     print('Time taken:', time.time() - start_time)
