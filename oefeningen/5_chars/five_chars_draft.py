@@ -46,18 +46,9 @@ def get_filestring(file: str):
         filestring = f.read()
     return filestring
 
-def has_all_chars_in_word(char_combination: str, word: str):
-    return all(char in word for char in char_combination)
-
-
-def has_any_char_in_word(char_combination: str, word: str):
-    return any(char in word for char in char_combination)
 
 def has_forbidden_char(forbidden_chars: str, word: str):
     return any(char in word for char in forbidden_chars)
-
-def has_no_forbidden_char(forbidden_chars: str, word: str):
-    return all(char not in word for char in forbidden_chars)
 
 def get_char_combinations(characters:str):
     return {''.join(comb):0 for comb in combinations(characters, 5)}
@@ -71,27 +62,43 @@ def get_character_count(words: list):
                 char_count[char] += 1
     return char_count
 
+def remove_items_containing_char_from_list(char: str, list: list):
+    return [word for word in list if char not in word]
+
+def add_one_to_dict_values_for_keys_containing_char(char: str, dict: dict):
+    for key in dict.keys():
+        if char in key:
+            dict[key] += 1
+    return dict
+
 @time_execution
 def main():
     words = get_wordlist_from_file("words.txt")
     character_count = get_character_count(words)
     character_count_sorted = sorted(character_count.items(), key=lambda x: x[1], reverse=True)
     sorted_alphabet= [char for char, count in character_count_sorted]
-    char_combinations= get_char_combinations(sorted_alphabet) 
+    char_combinations_dict= get_char_combinations(sorted_alphabet)
+    char_combinations_list = list(char_combinations_dict.keys())
 
-    #words = ["hello","kiekeboe"]
-    for word in words:
-        for combination in char_combinations:
-            if has_forbidden_char(combination, word):
-                char_combinations[combination] += 1
+    while char_combinations_list != []:
+        char_combination = char_combinations_list.pop(0)
+        for char in char_combination:
+            for word in words:
+                if char in word:
+                    remove_items_containing_char_from_list(char, char_combinations_list)
+                    add_one_to_dict_values_for_keys_containing_char(char, char_combinations_dict)
+                    break
+
     
-    pprint(char_combinations)
+
+
+
+
 
 if __name__ == "__main__":
     main()
 
-         
-        
+
 
 
 
