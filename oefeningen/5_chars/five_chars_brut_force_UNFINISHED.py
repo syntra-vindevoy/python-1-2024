@@ -18,6 +18,8 @@ def time_execution(func):
 
 
 
+
+
 def get_char_combinations():
     return {''.join(comb):0 for comb in combinations(ALPHABET, 5)}
 
