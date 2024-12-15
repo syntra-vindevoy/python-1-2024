@@ -73,8 +73,7 @@ def add_one_to_dict_values_for_keys_containing_char(char: str, dict: dict):
             dict[key] += 1
     return dict
 
-@time_execution
-def get_combinations(character_stringlist):
+def get_combination_list(character_stringlist):
     character_combinations = []
     for i in range(0,26):
         char_1 = alphabet[i]
@@ -89,14 +88,14 @@ def get_combinations(character_stringlist):
                         character_combinations.append(''.join([char_1,char_2,char_3,char_4,char_5]))
     return character_combinations
 
-def get_dict_from_list(combinations_list):
+def get_dict_from_list(combination_list):
     combinations_dict = {}
-    for combination in combinations_list:
+    for combination in combination_list:
         combination_str = ''.join(combination)
-        combinations_dict[combination_str] = 0
+        combinations_dict[combination_str] = set()
     return combinations_dict
 
-def get_matching_items(char,combination_list):
+def get_matching_items(char, combination_list):
     return [combination for combination in combination_list if char in combination]
 
 @time_execution
@@ -105,46 +104,28 @@ def main():
 
     character_count = get_character_count(word_list)
     character_count_sorted = sorted(character_count.items(), key=lambda x: x[1], reverse=True)
-    sorted_alphabet= [char for char, count in character_count_sorted]
-    combination_list = get_combinations(sorted_alphabet)
+    sorted_alphabet = [char for char, count in character_count_sorted]
+    
+    char_list = sorted_alphabet
+    combination_list = get_combination_list(sorted_alphabet)
     combination_dict = get_dict_from_list(combination_list)
 
+    for char in ['a']:
+        #for char in char_list:
+        matching_words = get_matching_items(char, word_list)
+        matching_combinations = get_matching_items(char, combination_list)
 
-    '''
-    # test variables
-    '''
-    char_list = ['a','e','d']
-    combination_list = ["ae","ad","de"]
-    combination_dict = {'ae':0,'ad':0,'de':0}
-    word_list = ['apple','zzyx']
-
-    for char in char_list: # a tot z
-        #pprint(matching_combinations)
-        matching_words = get_matching_items(char,word_list)
-        matching_combinations = get_matching_items(char,combination_list)
-        pprint(matching_words)
-        print()
-
-               
-        
-
-
-                        
-                        
-                         
-            
-
-
-
-
-    
-
-
-
-
+        for matching_combination in matching_combinations:
+            #print(matching_combination)
+            combination_dict[matching_combination].update(matching_words)
+   
+    pprint(combination_dict)
 
 if __name__ == "__main__":
     main()
+
+               
+
 
 
 
