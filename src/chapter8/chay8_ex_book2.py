@@ -3,6 +3,7 @@ ex 2
 There is a string method called count that is similar to the function in Section 8.7.
  Read the documentation of this method and write an invocation that counts the number of a’s in 'banana'.
 """
+import string
 
 word ="battaan path"
 occurents_letters={}
@@ -12,6 +13,7 @@ for letter in word:
      occurents_letters[letter]=word.count(letter)
 
 print(occurents_letters)
+print(word.count("a"))
 
 """
 ex 3
@@ -46,18 +48,22 @@ def any_lowercase2(s):
             return 'True'
         else:
             return 'False'
-#bad
+
+
+#Ok
 def any_lowercase3(s):
     for c in s:
         flag = c.islower()
     return flag
+assert any_lowercase3("FFFaFd") == True
 
-#bad
+#bad always true
 def any_lowercase4(s):
     flag = False
     for c in s:
         flag = flag or c.islower()
     return flag
+
 #bad
 def any_lowercase5(s):
     for c in s:
@@ -92,7 +98,7 @@ Potentially offensive jokes on the Internet are sometimes encoded in ROT13, whic
 
 
 
-def rotate_word(word, rotate_word_times: object):
+def rotate_word(word:str, rotate_word_times: int):
     """
     Args:
         word: The string to be rotated.
@@ -103,14 +109,64 @@ def rotate_word(word, rotate_word_times: object):
     """
     new_word = ""
     for l in word:
-        t=ord(l)+rotate_word_times
-        if t>122:
-            t-=26
-        new_letter = chr(t )
-        new_word += new_letter
+        if l.isalpha():  # Process only alphabetic characters
+            if l.islower():  # Lowercase letters
+                t = ord(l) + rotate_word_times
+                if t > ord('z'):  # Wrap around 'z'
+                    t -= 26
+                new_word += chr(t)
+            elif l.isupper():  # Uppercase letters
+                t = ord(l) + rotate_word_times
+                if t > ord('Z'):  # Wrap around 'Z'
+                    t -= 26
+                new_word += chr(t)
+        else:
+            # Leave non-alphabet characters as is
+            new_word += l
     return new_word
 
 rotate_word_times= 13
 word = "cheer"
 print(rotate_word(word, rotate_word_times))
 assert rotate_word(word, rotate_word_times) == "purre"
+
+
+word = "Varkenskop"
+assert rotate_word(word, rotate_word_times)  =="Inexrafxbc"
+
+def cesaer(word:str, incr:int):
+    c=""
+    for l in word:
+        if l.isupper():
+            c+= string.ascii_lowercase.index(l)+incr%26
+        else:
+            c+= string.ascii_uppercase.index(l)+incr%26
+    return c
+
+
+import string
+
+def ceasar(word, incr: int):
+
+    c = ""
+
+    for letter in word:
+        if letter.isupper():
+            i = string.ascii_lowercase.index(letter) + incr % 26
+            c += string.ascii_uppercase[i]
+
+        else:
+            c += string.ascii_lowercase[string.ascii_lowercase.index(letter) + incr]
+
+
+def ceasar2(word, incr: int):
+    c = ""
+    caps = string.ascii_uppercase + string.ascii_uppercase
+
+    for letter in word:
+        if letter.isupper():
+            i = caps.index(letter) + incr
+            c+= string.ascii_uppercase[i]
+
+        else:
+            c += string.ascii_lowercase[(string.ascii_lowercase.index(letter) + incr) % 26]
