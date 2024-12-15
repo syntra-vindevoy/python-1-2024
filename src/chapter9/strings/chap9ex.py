@@ -150,23 +150,22 @@ def avoids(word, forbidden_letters):
     return True
 
 
-def is_abecedarian(list_words:[str])->bool:
+def is_abecedarian(word)->bool:
     """
     Exercise 6
     Write a function called is_abecedarian that returns True if the letters in a word appear in alphabetical
      order (double letters are ok). How many abecedarian words are there?
     :return:
     """
-    first_word=list_words[0]
-    for i in range(len(first_word)-1):
-        if first_word[i+1]<first_word[i]:
+
+    for i in range(len(word)-1):
+        if word[i+1]<word[i]:
             return False
     return True
-
-#assert is_abecedarian(["hello", "world"]) == True
-#assert is_abecedarian(["hello", "world", "world"]) == False
-#assert is_abecedarian(["hello", "world", "world", "world"]) == False
-
+assert is_abecedarian("hhnnx") == True
+assert is_abecedarian("abcdef") == True
+assert is_abecedarian("hello") == False
+assert is_abecedarian("cherry") == False
 
 def uses_all(word, required_letters):
     """Check if a word contains all the required letters."""
