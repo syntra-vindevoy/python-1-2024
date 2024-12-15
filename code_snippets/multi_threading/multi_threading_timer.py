@@ -17,7 +17,7 @@ def run_timer():
         count += 1
         sleep(1)
 
-        print(f"\r{count:02}", end="")
+        print(f"\r{count:02}    ", end="")
         sys.stdout.flush()
 
 def main():
