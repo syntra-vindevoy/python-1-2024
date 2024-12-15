@@ -134,13 +134,30 @@ def ex5_uses_all(word: str, letters: str):
             return False
         else:
             word = word.replace(letter, "", 1)
+    return True
 
+assert ex5_uses_all("alteridoticu", "aeiou") == True
+assert ex5_uses_all("alteridrrt", "aeiou") == False
 
+def uses_all2(word, required_letters):
+    """
+       Exercise 5
+       Write a function named uses_all that takes a word and a string of required letters, and that returns True
+       if the word uses all the required letters at least once. How many words are there that use all the vowels aeiou?
+       How about aeiouy?
+       :param required_letters:
+       :param word:
+       :param letters:
+       :return:
 
+        Check if a word contains all the required letters."""
+    for letter in required_letters:
+        if letter not in word:
+            return False
+    return True
 
-
-
-
+assert uses_all2("alteridoticu", "aeiou") == True
+assert uses_all2("alteridrrt", "aeiou") == False
 
 def avoids(word, forbidden_letters):
     """Check if a word avoids the forbidden letters."""
@@ -162,17 +179,13 @@ def is_abecedarian(word)->bool:
         if word[i+1]<word[i]:
             return False
     return True
+
 assert is_abecedarian("hhnnx") == True
 assert is_abecedarian("abcdef") == True
 assert is_abecedarian("hello") == False
 assert is_abecedarian("cherry") == False
 
-def uses_all(word, required_letters):
-    """Check if a word contains all the required letters."""
-    for letter in required_letters:
-        if letter not in word:
-            return False
-    return True
+
 
 
 def check_double_letters(word:str):
