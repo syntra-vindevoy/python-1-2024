@@ -11,10 +11,11 @@ def has_no_e(word):
 def cons_dubble (word):
     for letter in word:
         pos = word.find(letter)
-        if len(word) - pos < 4 : return False #stopt wanneer er maar 3 letters over blijven
+        if len(word) - pos < 6 : return False #stopt wanneer er maar 3 letters over blijven
         if letter == word[pos + 1]:
             if word[pos + 2] == word[pos + 3]:
-                return True
+                if word[pos + 4] == word[pos + 5]:
+                    return True
 
 a = []
 for word in words:
