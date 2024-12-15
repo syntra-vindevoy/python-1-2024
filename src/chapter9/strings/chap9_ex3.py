@@ -21,36 +21,56 @@ def load_words(filename):
 
 def ex3_avoid_letters_2(word: str, forbidden_letters: str):
     return word.index(forbidden_letters) == -1
+from itertools import combinations
+
+from itertools import combinations
+
+
+def count_excluded_words(word_list, forbidden_letters):
+    """
+    Counts how many words in the given list are excluded by the provided forbidden letters.
+
+    Args:
+        word_list (list): List of words to check.
+        forbidden_letters (set): A set of forbidden letters.
+
+    Returns:
+        int: The number of words that include any of the forbidden letters.
+    """
+    excluded_count = 0
+    for word in word_list:
+        # Check for any intersection between the word and the forbidden letters
+        if forbidden_letters.intersection(word):  # Optimized membership check
+            excluded_count += 1
+    return excluded_count
+
 
 def find_best_forbidden_letters(word_list):
     """
-    Write a program that prompts the user to enter a string of forbidden letters and then prints the number
-    of words that don’t contain any of them. Can you find a combination of 5 forbidden letters that excludes the
-    smallest number of words?
-    Determines whether a given word contains any of the specified forbidden letters.
-    If the word contains at least one forbidden letter, it returns False. Otherwise, it
-    returns True.
-    1. **Loading Words**: `load_words` reads all the words from a file into a list.
-    2. **Avoids Function**: `avoids` checks if a word avoids a given set of forbidden letters.
-    3. **Finding the Best Combination**:
-    - `itertools.combinations` generates all combinations of 5 letters from the alphabet.
-    - For each combination, the program counts the number of words excluded using the `avoids` function.
-    - The program keeps track of the combination that results in the smallest number of excluded words.
-    :param word_list:
-    :return:
+    Finds the combination of 5 forbidden letters that excludes the smallest number of words.
+
+    Args:
+        word_list (list): List of words to check.
+
+    Returns:
+        tuple: A tuple containing the best forbidden combination and the count of excluded words.
     """
     alphabet = "abcdefghijklmnopqrstuvwxyz"
     min_excluded = len(word_list)  # Start with the maximum possible value
     best_combination = None
 
+    # Iterate over all combinations of 5 letters
     for combo in combinations(alphabet, 5):
-        combo_str = ''.join(combo)
-        excluded_count = sum(1 for word in word_list if not avoids(word, combo_str))
+        forbidden_set = set(combo)  # Convert the combination to a set for faster lookups
+        excluded_count = count_excluded_words(word_list, forbidden_set)
+
         if excluded_count < min_excluded:
             min_excluded = excluded_count
-            best_combination = combo_str
+            best_combination = ''.join(combo)  # Convert back to a string for the result
 
     return best_combination, min_excluded
+
+
 
 
 def avoids(word, forbidden_letters):
