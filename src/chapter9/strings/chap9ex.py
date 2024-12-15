@@ -94,8 +94,8 @@ def count_words_with_all_vowels(word_list, vowels):
     """Count how many words in the list use all the specified vowels."""
     return sum(1 for word in word_list if uses_all(word, vowels))
 
-assert count_words_with_all_vowels("alteridoticu", "aeiou") == True
-assert count_words_with_all_vowels("alteridrrt", "aeiou") == False
+assert count_words_with_all_vowels(["alteridoticu"], "aeiou") >0
+assert count_words_with_all_vowels(["alteridrrt"], "aeiou") == 0
 
 
 def ex5_uses_all(word: str, letters: str):
@@ -209,17 +209,36 @@ def count_double_letters(word:str)->int:
 assert count_double_letters("Mississippi") == 3
 assert count_double_letters("committee") == 3
 
-"""
 
-Exercise 9   
-“Recently I had a visit with my mom and we realized that the two digits that make up my age 
-when reversed resulted in her age. For example, if she’s 73, I’m 37. We wondered how often
-this has happened over the years but we got sidetracked with other topics and we never came up with an answer.
-“When I got home I figured out that the digits of our ages have been reversible six times so far.
- I also figured out that if we’re lucky it would happen again in a few years, and if we’re really lucky it would
-  happen one more time after that. In other words, it would have happened 8 times over
+def count_reversible_ages():
+    """
+    Exercise 9
+    Recently I had a visit with my mom and we realized that the two digits that make up my age
+    when reversed resulted in her age. For example, if she’s 73, I’m 37. We wondered how often
+    this has happened over the years but we got sidetracked with other topics and we never came up with an answer.
+    When I got home I figured out that the digits of our ages have been reversible six times so far.
+     I also figured out that if we’re lucky it would happen again in a few years, and if we’re really lucky it would
+      happen one more time after that. In other words, it would have happened 8 times over
 
-"""
+    """
+    # List comprehension to find all valid (child_age, parent_age) pairs
+    reversible_ages = [
+        (child_age, int(str(child_age)[::-1]))  # Tuple of (child's age, parent's age)
+        for child_age in range(11,121)  # Loop over child's age (0 to 120)
+        if 0 <= int(str(child_age)[::-1]) <= 120  # Ensure the reversed age is valid
+    ]
+
+    # Print all reversible age pairs
+    for child_age, parent_age in reversible_ages:
+        print(f"Child's age: {child_age}, Parent's age: {parent_age}")
+
+    # Return the count of such pairs
+    print(f"Total reversible age occurrences: {len(reversible_ages)}")
+    return len(reversible_ages)
+
+
+
+
 def is_palindrome(s: str) -> bool:
     """
     Check if a string is a palindrome.
@@ -292,3 +311,4 @@ if __name__ == "__main__":
     ex1_word_more_then_20()
     word_with_doubles()
     find_odometer_reading()
+    count_reversible_ages()
