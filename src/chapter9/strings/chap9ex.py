@@ -160,11 +160,29 @@ assert uses_all2("alteridoticu", "aeiou") == True
 assert uses_all2("alteridrrt", "aeiou") == False
 
 def avoids(word, forbidden_letters):
-    """Check if a word avoids the forbidden letters."""
+    """
+    Determines whether a given word contains any of the specified forbidden letters.
+    If the word contains at least one forbidden letter, it returns False. Otherwise, it
+    returns True.
+
+    :param word: The word to be checked for forbidden letters.
+    :type word: str
+    :param forbidden_letters: A string containing letters that should not be present
+        in the word.
+    :type forbidden_letters: str
+    :return: Returns True if the word does not contain any forbidden letters, otherwise
+        returns False.
+    :rtype: bool
+    """
     for letter in forbidden_letters:
         if letter in word:
             return False
     return True
+
+assert avoids("alteridoticu", "aeiou") == False
+assert avoids("alteridrrt", "aeiou") == False
+assert avoids("skwlp", "aeiouy") == True
+
 
 
 def is_abecedarian(word)->bool:
