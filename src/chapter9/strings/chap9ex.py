@@ -1,6 +1,3 @@
-
-from itertools import combinations
-
 def load_words(filename):
     """
     Loads words from a specified file, stripping whitespace from each line.
@@ -23,10 +20,10 @@ def load_words(filename):
 def ex1_word_more_then_20():
     """
     Exercise 1   Write a program that reads words.txt and prints only the words with more than 20 characters
-(not counting whitespace).
-Exercise 2
-In 1939 Ernest Vincent Wright published a 50,000 word novel called Gadsby that does not contain the letter “e”.
- Since “e” is the most common letter in English, that’s not easy to do.
+    (not counting whitespace).
+    Exercise 2
+    In 1939 Ernest Vincent Wright published a 50,000 word novel called Gadsby that does not contain the letter “e”.
+    Since “e” is the most common letter in English, that’s not easy to do.
     :return:
     """
     with open("../words.txt") as file:
@@ -55,62 +52,6 @@ def ex2_word_no_e():
             if "e" not in word:
                 print(word)
 
-def ex3_avoid_letters(word: str, forbidden_letters: str):
-    """
-
-    Exercise 3
-    Write a function named avoids that takes a word and a string of forbidden letters, and that returns T
-    rue if the word doesn’t use any of the forbidden letters.
-
-    Write a program that prompts the user to enter a string of forbidden letters and then prints the number
-    of words that don’t contain any of them. Can you find a combination of 5 forbidden letters that excludes the
-    smallest number of words?
-
-    :param word:
-    :param forbidden_letters:
-    :return:
-    """
-    for letter in forbidden_letters:
-        if letter in word:
-            return False
-    return True
-
-def ex3_avoid_letters_2(word: str, forbidden_letters: str):
-    return word.index(forbidden_letters) == -1
-
-def find_best_forbidden_letters(word_list):
-    """
-    1. **Loading Words**: `load_words` reads all the words from a file into a list.
-    2. **Avoids Function**: `avoids` checks if a word avoids a given set of forbidden letters.
-    3. **Finding the Best Combination**:
-    - `itertools.combinations` generates all combinations of 5 letters from the alphabet.
-    - For each combination, the program counts the number of words excluded using the `avoids` function.
-    - The program keeps track of the combination that results in the smallest number of excluded words.
-    :param word_list:
-    :return:
-    """
-    alphabet = "abcdefghijklmnopqrstuvwxyz"
-    min_excluded = len(word_list)  # Start with the maximum possible value
-    best_combination = None
-
-    for combo in combinations(alphabet, 5):
-        combo_str = ''.join(combo)
-        excluded_count = sum(1 for word in word_list if not avoids(word, combo_str))
-        if excluded_count < min_excluded:
-            min_excluded = excluded_count
-            best_combination = combo_str
-
-    return best_combination, min_excluded
-
-
-
-def uses_all(word, required_letters):
-    """Check if a word contains all the required letters."""
-    for letter in required_letters:
-        if letter not in word:
-            return False
-    return True
-
 def ex4_uses_only(word: str, letters: str):
     """
     Exercise 4
@@ -127,14 +68,38 @@ def ex4_uses_only(word: str, letters: str):
             return False
 
 def count_words_with_all_vowels(word_list, vowels):
+    """
+    Exercise 5
+    Count the number of words in the provided list that contain all the
+    specified vowels. A word must include all the characters in the
+    ``vowels`` string to be considered valid, regardless of order.
+
+    :param word_list: A list of words to be analyzed.
+    :type word_list: list[str]
+    :param vowels: A string representing the vowels that each word in
+        ``word_list`` should contain. This parameter defines the
+        specific subset of letters to be checked in each word.
+    :type vowels: str
+    :return: Total count of words in ``word_list`` that contain every
+        character in ``vowels`` at least once.
+    :rtype: int
+    """
+    def uses_all(word, required_letters):
+        """Check if a word contains all the required letters."""
+        for letter in required_letters:
+            if letter not in word:
+                return False
+        return True
+
     """Count how many words in the list use all the specified vowels."""
     return sum(1 for word in word_list if uses_all(word, vowels))
 
+assert count_words_with_all_vowels("alteridoticu", "aeiou") == True
+assert count_words_with_all_vowels("alteridrrt", "aeiou") == False
 
 
 def ex5_uses_all(word: str, letters: str):
     """
-    Exercise 5
     Write a function named uses_all that takes a word and a string of required letters, and that returns True
     if the word uses all the required letters at least once. How many words are there that use all the vowels aeiou?
     How about aeiouy?
@@ -171,30 +136,6 @@ def uses_all2(word, required_letters):
 
 assert uses_all2("alteridoticu", "aeiou") == True
 assert uses_all2("alteridrrt", "aeiou") == False
-
-def avoids(word, forbidden_letters):
-    """
-    Determines whether a given word contains any of the specified forbidden letters.
-    If the word contains at least one forbidden letter, it returns False. Otherwise, it
-    returns True.
-
-    :param word: The word to be checked for forbidden letters.
-    :type word: str
-    :param forbidden_letters: A string containing letters that should not be present
-        in the word.
-    :type forbidden_letters: str
-    :return: Returns True if the word does not contain any forbidden letters, otherwise
-        returns False.
-    :rtype: bool
-    """
-    for letter in forbidden_letters:
-        if letter in word:
-            return False
-    return True
-
-assert avoids("alteridoticu", "aeiou") == False
-assert avoids("alteridrrt", "aeiou") == False
-assert avoids("skwlp", "aeiouy") == True
 
 
 
@@ -348,15 +289,6 @@ def word_with_doubles():
     print(f"The word with most double letters is: {the_word} - {most_doubles}") \
 
 if __name__ == "__main__":
-
-
     ex1_word_more_then_20()
-
-
     word_with_doubles()
     find_odometer_reading()
-
-
-    best_comb, num_excluded = find_best_forbidden_letters(load_words("../words.txt"))
-    print(f"The best combination of forbidden letters is: {best_comb}")
-    print(f"It excludes {num_excluded} words.")
