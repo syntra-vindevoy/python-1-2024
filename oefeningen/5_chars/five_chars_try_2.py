@@ -96,6 +96,8 @@ def main():
     
     min_value = min(combination_dict.values())
     smallest_combinations = [k for k, v in combination_dict.items() if v == min_value]
+    largest_combinations = [k for k, v in combination_dict.items() if v == max(combination_dict.values())]
+    
     print("Combinations with the smallest value:")
     pprint(smallest_combinations)
 
