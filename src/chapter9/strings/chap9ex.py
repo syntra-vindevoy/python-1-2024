@@ -2,6 +2,19 @@
 from itertools import combinations
 
 def load_words(filename):
+    """
+    Loads words from a specified file, stripping whitespace from each line.
+
+    This function reads a given text file line by line, processes each line to
+    remove leading and trailing whitespace, and returns a list containing the
+    processed lines. The function assumes that the input file is correctly
+    formatted and accessible.
+
+    :param filename: The path to the input file containing the list of words.
+    :type filename: str
+    :return: A list of words from the file with whitespace stripped.
+    :rtype: list[str]
+    """
 
     with open(filename) as file:
         return [line.strip() for line in file]
@@ -207,7 +220,17 @@ assert is_abecedarian("cherry") == False
 
 
 def check_double_letters(word:str):
+    """
+    Checks whether the provided word contains two consecutive identical
+    letters. This function iterates through the word and compares each
+    letter with the next one.
 
+    :param word: The string to be checked for consecutive identical letters
+    :type word: str
+    :return: True if the word contains two consecutive identical letters,
+             False otherwise
+    :rtype: bool
+    """
     for i in range(len(word)-1):
         if word[i+1]==word[i]:
             return True
@@ -310,29 +333,30 @@ def find_odometer_reading():
         print(f"Odometer reading when you first looked: {odometer_str}")
         break
 
+def word_with_doubles():
+    the_word = ""
+    list_word = load_words("../words.txt")
+    most_doubles = 0
+    for w in list_word:
+        d = count_double_letters(w)
+        if d > 0:
+            if d > most_doubles:
+                most_doubles = d
+                the_word = w
+                print(f"The word with  double letters is: {the_word} - {most_doubles}")
 
+    print(f"The word with most double letters is: {the_word} - {most_doubles}") \
 
 if __name__ == "__main__":
 
 
-    #ex1_word_more_then_20()
-    #best_comb, num_excluded = find_best_forbidden_letters(load_words("../words.txt"))
-    #print(f"The best combination of forbidden letters is: {best_comb}")
-    #print(f"It excludes {num_excluded} words.")
+    ex1_word_more_then_20()
 
-    the_word=""
-    list_word=load_words("../words.txt")
-    most_doubles=0
-    for  w in list_word:
-        d = count_double_letters(w)
-        if d>0:
-            if d>most_doubles:
-                most_doubles=d
-                the_word=w
-                print(f"The word with  double letters is: {the_word} - {most_doubles}")
 
-    print(f"The word with most double letters is: {the_word} - {most_doubles}")\
-
+    word_with_doubles()
     find_odometer_reading()
 
 
+    best_comb, num_excluded = find_best_forbidden_letters(load_words("../words.txt"))
+    print(f"The best combination of forbidden letters is: {best_comb}")
+    print(f"It excludes {num_excluded} words.")
