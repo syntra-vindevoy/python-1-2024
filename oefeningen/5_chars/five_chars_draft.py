@@ -39,22 +39,6 @@ def get_wordlist_from_file(file: str):
     return words
 
 
-def get_filestring(file: str):
-    script_dir = os.path.dirname(__file__)
-    file_path = os.path.join(script_dir, file)
-    with open(file_path, "r") as f:
-        filestring = f.read()
-    return filestring
-
-
-def has_forbidden_char(forbidden_chars: str, word: str):
-    return any(char in word for char in forbidden_chars)
-
-def get_char_combinations(characters:str):
-    char_combinations= {}
-    for comb in combinations(characters, i):
-        char_combinations[comb] = 0
-
 
 def get_character_count(words: list):
     char_count = {char: 0 for char in alphabet}
@@ -64,14 +48,6 @@ def get_character_count(words: list):
                 char_count[char] += 1
     return char_count
 
-def remove_items_containing_char_from_list(char: str, list: list):
-    return [word for word in list if char not in word]
-
-def add_one_to_dict_values_for_keys_containing_char(char: str, dict: dict):
-    for key in dict.keys():
-        if char in key:
-            dict[key] += 1
-    return dict
 
 def get_combination_list(character_stringlist):
     character_combinations = []
@@ -92,7 +68,7 @@ def get_dict_from_list(combination_list):
     combinations_dict = {}
     for combination in combination_list:
         combination_str = ''.join(combination)
-        combinations_dict[combination_str] = set()
+        combinations_dict[combination_str] = 0
     return combinations_dict
 
 def get_matching_items(char, combination_list):
@@ -110,16 +86,18 @@ def main():
     combination_list = get_combination_list(sorted_alphabet)
     combination_dict = get_dict_from_list(combination_list)
 
-    for char in ['a']:
+    for char in char_list:
         #for char in char_list:
         matching_words = get_matching_items(char, word_list)
         matching_combinations = get_matching_items(char, combination_list)
 
         for matching_combination in matching_combinations:
             #print(matching_combination)
-            combination_dict[matching_combination].update(matching_words)
+            combination_dict[matching_combination] += len(matching_words)
    
-    pprint(combination_dict)
+    min_combination = min(combination_dict, key=combination_dict.get)
+    print(f"least amount of eliminations: {min_combination}")
+
 
 if __name__ == "__main__":
     main()
