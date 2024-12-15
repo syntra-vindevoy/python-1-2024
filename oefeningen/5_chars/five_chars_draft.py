@@ -15,7 +15,7 @@ that excludes the smallest number of words?
 
 from itertools import combinations
 import os
-from string import ascii_lowercase as ALPHABET
+from string import ascii_lowercase as alphabet
 from pprint import pprint
 import time
 
@@ -51,12 +51,14 @@ def has_forbidden_char(forbidden_chars: str, word: str):
     return any(char in word for char in forbidden_chars)
 
 def get_char_combinations(characters:str):
-    return {''.join(comb):0 for comb in combinations(characters, 5)}
+    char_combinations= {}
+    for comb in combinations(characters, i):
+        char_combinations[comb] = 0
 
 
 def get_character_count(words: list):
-    char_count = {char: 0 for char in ALPHABET}
-    for char in ALPHABET:
+    char_count = {char: 0 for char in alphabet}
+    for char in alphabet:
         for word in words:
             if char in word:
                 char_count[char] += 1
@@ -72,22 +74,68 @@ def add_one_to_dict_values_for_keys_containing_char(char: str, dict: dict):
     return dict
 
 @time_execution
+def get_combinations(character_stringlist):
+    character_combinations = []
+    for i in range(0,26):
+        char_1 = alphabet[i]
+        for j in range (i+1,26):
+            char_2 = alphabet[j]
+            for k in range (j+1,26):
+                char_3 = alphabet[k]
+                for l in range (k+1,26):
+                    char_4 = alphabet[l]
+                    for m in range (l+1,26):
+                        char_5 = alphabet[m]
+                        character_combinations.append(''.join([char_1,char_2,char_3,char_4,char_5]))
+    return character_combinations
+
+def get_dict_from_list(combinations_list):
+    combinations_dict = {}
+    for combination in combinations_list:
+        combination_str = ''.join(combination)
+        combinations_dict[combination_str] = 0
+    return combinations_dict
+
+def get_matching_items(char,combination_list):
+    return [combination for combination in combination_list if char in combination]
+
+@time_execution
 def main():
-    words = get_wordlist_from_file("words.txt")
-    character_count = get_character_count(words)
+    word_list = get_wordlist_from_file("words.txt")
+
+    character_count = get_character_count(word_list)
     character_count_sorted = sorted(character_count.items(), key=lambda x: x[1], reverse=True)
     sorted_alphabet= [char for char, count in character_count_sorted]
-    char_combinations_dict= get_char_combinations(sorted_alphabet)
-    char_combinations_list = list(char_combinations_dict.keys())
+    combination_list = get_combinations(sorted_alphabet)
+    combination_dict = get_dict_from_list(combination_list)
 
-    while char_combinations_list != []:
-        char_combination = char_combinations_list.pop(0)
-        for char in char_combination:
-            for word in words:
-                if char in word:
-                    remove_items_containing_char_from_list(char, char_combinations_list)
-                    add_one_to_dict_values_for_keys_containing_char(char, char_combinations_dict)
-                    break
+
+    '''
+    # test variables
+    '''
+    char_list = ['a','e','d']
+    combination_list = ["ae","ad","de"]
+    combination_dict = {'ae':0,'ad':0,'de':0}
+    word_list = ['apple','zzyx']
+
+    for char in char_list: # a tot z
+        #pprint(matching_combinations)
+        matching_words = get_matching_items(char,word_list)
+        matching_combinations = get_matching_items(char,combination_list)
+        pprint(matching_words)
+        print()
+
+               
+        
+
+
+                        
+                        
+                         
+            
+
+
+
 
     
 
