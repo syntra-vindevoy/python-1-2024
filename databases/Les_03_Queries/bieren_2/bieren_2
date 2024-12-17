@@ -42,6 +42,16 @@ create unique index idx_bieren_naam
 on bieren(naam);
 
 
+drop index idx_bieren_naam;
+create unique index idx_bieren_naam_brouwernr
+on bieren(naam,brouwerNr);
+
+
+
+
+
+
+
 create unique index idx_Brouwers_BrouwerNaam
 on Brouwers(BrouwerNaam);
 
@@ -55,9 +65,11 @@ select * from soorten;
 -- id-column mag standaard niet overschreven worden
 insert into soorten (SoortNr, Soort) overriding system value values (2,'Quadrupel');
 
-alter table bieren(
-	add foreign key(BrouwerNr) references Brouwers(BrouwerNr)
-)
+alter table bieren
+	add foreign key(BrouwerNr) references Brouwers(BrouwerNr),
+	add foreign key(SoortNr) references Soorten(SoortNr)
+;
+	
 
 
 
