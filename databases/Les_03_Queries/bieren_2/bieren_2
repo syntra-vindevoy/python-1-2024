@@ -1,0 +1,64 @@
+
+drop table if exists bieren;
+create table public.bieren (
+	BierNr		int 			generated always as identity primary key,
+	Naam		varchar(100) 	not null,
+	BrouwerNr	int 			default null,
+	SoortNr		int 			default null,
+	Alcohol		decimal(7,2) 	default null
+);
+
+
+drop table if exists brouwers;
+create table brouwers (
+	BrouwerNr	int				generated always as identity primary key,
+	BrouwerNaam	varchar(50)		not null,
+	Adres		varchar(50)		default null,
+	postcode	smallint		default null,
+	gemeente	varchar(50)		default null,
+	omzet		int				default null
+);
+
+
+drop table if exists soorten;
+create table soorten (
+	SoortNr 	int				generated always as identity,
+	Soort		varchar(50)	not null,
+	primary key (SoortNr)
+);
+
+create index idx_soorten_soort
+on soorten(soort);
+
+
+drop index idx_soorten_soort;
+
+
+create unique index idx_soorten_soort_unique
+on soorten(soort);
+
+
+create unique index idx_bieren_naam
+on bieren(naam);
+
+
+create unique index idx_Brouwers_BrouwerNaam
+on Brouwers(BrouwerNaam);
+
+
+insert into soorten(Soort) values('Tripel');
+insert into soorten(Soort) values('Tripel');
+
+select * from soorten;
+
+-- insert into soorten (SoortNr, Soort) values (2, 'Quadrupel');
+-- id-column mag standaard niet overschreven worden
+insert into soorten (SoortNr, Soort) overriding system value values (2,'Quadrupel');
+
+alter table bieren(
+	add foreign key(BrouwerNr) references Brouwers(BrouwerNr)
+)
+
+
+
+

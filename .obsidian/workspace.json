@@ -35,8 +35,7 @@
               "title": "python"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -178,19 +177,19 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "5fe9b10bc375ee4c",
+  "active": "6534bf29f0f6b600",
   "lastOpenFiles": [
-    "oefeningen/5_chars/five_chars_draft_test.py",
-    "oefeningen/5_chars/__pycache__/five_chars_draft.cpython-312.pyc",
-    "oefeningen/5_chars/__pycache__",
-    "oefeningen/5_chars/five_chars_brut_force_UNFINISHED.py",
-    "oefeningen/5_chars/five_chars_draft.py",
-    "oefeningen/5_chars/five_chars_yves_.py",
-    "oefeningen/5_chars/test.py",
-    "oefeningen/5_chars/words.txt",
-    "oefeningen/5_chars/5_chars_yves_.py",
-    "oefeningen/5_chars/5_chars_draft.py",
-    "oefeningen/5_chars/5_chars_trying.py",
+    "databases/Les_03_Queries/bieren_2/bieren_2",
+    "databases/Les_03_Queries/bieren_2",
+    "databases/Les_03_Queries/earthquakes/earthquake.csv",
+    "databases/Les_03_Queries/bieren/insert_soorten.sql",
+    "databases/Les_03_Queries/bieren/insert_brouwers.sql",
+    "databases/Les_03_Queries/bieren/insert_bieren.sql",
+    "databases/Les_03_Queries/bieren/init_bieren.sql",
+    "databases/Les_03_Queries/bieren/earthquake.csv",
+    "databases/Les_03_Queries/bieren/create_tables.sql",
+    "databases/Les_03_Queries/bieren/create_soorten.sql",
+    "databases/Les_03_Queries/bieren",
     "obsidian/python.md",
     "obsidian/database.md",
     "obsidian/syntra.md",

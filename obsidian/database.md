@@ -237,3 +237,54 @@ psql -h localhost -U postgres -d test
 ```sql
 \i path/to/other_script.sql
 ```
+
+ipv serial, beter INT GENERATED ALWAYS AS IDENTITY
+
+
+
+on delete
++ set null
++ set default
++ restrict
++ no action
++ cascade
+	+ bij verwijderen van lid, wordt ook betaling verwijderd
+	+ verwijzing moet steeds kunnen werken
+
+on update
++ primary key wordt normaal niet gewijzigd, dus weinig gebruikt
+
+
+```sql
+select ...
+
+insert ...
+update ...
+delete ...
+
+create ...
+```
+
+
+Crud
++ create : insert
++ read : select
++ update : update 
++ delete : delete
+
+```sql
+select * from
+
+```
+
+https://github.com/socratica
+
+
+csv inladen
++ tabel rechtsklikken 
++ import export 
++ file selecteren 
++ options header aanvinken
+
+select voor cols
+where voor rows
