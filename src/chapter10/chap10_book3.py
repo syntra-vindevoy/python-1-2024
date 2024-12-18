@@ -6,6 +6,7 @@ What is the longest word you can think of where each letter appears only once?
 Write a function named has_duplicates that takes a sequence – like a list or string – as a parameter and returns
 True if there is any element that appears in the sequence more than once.
 """
+import collections
 
 """
 10.11.4. Exercise
@@ -23,8 +24,12 @@ def find_repeats(counter):
     return list_greater
 
 
-assert find_repeats({'a': 1, 'b': 2, 'f': 5, 'c': 3, 'd': 1}) == ['b', 'f', 'c']
+def find_repeats2(counter:dict):
+    return [x for x,y in counter.items() if y> 1]
 
+
+assert find_repeats({'a': 1, 'b': 2, 'f': 5, 'c': 3, 'd': 1}) == ['b', 'f', 'c']
+assert find_repeats2({'a': 1, 'b': 2, 'f': 5, 'c': 3, 'd': 1}) == ['b', 'f', 'c']
 """
 10.11.5. Exercise
 Suppose you run value_counts with two different words and save the results in two dictionaries.
@@ -49,45 +54,65 @@ def value_counts(word):
             counter[letter] = 1
     return counter
 
+from collections import defaultdict
+def value_counts2(word):
+    def _increment_counter(counter, character):
+        counter[character] += 1
+
+    character_counter = defaultdict(int)
+    for char in word:
+        _increment_counter(character_counter, char)
+    return dict(character_counter)
+
+def value_counts3(word):
+   return collections.Counter(word)
 
 assert value_counts('brontosaurus') == {'a': 1, 'b': 1, 'n': 1, 'o': 2, 'r': 2, 's': 2, 't': 1, 'u': 2}
-
+assert value_counts2('brontosaurus') == {'a': 1, 'b': 1, 'n': 1, 'o': 2, 'r': 2, 's': 2, 't': 1, 'u': 2}
+assert value_counts3('brontosaurus') == {'a': 1, 'b': 1, 'n': 1, 'o': 2, 'r': 2, 's': 2, 't': 1, 'u': 2}
+assert value_counts3('apatosaurus') == {'a': 3, 's': 2, 'u': 2, 'p': 1, 't': 1, 'o': 1, 'r': 1}
+assert value_counts2('apatosaurus') == {'a': 3, 's': 2, 'u': 2, 'p': 1, 't': 1, 'o': 1, 'r': 1}
+assert value_counts('apatosaurus') == {'a': 3, 's': 2, 'u': 2, 'p': 1, 't': 1, 'o': 1, 'r': 1}
 
 def add_counters(counter1, counter2):
     result = {}
-    for key in counter1:
-        if key in counter2:
-            result[key] = counter1[key] + counter2[key]
-        else:
-            result[key] = counter1[key]
+    all_keys = set(counter1.keys()).union(counter2.keys())
+    for key in all_keys:
+        result[key] = counter1.get(key, 0) + counter2.get(key, 0)
     return result
 
+def add_counters_faster(counter1, counter2):
+    return collections.Counter(counter1+counter2)
 
 assert (add_counters(value_counts('brontosaurus'), value_counts('apatosaurus')) ==
-        {'a': 4, 'b': 1, 'n': 1, 'o': 3, 'r': 3, 's': 4, 't': 2, 'u': 4})
+        {'a': 4, 'b': 1, 'n': 1, 'o': 3, 'p': 1, 'r': 3, 's': 4, 't': 2, 'u': 4})
 
+assert (add_counters(value_counts3('brontosaurus'), value_counts3('apatosaurus')) == {'a': 4, 'b': 1, 'n': 1, 'o': 3, 'p': 1, 'r': 3, 's': 4, 't': 2, 'u': 4})
+
+assert (dict(sorted(add_counters_faster('brontosaurus', 'apatosaurus').items())) ==
+        {'a': 4, 'b': 1, 'n': 1, 'o': 3, 'p': 1, 'r': 3, 's': 4, 't': 2, 'u': 4})
 """
 10.11.6. Exercise
-A word is “interlocking” if we can split it into two words by taking alternating letters. For example, “schooled” is an
- interlocking word because it can be split into “shoe” and “cold”.
 
-To select alternating letters from a string, you can use a slice operator with three components that indicate where
- to start, where to stop, and the “step size” between the letters.
-
-In the following slice, the first component is 0, so we start with the first letter. The second component is None, 
-which means we should go all the way to the end of the string. And the third component is 2, 
-so there are two steps between the letters we select.
-
-word = 'schooled'
-first = word[0:None:2]
-first
-'shoe'
-Instead of providing None as the second component, we can get the same effect by leaving it out altogether. 
-For example, the following slice selects alternating letters, starting with the second letter.
-
-second = word[1::2]
-second
-'cold'
 Write a function called is_interlocking that takes a word as an argument 
 and returns True if it can be split into two interlocking words.
 """
+def is_interlocking(word, word_list):
+    """
+    Determines if a word can be split into two interlocking words.
+
+    Args:
+    - word (str): The input word to check.
+    - word_list (set): A set of valid words for interlocking comparison.
+
+    Returns:
+    - bool: True if the word can be split into two interlocking words, False otherwise.
+    """
+    # Split the word into characters at even and odd indices
+    word1 = word[::2]  # Characters at even indices
+    word2 = word[1::2]  # Characters at odd indices
+
+    # Check if both generated words exist in the word_list
+    return word1 in word_list and word2 in word_list
+
+assert is_interlocking('brontosaurus', {'brontosaurus', 'apatosaurus', 'triceratops', 'botsuu', 'rnoars'}) == True
