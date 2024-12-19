@@ -1226,3 +1226,11 @@ exit code
 1 error gedefineerd
 2 error gedefineerd
 process finished with exit code 0
+
+
+## regular expressions
+
+
+
+error checking : ruff
+

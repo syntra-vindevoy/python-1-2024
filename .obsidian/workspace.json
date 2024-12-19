@@ -35,7 +35,8 @@
               "title": "python"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -177,21 +178,21 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "6534bf29f0f6b600",
+  "active": "5fe9b10bc375ee4c",
   "lastOpenFiles": [
+    "code_snippets/slice_variable.py",
+    "code_snippets/slice_variable_UNFINISHED.py",
+    "code_snippets/slice_typing.py",
+    "obsidian/database.md",
+    "code_snippets/swapping.py",
+    "code_snippets/counter.py",
+    "code_snippets/unpacking.py",
+    "code_snippets/groupby.py",
     "databases/Les_04_Queries/queries",
     "databases/Les_04_Queries/insert_soorten_new.sql",
     "databases/Les_04_Queries/insert_bieren_new.sql",
     "databases/Les_04_Queries/insert_brouwers_new.sql",
-    "databases/Les_04_Queries",
-    "databases/Les_03_Queries/bieren_2/bieren_2",
-    "databases/Les_03_Queries/bieren_2",
-    "databases/Les_03_Queries/earthquakes/earthquake.csv",
-    "databases/Les_03_Queries/bieren/insert_soorten.sql",
-    "databases/Les_03_Queries/bieren/insert_brouwers.sql",
-    "databases/Les_03_Queries/bieren/insert_bieren.sql",
     "obsidian/python.md",
-    "obsidian/database.md",
     "obsidian/syntra.md",
     "obsidian/branch_overview.png",
     "examen/opgave.md",

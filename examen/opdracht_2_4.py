@@ -19,7 +19,6 @@ def russian_peasant_while(a: int, b: int) -> int:
 
 def main():
 
-
     assert russian_peasant_recursion(1, 1) == 1
     assert russian_peasant_recursion(1, 2) == 2
     assert russian_peasant_recursion(2, 2) == 4
