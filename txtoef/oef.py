@@ -4,29 +4,38 @@
 #loopen van a tot v, van b tot w, van c tot x, van de tot y en van e tot z
 #loop over u woorden en kijk of u karkater erin voorkomt, komt het er niet in voor gaat u counter omhoog
 #doel is dit zo snel mogelijk te laten lopen (minder dan een minuut)
-from collections import Counter
-import itertools
+import string
 
 # Read words from a text file
 with open("words.txt", "r") as file:
     words = [line.strip() for line in file]
 
-# Filter words with fewer than 5 unique letters
-words = [word for word in words if len(set(word)) >= 5]
+# Function to generate combinations of letters without itertools
+def generate_combinations(letters, r):
+    if r == 0:
+        return [""]
+    if not letters:
+        return []
+    with_first = [letters[0] + combo for combo in generate_combinations(letters[1:], r - 1)]
+    without_first = generate_combinations(letters[1:], r)
+    return with_first + without_first
 
 # Initialize counters
-combo_counter = Counter()
+combo_counter = {}
 
 # Loop through each word and generate combinations dynamically
 for word in words:
-    unique_letters = set(word)  # Get unique letters in the word
-    word_combinations = itertools.combinations(unique_letters, 5)  # Generate combinations from the word's letters
-    for combo in word_combinations:
-        combo_counter[''.join(combo)] += 1
+    for combo in generate_combinations(string.ascii_lowercase, 5):  # Generate all 5-letter combinations
+        if not any(letter in word for letter in combo):  # Check if none of the letters are in the word
+            combo = ''.join(sorted(combo))  # Sort letters to ensure consistent keys
+            if combo in combo_counter:
+                combo_counter[combo] += 1
+            else:
+                combo_counter[combo] = 1
 
 # Find the combination with the most and least words
-most_common = combo_counter.most_common(1)[0]  # Most common combination
-least_common = min(combo_counter.items(), key=lambda x: x[1])  # Least common combination
+most_common = max(combo_counter.items(), key=lambda x: x[1])
+least_common = min(combo_counter.items(), key=lambda x: x[1])
 
 print("Most common combination:", most_common)
 print("Least common combination:", least_common)
