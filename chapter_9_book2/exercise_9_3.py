@@ -1,16 +1,11 @@
 import string
-from itertools import combinations
 from time import perf_counter
 
-
-def uses_none(word, forbidden):
-    for letter in forbidden:
-        if letter in word: return False
-    return True
 
 def find_combination():
     with open("words.txt", "r") as f:
         words = f.read().split("\n")
+
     alphabet = list (string.ascii_lowercase)
     combinations = []
 
@@ -26,26 +21,16 @@ def find_combination():
                 value = value_temp
                 temp_letter = letter
 
+        words = [word for word in words if temp_letter not in word]
+
         combinations.append(temp_letter)
         alphabet.remove(temp_letter)
-    n = 0
-    for word in words:
-        if uses_none(word, combinations): n += 1
 
-    return (combinations, n)
+    return combinations, len(words)
 
 
 if __name__ == "__main__":
     start = perf_counter()
     combination, n = find_combination()
     stop = perf_counter()
-    print (f"{n} results found with combination {combination} in {stop - start} seconds")
-
-
-
-
-
-
-
-
-
+    print (f" {n} results found without combination {combination} in {stop - start} seconds")
