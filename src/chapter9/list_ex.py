@@ -80,5 +80,63 @@ print(comp)
 
 
 
+import re
+
+
+def split_on_upper_and_space_re(s):
+    # Use a regex to split on uppercase letters or spaces
+    return re.findall(r'[A-Z][a-z0-9]*|[a-z0-9]+', s)
+
+def split_on_upper_and_space(s):
+    words = []
+    current_word = ""
+
+    for char in s:
+        # Check for uppercase letter (except for the first character in the word)
+        if char.isupper() and current_word:
+            words.append(current_word)
+            current_word = char
+        # Check for spaces
+        elif char.isspace() and current_word:
+            words.append(current_word)
+            current_word = ""
+        else:
+            current_word += char
+
+    # Append the final collected word (if any)
+    if current_word:
+        words.append(current_word)
+
+    return words
+
+
+def split_on_upper_and_space_c(s):
+    # Step through indexes of the string to identify start of new words
+    words = [
+        s[start:end]
+        for start, end in zip(
+            [0] + [i for i in range(1, len(s)) if s[i].isupper() or s[i].isspace()],
+            [i for i in range(1, len(s)) if s[i].isupper() or s[i].isspace()] + [len(s)]
+        )
+    ]
+    # Filter out empty words and strip spaces
+    return [word for word in words if word.strip()]
+
+# Example string
+str_exampl = "hello WorldFromWorld123OfHorror"
+
+# Split the string
+result = split_on_upper_and_space(str_exampl)
+print(result)
+
+
+
+
+
+
+
+
+
+
 
 
