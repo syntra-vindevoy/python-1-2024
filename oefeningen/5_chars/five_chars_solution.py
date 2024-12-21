@@ -33,7 +33,6 @@ def get_wordlist_from_file(file: str):
     script_dir = path.dirname(__file__)
     file_name = "words.txt"
     file_path = path.join(script_dir, file_name)
-
     with open(file_path, "r") as f:
         words = f.read().split("\n")
     return words
@@ -73,6 +72,7 @@ def get_matching_items_from_set(char, word_set):
 
 @timing
 def main():
+
     word_list = get_wordlist_from_file("words.txt")
     character_count = get_character_count(word_list)
     character_count_sorted = sorted(character_count.items(), key=lambda x: x[1], reverse=True)
@@ -101,6 +101,7 @@ def main():
     # print("Combinations with the largest value:")
     # print(largest_combinations)  
 
+  
 if __name__ == "__main__":
     main()
 
