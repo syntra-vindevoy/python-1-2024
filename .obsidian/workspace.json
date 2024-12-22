@@ -180,6 +180,8 @@
   },
   "active": "5fe9b10bc375ee4c",
   "lastOpenFiles": [
+    "oefeningen/5_chars/main6.py",
+    "oefeningen/5_chars/main5 copy.py",
     "code_snippets/slice_variable.py",
     "code_snippets/slice_variable_UNFINISHED.py",
     "code_snippets/slice_typing.py",
@@ -190,8 +192,6 @@
     "code_snippets/groupby.py",
     "databases/Les_04_Queries/queries",
     "databases/Les_04_Queries/insert_soorten_new.sql",
-    "databases/Les_04_Queries/insert_bieren_new.sql",
-    "databases/Les_04_Queries/insert_brouwers_new.sql",
     "obsidian/python.md",
     "obsidian/syntra.md",
     "obsidian/branch_overview.png",
