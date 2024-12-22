@@ -50,12 +50,4 @@ def get_wordlist_from_file(file_name: str):
 
 
 
-def add_to_combination_dict(
-        char:str,
-        word_set:set[str],
-        combination_dict:dict[str:set(str)]) \
-            -> dict[str,set[str]]:
-    
-    this_word_set = set(word for word in word_set if char in word)
-    combination_dict[char].add(this_word_set) 
-    return combination_dict
+

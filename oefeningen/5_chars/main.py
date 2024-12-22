@@ -16,20 +16,48 @@ def main():
 
     print(ALPHABET.value)
 
-    new_word_set = word_set
 
     char_list = list(ALPHABET.value)
 
-    #for i in range(0,len(char_list)):
-    for i in range(0,1):
-        char_1 = char_list[i]
-        this_word_set = set(word for word in new_word_set if char_1 in word)
-        combination_dict_1_chars[char_1] = this_word_set
-        new_word_set = new_word_set - this_word_set
+    # 1 char
+    length = len(char_list)
+
+    remaining_words_set_start = word_set     
+
+    for i in range(0,length-4):
+        char_i = char_list[i]
+        set_i = set(word for word in remaining_words_set_start if char_i in word)
+        combination_dict_1_chars[char_i] = set_i
+        remaining_words_set_after_i = word_set - set_i
+
+        for j in range(1,length-3):
+            char_j = char_list[j]
+            set_j = set(word for word in remaining_words_set_after_i if char_j in word)
+            combination_dict_2_chars[char_i+char_j] = set_j
+            remaining_words_set_after_j = remaining_words_set_after_i - set_j
+
+            for k in range(2,length-2):
+                char_k = char_list[k]
+                set_k = set(word for word in remaining_words_set_after_j if char_j in word)
+                combination_dict_3_chars[char_i+char_j+char_k] = set_k
+                remaining_words_set_after_k = remaining_words_set_after_j - set_k
+
+                for l in range(3,length-1):
+                    char_l = char_list[l]
+                    set_l = set(word for word in remaining_words_set_after_k if char_l in word)
+                    combination_dict_4_chars[char_i+char_j+char_k+char_l] = set_l
+                    remaining_words_set_after_l = remaining_words_set_after_k - set_l
+
+                    for m in range(4,length):
+                        char_m = char_list[m]
+                        set_m = set(word for word in remaining_words_set_after_l if char_m in word)
+                        combination_dict_5_chars[char_i+char_j+char_k+char_l] = set_m
 
 
-              
-    pprint (combination_dict_1_chars)
+    #pprint(combination_dict_1_chars['b'])
+    #pprint(combination_dict_2_chars['ab'])
+    pprint(combination_dict_5_chars['abcde'])
+
             
 
 if __name__ == "__main__":
