@@ -1,5 +1,6 @@
 
 from itertools import combinations
+from os import path
 from pprint import pprint
 from time import time
 
@@ -37,14 +38,24 @@ def get_5_char_combination_set(character_stringlist):
                         .add(''.join([char_1,char_2,char_3,char_4,char_5]))
     return character_combinations   
 
-@timing
-def get_combinations_secursive(character_stringlist,combination_length):
-    return set(combinations(character_stringlist,combination_length))
 
-@timing
-def get_char_combination_set(character_stringlist, combination_length):
-    character_combinations = set()
-    for combination in combinations(character_stringlist, combination_length):
-        character_combinations.add(''.join(combination))
-    return character_combinations
 
+def get_wordlist_from_file(file_name: str):
+    script_dir = path.dirname(__file__)
+
+    file_path = path.join(script_dir, file_name)
+    with open(file_path, "r") as f:
+        words = f.read().split("\n")
+    return words
+
+
+
+def add_to_combination_dict(
+        char:str,
+        word_set:set[str],
+        combination_dict:dict[str:set(str)]) \
+            -> dict[str,set[str]]:
+    
+    this_word_set = set(word for word in word_set if char in word)
+    combination_dict[char].add(this_word_set) 
+    return combination_dict
