@@ -1,4 +1,5 @@
 import unittest
+import sys
 from example import *
 
 class TestExample(unittest.TestCase):
@@ -30,29 +31,35 @@ class TestExample(unittest.TestCase):
 def run_selected_tests(test_names):
     suite = unittest.TestSuite()
     for test_name in test_names:
-        suite.addTest(TestExample(test_name))
+        suite.addTest(TestExample(f"test_{test_name}"))
     runner = unittest.TextTestRunner()
     runner.run(suite)
 
 def menu():
     test_methods = [method for method in dir(TestExample) if method.startswith('test_')]
+    test_names = [method[5:] for method in test_methods]  # Remove 'test_' prefix for display
     print("Select the test suite to run:")
-    for i, test in enumerate(test_methods, 1):
+    print(f"0. Test All (default)")
+    for i, test in enumerate(test_names, 1):
         print(f"{i}. {test.replace('_', ' ').title()}")
-    print(f"{len(test_methods) + 1}. Test All (default)")
 
-    choice = input(f"Enter your choice (1-{len(test_methods) + 1}): ")
+    choice = input(f"Enter your choice (1-{len(test_names) + 1}): ")
 
-    if choice.isdigit() and 1 <= int(choice) <= len(test_methods):
-        tests_to_run = [test_methods[int(choice) - 1]]
-    elif choice == str(len(test_methods) + 1) or choice == '':
-        tests_to_run = test_methods
+    if choice == '0' or choice == '':
+        tests_to_run = test_names
+    elif choice.isdigit() and 1 <= int(choice) <= len(test_names):
+        tests_to_run = [test_names[int(choice) - 1]]
     else:
         print("Invalid choice")
         return
-    
 
     run_selected_tests(tests_to_run)
 
 if __name__ == '__main__':
-    menu()
+    if len(sys.argv) > 1:
+        # Run specific tests provided as command-line arguments without 'test_' prefix
+        tests_to_run = [arg for arg in sys.argv[1:]]
+        run_selected_tests(tests_to_run)
+    else:
+        # Run all tests if no arguments are provided
+        menu()
