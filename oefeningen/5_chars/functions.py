@@ -19,7 +19,6 @@ def loop_function(function,amount,depth):
     for i in range(amount):
         function()
 
-@timing
 def get_5_char_combination_set(character_stringlist):
     character_combinations = set()
     length = len(character_stringlist)
@@ -39,7 +38,7 @@ def get_5_char_combination_set(character_stringlist):
                         .add(''.join([char_1,char_2,char_3,char_4,char_5]))
     return character_combinations   
 
-def get_char_combination_set(character_stringlist):
+def get_all_char_combination_set(character_stringlist):
     character_combinations = set()
     length = len(character_stringlist)
 
@@ -61,7 +60,6 @@ def get_char_combination_set(character_stringlist):
                         .add(''.join([char_1,char_2,char_3,char_4,char_5]))
     return character_combinations  
 
-@timing
 def get_char_combination_set(character_stringlist, combination_length):
     character_combinations = set()
     for combo in combinations(character_stringlist, combination_length):

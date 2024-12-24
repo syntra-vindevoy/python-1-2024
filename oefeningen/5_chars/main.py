@@ -20,7 +20,10 @@ from icecream import ic
 
 @timing
 def main():
-    pass
+    word_list = {"auto",'bus','step'}
+    chars = 'abc'
+    word_combinations = get_char_combination_set(chars,2) 
+    print(word_combinations)
 
 
 if __name__ == '__main__':
