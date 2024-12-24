@@ -77,4 +77,31 @@ def char_count(char_list,word_set):
                 char_dict[char] += 1
     return char_dict
 
+def char_in_word(char,word):
+    return char in word
 
+def char_not_in_word(char,word):
+    return not char in word
+
+def char_in_words(char:str,word_set:set[str])->set[str]:
+    return {word for word in word_set if char in word}
+
+def char_not_in_words(char:str,word_set:set[str])->set[str]:
+    return {word for word in word_set if not char in word}
+
+def any_char_in_word(char_list:set[str],word:str)->bool:
+    return any([char in word for char in char_list])
+
+def no_char_in_word(char_list, word):
+    return all(char not in word for char in char_list)
+
+def any_char_in_words(char_list:set[str],word_set:set[str])->set[str]:
+    return {word for word in word_set if any_char_in_word(char_list,word)}
+
+def no_char_in_words(char_list:set[str],word_set:set[str])->set[str]:
+    return {word for word in word_set if no_char_in_word(char_list,word)}
+
+def word_to_set(word:str)->set[str]:
+    return set(word)
+
+def word_set_to_set_of_sets()
