@@ -109,5 +109,24 @@ def no_char_in_words(char_list:set[str],word_set:set[str])->set[str]:
 def word_to_set(word:str)->set[str]:
     return set(word)
 
+def get_matching_dict_slow(chars,char_combination_length,word_set):
+    char_combinations = get_char_combination_set(chars,char_combination_length) 
+    adding_dict = {comb: 0 for comb in char_combinations}
+    for comb in char_combinations:
+        adding_dict[comb] += len(any_char_in_words(comb,word_set))
+    return adding_dict
 
 
+def get_matching_dict_fast(chars, char_combination_length, word_set):
+    char_combinations = get_char_combination_set(chars, char_combination_length)
+    adding_dict = {comb: 0 for comb in char_combinations}
+    non_matching_words = {comb: set(word_set) for comb in char_combinations}
+    
+    for comb in char_combinations:
+        for word in list(non_matching_words[comb]):
+            if all(char in word for char in comb):
+                adding_dict[comb] += 1
+            else:
+                non_matching_words[comb].remove(word)
+    
+    return adding_dict
