@@ -33,5 +33,16 @@ assert no_char_in_words(['z','y','x'],{'abc','efg'}) == {'abc','efg'}
 assert no_char_in_words(['z','y','x'],{'xyz','efg'}) == {'efg'}
 assert no_char_in_words(['a','y','x'],{'abc','efg'}) == {'efg'}
 
+
 assert word_to_set('abc') == {'a','b','c'}
 assert word_to_set('xyz') == {'x','y','z'}
+
+
+assert get_char_combination_set(['a', 'b', 'c', 'd', 'e'], 5) == {'abcde'}
+assert get_char_combination_set(['a', 'b', 'c', 'd', 'e'], 4) == {'abcd', 'abce', 'abde', 'acde', 'bcde'}
+assert get_char_combination_set(['a', 'b', 'c', 'd', 'e'], 3) == {'abc', 'abd', 'abe', 'acd', 'ace', 'ade', 'bcd', 'bce', 'bde', 'cde'}
+assert get_char_combination_set(['a', 'b', 'c'], 2) == {'ab','ac','bc'}
+
+
+get_char_combination_set(string.ascii_lowercase, 5)
+get_5_char_combination_set(string.ascii_lowercase)

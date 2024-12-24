@@ -61,6 +61,13 @@ def get_char_combination_set(character_stringlist):
                         .add(''.join([char_1,char_2,char_3,char_4,char_5]))
     return character_combinations  
 
+@timing
+def get_char_combination_set(character_stringlist, combination_length):
+    character_combinations = set()
+    for combo in combinations(character_stringlist, combination_length):
+        character_combinations.add(''.join(combo))
+    return character_combinations
+
 def get_wordlist_from_file(file_name: str):
     script_dir = path.dirname(__file__)
 
@@ -104,4 +111,5 @@ def no_char_in_words(char_list:set[str],word_set:set[str])->set[str]:
 def word_to_set(word:str)->set[str]:
     return set(word)
 
-def word_set_to_set_of_sets()
+
+
