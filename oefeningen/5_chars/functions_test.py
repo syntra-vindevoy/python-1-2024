@@ -56,22 +56,91 @@ def slow_case():
     matching_dict_slow = get_matching_dict_slow(chars, char_combination_length, word_set)
     ic(matching_dict_slow)
     assert matching_dict_slow == {'ab': 3, 'ac': 2, 'bc': 2}
-slow_case()
 
 @timing
 def fast_case():
     chars = 'abc'
     char_combination_length = 2
     word_set = {'auto', 'bus', 'abba', 'velo'}
-    matching_dict_fast = get_matching_dict_fast(chars, char_combination_length, word_set)
-    ic(matching_dict_fast)
+    matching_dict_fast = get_matching_dict_adding(chars, char_combination_length, word_set)   
     assert matching_dict_fast == {'ab': 3, 'ac': 2, 'bc': 2}
 fast_case()
 
 
-       
+@timing
+def all_chars():
+    chars = string.ascii_lowercase
+    char_combination_length = 5
+    word_set = {'auto', 'bus', 'abba', 'velo'}
+    matching_dict_fast = get_matching_dict_adding(chars, char_combination_length, word_set)   
+
+    #ic(matching_dict_fast)
+all_chars()
+
+@timing
+def all_words_1comb():
+    chars = string.ascii_lowercase
+    char_combination_length = 1
+    word_set = get_wordlist_from_file('words.txt')
+    matching_dict_fast = get_matching_dict_adding(chars, char_combination_length, word_set)   
+
+    #ic(matching_dict_fast)
+all_words_1comb()
+
+@timing
+def all_words_2comb():
+    chars = string.ascii_lowercase
+    char_combination_length = 2
+    word_set = get_wordlist_from_file('words.txt')
+    matching_dict_fast = get_matching_dict_adding(chars, char_combination_length, word_set)   
+
+    #ic(matching_dict_fast)
+#all_words_2comb()  
+
+@timing
+def all_words_3comb():
+    chars = string.ascii_lowercase
+    char_combination_length = 3
+    word_set = get_wordlist_from_file('words.txt')
+    matching_dict_fast = get_matching_dict_adding(chars, char_combination_length, word_set)   
+#all_words_3comb() 
   
  
-
+@timing
+def fast_case_beta():
+    chars = 'abc'
+    char_combination_length = 2
+    word_set = {'auto', 'bus', 'abba', 'velo'}
+    matching_dict_fast = get_matching_dict_adding(chars, char_combination_length, word_set)   
+    assert matching_dict_fast == {'ab': 3, 'ac': 2, 'bc': 2}
+fast_case_beta()
     
+@timing
+def fast_case_beta_all_chars():
+    chars = string.ascii_lowercase
+    char_combination_length = 2
+    word_set = {'auto', 'bus', 'abba', 'velo'}
+    matching_dict_fast = get_matching_dict_adding(chars, char_combination_length, word_set)   
+fast_case_beta_all_chars()
 
+@timing
+def fast_case_beta_all_chars():
+    chars = string.ascii_lowercase
+    char_combination_length = 5
+    word_set = {'auto', 'bus', 'abba', 'velo'}
+    matching_dict_fast = get_matching_dict_adding(chars, char_combination_length, word_set)   
+fast_case_beta_all_chars()
+
+@timing
+def fast_case_count():
+    chars = 'abc'
+    char_combination_length = 2
+    word_set = {'auto', 'bus', 'abba', 'velo'}
+    matching_dict_fast = get_matching_count(
+        chars, 
+        char_combination_length, 
+        word_set
+        )   
+    ic(matching_dict_fast)
+    #assert matching_dict_fast == {'ab': 3, 'ac': 2, 'bc': 2}
+fast_case_count()

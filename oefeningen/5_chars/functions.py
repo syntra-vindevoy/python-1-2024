@@ -4,7 +4,7 @@ from os import path
 from pprint import pprint
 from time import time
 from constants import *
-
+from icecream import ic
 
 def timing(func):
     def wrapper(*args, **kwargs):
@@ -109,6 +109,7 @@ def no_char_in_words(char_list:set[str],word_set:set[str])->set[str]:
 def word_to_set(word:str)->set[str]:
     return set(word)
 
+
 def get_matching_dict_slow(chars,char_combination_length,word_set):
     char_combinations = get_char_combination_set(chars,char_combination_length) 
     adding_dict = {comb: 0 for comb in char_combinations}
@@ -116,17 +117,46 @@ def get_matching_dict_slow(chars,char_combination_length,word_set):
         adding_dict[comb] += len(any_char_in_words(comb,word_set))
     return adding_dict
 
+def get_matching_dict_adding(chars, char_combination_length, word_set):
+    char_combination_set = \
+        get_char_combination_set(chars, char_combination_length)
+    combination_dict = \
+        {comb: 0 for comb in char_combination_set}
+    word_dict = \
+        {word: char_combination_set.copy() for word in word_set}
+    for char in chars:
+        word_matched_list = \
+            [word for word in word_set if char in word]
+        combination_matched_list = \
+            [comb for comb in char_combination_set if char in comb]
+        for word in word_matched_list:
+            word_dict[word] -= set(combination_matched_list)
+    for comb in combination_dict:
+        combination_dict[comb] = sum(1 for word in word_dict if comb not in word_dict[word])
+    return combination_dict
 
-def get_matching_dict_fast(chars, char_combination_length, word_set):
-    char_combinations = get_char_combination_set(chars, char_combination_length)
-    adding_dict = {comb: 0 for comb in char_combinations}
-    non_matching_words = {comb: set(word_set) for comb in char_combinations}
+from collections import defaultdict
+import itertools
+
+def get_matching_dict_adding_beta(chars, length, word_set):
+    matching_dict = defaultdict(list)
+    combinations = {''.join(comb) for comb in itertools.product(chars, repeat=length)}
     
-    for comb in char_combinations:
-        for word in list(non_matching_words[comb]):
-            if all(char in word for char in comb):
-                adding_dict[comb] += 1
-            else:
-                non_matching_words[comb].remove(word)
+    for word in word_set:
+        for comb_str in combinations:
+            if comb_str in word:
+                matching_dict[comb_str].append(word)
     
-    return adding_dict
+    return matching_dict
+
+from collections import defaultdict
+import itertools
+
+def get_matching_count(chars, length, word_set):
+    match_count = defaultdict(int)
+    combinations = get_char_combination_set(chars, length)
+    ic(combinations)
+    
+
+
+    return match_count
