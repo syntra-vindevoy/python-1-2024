@@ -7,7 +7,6 @@ from collections import defaultdict
 @timing
 def main_matched(char_frozen_set,word_frozen_set):
 
-    ic.disable()
     comb_matched_dict = dict()
     for char in char_frozen_set:
         comb_matched_dict[char]=set()
@@ -72,13 +71,6 @@ def main_unmatched(char_frozen_set,word_frozen_set):
         comb_unmatched_dict[comb] = \
             comb_unmatched_dict[comb[0]+comb[1]+comb[2]].intersection(comb_unmatched_dict[comb[3]+comb[4]])
     return comb_unmatched_dict
-
-
-
-
-
-
-
 
 @timing
 def main_unmatched(char_frozen_set,word_frozen_set):
@@ -217,25 +209,29 @@ def main_unmatched_5_steps(char_frozen_set,word_frozen_set):
     return comb_unmatched_dict
 
 
+
 def main():
 
     #char_frozen_set = frozenset(['a', 'b', 'c'])
     #char_frozen_set = frozenset("abcdefg")
     char_frozen_set = frozenset(string.ascii_lowercase)
+    char_list = string.ascii_lowercase
 
     
-    #word_frozen_set = frozenset(['auto', 'bus', 'step'])
+    word_frozen_set = frozenset(['auto', 'bus', 'step'])
+    #word_frozen_set = frozenset(['auto', 'bus', 'step','bike'])
     #word_frozen_set = frozenset(get_wordlist_from_file('words.txt')[0:10])
     #word_frozen_set = frozenset(get_wordlist_from_file('words.txt')[0:100])
-    word_frozen_set = frozenset(get_wordlist_from_file('words.txt')[0:1_000])
+    #word_frozen_set = frozenset(get_wordlist_from_file('words.txt')[0:1_000])
     #word_frozen_set = frozenset(get_wordlist_from_file('words.txt')[0:10_000])
     #word_frozen_set = frozenset(get_wordlist_from_file('words.txt'))
 
-    main_matched(char_frozen_set, word_frozen_set)
-    main_unmatched_shorter(char_frozen_set, word_frozen_set)
-    main_unmatched(char_frozen_set, word_frozen_set)
-    main_unmatched_no_empty_sets(char_frozen_set, word_frozen_set)
-    main_unmatched_5_steps(char_frozen_set, word_frozen_set)
+    #main_matched(char_frozen_set, word_frozen_set)
+    #main_unmatched_shorter(char_frozen_set, word_frozen_set)
+    #main_unmatched(char_frozen_set, word_frozen_set)
+    #main_unmatched_no_empty_sets(char_frozen_set, word_frozen_set)
+    #main_unmatched_5_steps(char_frozen_set, word_frozen_set)
+    #print()
 
 
 if __name__ == '__main__':

@@ -66,6 +66,12 @@ def get_char_combination_set(character_stringlist, combination_length):
         character_combinations.add(''.join(combo))
     return character_combinations
 
+def get_char_combination_list(character_stringlist, combination_length):
+    character_combinations = list()
+    for combo in combinations(character_stringlist, combination_length):
+        character_combinations.append(''.join(combo))
+    return character_combinations
+
 def get_wordlist_from_file(file_name: str):
     script_dir = path.dirname(__file__)
 

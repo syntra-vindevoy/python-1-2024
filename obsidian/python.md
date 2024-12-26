@@ -1234,3 +1234,237 @@ process finished with exit code 0
 
 error checking : ruff
 
+oefening excercise 3
+
+## Files and Databases
+### oud boek
+
+openen files
+```python
+with open("words.txt", "r") as file:
+	lines = file.readlines()
+
+with open("words.txt","w") as file:
+	
+	file.write("marijn\n")
+	file.write("yves\n")
+
+	lines = ['yves\n','vindevogel']
+	file.writelines()
+
+```
+
+paths
++ waar cmd staat wordt het uitgevoerd
+```python
+import os
+from pathlib import Path
+cwd = os.getcwd() 
+# waar zit ik op systeem
+# cwd = current working directory
+
+current_dir = Path(__file__).parent.absolute() # locatie van draaiend script
+config_dir = current_dir.parent.jointpath("config","settings.ini")
+# OS ONAFHANKELIJK
+
+windows_path = "c:\\test\\folder" # escape char nodig in windows...
+window_path = r"c:\test\folder"
+windows_path = r"c:/test/folder" #can in 
+
+os.path.pathsep #uitperoberen
+```
+
+
+
+```python
+with open(f"{current_dir)/output.txt","w") as file:
+	os.path.abspath 
+	os.path.exists 
+		#bestaat file?
+	
+```
+
+docs.python.org/3/library/pathlib
+
+\. huidige directory
+\.\. bovenliggende dir
+
+glob(*/*..)
++ uitproberen
++ \*\* is meerdere folders
++ \* folders 
+
+## Try except
+```python
+try:
+	with open("words.txt","r") as f:
+		lines = f.readlines()
+except Exception as err:
+	print(f"An Error occurred: \n {err}") 
+	# exception is algemene foutmelding
+	# process finished with exit code 0
+	
+```
+
+
+enkel opvangen dat file niet bestaat
+```python
+try:
+	with open("words.txt","r") as f:
+		lines = f.readlines()
+except FileNotFoundError:
+	print(f"Could not find file") 
+	# exception is algemene foutmelding
+	# process finished with exit code 0
+```
+
+```python
+try:
+	with open("words.txt","r") as f:
+		lines = f.readlines()
+except FileNotFoundError:
+	print(f"Could not find file") 
+	# exception is algemene foutmelding
+	# process finished with exit code 0
+```
+
+
+verkeerde error, programma crasht
+```python
+except SyntaxError:
+	print(f"could not find file.")
+	
+```
+
+```python
+except Exception:
+	print("blablabla")
+except SyntaxError:
+	print("meohaha")
+```
+syntaxerror wordt nooit bereikt.
+
+
+```python
+except SyntaxError:
+	print("meohaha")
+except Exception:
+	print("blablabla")
+```
+syntaxerror wordt nooit bereikt.
+
+
+onverwachte fouten : try except
+
+```python
+try:
+	...
+except:
+	...
+finally:
+	print('fout of geen fout, dit wordt altijd uitgevoerd')
+	if f:
+		if not f.closed:
+			f.close()
+```
+finally wordt minder en minder gebruikt door gebruikt van vb with.
+
+```python
+def fac(n):
+	assert n >= 1, "test als niet goed is"
+```
+
+```python
+def fac(n):
+	if n < 0:
+		raise ValueError("n must be non-negative {n}")
+i = input("give positive integer:")
+try: 
+	print(fac(int(i)))
+except ValueError as err:
+	print("Read the f manual")
+
+
+```
+
+assert voor testen
+raises voor eindgebruiker
+
+
+zelf keuze maken of code moet afsluiten na raise
+
+error_trap.py kunnen inbouwen
+
+## Pickling
+dbm data byte stream?
+\x wil zeggen hexadecimaal
+
++ inladen van pickle-files is heel snel
++ versie van pickle gewijzigd... backwards compatibility
+	+ wie niet geupgrade heeft gaat fout krijgen
++ vervangen door parquet-files back and forward compatibility
+	+ compressy
+	+ power-bi kan files lezen!!!
+	+ kunnen opgedeeld worden
+	+ moeten volledig gelezen worden om te gebruiken (query-probleem)
++ <mark>rabit</mark> enque: pickels in wacht laten staan. que vangt pickles op.
+	+ enkel probleem mogelijk als server het niet aankan
+	+ wil niet met klasses werken
+		+ enkel strings of pickels
+
+## Pipes
++ niet gezien, voorbeeld volgt nog
++ ls -la | more
+
+
+
+conda install -c conda-forge pandas numpy pyarrow
+
+## Pandas
+
+```python
+pd.read...
+# dataframes inladen van sql
+```
+read_excel
+read_csv
+read_parquet
+
+## YAML en/of JSON
+
+voorbeeld van yaml files overnemen
+voorbeeld voor json zelf opzoeken
+
+## Shelve
+database wordt niet gebruikt
+
+## wanneer zijn twee files gelijk?
+
+md5 enkel gebruiken voor files en strings
+paswoorden als MD5 
+
+excercises maken: hoofdstuk 13 afgesloten
+oefeningen afsluiten tegen volgende les 9 januari
+
+zeker kennen
++ zonder pandas
+	+ yaml inlezen
+	+ csv inlezen
++ parquet en pickles niet kennen, weten dat het bestaat, wordt niet gevraagd
+	+ pickelen wanneer server bijvoorbeeld niet werk, schrijven naar disk
++ MD5 paswoord kunnen maken
+
+
+Eindwerk:
++ er moet persistentie zijn, 
+	+ schrijven naar relat database
++ er moeten klasses zijn
+	+ (geen examen oo)
+
+
+flet.dev
+shiny
+
+
+
+
