@@ -1,57 +1,34 @@
 import hashlib
 import os
-
+from pathlib import Path
 import yaml
+import shelve
 
-
-def walk (dirname):
-    for name in os.listdir (dirname):
-        path = os.path.join (dirname, name)
-
-        if os.path.isfile (path):
-            print (path)
-        elif os.path.isdir (path):
-            walk (path)
+#todo
+def walk (dir_path):
+    dir_path = Path(dir_path)
+    files = list(dir_path.iterdir())
+    for name in files:
+        if name.is_file():
+            print (name)
+        elif name.is_dir():
+            walk (name)
 
 
 def md5_digest (filename):
-    data = open (filename, 'rb').read ()
-    md5_hash = hashlib.md5 ()
-    md5_hash.update (data)
-    digest = md5_hash.hexdigest ()
-    return digest
+    try:
+        with open (filename, 'rb') as file:
+            data = file.read ()
+            md5_hash = hashlib.md5 ()
+            md5_hash.update (data)
+            digest = md5_hash.hexdigest ()
+            return digest
+    except FileNotFoundError:
+        print (f"File not found: {filename}")
+        return None
 
 
-def main ():
-    print (os.getcwd ())
-    file_name = os.getcwd ()
-    list_files = os.listdir ()
-    for file in list_files:
-        if os.path.isdir (os.path.join (file_name, file)):
-            print (f"is dir {file} {os.path.isdir (file)}")
-            print (file, end=' ')
-        else:
-            print (f"file size {file} {os.path.getsize (file)} bytes")
-            print (file)
-        print (file, end=' ')
-    print (os.path.exists ('photos'))
-    print (os.path.join ('photos', 'jan-2023', 'photo1.jpg'))
-
-    num_years = 1.5
-    num_camels = 23
-    writer = open ('camel-spotting-book.txt', 'w')
-    writer.write (str (num_years))
-    writer.write (str (num_camels))
-    writer.close ()
-
-    line = f'In {round (num_years * 12)} months I have spotted {num_camels} camels'
-    writer = open ('camel-spotting-book.txt', 'w')
-    writer.write (f'Years of observation: {num_years}\n')
-    writer.write (f'Camels spotted: {num_camels}\n')
-    writer.close ()
-
-    # YAML
-
+def yaml_demo():
     config = {
         'photo_dir': 'photos',
         'data_dir': 'photo_info',
@@ -59,21 +36,45 @@ def main ():
     }
 
     config_filename = 'config.yaml'
-    writer = open (config_filename, 'w')
-    yaml.dump (config, writer)
-    writer.close ()
+    with open (config_filename, 'w') as writer:
+        yaml.dump (config, writer)
 
-    reader = open (config_filename)
-    config_readback = yaml.safe_load (reader)
-    print (config_readback)
-    reader.close ()
+    with open (config_filename) as reader:
+        config_readback = yaml.safe_load (reader)
+        print (config_readback)
 
-    def sort_word (word):
-        return ''.join (sorted (word))
 
-    # Shelve
+
+
+    # Find all text files inside a directory
+def main ():
+    for file in Path.cwd().iterdir():
+        if file.is_dir ():
+            print (f"is dir {file} {file.name}")
+            print (file.name, end=' ')
+        else:
+            print (f"file size {file}  bytes")
+            print (file)
+        print (file, end=' ')
+    print (os.path.exists ('photos'))
+    print (os.path.join ('photos', 'jan-2023', 'photo1.jpg'))
+
+    num_years = 1.5
+    num_camels = 23
+    with open ('camel-spotting-book.txt', 'w') as writer:
+        writer.write (str (num_years))
+        writer.write (str (num_camels))
+        writer.write(f'Years of observation: {num_years}\n')
+        writer.write(f'Camels spotted: {num_camels}\n')
+
+
+
+def shelf_demo ():
+    def sort_word(word_in):
+        return ''.join(sorted(word_in))
+
     word = 'tops'
-    import shelve
+
     shelf_filename = 'mydata.shelf'
     shelf = shelve.open (shelf_filename, 'c')
     shelf['animals'] = ['bear', 'tiger', 'penguin', 'zebra']
@@ -89,8 +90,13 @@ def main ():
     shelf[key] = anagram_list
     shelf.close ()
 
-    walk (os.getcwd ())
+
 
 
 if __name__ == '__main__':
+    walk (os.getcwd ())
+    yaml_demo()
+    shelf_demo ()
     main ()
+    current_path = Path(__file__)
+    print (current_path)
