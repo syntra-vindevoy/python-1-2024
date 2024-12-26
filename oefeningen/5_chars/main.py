@@ -227,14 +227,14 @@ def main():
     #word_frozen_set = frozenset(['auto', 'bus', 'step'])
     #word_frozen_set = frozenset(get_wordlist_from_file('words.txt')[0:10])
     #word_frozen_set = frozenset(get_wordlist_from_file('words.txt')[0:100])
-    #word_frozen_set = frozenset(get_wordlist_from_file('words.txt')[0:1_000])
+    word_frozen_set = frozenset(get_wordlist_from_file('words.txt')[0:1_000])
     #word_frozen_set = frozenset(get_wordlist_from_file('words.txt')[0:10_000])
-    word_frozen_set = frozenset(get_wordlist_from_file('words.txt'))
+    #word_frozen_set = frozenset(get_wordlist_from_file('words.txt'))
 
-    #main_matched(char_frozen_set, word_frozen_set)
-    #main_unmatched_shorter(char_frozen_set, word_frozen_set)
-    #main_unmatched(char_frozen_set, word_frozen_set)
-    #main_unmatched_no_empty_sets(char_frozen_set, word_frozen_set)
+    main_matched(char_frozen_set, word_frozen_set)
+    main_unmatched_shorter(char_frozen_set, word_frozen_set)
+    main_unmatched(char_frozen_set, word_frozen_set)
+    main_unmatched_no_empty_sets(char_frozen_set, word_frozen_set)
     main_unmatched_5_steps(char_frozen_set, word_frozen_set)
 
 
