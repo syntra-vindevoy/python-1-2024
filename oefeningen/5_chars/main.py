@@ -228,7 +228,7 @@ def main():
 
     #main_matched(char_frozen_set, word_frozen_set)
     #main_unmatched_shorter(char_frozen_set, word_frozen_set)
-    #main_unmatched(char_frozen_set, word_frozen_set)
+    main_unmatched(char_frozen_set, word_frozen_set)
     #main_unmatched_no_empty_sets(char_frozen_set, word_frozen_set)
     #main_unmatched_5_steps(char_frozen_set, word_frozen_set)
     #print()

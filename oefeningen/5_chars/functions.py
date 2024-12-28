@@ -157,6 +157,7 @@ def get_matching_dict_adding_beta(chars, length, word_set):
 
 from collections import defaultdict
 import itertools
+import re
 
 def get_matching_count(chars, length, word_set):
     match_count = defaultdict(int)
@@ -166,3 +167,7 @@ def get_matching_count(chars, length, word_set):
 
 
     return match_count
+
+def word_contains_combination(word, combination):
+    pattern = f"[{''.join(combination)}]"
+    return bool(re.search(pattern, word))
