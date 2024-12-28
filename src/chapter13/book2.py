@@ -47,6 +47,13 @@ def walk_dir (dir_path,suffix)->[pathlib.Path]:
             filenames.extend(walk_dir(f.resolve(),suffix))
     return filenames
 
+#todo
+def walk_dir_files (dir_path,suffix)->[pathlib.Path]:
+    current_path = Path(__file__).parent
+    root_path = current_path.parent
+    my_python_files = root_path.rglob(f"*.{suffix}")
+    return my_python_files
+
 
 def checksum (filename:str)->str:
     with open (filename, 'rb') as file_c:
@@ -58,7 +65,7 @@ def checksum (filename:str)->str:
 
 def find_duplicates (dir_path:Path, suffix:str)->[(Path,Path)]:
     double_files = []
-    files=walk_dir (dir_path,suffix)
+    files=walk_dir_files (dir_path,suffix)
     for file_1 in files:
         for file_2 in files:
             if file_1.name != file_2.name:
