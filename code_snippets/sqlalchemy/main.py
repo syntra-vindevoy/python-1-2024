@@ -1,4 +1,4 @@
-from sqlalchemy import create_engine, Column, Integer, String
+from sqlalchemy import ForeignKey, create_engine, Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker, declarative_base
 import os
@@ -11,62 +11,86 @@ if os.path.exists(db_path):
     os.remove(db_path)
 engine = create_engine(f'sqlite:///{db_path}')
 Base = declarative_base()
+Session = sessionmaker(bind=engine)
+session = Session()
 
-
-def create_the_session():
-    Session = sessionmaker(bind=engine)
-    session = Session()
-    return session
 
 # TABLES
 
-def create_the_table():
+def create_table():
     Base.metadata.create_all(engine)
 
-def show_the_table():
+def show_tables():
     print(Base.metadata.tables)
 
-class Try(Base):
-    __tablename__ = 'try'
+
+class Person(Base):
+    __tablename__ = 'person'
     id = Column(Integer, primary_key=True)
     name = Column(String)
 
-# CRUD
-## CREATE
 
-def create(session):
-    new_entry = Try(id=5, name='one')
+class Address(Base):
+    __tablename__ = 'address'
+    id = Column(Integer, primary_key=True)
+    street = Column(String)
+    city = Column(String)
+    zip = Column(String)
+    person_id = Column(Integer, ForeignKey('person.id'))
+
+
+# CRUD
+
+def create(id,name):
+    new_entry = Person(id=id, name=name)
     session.add(new_entry)
     session.commit()
 
-## READ
-def read(session):
-    entries = session.query(Try).all()
+
+def read_all(class_name:str):
+    entries = session.query(class_name).all()
     for entry in entries:
         print(entry.id, entry.name)
 
-## UPDATE
-def update(session):
-    entry_to_update = session.query(Try).filter_by(id=5).first()
-    entry_to_update.name = 'updated_name'
-    session.commit()
 
-## DELETE
-def delete(session):
-    entry_to_delete = session.query(Try).filter_by(id=5).first()
-    session.delete(entry_to_delete)
+def update(id:int, new_name:str):
+    entry_to_update = session.query(Person).filter_by(id=id).first()
+    entry_to_update.name = new_name
     session.commit()
 
 
+def delete(id):
+    session \
+        .delete(session.query(Person).filter_by(id=id).first())
+    session.commit()
+
+
+def delete_multiple(*ids):
+    for id in ids:
+        session \
+            .delete(session.query(Person).filter_by(id=id).first())
+    session.commit()
+    
 
 def main():
-    create_the_table()
-    session = create_the_session()
 
-    create(session)
-    read(session)
-    update(session)
-    delete(session)
+    #SETUP
+
+    create_table()
+    
+    #CRUD
+    
+    create(5, 'john')
+    create(6, 'Jane')
+    create(7, 'Joe')
+
+    update(5, 'John Doe')
+    
+    delete(6)
+
+    #READ
+    read_all(Person)
+    read_all(Address)
 
 
 if __name__ == '__main__':

@@ -1,16 +1,6 @@
-
-/*
-
-CREATE TABLE try (
-    id INT PRIMARY KEY,
-    name VARCHAR(100)
-);
-
-*/
-
 select * from try;
 
 
-insert into try (id, name) values (5, 'one');
+insert INTO try (id, name) VALUES (5,'JohnDoe');
 
 
