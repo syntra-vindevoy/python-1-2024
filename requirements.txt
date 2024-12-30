@@ -13,3 +13,5 @@ requests~=2.32.3
 ipython~=8.31.0
 anyio~=4.6.2
 pandas~=2.2.3
+sqlalchemy~=2.0.34
+alembic~=1.14.0
