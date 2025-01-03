@@ -1,4 +1,7 @@
 import pickle
+import time
+
+
 class PickelsFile:
 
     PICKLES_FILENAME :str= "PickelsFileSerial.txt"
@@ -70,6 +73,7 @@ class PickelsFile:
 
 
 if __name__ == "__main__":
+
     students_data = {
 
         'Student 1': {
@@ -82,11 +86,19 @@ if __name__ == "__main__":
             'Name': 'Elena', 'Age': 14, 'Grade': 8
         }
     }
+
+    start = time.time()
     march = PickelsFile("AI.txt",students=students_data,status=True,name="Benoit",age=23)
     march.read_file()
     march.serialization()
+    end = time.time()
+    print(end - start)
 
-    march2= PickelsFile()
+    start = time.time()
+    march2 = PickelsFile()
     march2.deserialization()
+    end = time.time()
+    print(end - start)
+
 
     assert march == march2
