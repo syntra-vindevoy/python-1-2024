@@ -1,3 +1,5 @@
+import timeit
+
 
 def print_args(*args):
     for arg in args:
@@ -35,7 +37,7 @@ numbers = [*numbers,7,8,9]
 print(numbers)
 
 dict = {"a":1,"b":2,"c":3}
-numbers = [*dict,7,8,9]
+numbers = [dict,7,8,9]
 print(numbers)
 
 
