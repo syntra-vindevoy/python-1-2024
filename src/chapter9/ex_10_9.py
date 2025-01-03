@@ -35,7 +35,7 @@ def method_4(wrds: list[str]):
 def main():
     times = 10000
 
-    with open("../chapter9/words.txt", "r") as f:
+    with open("words.txt", "r") as f:
         words = f.readlines()
 
     # start = datetime.now()

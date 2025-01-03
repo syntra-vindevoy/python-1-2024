@@ -101,8 +101,6 @@ assert avoids("skwlp", "aeiouy") == True
 
 
 if __name__ == "__main__":
-
-
     best_comb, num_excluded = find_best_forbidden_letters(load_words("../words.txt"))
     print(f"The best combination of forbidden letters is: {best_comb}")
     print(f"It excludes {num_excluded} words.")

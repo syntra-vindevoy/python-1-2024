@@ -17,8 +17,8 @@ def replace_all (pattern, replacement, filename):
     with open (filename, 'r') as file:
         contents = file.read ()
         contents = contents.replace (pattern, replacement)
-        with open (filename, 'w') as file:
-            file.write (contents)
+        with open (filename, 'w') as file_write:
+            file_write.write (contents)
             return contents
 
 
