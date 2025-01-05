@@ -8,6 +8,9 @@ from sys import exception
 
 
 def sed(pattern, replacement, filename_original, filename_replacement):
+    if not isinstance(filename_replacement, str) or not isinstance(filename_original, str):
+        print ("insert valid filenames")
+        return
     try:
         with open (filename_original, "r") as file:
             file_content = file.read()
@@ -26,10 +29,4 @@ def sed(pattern, replacement, filename_original, filename_replacement):
     with open (filename_replacement, "w") as file:
         file.write(file_new_content)
 
-sed ("abc", "def", "original.txt", "new_file.txt")
-
-
-
-
-
-
+sed ("abc", "def", 15, "new_file.txt")
