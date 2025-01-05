@@ -8,25 +8,26 @@ from sys import exception
 
 
 def sed(pattern, replacement, filename_original, filename_replacement):
-    if not isinstance(filename_replacement, str) or not isinstance(filename_original, str):
-        print ("insert valid filenames")
-        return
+
     try:
         with open (filename_original, "r") as file:
             file_content = file.read()
     except FileNotFoundError:
         print("File not found")
         return
-    except exception as err:
+    except Exception as err:
         print(f"this error occurs: {err}")
         return
 
-    with open (filename_original, "r") as file:
-        file_content = file.read()
-
     file_new_content = file_content.replace(pattern, replacement)
 
-    with open (filename_replacement, "w") as file:
-        file.write(file_new_content)
+    try:
+        with open(filename_replacement, "a") as file:
+            file.write(file_new_content)
 
-sed ("abc", "def", 15, "new_file.txt")
+    except Exception as err:
+        print(f"Could not write to file: {err}")
+        return
+
+
+sed ("abc", "def", "original.txt", "new.txt")
