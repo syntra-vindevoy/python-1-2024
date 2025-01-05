@@ -72,6 +72,8 @@ class PickelsFile:
         return hash((self.__filename, frozenset(self.__students.items()), self.__status, self.__name, self.__age, self.__content))
 
 
+
+
 if __name__ == "__main__":
 
     students_data = {

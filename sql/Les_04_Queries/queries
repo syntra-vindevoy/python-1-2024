@@ -1,0 +1,70 @@
+select * from bieren
+where alcohol is not null
+order by alcohol desc
+limit 1
+;
+
+select max(alcohol)
+from bieren
+;
+
+
+select * from bieren
+where alcohol is not null 
+and alcohol = (select 
+					max(alcohol) from bieren 
+					where alcohol < 15)
+order by alcohol desc;
+;
+
+
+select naam, brouwernr, soortnr, alcohol
+from bieren
+where alcohol = 12
+;
+
+
+-- joinen van tables
+
+select 		bieren.naam, 
+			bieren.brouwernr,
+			bieren.soortnr,
+			bieren.alcohol,
+			brouwers.brouwernaam
+from 		bieren,
+			brouwers
+where 		alcohol = 12
+and			bieren.brouwernr = brouwers.brouwernr
+order by 	bieren.naam
+;
+
+--alternatief
+
+select 		bieren.naam, 
+			bieren.brouwernr,
+			bieren.soortnr,
+			bieren.alcohol,
+			brouwers.brouwernaam
+from 		bieren inner join brouwers on bieren.brouwernr = brouwers.brouwernr
+where 		alcohol = 12
+order by 	bieren.naam
+;
+
+--alternatief
+
+select 		A.naam, 
+			A.brouwernr,
+			S.soort,
+			A.alcohol,
+			B.brouwernaam
+from 		bieren A,
+			brouwers B,
+			soorten S
+where 		alcohol = 12
+and			A.brouwernr = B.brouwernr
+and 		A.soortnr = S.soortnr -- mappen van foreign key
+order by 	A.naam
+;
+
+
+
