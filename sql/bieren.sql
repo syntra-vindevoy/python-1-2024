@@ -57,18 +57,31 @@ FROM
     soorten s ON b.soortnr = s.soortnr;
 
 
-SELECT br.brouwernaam, COUNT(b.biernr)
+SELECT br.brouwernaam, COUNT(b.biernr) as count
 FROM public.brouwers AS br
 INNER JOIN public.bieren AS b
 ON br.brouwernr = b.brouwernr
-GROUP BY br.brouwernaam;
+GROUP BY br.brouwernaam
+order by count
+;
 
 SELECT br.brouwernaam, COUNT(b.biernr)
 FROM public.brouwers AS br
 INNER JOIN public.bieren AS b
 ON br.brouwernr = b.brouwernr
 WHERE b.alcohol > 6 AND b.alcohol < 10
-GROUP BY br.brouwernaam
+GROUP BY br.brouwernaam;
+
+select s.soort, count(b.naam) as count  from soorten s inner join public.bieren b on s.soortnr = b.soortnr
+group by s.soort;
+
+SELECT s.soort, COUNT(b.biernr) AS bier_count
+FROM soorten s
+INNER JOIN bieren b ON s.soortnr = b.soortnr
+GROUP BY s.soort
+ORDER BY bier_count DESC
+LIMIT 1;
+
 
 
 
