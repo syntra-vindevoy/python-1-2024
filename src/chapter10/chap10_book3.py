@@ -1,3 +1,4 @@
+from collections import defaultdict
 """
 10.11.3. Exercise
 What is the longest word you can think of where each letter appears only once?
@@ -54,7 +55,6 @@ def value_counts(word):
             counter[letter] = 1
     return counter
 
-from collections import defaultdict
 def value_counts2(word):
     def _increment_counter(counter, character):
         counter[character] += 1
