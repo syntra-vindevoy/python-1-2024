@@ -27,5 +27,12 @@ def longest_word():
         words2 = {}
         for word in words:
             words2[word] = len(word)
-        print (words2)
-longest_word()
+    words_sorted = sorted(words2.items(), key=lambda x: x[1], reverse=True)
+
+    for word in words_sorted:
+        if has_duplicates(word[0]): return True
+
+print (longest_word())
+
+from sortedcontainers import SortedDict
+
