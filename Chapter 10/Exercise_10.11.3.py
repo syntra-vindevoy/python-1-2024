@@ -80,3 +80,11 @@ with open("words.txt", "r") as file:
     # key, want het moet enkel rekening houden met woorden die langer zijn
     word_lengths = {len(word): word for word in words}
     print(word_lengths[max(word_lengths.keys())])
+
+
+# extra option to do ourselves
+# first get the longest word
+# find one without duplicates in the longest
+# if not found, descend
+with open("words.txt", "r") as file:
+    words = file.read().splitlines()
