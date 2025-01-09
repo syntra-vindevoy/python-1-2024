@@ -60,7 +60,25 @@ assert invert_dict(dict(a=1, b=2, c=3, z=1)) == {1: ['a', 'z'], 2: ['b'], 3: ['c
 Exercise 3   Memoize the Ackermann function from Exercise 2 and see if memoization makes it possible to evaluate
  the function with bigger arguments. Hint: no. Solution: https://thinkpython.com/code/ackermann_memo.py.
 """
-#ToDo
+
+cache = {}
+
+def ackermann(m, n):
+
+    if m == 0:
+        return n + 1
+    if n == 0:
+        return ackermann(m - 1, 1)
+
+    if (m, n) in cache:
+        return cache[m, n]
+    else:
+        cache[m, n] = ackermann(m - 1, ackermann(m, n - 1))
+        return cache[m, n]
+
+
+print(ackermann(3, 4))
+print(ackermann(3, 6))
 
 """
 Exercise 4
@@ -85,7 +103,7 @@ assert has_duplicates(["a", "b", "c", "a"]) == True
 
 
 def has_duplicates_len(words: list)->bool:
-   return len(set(list)) < len(list)
+   return len(set(words)) < len(words)
 
 assert has_duplicates_len(["a", "b", "c", "a"]) == True
 
