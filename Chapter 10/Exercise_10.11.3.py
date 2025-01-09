@@ -71,3 +71,12 @@ with open("words.txt", "r") as file:
 
 print(longest_word_2, longest)
 
+
+with open("words.txt", "r") as file:
+    words = file.read().splitlines()
+    # maakt een lijst van de woorden waarbij  de lengte van het woord, gelijk is aan de unieke lengte van het woord (= geen duplicates)
+    words = [word for word in words if len(word) == len(set(word))]
+    # maakt een dict met als key de lengte van een woord en de value het woord zelf. Overschrijven maakt niet uit bij dezelfde lengte /
+    # key, want het moet enkel rekening houden met woorden die langer zijn
+    word_lengths = {len(word): word for word in words}
+    print(word_lengths[max(word_lengths.keys())])
