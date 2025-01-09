@@ -1,13 +1,50 @@
 from collections import defaultdict
+import collections
 """
 10.11.3. Exercise
 What is the longest word you can think of where each letter appears only once?
  Let’s see if we can find one longer than unpredictably.
-
 Write a function named has_duplicates that takes a sequence – like a list or string – as a parameter and returns
 True if there is any element that appears in the sequence more than once.
 """
-import collections
+def has_duplicates_len(words: list)->bool:
+   return len(set(words)) < len(words)
+
+def longest_word(word_list):
+    longest=0
+    lw = ''
+    for word in word_list:
+        if len(word) < longest:
+            continue
+        if has_duplicates_len(word):
+            continue
+        if len(word) > len(lw):
+            longest=len(word)
+            lw = word
+    print(lw,longest)
+
+with open('words.txt') as file:
+    word_list = file.read().splitlines()
+    longest_word(word_list)
+
+
+def longest_word_n():
+    with open('words.txt') as file:
+        wls = file.read().splitlines()
+        words=[word for word in wls if len(word) == len(set(word))]
+        word_lengths ={len(word):word for word in words}
+
+        print(word_lengths[max(word_lengths.keys())])
+
+assert has_duplicates_len(['a', 'b', 'c', 'a']) == True
+
+longest_word_n()
+
+
+
+
+
+
 
 """
 10.11.4. Exercise
