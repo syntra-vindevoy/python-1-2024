@@ -37,3 +37,37 @@ def find_longest_word_without_duplicates(filename):
 filename = 'words.txt'  # Replace with the actual path if needed
 longest_word = find_longest_word_without_duplicates(filename)
 print("The longest word without duplicates is:", longest_word)
+
+
+#CLASS OPTION
+def has_duplicates_2(word: str) -> str:
+    letters = {}
+
+    for letter in word:
+        if letter in letters:
+            return True
+        letters[letter] = True
+
+# OR ONELINER
+
+def has_duplicates_ol(word: str) -> bool:
+    return len(word) > len(set(word))
+
+with open("words.txt", "r") as file:
+    words = file.read().splitlines()
+    longest = 0
+    longest_word_2 = ""
+
+    for word in words:
+        if len(word) < len(longest_word_2):
+            continue
+
+        if has_duplicates_2(word):
+            continue
+
+        if len(word) > longest:
+            longest = len(word)
+            longest_word_2 = word
+
+print(longest_word_2, longest)
+
