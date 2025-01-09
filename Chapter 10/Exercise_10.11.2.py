@@ -23,6 +23,7 @@ print(counter.get('c', 0))
 def value_counts_2(string):
     counter = {}
     for letter in string:
-        counter[letter] = counter.get(letter, 0) +=1
+        counter[letter] = counter.get(letter, 0) + 1
     return counter
 
+print(value_counts_2("banaan"))
