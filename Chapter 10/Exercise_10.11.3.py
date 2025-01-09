@@ -23,8 +23,12 @@ def find_longest_word_without_duplicates(filename):
         for word in words:
             word = word.strip()  # Remove any leading/trailing whitespace or newline characters
 
-            if not has_duplicates(word) and len(word) > len(longest_word):
-                longest_word = word  # Update longest_word if the current word is longer and has no duplicates
+            # Skip if the current word is smaller than the longest_word already found
+            if len(word) <= len(longest_word):
+                continue
+
+            if not has_duplicates(word):
+                longest_word = word  # Update longest_word if the current word has no duplicates
 
     return longest_word
 
