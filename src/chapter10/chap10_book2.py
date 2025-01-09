@@ -8,6 +8,7 @@ If you did Exercise 10, you can compare the speed of this implementation with th
  and the bisection search.
  """
 
+
 def read_words():
     """
     Reads a word list from a file named 'words.txt' and stores them in a dictionary.
@@ -44,6 +45,7 @@ Read the documentation of the dictionary method setdefault and use it to write a
 
 """
 
+
 def invert_dict(dict_words: dict):
     inverse = {}
     for key in dict_words:
@@ -51,8 +53,8 @@ def invert_dict(dict_words: dict):
         inverse.setdefault(val, []).append(key)
     return inverse
 
-assert invert_dict(dict(a=1, b=2, c=3, z=1)) == {1: ['a', 'z'], 2: ['b'], 3: ['c']}
 
+assert invert_dict(dict(a=1, b=2, c=3, z=1)) == {1: ['a', 'z'], 2: ['b'], 3: ['c']}
 
 """
 Exercise 3   Memoize the Ackermann function from Exercise 2 and see if memoization makes it possible to evaluate
@@ -70,13 +72,15 @@ Solution: https://thinkpython.com/code/has_duplicates.py.
 
 """
 
-def has_duplicates (words: list):
-    dict_words = {}
-    for word in words:
-        if word in dict_words:
+
+def has_duplicates(words: list)->bool:
+    dup = dict()
+    for x in words:
+        if x in dup:
             return True
-        dict_words[word] = None
+        dup[x] = True
     return False
+
 
 assert has_duplicates(["a", "b", "c", "a"]) == True
 
@@ -87,17 +91,21 @@ Two words are “rotate pairs” if you can rotate one of them and get the other
 Write a program that reads a wordlist and finds all the rotate pairs.
 Solution: https://thinkpython.com/code/rotate_pairs.py.
 """
+
+
 def rotate_pairs(words: list):
-    pairs={}
+    pairs = {}
     for word in words:
-        rotate_w=word[::-1]
-        if rotate_w in words and word!=rotate_w:
-            pairs[word]=rotate_w
+        rotate_w = word[::-1]
+        if rotate_w in words and word != rotate_w:
+            pairs[word] = rotate_w
     return pairs
+
 
 """
 Exercise 6
 """
+
 
 def find_homophone_word(word_list, homophone_check):
     """

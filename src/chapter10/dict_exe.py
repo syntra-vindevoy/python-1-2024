@@ -32,3 +32,10 @@ print(new_dict)
 dicct3 = {'a': 10, 'b': 9, 'c': 6}
 dicct3.update(dict1)
 print(dicct3)
+
+direr = {}
+direr[0] = "test"
+direr[1] = "test"
+print(direr)
+direr[0] = "kaka"
+print(direr)
