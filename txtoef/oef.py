@@ -7,7 +7,7 @@
 import string
 
 # Read words from a text file
-with open("words.txt", "r") as file:
+with open("../H10/words.txt", "r") as file:
     words = [line.strip() for line in file]
 
 # Function to generate combinations of letters without itertools

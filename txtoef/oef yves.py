@@ -12,7 +12,7 @@ def five_chars():
 
     print(len(combinations))
 
-    with open("words.txt", "r") as file:
+    with open("../H10/words.txt", "r") as file:
         words = file.read().splitlines()
 
         print("number of words:", len(words))

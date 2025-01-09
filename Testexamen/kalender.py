@@ -50,4 +50,4 @@ def print_year(year: int):
         print_month(year, month)  # Print the calendar for the month
 
 # Call the function to print the calendar for the entire year 2022
-print_year(2022)
+print_year(2024)

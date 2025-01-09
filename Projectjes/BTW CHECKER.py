@@ -25,7 +25,9 @@ def highlight_errors_in_excel(file_path, sheet_name='Sheet1', vat_column='VAT Nu
         output_file (str): Path to save the output Excel file.
     """
     # Load the Excel file into a DataFrame
-    df = pd.read_excel(file_path, sheet_name=sheet_name)
+    df =
+    with pd.read_excel(file_path, sheet_name=sheet_name) as df:
+
 
     # Validate VAT numbers and create an 'Error' column
     df['Error'] = df[vat_column].apply(lambda vat: not validate_belgian_vat(str(vat)) if pd.notnull(vat) else True)
