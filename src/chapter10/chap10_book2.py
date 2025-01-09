@@ -81,8 +81,13 @@ def has_duplicates(words: list)->bool:
         dup[x] = True
     return False
 
-
 assert has_duplicates(["a", "b", "c", "a"]) == True
+
+
+def has_duplicates_len(words: list)->bool:
+   return len(set(list)) < len(list)
+
+assert has_duplicates_len(["a", "b", "c", "a"]) == True
 
 """
 Exercise 5
