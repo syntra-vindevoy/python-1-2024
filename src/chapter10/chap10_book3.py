@@ -40,12 +40,6 @@ assert has_duplicates_len(['a', 'b', 'c', 'a']) == True
 
 longest_word_n()
 
-
-
-
-
-
-
 """
 10.11.4. Exercise
 Write function called find_repeats that takes a dictionary that maps from each key to a counter,
