@@ -1,4 +1,4 @@
-#Support program to chap03_func
+#Support program to 03_func
 
 def add(x, y):
     a = x + y
