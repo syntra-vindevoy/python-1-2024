@@ -1,0 +1,3 @@
+ ProductA, 100
+ ProductB, 200
+ ProductC, 150
