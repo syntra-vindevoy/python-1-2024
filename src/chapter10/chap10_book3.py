@@ -145,5 +145,16 @@ def is_interlocking(word, word_list):
 
     # Check if both generated words exist in the word_list
     return word1 in word_list and word2 in word_list
+from sortedcontainers import SortedDict
+
+def interlocking_set():
+    with open ("words.txt", "r") as f:
+        words = f.read().splitlines()
+        words =set(words)
+    interlocking = SortedDict({word: (word[0::2], word[1::2]) for word in words if word[0::2] in words and word[1::2] in words})
+
+    return interlocking
 
 assert is_interlocking('brontosaurus', {'brontosaurus', 'apatosaurus', 'triceratops', 'botsuu', 'rnoars'}) == True
+
+print(interlocking_set())
