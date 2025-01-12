@@ -90,7 +90,8 @@ write_and_read_file("example.txt", data)
 - b) Explain the difference between `isalpha()`, `isdigit()`, and `isalnum()`. Provide an example for each.
 
 #### 5.2 Practical (15 points)  
-- Write a function `reverse_vowels(s)` that takes a string and returns it with only the vowels reversed while leaving other characters unchanged.  
+- Write a function `reverse_vowels(s)` that takes a string and returns 
+it with only the vowels reversed while leaving other characters unchanged.  
 
 Example:  
 ```python
@@ -107,7 +108,8 @@ reverse_vowels("hello world")
 - b) Provide an example to explain how you can extract every third character from a string.
 
 #### 6.2 Practical (10 points)  
-- Write a function `find_substrings(s, k)` that takes a string `s` and an integer `k`, and returns a list of all unique substrings of length `k` in `s`.  
+- Write a function `find_substrings(s, k)` that takes a string `s` and an integer `k`
+- and returns a list of all unique substrings of length `k` in `s`.  
 
 Example:  
 ```python
