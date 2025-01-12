@@ -27,6 +27,16 @@ for line in reader:
         break
     writer.write(line)
 
+
+for line in open("pg345_cleaned.txt", encoding="utf-8"):
+    line = line.strip()
+    if len(line) > 0:
+        print(line)
+    if line.endswith("Stoker"):
+        break
+
+
 # Close the reader and writer
 reader.close()
 writer.close()
+
