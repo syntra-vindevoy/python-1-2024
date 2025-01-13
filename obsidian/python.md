@@ -1465,6 +1465,51 @@ Eindwerk:
 flet.dev
 shiny
 
+## Dictionaries
+```python
+d = {}
+d[0]="toto"
+print("the key name exists", "name" in d)
+if "name" in d:
+
+lst = [1,2,3]
+d = {i:lst[i] for i in range(len(lst))}
+numbers_copy = dict(numbers)
+
+for key in dict:
+	print(key,dict[key])
+```
+
+key is hoofdletter-gevoelig!
+dicationary comprehension
++ eerst dict aanmaken
+
+memoization met dict
+tail-recursion als oplossing voor stack-overflow?
+
+
+Geef de eerste duizend priemgetallen, gebruik makende van caching
+
+
+two sum
++ op welke plaats staan twee getallen die samen zijn voor getal y
+
+
+
+leetcode [Median of Two Sorted Arrays](https://leetcode.com/problems/median-of-two-sorted-arrays/)
+https://medium.com/@ccpythonprogramming/algorithms-in-python-2c0c791ef6af
+
+
+
+oefening op inverted dict voetbal standen
+medium.com algoritms in python
+
+
+examen
++ inlezen file
++ dicts
++ lists
+
 
 
 

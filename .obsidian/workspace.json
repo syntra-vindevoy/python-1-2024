@@ -35,7 +35,8 @@
               "title": "python"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -177,21 +178,20 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "6534bf29f0f6b600",
+  "active": "5fe9b10bc375ee4c",
   "lastOpenFiles": [
+    "obsidian/database.md",
+    "obsidian/python.md",
     "code_snippets/sqlalchemy/example.db-journal",
     "code_snippets/sqlalchemy/example.db",
     "code_snippets/sqlite/script.sql",
     "code_snippets/sqlite",
     "code_snippets/postgresql/try.sql",
-    "obsidian/python.md",
     "oefeningen/5_chars/main6.py",
     "oefeningen/5_chars/main5 copy.py",
     "code_snippets/slice_variable.py",
     "code_snippets/slice_variable_UNFINISHED.py",
     "code_snippets/slice_typing.py",
-    "obsidian/database.md",
-    "code_snippets/swapping.py",
     "obsidian/syntra.md",
     "obsidian/branch_overview.png",
     "examen/opgave.md",
