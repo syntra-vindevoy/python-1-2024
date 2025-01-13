@@ -74,3 +74,17 @@ print(find_first(lines, pattern).string)  # Print the first line starting with '
 # Define a pattern to find lines ending with 'Harker'.
 pattern = "Harker$"
 print(find_first(lines, pattern).string)  # Print the first line ending with 'Harker'
+
+pattern = "cent(er|re)"
+result = find_first(lines, pattern)
+print(result.string)
+
+
+pattern = "colou?r"
+result = find_first(lines, pattern)
+line = result.string
+print(line)
+
+
+line = re.sub(pattern, "color", line)
+print(line)
