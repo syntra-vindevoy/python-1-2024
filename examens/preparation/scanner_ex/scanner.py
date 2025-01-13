@@ -18,6 +18,11 @@ def main():
         print(key)
         for file, para, index in dict_paras[key]:
             print(f"\t{file} : {para} ({index})")
+    with open("summary.txt", "w") as file_s:
+        for key in dict_paras:
+            file_s.write(f"{key}\n")
+            for file, para, index in dict_paras[key]:
+                file_s.write(f"\t{file} : {para} ({index})\n")
 
 
 def scan_directory(dir_path, suffix) -> [pathlib.Path]:
