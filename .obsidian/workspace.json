@@ -35,8 +35,7 @@
               "title": "python"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -178,10 +177,10 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "5fe9b10bc375ee4c",
+  "active": "6534bf29f0f6b600",
   "lastOpenFiles": [
-    "obsidian/database.md",
     "obsidian/python.md",
+    "obsidian/database.md",
     "code_snippets/sqlalchemy/example.db-journal",
     "code_snippets/sqlalchemy/example.db",
     "code_snippets/sqlite/script.sql",

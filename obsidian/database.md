@@ -288,3 +288,7 @@ csv inladen
 
 select voor cols
 where voor rows
+
+## SQL QUERIES
+
+examen op 25 februari
