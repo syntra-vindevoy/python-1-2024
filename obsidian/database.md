@@ -292,3 +292,107 @@ where voor rows
 ## SQL QUERIES
 
 examen op 25 februari
+
+chcp 1252 (in command prompt)
+type van tekens
+
+```cmd
+psql -c "CREATE DATABASE adventureworks;" -U postgres -p 5432
+
+psql -d adventureworks < install.sql -U postgres -p 5432
+```
+
+```sql
+\l --lijst van databases
+```
+
+zie query-files syntax
+w3schools sql 
++ sql_intro
++ sql syntax
+	+ select distinct
+
+
+# joins
++ inner join
+	+ doorsnede van twee tables
++ left join
+	+ alles van linkse tabel
+	+ rechtse tabel wordt er aan gehangen
++ cross join
+	+ alles
+	+ carthesis product
+	+ komt weinig voor
+	
+soorten\<bieren\>brouwers
+
+
+
+```sql
+select table1.column1, table2 column2
+-- welke kolommen weergeven
+from table1
+-- basis
+(inner)join table2 on table2.col=table.col1
+-- welke kolommen matchen
+```
+
+"inner join" is zelfde als "join"
+"left outer join" is zelfde als "left join"
+
+```sql
+select table1.column1, table2 column2
+-- welke kolommen weergeven
+from table1
+-- basis
+left (outer) join table2 on table2.col=table.col1
+-- welke kolommen matchen
+```
+
+```sql
+select br.brouwernaam,
+		s.soort,
+		bier.alcohol,
+		bier.naam
+from public.bieren bier
+left join public.brouwers br on br.brouwernr = bier.brouwernr
+left join public.soorten s on s.soorten on s.soortnr = bier.soortnr
+order by brouwernaam, soort, alcohol, naam
+```
+
+left met left wisselen maakt niet uit
+ontbrekende gegevens (null)
+
+... where bier.alcohol is null
+
+```sql
+select
+	col,
+	agg,
+from
+	tablename
+where
+
+group by
+	col, -- alle agg moeten hier in voorkomen
+having
+	condition
+```
+
+sequences (net boven tables)
+
+
+```sql
+SELECT *
+FROM brouwers
+ORDER BY brouwernr DESC
+LIMIT 3
+;
+```
+
+where --> rijen die aan conditie voldoen
+
+
+w3schools postgresql
+youtube @socratica
+
