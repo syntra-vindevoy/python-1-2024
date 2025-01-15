@@ -30,7 +30,7 @@ insert into bieren(naam,soortnr)  values ('test2',null);
 
 
 -- Kan je soort 'Syntra bier' toeveogen?n
-
+insert into soorten(soort) values ('Syntra bier');
 
 -- Welke biernamen zitten er dubbel in?
     select bieren.naam as naam ,count(*) as dubbel from bieren group by naam having count(*)>1 order by bieren.naam;
@@ -42,7 +42,7 @@ from bieren b
 left join brouwers br on br.brouwernr = b.brouwernr
 left join soorten s on s.soortnr = b.soortnr
 where b.naam in ( select bieren.naam from bieren group by naam having count(*)>1 )
-group by b.naam, br.brouwernaam, s.soortnr;
+group by b.naam, br.brouwernaam, s.soortnr, b.alcohol;
 
 
 -- 2. CHECK ON NULL (IS NULL)
