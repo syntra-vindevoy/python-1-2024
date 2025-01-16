@@ -64,12 +64,10 @@ Exercise 3   Memoize the Ackermann function from Exercise 2 and see if memoizati
 cache = {}
 
 def ackermann(m, n):
-
     if m == 0:
         return n + 1
     if n == 0:
         return ackermann(m - 1, 1)
-
     if (m, n) in cache:
         return cache[m, n]
     else:
@@ -89,7 +87,6 @@ Use a dictionary to write a faster, simpler version of has_duplicates.
 Solution: https://thinkpython.com/code/has_duplicates.py.
 
 """
-
 
 def has_duplicates(words: list)->bool:
     dup = dict()
