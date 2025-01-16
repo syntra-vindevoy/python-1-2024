@@ -1,9 +1,11 @@
 from time import perf_counter
 
 def primes (number):
-    prime_list = [2,]
-    n = 3
+    prime_list = [2,3,5,]
+    n = 7
+
     while len(prime_list) < number:
+
         prime_check = True
         for i in prime_list[1:]:
             if i * i > n: break #stops sequence at sqrt of n, no need to continue checking higher values
@@ -12,6 +14,10 @@ def primes (number):
                 break
         if prime_check: prime_list.append(n)
         n += 2
+        while n % 5 == 0 or n % 3 == 0:
+            n += 2
+
+
     return prime_list
 
 if __name__ == '__main__':
