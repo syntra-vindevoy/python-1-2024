@@ -1510,6 +1510,39 @@ examen
 + dicts
 + lists
 
+## Dicts 
++ een keer doorlopen = dict
+
+## Tuples
+```python
+x = (1, 2)
+
+y = 1, 2
+
+  
+
+print(x)
+
+print(y)
+
+  
+
+type(x)
+
+type(y)
+```
 
 
+een sorted tuple is een list!
+tuple is immutable, wijzigen is hernieuw schrijven, cfr string
 
+try except pass
+--> probeer iets te doen en ga voort als het niet lukt
+
+
+snapshot: 3
+alpha: 2
+beta: 4
+milestone: 1
+rc release candidate: 5
+final: 6

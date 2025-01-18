@@ -35,7 +35,8 @@
               "title": "python"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -177,8 +178,11 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "6534bf29f0f6b600",
+  "active": "5fe9b10bc375ee4c",
   "lastOpenFiles": [
+    "lessen/tuples.py",
+    "lessen/tuples",
+    "obsidian/database.md",
     "databases/Les_05_Queries/Les_05_bieren_opdrachten.sql",
     "databases/Les_05_Queries/Les_05_bieren.sql",
     "databases/Les_05_Queries/Les_05_adventureworks_opdrachten.sql",
@@ -188,11 +192,8 @@
     "databases/Unconfirmed 929485.crdownload",
     "databases/Les_05_Database/backup.sql",
     "databases/Les_05_Database/adventure-works-postgres-master/data/WorkOrderRouting.csv",
-    "databases/Les_05_Database/adventure-works-postgres-master/data/WorkOrder.csv",
-    "databases/Les_05_Database/adventure-works-postgres-master/data/Vendor.csv",
     "databases/Les_05_Database/adventure-works-postgres-master/README.md",
     "obsidian/python.md",
-    "obsidian/database.md",
     "obsidian/syntra.md",
     "obsidian/branch_overview.png",
     "examen/opgave.md",
