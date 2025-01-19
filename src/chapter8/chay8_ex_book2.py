@@ -3,7 +3,6 @@ ex 2
 There is a string method called count that is similar to the function in Section 8.7.
  Read the documentation of this method and write an invocation that counts the number of a’s in 'banana'.
 """
-import string
 
 word ="battaan path"
 occurents_letters={}
@@ -21,9 +20,7 @@ Use this idiom to write a one-line version of is_palindrome from Exercise 3.
 """
 
 word="rattar"
-
 rev_word=word[::1]
-
 assert rev_word == word,"Oh no! This assertion failed!"
 
 

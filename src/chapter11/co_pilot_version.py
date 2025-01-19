@@ -23,7 +23,6 @@ def is_version_less_than(current_version, new_version):
                 return False
         else:
             return isinstance(c, str) and not isinstance(n, str)
-
     return len(current_parts) < len(new_parts)
 
 # Test cases
