@@ -1,5 +1,5 @@
 from datetime import datetime
-from chap09_is_anagram import is_anagram
+from b2_ex15_6 import is_anagram
 
 ###Classic way, but bad way, because you have to close the file at the end
 #f = open("words.txt", "r")
