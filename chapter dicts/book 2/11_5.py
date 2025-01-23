@@ -15,12 +15,11 @@ def find_pairs():
     with open("words.txt", "r") as f:
         words_dict = {word: 1 for word in f.read().splitlines()}
         pairs_list = []
-        print (words_dict)
     for word in words_dict:
-        new_word = rotate_word(word, 1)
+        new_word = rotate_word(word, 2)
         if new_word in words_dict: pairs_list.append((word, new_word))
 
-    return pairs_list
+    return len(pairs_list), pairs_list
 
 print (find_pairs())
 
