@@ -20,6 +20,7 @@ def generate_primes_sieve_no_imports(limit):
             for multiple in range(num * num, upper_bound + 1, num):
                 sieve[multiple] = False
 
+
     # Extract prime numbers from the sieve
     primes = [i for i, is_prime in enumerate(sieve) if is_prime]
 
