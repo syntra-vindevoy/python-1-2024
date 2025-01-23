@@ -1,3 +1,5 @@
+import random
+
 def check_number_lotery(lotery_number, total):
     steps = 0
     max_number = total
@@ -25,12 +27,17 @@ def longest_steps(total):
             list_lotery = [i]
         elif steps == max:
             list_lotery.append(i)
-    print(list_lotery, max)
+    print(list_lotery)
+    print(max)
+
+def random_lotery(total):
+    return random.randint(1, total)
 
 
-
-print(longest_steps(10))
+print(longest_steps(1000000))
 print(check_number_lotery(4, 10))
+
+print(check_number_lotery(random_lotery(100), 100))
 
 #getal ingeven: pc moet raden of het nr juist is.
 #Hoeveel st appen zijn hiervoor nodig, voor hij het vind.
