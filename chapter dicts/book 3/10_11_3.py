@@ -4,7 +4,7 @@ Let’s see if we can find one longer than unpredictably.
 Write a function named has_duplicates that takes a sequence –
 like a list or string – as a parameter and returns True if there is any element that appears in the sequence more than once.
 """
-
+from sortedcontainers import SortedDict
 
 def has_duplicates(word):
     d = {}
@@ -14,7 +14,7 @@ def has_duplicates(word):
 
 print(has_duplicates("hallo"))
 
-with open ("words.txt", "r") as f:
+with open ("../words.txt", "r") as f:
     words = f.read().splitlines()
     words = [word for word in words if len(word) == len(set(word))]
     word_lenghts = {len(word): word for word in words}
@@ -22,17 +22,25 @@ print(sorted(word_lenghts, reverse=True)[0])
 print (word_lenghts[max(word_lenghts.keys())])
 
 def longest_word():
-    with open ("words.txt", "r") as f:
+    with open ("../words.txt", "r") as f:
         words = f.read().splitlines()
         words2 = {}
         for word in words:
             words2[word] = len(word)
+
     words_sorted = sorted(words2.items(), key=lambda x: x[1], reverse=True)
 
     for word in words_sorted:
-        if has_duplicates(word[0]): return True
+        if not has_duplicates(word[0]): return word
 
 print (longest_word())
 
-from sortedcontainers import SortedDict
+"""de sorted()-functie sorteert de lijst van tuples. 
+        De argumenten binnen sorted() bepalen hoe de sortering wordt uitgevoerd.
+
+    key=lambda x: x[0]:
+        De key-parameter bepaalt op welke eigenschap de sortering gebaseerd is.
+        lambda x: x[0] betekent: neem het eerste element (x[0]) van elk tuple als de sorteerbasis.
+        In dit geval verwijst x[0] naar de sleutel in elk tuple
+"""
 

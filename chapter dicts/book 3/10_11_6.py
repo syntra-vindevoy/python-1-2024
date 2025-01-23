@@ -2,7 +2,7 @@ from sortedcontainers import SortedDict
 
 
 def interlocking():
-    with open ("words.txt", "r") as f:
+    with open ("../words.txt", "r") as f:
         words = f.read().splitlines()
         words =set(words) #set gaat massas sneller!
     # interlocking = {}
