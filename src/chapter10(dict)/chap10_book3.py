@@ -76,7 +76,6 @@ There are many ways to solve this problem. Once you have a working solution, con
  for different solutions.
 """
 
-
 def value_counts(word):
     counter = {}
     for letter in word:
@@ -152,7 +151,6 @@ def interlocking_set():
         words = f.read().splitlines()
         words =set(words)
     interlocking = SortedDict({word: (word[0::2], word[1::2]) for word in words if word[0::2] in words and word[1::2] in words})
-
     return interlocking
 
 assert is_interlocking('brontosaurus', {'brontosaurus', 'apatosaurus', 'triceratops', 'botsuu', 'rnoars'}) == True

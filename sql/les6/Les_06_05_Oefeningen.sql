@@ -143,7 +143,7 @@ WHERE bieren.alcohol IN (
 );
 
 -- 5. COMMON TABLE EXPRESSIONS (CTE)
--- *********************************
+-- *********************************p
 
 -- Algemeen
 WITH temp_table1 AS
@@ -299,6 +299,34 @@ SELECT DDMMYYYY
      , cast(concat(JAAR, MAAND, DAG) as DATE) AS DATUM2
      , cast(concat(JAAR, '-', MAAND, '-', DAG) as DATE) AS DATUM3
      , cast(JAAR || MAAND || DAG as DATE) AS DATUM4
-FROM TEMP
+FROM TEMP;
 
 
+
+
+CREATE FUNCTION categorie(alcohol float)
+RETURNS varchar AS $$
+BEGIN
+    RETURN
+    CASE
+        WHEN alcohol IS NULL THEN 'onbekend'
+        WHEN alcohol <= 0.10 THEN 'Alcohol vrij'
+        WHEN alcohol < 2 THEN 'Extra laag'
+        WHEN alcohol < 5 THEN 'laag'
+        WHEN alcohol < 10 THEN 'Gemiddeld'
+        ELSE 'Hoog'
+    END;
+END; $$
+LANGUAGE plpgsql;
+
+select now();
+WITH dubbel_voorkomende_bieren AS (
+    SELECT DISTINCT naam
+    FROM public.bieren
+    WHERE naam IS NOT NULL
+    GROUP BY naam
+    HAVING COUNT(*) > 1
+)
+SELECT bieren.biernr, bieren.naam AS bier_naam, bieren.brouwernr, bieren.soortnr, bieren.alcohol
+FROM public.bieren
+JOIN dubbel_voorkomende_bieren ON bieren.naam = dubbel_voorkomende_bieren.naam;
