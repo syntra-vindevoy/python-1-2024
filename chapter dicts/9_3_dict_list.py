@@ -3,13 +3,12 @@ from time import perf_counter
 
 def find_combination():
     with open("words.txt", "r") as f:
-        word_list = f.read().splitlines()
+        words ={}
+        for word in f.read().splitlines():
+            new_word = "".join(sorted(set(word)))
+            words[new_word] = words.get(new_word, 0) + 1
 
-    words = {}
     alphabet = list (string.ascii_lowercase)
-    for word in word_list:
-        new_word = "".join(sorted(set(word)))
-        words[new_word] = words.get(new_word, 0) + 1
 
     print (sum(words.values()))
     combinations = []
