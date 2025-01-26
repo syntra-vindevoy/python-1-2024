@@ -8,11 +8,7 @@ def find_combination():
     words = {}
     alphabet = list (string.ascii_lowercase)
     for word in word_list:
-        new_word = ""
-
-        for letter in alphabet:
-            if letter in word:
-                new_word += letter
+        new_word = "".join(sorted(set(word)))
         words[new_word] = words.get(new_word, 0) + 1
 
     print (sum(words.values()))
