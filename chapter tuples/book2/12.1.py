@@ -4,13 +4,11 @@ how letter frequency varies between languages"""
 
 def letter_frequency(file_name):
     with open (file_name, "r") as f:
-        words = f.read().split()
+        words = f.read().lower()
     letters_count = {}
     for item in words:
-        for i in item:
-            if i.isalpha():
-                i = i.lower()
-                letters_count[i] = letters_count.get(i, 0) + 1
+        if item.isalpha():
+            letters_count[item] = letters_count.get(item, 0) + 1
 
     letters_count = sorted(letters_count.items(), key=lambda item: item[1],reverse=True)
     letters = [letter for letter, count in letters_count]
