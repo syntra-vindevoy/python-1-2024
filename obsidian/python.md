@@ -1546,3 +1546,12 @@ beta: 4
 milestone: 1
 rc release candidate: 5
 final: 6
+
+data
+
+
+```python
+#%%
+from lorem import ...
+
+```

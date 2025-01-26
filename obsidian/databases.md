@@ -396,3 +396,21 @@ where --> rijen die aan conditie voldoen
 w3schools postgresql
 youtube @socratica
 
+# 250121
+## datum en tijdsfuncties
+
++ verschillen vaak van andere databases
++ \+ en \-
++ DATETIME en TIMESTAMP
+	+ omgekeerd geschreven, jaar maand dag
++ DATE
+	+ simplified integer based respresentation
++ INTERVAL
+	+ verschil tussen twee timestamps is steeds een interval
+		+ timestamp - timestamp = interval
+		+ timestamp + interval = timestamp
+```sql
+
+-- 
+```
+
