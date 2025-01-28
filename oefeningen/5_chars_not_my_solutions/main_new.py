@@ -1,3 +1,4 @@
+import bisect
 import string
 from time import perf_counter
 
@@ -11,16 +12,15 @@ def find_combination():
             # shortens the words list and counts the amount of same combinations
             words[new_word] = words.get(new_word, 0) + 1
 
-    # alphabet = list(string.ascii_lowercase)
-    alphabet = list("abcd")
+    alphabet = list(string.ascii_lowercase)
     combinations = []
 
-    # for _ in range(5):
-    for _ in range(3):
+    for _ in range(5):
         letter_count = 10000000
         for letter in alphabet:
             value_temp = 0
-
+            """
+            """
             for word, value in words.items():
                 if letter in word:
                     value_temp += value

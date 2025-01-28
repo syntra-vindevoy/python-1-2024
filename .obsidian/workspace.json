@@ -64,7 +64,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -206,8 +206,9 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "b502eb4577f69e51",
+  "active": "5fe9b10bc375ee4c",
   "lastOpenFiles": [
+    "my_base.md",
     "obsidian/databases.md",
     "obsidian/python.md",
     "oefeningen/5_chars_not_my_solutions/words.txt",
@@ -220,7 +221,6 @@
     "lessen/chapter_11_tuples",
     "lessen/chapter_11_tuples.py",
     "code_snippets/yield.py",
-    "my_base.md",
     "changes.md",
     "databases/Les_05_Database/adventure-works-postgres-master/README.md",
     "obsidian/syntra.md",

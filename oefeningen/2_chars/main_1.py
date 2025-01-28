@@ -6,6 +6,18 @@ word_list = "ab cb cd".split()
 
 char_list = list("abcde")
 word_list = "ab cbe cd cde".split()
+word_list = "ae cbe cd bcd".split()
+words_list = ["ae", "abe", "cd", "bcd"]
+
+char_list = list("abcd")
+word_list = ["ab", "cb", "cd", "ad"]
+word_list = ["ab", "ac", "bc", "bd", "cd"]
+word_list = ["ab", "bc", "cd", "da"]
+word_list = ["ab", "bc", "cd", "de", "ef"]
+
+char_list = list("abcd")
+word_list = ["a", "b", "c"]
+word_list = ["ab", "bc", "cd", "da"]
 """
 """
 
