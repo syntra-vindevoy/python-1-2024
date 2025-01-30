@@ -19,13 +19,20 @@ words_dir = Path("C:/Syntra")
 file_name = "words.txt"
 file = words_dir / file_name
 
+# def anagrams(file):
+#     with open (file, "r") as f:
+#         words = f.read().splitlines()
+#         words_sorted = {}
+#     for word in words:
+#         words_sorted["".join (sorted(word))] = word
+#     return words_sorted
+# print(anagrams(file))
+
 def anagrams(file):
-    with open (file, "r") as f:
-        words = f.read().splitlines()
-    words_sorted = {}
-    for word in words:
-        words_sorted["".join (sorted(word))] = word
+    with open(file, "r") as f:
+        words_sorted = {"".join(sorted(word)): word for word in f.read().splitlines()}
     return words_sorted
-print(anagrams(file))
+
+print (anagrams(file))
 
 
