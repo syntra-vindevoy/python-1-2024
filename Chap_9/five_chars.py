@@ -75,7 +75,7 @@ if __name__ == "__main__":
 
     # Print the five least used letters
     print("Five least used letters:")
-    for letter, count in grouped_letters[:2]:  # Using slicing to get the first 5 least used letters
+    for letter, count in grouped_letters[:5]:  # Using slicing to get the first 5 least used letters
         print(f"{letter}: {count}")
 
 
