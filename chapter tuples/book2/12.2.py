@@ -30,9 +30,20 @@ file = words_dir / file_name
 
 def anagrams(file):
     with open(file, "r") as f:
-        words_sorted = {"".join(sorted(word)): word for word in f.read().splitlines()}
-    return words_sorted
+        words_sorted = {}
+        for word in f.read().splitlines():
+            key = "".join(sorted(word))
+            words_sorted.setdefault(key, []).append(word)
 
-print (anagrams(file))
+    #makes a dict with only the true anagrams
+    anagrams_only = {key: value for key, value in words_sorted.items() if len(value) >= 2}
+
+    #sorts the dict by number of values, did not work without the itteration
+    anagrams_sorted = {key: value for key, value in
+                       sorted(anagrams_only.items(), key=lambda item: len(item[1]), reverse=True)}
+
+    eight_letter_anagrams = {key: value for key, value in anagrams_only.items() if len(key) == 8}
 
 
+    return eight_letter_anagrams.values()
+print(anagrams(file))
