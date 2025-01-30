@@ -128,15 +128,3 @@ str_exampl = "hello WorldFromWorld123OfHorror"
 # Split the string
 result = split_on_upper_and_space(str_exampl)
 print(result)
-
-
-
-
-
-
-
-
-
-
-
-
