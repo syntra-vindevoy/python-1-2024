@@ -39,6 +39,12 @@ for word in five_letter_word_list:
     word_1 = word[1:]
     word_2 = word[0] + word[2:]
     if word_1 in word_list and word_2 in four_letter_word_list:
+        if (
+            soundslike_dictionary.get(word) == None
+            or soundslike_dictionary.get(word_1) == None
+            or soundslike_dictionary.get(word_2) == None
+        ):
+            continue
         if soundslike_dictionary.get(word) == soundslike_dictionary.get(
             word_1
         ) and soundslike_dictionary.get(word) == soundslike_dictionary.get(word_2):
@@ -47,4 +53,4 @@ for word in five_letter_word_list:
                 f"{soundslike_dictionary.get(word)} -> {soundslike_dictionary.get(word_1)} -> {soundslike_dictionary.get(word_2)}"
             )
 
-# oplossing is scent cent sent, andere woorden worden ook weergegeven omdat woorduitspraak ontbreekt
+# oplossing is scent cent sent, andere woorden worden geelimineerd omwille van uitspraak niet beschikbaar
