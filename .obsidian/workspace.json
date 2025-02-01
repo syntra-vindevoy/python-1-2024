@@ -208,6 +208,8 @@
   },
   "active": "5fe9b10bc375ee4c",
   "lastOpenFiles": [
+    "oefeningen/dictionaries/exercises.py",
+    "oefeningen/dictionaries/draft.py",
     "my_base.md",
     "obsidian/databases.md",
     "obsidian/python.md",
@@ -220,7 +222,6 @@
     "lessen/chapter_11_tuples/chapter_11_tuples.py",
     "lessen/chapter_11_tuples",
     "lessen/chapter_11_tuples.py",
-    "code_snippets/yield.py",
     "changes.md",
     "databases/Les_05_Database/adventure-works-postgres-master/README.md",
     "obsidian/syntra.md",
