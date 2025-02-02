@@ -1,28 +1,41 @@
-"""
-Write a function called most_frequent_letters that takes a string and prints the letters in decreasing order of frequency.
-
-To get the items in decreasing order, you can use reversed along with sorted or you can pass reverse=True as a keyword parameter to sorted.
-"""
-
 from icecream import ic
 
-
-def value_counts(string):
-    counter = {}
-    for letter in string:
-        if letter not in counter:
-            counter[letter] = 1
-        else:
-            counter[letter] += 1
-    return counter
+import os
 
 
-def second_element(t):
-    return t[1]
+def get_file_content(file: str):
+    script_dir = os.path.dirname(__file__)
+    file_path = os.path.join(script_dir, file)
+
+    if not os.path.exists(file_path):
+        raise FileNotFoundError(f"The file {file} does not exist at {file_path}")
+
+    with open(file_path, "r", encoding="utf-8") as f:
+        words = f.read()
+    return words
 
 
-print(value_counts("bananas"))
-items = value_counts("bananas").items()
-sorted_items = sorted(items, key=second_element)
+def most_frequent_characters(string: str):
+    def value_counts(string):
+        counter = {}
+        for letter in string:
+            if letter not in counter:
+                counter[letter] = 1
+            else:
+                counter[letter] += 1
+        return counter
 
-ic(sorted_items)
+    def second_element(t):
+        return t[1]
+
+    return sorted(value_counts(string).items(), key=second_element, reverse=True)
+
+
+import string
+
+character_list = string.ascii_lowercase
+
+characters = most_frequent_characters(get_file_content("dracula.txt").lower())
+for key, value in characters:
+    if key in character_list:
+        print(f"{key}:{value}")
