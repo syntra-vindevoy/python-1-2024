@@ -8,6 +8,10 @@ def count(word, letter):
     return c
 
 
+def lc_count(word, letter):
+    return len([w for w in word if w == letter])
+
+
 def one_liner_count(word, letter):
     return len(word) - len(word.replace(letter, ""))
 
@@ -15,3 +19,5 @@ def one_liner_count(word, letter):
 assert one_liner_count("banana", "a") == 3
 assert one_liner_count("banana", "n") == 2
 
+assert lc_count("banana", "a") == 3
+assert lc_count("banana", "n") == 2

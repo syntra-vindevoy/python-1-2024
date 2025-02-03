@@ -13,6 +13,7 @@ def vol_line(horizontal, size):
 
 
 def squares(horizontal, vertical, size):
+
     for _ in range(vertical):
         print(edge_line(horizontal, size))
 

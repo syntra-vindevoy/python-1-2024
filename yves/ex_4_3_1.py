@@ -1,15 +1,15 @@
 import turtle
 
+bob = turtle.Turtle()
 
-def square(t,l):
+
+def square(length):
     for i in range(4):
-        t.fd(l)
-        t.lt(90)
+        bob.fd(length)
+        bob.lt(90)
 
 
 if __name__ == "__main__":
-    bob = turtle.Turtle()
-
-    square(bob, 100)
+    square(100)
 
     turtle.mainloop()

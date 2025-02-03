@@ -1,43 +1,20 @@
-import datetime
 import time
-from math import floor
 
-import pytz
+time_now = time.ctime()
 
+seconds = time.time()
+seconds_in_day = 60 * 60 * 24
+seconds_in_hour = 60 * 60
+seconds_in_minute = 60
 
-def epoch():
-    tz = pytz.timezone("UTC")
-    print(f"now: {datetime.datetime.now().astimezone(tz=tz)}")
-
-    n = time.time()
-
-    print(f"Epoch: {n}")
-
-    n = floor(n)
-
-    seconds = n % 60
-    print(f"Seconds: {seconds}")
-
-    n = n - seconds
-    n = n / 60  # level of minutes
-
-    minutes = int(n % 60)
-    print(f"Minutes: {minutes}")
-
-    n = n - minutes
-    n = n / 60  # level of hours
-
-    hours = int(n % 24)
-    print(f"Hours: {hours}")
-
-    n = n - hours
-    n = n / 24  # level of days
-
-    print(f"Days: {int(n)}")
+days = seconds // seconds_in_day
+seconds -= days * seconds_in_day
+hours = seconds // seconds_in_hour
+seconds = seconds - (hours * seconds_in_hour)
+minutes = seconds // seconds_in_minute
+seconds = seconds - (minutes * seconds_in_minute)
 
 
-if __name__ == "__main__":
-    #epoch()
+print(int(days), int(hours), int(minutes), int(seconds))
+print(time_now)
 
-    today = datetime.datetime(year=2022, month=10, day=13, hour=6)
-    print(today)

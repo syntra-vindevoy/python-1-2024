@@ -1,8 +1,10 @@
 import math
 import turtle
 
-radius = 100
+
+radius = 100.0
 # Do not touch the code below
+
 
 
 def arc(t, r, d):
@@ -39,6 +41,6 @@ def square(t, l):
 if __name__ == "__main__":
     bob = turtle.Turtle()
 
-    arc(bob, radius, 45)
+    arc(bob, radius, 90)
 
     turtle.mainloop()

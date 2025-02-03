@@ -7,12 +7,12 @@ def main():
     weights = SortedDict()
     stones = [1, 3, 9, 27]
 
-    for s in stones:
-        for w in list(weights.keys()):
-            weights[s + w] = [w, s]
-            weights[s - w] = [-w, s]
+    for stone in stones:
+        for weight in weights.copy():
+            weights[stone + weight] = sorted(weights[weight] + [stone])
+            weights[stone - weight] = sorted([-w for w in weights[weight]] + [stone])
 
-        weights[s] = [s]
+        weights[stone] = [stone]
 
     print(weights)
 
