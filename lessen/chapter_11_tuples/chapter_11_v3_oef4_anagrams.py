@@ -45,7 +45,7 @@ for item in filtered_items:
 
 # anagram met langste lengte
 print("anagram met langste lengte:")
-filtered_items = [item for item in sorted_items if len(item[1]) >= 2)]
+filtered_items = [item for item in sorted_items if len(item[1]) >= 2]
 longest_word_length = 0
 for item in filtered_items:
     if len(item[0]) > longest_word_length:
