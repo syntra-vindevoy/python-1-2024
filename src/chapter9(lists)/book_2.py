@@ -1,5 +1,5 @@
 import random
-import itertools
+
 
 def nested_sum(list_of_lists):
     """
@@ -203,6 +203,7 @@ You can download my solution from https://thinkpython.com/code/birthday.py.
 """
 
 
+# beste oplossing
 def has_duplicates(birthdays):
     return len(birthdays) != len(set(birthdays))
 
