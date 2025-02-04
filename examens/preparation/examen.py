@@ -225,3 +225,30 @@ It excels in AI, web development, and scientific computing.
 # Find words with exactly 2 vowels
 words_with_two_vowels = find_words_with_two_vowels(text)
 print("Words with exactly 2 vowels:", words_with_two_vowels)
+
+
+def merge_dictionaries(dict1, dict2):
+    merged_dict = {**dict1, **dict2}
+    return merged_dict
+
+
+def merge_dictionaries1(dict1, dict2):
+    merged_dict = dict1 | dict2  # Merge with the second dictionary overwriting common keys
+    return merged_dict
+
+
+assert merge_dictionaries({'a': 1, 'b': 2}, {'c': 3, 'd': 4}) == {'a': 1, 'b': 2, 'c': 3, 'd': 4}
+
+pairs = [(1, 'a'), (2, 'b'), (3, 'c')]
+nums, chars = zip(*pairs)
+
+print(list(nums))  # Output: [1, 2, 3]
+print(list(chars))  # Output: ['a', 'b', 'c']
+
+words = ["apple", "banana", "cherry", "banana", "date"]
+
+for i in range(len(words) - 1, -1, -1):  # Iterate backwards
+    if words[i] == "banana":
+        del words[i]  # Remove "banana"
+
+print(words)  # Output: ['apple', 'cherry', 'date']
