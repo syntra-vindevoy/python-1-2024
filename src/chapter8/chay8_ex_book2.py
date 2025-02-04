@@ -3,7 +3,6 @@ ex 2
 There is a string method called count that is similar to the function in Section 8.7.
  Read the documentation of this method and write an invocation that counts the number of a’s in 'banana'.
 """
-import string
 
 word ="battaan path"
 occurents_letters={}
@@ -21,9 +20,7 @@ Use this idiom to write a one-line version of is_palindrome from Exercise 3.
 """
 
 word="rattar"
-
 rev_word=word[::1]
-
 assert rev_word == word,"Oh no! This assertion failed!"
 
 
@@ -134,39 +131,67 @@ assert rotate_word(word, rotate_word_times) == "purre"
 word = "Varkenskop"
 assert rotate_word(word, rotate_word_times)  =="Inexrafxbc"
 
-def cesaer(word:str, incr:int):
-    c=""
+
+def caesar(word: str, incr: int) -> str:
+    result = ""
     for l in word:
         if l.isupper():
-            c+= string.ascii_lowercase.index(l)+incr%26
+            # Handle uppercase letters
+            new_char = string.ascii_uppercase[(string.ascii_uppercase.index(l) + incr) % 26]
+        elif l.islower():
+            # Handle lowercase letters
+            new_char = string.ascii_lowercase[(string.ascii_lowercase.index(l) + incr) % 26]
         else:
-            c+= string.ascii_uppercase.index(l)+incr%26
-    return c
+            # Leave non-alphabetic characters unchanged
+            new_char = l
+        result += new_char
+    return result
 
 
 import string
 
-def ceasar(word, incr: int):
+assert caesar("cheer", 13) == "purre"
 
+
+def caesar2(word, incr: int):
     c = ""
-
     for letter in word:
         if letter.isupper():
-            i = string.ascii_lowercase.index(letter) + incr % 26
+            i = (string.ascii_uppercase.index(letter) + incr) % 26
             c += string.ascii_uppercase[i]
-
+        elif letter.islower():
+            i = (string.ascii_lowercase.index(letter) + incr) % 26
+            c += string.ascii_lowercase[i]
         else:
-            c += string.ascii_lowercase[string.ascii_lowercase.index(letter) + incr]
+            c += letter  # Leave non-alphabetic characters unchanged
+    return c
 
+assert caesar2("abc", 1) == "bcd"
+assert caesar2("xyz", 1) == "yza"
+assert caesar2("ABC", 1) == "BCD"
+assert caesar2("XYZ", 1) == "YZA"
+assert caesar2("abc", 2) == "cde"
+assert caesar2("aBcE", 2) == "cDeG"
+assert caesar2("cheer", 13) == "purre"
 
-def ceasar2(word, incr: int):
-    c = ""
-    caps = string.ascii_uppercase + string.ascii_uppercase
-
+def caesar4(word, shift):
+    csr = ""
     for letter in word:
-        if letter.isupper():
-            i = caps.index(letter) + incr
-            c+= string.ascii_uppercase[i]
-
+        offset = (ord("a") - ord("A")) * letter.isupper()
+        lower = letter.lower()
+        if ord(lower) + shift > ord("z"):
+            csr += chr(ord("a") + ord("z") - ord(lower) + shift - offset - 1)
         else:
-            c += string.ascii_lowercase[(string.ascii_lowercase.index(letter) + incr) % 26]
+            csr += chr(ord(lower) + shift - offset)
+
+    return csr
+
+
+assert caesar4("abc", 1) == "bcd"
+assert caesar4("xyz", 1) == "yza"
+assert caesar4("ABC", 1) == "BCD"
+assert caesar4("XYZ", 1) == "YZA"
+assert caesar4("abc", 2) == "cde"
+assert caesar4("aBcE", 2) == "cDeG"
+
+

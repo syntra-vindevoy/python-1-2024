@@ -1,0 +1,21 @@
+### **Integrating Files with Strings**
+10. **Basic:**
+    - Write a program to read a file `paragraph.txt` and:
+      - Count the number of characters in the file.
+      - Count the number of sentences (assume sentences end with `.`).
+      - Count the number of words.
+
+11. **Intermediate:**
+    - Write a Python program to search for a specific word in a file `document.txt` and:
+      - Count how many times the word occurs.
+      - Replace all occurrences of the word with another word and save the updated content to a new file `updated_document.txt`.
+
+12. **Advanced:**
+    - Write a Python program that reads a file `log.txt` containing log entries in the format:
+      ```
+      2025-01-01 INFO Starting application
+      2025-01-01 ERROR Failed to connect
+      2025-01-02 INFO Process completed
+      ```
+      - Extract and count the number of log entries for each level (`INFO`, `ERROR`, etc.).
+      - Save the counts to a file `log_summary.txt`.

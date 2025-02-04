@@ -1,8 +1,7 @@
 import os
 import re
+from collections import Counter
 
-
-# https://www.programiz.com/python-programming/regex
 
 def is_reverse(word1, word2):
     if len(word1) != len(word2):
@@ -16,8 +15,11 @@ def is_reverse(word1, word2):
         j -=1
     return True
 
-assert is_reverse( "sprint", "tnirps")==True
+def is_reverse2(word1, word2):
+    return word1 == word2[::-1]
 
+assert is_reverse( "sprint", "tnirps")==True
+assert is_reverse2( "sprint", "tnirps")==True
 
 def find_first (pattern):
     for line in open ('pg345.txt', encoding='utf-8', errors='replace'):
@@ -44,7 +46,9 @@ def count_matches (pattern):
         if result is not None:
             count += 1
     return count
-
+def count_matches2(file_path,pattern):
+    with open(file_path, encoding='utf-8', errors='replace') as f:
+        return sum(1 for line in f if re.search(pattern, line))
 
 def start ():
     delete_file ('pg345_cleaned.txt')
@@ -74,6 +78,7 @@ def start ():
     result = find_first (r'Bram|Stokers|Jonathan')
     print (result)
     print (count_matches (r'Dracula|Stokers|Jonathan'))
+    print(count_matches2("pg345.txt",r'Dracula|Stokers|Jonathan'))
     result = find_first ('^The')
     print (result)
     result = find_first ('Harker$')
