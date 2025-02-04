@@ -1,7 +1,3 @@
-import re
-import string
-
-
 def caesar2(word, incr: int):
     c = ""
     for letter in word:
@@ -176,6 +172,17 @@ Write a function called word_distance that takes two words with the same length 
 Hint: Use zip to loop through the corresponding letters of the words.
 """
 def word_distance(word1, word2):
+    """
+    Calculates the number of differing positions between two strings
+    of equal lengths. This is also known as the Hamming distance.
+
+    Args:
+        word1: The first string to compare.
+        word2: The second string to compare.
+
+    Returns:
+        The integer Hamming distance between the two strings.
+    """
     total_distance = 0
     for w1, w2 in zip(word1, word2):
         if w1 != w2:
@@ -183,3 +190,38 @@ def word_distance(word1, word2):
     return total_distance
 
 assert word_distance("cheer", "chaar") == 2
+
+
+def avoids(word, forbidden):
+    return any(ch in forbidden.lower() for ch in word.lower())
+
+
+fin = open('van_studenten/words.txt')
+
+for word in fin:
+    if avoids(word, 'lobs') == True:
+        print(word)
+
+import re
+
+
+# Define a function to find words with exactly 2 vowels
+def find_words_with_two_vowels(text):
+    # Regex to match words with exactly two vowels
+    pattern = r'\b\w*[aeiouAEIOU]\w*[aeiouAEIOU]\w*\b'
+    words = re.findall(pattern, text)
+
+    # Filter out words with more than 2 vowels
+    result = [word for word in words if sum(ch in "aeiouAEIOU" for ch in word) == 2]
+    return result
+
+
+# Sample text
+text = """
+Python is a versatile programming language with many features.
+It excels in AI, web development, and scientific computing.
+"""
+
+# Find words with exactly 2 vowels
+words_with_two_vowels = find_words_with_two_vowels(text)
+print("Words with exactly 2 vowels:", words_with_two_vowels)
