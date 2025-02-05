@@ -3,7 +3,7 @@ from pathlib import Path
 
 names = ["Thomas\n", "Meersschaut\n"]
 current_dir = Path(__file__).parent.absolute()      #Directory of file
-#cwd = os.getcwd()
+#cwd = os.getcwd()      #Get Current Working Directory
 
 #with open(f"{cwd}/outputpath.txt", "w") as file:
 #    file.writelines(names)
