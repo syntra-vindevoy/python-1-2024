@@ -19,7 +19,7 @@ concat_example = "Hello" + " " + "World"
 repeat_example = "Echo! " * 3
 # Indexing ([])
 index_example = concat_example[1]  # Accessing the second character
-# print(concat_example, repeat_example, index_example)
+print(concat_example, repeat_example, index_example)
 
 # 3. Traversal with Loops
 
@@ -30,7 +30,7 @@ vowel_count = 0
 for char in input_string:
     if char.lower() in vowels:
         vowel_count += 1
-# print(f"Number of vowels in '{input_string}': {vowel_count}")
+print(f"Number of vowels in '{input_string}': {vowel_count}")
 
 # 4. String Methods
 
@@ -67,8 +67,8 @@ is_word_in_sentence = "fox" in sentence  # True if "fox" is in the string
 # Operations on strings create new strings
 original = "immutable"
 modified = original + " strings"
-# print(original)  # 'immutable'
-# print(modified)  # 'immutable strings'
+print(original)  # 'immutable'
+print(modified)  # 'immutable strings'
 
 # 9. String Slicing and Advanced Techniques
 
@@ -98,13 +98,13 @@ example_sentence = "This is a test. This is only a test."
 frequency_result = word_frequency(example_sentence)
 
 # Uncomment the print statements below for testing the examples.
-print(concat_example, repeat_example, index_example)
-print(f"Number of vowels in '{input_string}': {vowel_count}")
-print(lower_example, upper_example, find_example, strip_example, replace_example)
-print(is_in, count_example)
-print(comparison_result)
-print(is_word_in_sentence)
-print(original, modified)
-print(substring, reversed_string)
-print(is_palindrome_result)
-print(frequency_result)
+# print(concat_example, repeat_example, index_example)
+# print(f"Number of vowels in '{input_string}': {vowel_count}")
+# print(lower_example, upper_example, find_example, strip_example, replace_example)
+# print(is_in, count_example)
+# print(comparison_result)
+# print(is_word_in_sentence)
+# print(original, modified)
+# print(substring, reversed_string)
+# print(is_palindrome_result)
+# print(frequency_result)
