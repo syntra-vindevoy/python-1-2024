@@ -2,7 +2,7 @@ import logging
 
 import yaml
 
-from src.OO.singelton import Singleton
+from src.OO.singleton import Singleton
 
 
 class ConfigLoader(metaclass=Singleton):
