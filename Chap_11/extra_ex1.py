@@ -39,6 +39,10 @@ def combine_nested_lists(list1, list2):
     list1[2][1][2].extend(list2)
     return list1
 
+def remove_value(sample_list, val):
+    return [i for i in sample_list if i != val]
+
+
 if __name__ == "__main__":
     list1 = [100, 200, 300, 400, 500]
     print(reverse_list(list1))
@@ -64,3 +68,5 @@ if __name__ == "__main__":
     list1 = ["a", "b", ["c", ["d", "e", ["f", "g"], "k"], "l"], "m", "n"]
     list2 = ["h", "i", "j"]
     print(combine_nested_lists(list1, list2))
+    sample_list1 = [1, 2, 5, 4, 5, 6, 5, 8, 9, 10]
+    print(remove_value(sample_list1, 5))
