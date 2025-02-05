@@ -17,14 +17,14 @@ def any_lowercase2(s):
 def any_lowercase3(s):
     for c in s:
         flag = c.islower()
-        return flag
+    return flag
 
 
 def any_lowercase4(s):
     flag = False
     for c in s:
         flag = flag or c.islower()
-        return flag
+    return flag
 
 
 def any_lowercase5(s):
