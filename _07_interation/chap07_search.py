@@ -1,4 +1,4 @@
-from chap02_var.chap02_exe import result
+from _02_var.chap02_exe import result
 
 name = "Thomas"
 
