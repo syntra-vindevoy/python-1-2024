@@ -252,3 +252,20 @@ for i in range(len(words) - 1, -1, -1):  # Iterate backwards
         del words[i]  # Remove "banana"
 
 print(words)  # Output: ['apple', 'cherry', 'date']
+
+# Example CSV file content:
+# name,age,job,city,country,email,phone,company,experience,skills
+# Alice,30,Engineer,New York,USA,alice@example.com,1234567890,TechCorp,5,Python;Java
+# Bob,25,Designer,Los Angeles,USA,bob@example.com,0987654321,DesignInc,3,Photoshop;Illustrator
+# Charlie,35,Manager,Chicago,USA,charlie@example.com,1122334455,BizGroup,10,Leadership;Finance
+
+# Open and read the CSV file
+with open("cv.csv", "r", encoding="utf-8") as file:
+    lines = file.readlines()
+
+# Extract headers and data
+headers = lines[0].strip().split(",")
+cv_data = [dict(zip(headers, line.strip().split(","))) for line in lines[1:]]
+
+# Print the list of dictionaries
+print(cv_data)
