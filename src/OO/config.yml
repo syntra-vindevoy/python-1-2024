@@ -1,0 +1,29 @@
+# Sample data
+users:
+  - id: 1
+    name: John Doe
+    email: john.doe@example.com
+    age: 30
+
+  - id: 2
+    name: Jane Smith
+    email: jane.smith@example.com
+    age: 25
+
+settings:
+  theme: light
+  notifications: true
+  language: en
+
+logs:
+  - timestamp: "2023-11-01T10:00:00Z"
+    level: info
+    message: "System initialized."
+
+  - timestamp: "2023-11-01T10:05:00Z"
+    level: warning
+    message: "Low disk space warning."
+
+  - timestamp: "2023-11-01T10:10:00Z"
+    level: error
+    message: "Unable to connect to server."
