@@ -39,6 +39,36 @@ def find_min_value(sample):
     return min(sample.values())
 
 def change_salary(sample, search_name, new_salary):
+    """
+    Update the salary for a specific employee in a dictionary of employees.
+
+    Parameters
+    ----------
+    sample : dict
+        A dictionary of employees, where keys are employee IDs (e.g., 'emp1', 'emp2')
+        and values are dictionaries containing employee information, such as name and salary.
+    search_name : str
+        The name of the employee whose salary should be updated.
+    new_salary : int or float
+        The new salary to assign to the specified employee.
+
+    Returns
+    -------
+    dict
+        The updated dictionary of employees, with the salary changed for the matching employee.
+
+    Examples
+    --------
+    # >>> employees = {
+    # ...     'emp1': {'name': 'Jhon', 'salary': 7500},
+    # ...     'emp2': {'name': 'Emma', 'salary': 8000},
+    # ...     'emp3': {'name': 'Brad', 'salary': 500}
+    # ... }
+    # >>> updated = change_salary(employees, 'Brad', 8500)
+    # >>> updated['emp3']['salary']
+    8500
+    """
+
     for emp_key, emp_data in sample.items():
         # Check if the 'name' in this employee matches search_name
         if emp_data.get('name') == search_name:
