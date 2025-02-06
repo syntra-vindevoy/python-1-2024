@@ -37,8 +37,8 @@ print(longest_word, longest)
 with open("words.txt", "r") as f:
     word_list = f.read().splitlines()
 
-    words = [word for word in word_list if len(word) == len(set(word))]  #Put all unique words in dict
-    print(words)
+    words = [word for word in word_list if len(word) == len(set(word))]  #Put all unique words in list
+    #print(words)
     word_lengths = {len(word):word for word in words}       #Make dict with key = length of word and value = word, word will be overwritten with the next one of the same length
     print(word_lengths)
     print(word_lengths[sorted(word_lengths, reverse=True)[0]])
