@@ -13,7 +13,7 @@ print(d)
 #print(d["Name"])       Dict is case sensitive
 print(d["name"])
 
-print("The key Name exists: ", "name" in d)
+print("The key name exists: ", "name" in d)
 print("The key Name exists: ", "Name" in d)
 
 lst = ["Thomas", "Mary", "Jane"]
