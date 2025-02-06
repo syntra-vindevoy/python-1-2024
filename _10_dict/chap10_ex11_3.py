@@ -1,6 +1,5 @@
 import string
 
-
 def has_duplicates1(word: string) -> bool:
     letters = {}
 
