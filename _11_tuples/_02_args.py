@@ -12,13 +12,13 @@ print(mean(*t))  # Use unpacking (*) to pass the list elements as arguments to t
 
 # Define another function 'test' that accepts keyword arguments (**kwargs)
 # '**kwargs' allows passing a variable number of keyword arguments to the function
-def test(**kwargs):
+def ttest(**kwargs):
     # Iterate through the keyword arguments and print their key and value pairs
     for kw in kwargs:
         print(f"{kw}: {kwargs[kw]}")  # Use f-string to format and display key-value pairs
 
 
-print(test(a=1, b=2, c=3))  # Call the function with keyword arguments and print the output
+print(ttest(a=1, b=2, c=3))  # Call the function with keyword arguments and print the output
 
 # Define a dictionary
 d = {
@@ -26,7 +26,7 @@ d = {
     "b": 2,
     "c": 3
 }
-print(test(**d))  # Use unpacking (**) to pass the dictionary as keyword arguments to the 'test' function
+print(ttest(**d))  # Use unpacking (**) to pass the dictionary as keyword arguments to the 'test' function
 
 
 # Define a function 'homepage' that accepts an obligatory 'request' parameter,
