@@ -54,7 +54,9 @@ def get_combo_list(this_word_list, next_word_list, combo_list):
 this_word_list = word_list_by_char_count(word_list, 2)
 next_word_list = word_list_by_char_count(word_list, 3)
 
-
+"""
+work in progress
+"""
 
 
 

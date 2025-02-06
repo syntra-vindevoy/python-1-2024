@@ -1555,3 +1555,38 @@ data
 from lorem import ...
 
 ```
+
+
+## oo
+
+@dataclass
+
+mangling (verborgen property)
+
+verborgen
+
+fastapi / django ninja
+
+untabbed
+
+mongodb = document database
+geheel van gegevens word opgeslagen als 1 document
+
+graph database: nodes ipv relaties
+
+werkwoord = method
+naamwoord = getter/setter
+
+create read update delete
+rabbit mq (multithreading sheduling/queing)
+(aanvaard enkel geserialiseerde item vb pickle)
+rabbit kent geen objecten --> pickle
+
+superviser design-pattern
+
+positioneel en keywordarguments
+
+partial methods?
+
+
+
