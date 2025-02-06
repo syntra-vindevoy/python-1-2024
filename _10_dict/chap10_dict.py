@@ -27,3 +27,4 @@ for k in d:
 print(d.keys())
 print(type(d.keys()))
 print(d.values())
+
