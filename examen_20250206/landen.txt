@@ -1,0 +1,5 @@
+31,Netherlands,4500
+32,Belgium,5000
+33,France,7000
+44,United Kingdom,8500
+46,Germany,9000
