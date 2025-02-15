@@ -36,6 +36,9 @@ class Human:
 
         return age
 
+    def __str__(self):
+        return f"{self.__class__.__name__}({self.__name})"
+
 
 class Student(Human):
     __slots__ = ('__student_id', '__grades')  # Private attributes specific to Student
@@ -65,6 +68,9 @@ class Student(Human):
         """Calculate the average grade from the student's grades."""
         return sum(self.__grades) / len(self.__grades) if self.__grades else 0.0
 
+    def __str__(self):
+        return f"{self.__class__.__name__}({self.__name}, {self.__student_id})"
+
 
 class Teacher(Human):
     __slots__ = ('__department', '__employee_id')  # Private attributes specific to Teacher
@@ -90,6 +96,9 @@ class Teacher(Human):
     def employee_id(self, value):
         self.__employee_id = value
 
+
+def __str__(self):
+    return f"{self.__class__.__name__}({self.__name}, {self.__department})"
 
 # Gebruik van de klassen
 student = Student(name="Alice", birthdate=date(2005, 6, 15), student_id="S12345")
