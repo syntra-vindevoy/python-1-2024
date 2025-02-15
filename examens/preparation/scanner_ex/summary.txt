@@ -1,0 +1,813 @@
+def
+	C:\Users\benoit\PycharmProjects\python-1-2024\examens\preparation\first\advanced.py : def main():
+    """
+   - Write a Python function that rotates a list by `n` positions. For example:
+     - Input: `lst = [1, 2, 3, 4, 5], n = 2`
+     - Output: `[4, 5, 1, 2, 3]` (if rotated to the right).
+   - Write a program that splits a list into two halves and swaps them. For example:
+     - Input: `[1, 2, 3, 4, 5, 6]`
+     - Output: `[4, 5, 6, 1, 2, 3]`
+    """
+    #list
+    lst = [1, 2, 3, 4, 5]
+    print(lst)
+    n=2
+    lst = lst[n+1:]+lst[:n+1]
+    print(lst) (0)
+	C:\Users\benoit\PycharmProjects\python-1-2024\examens\preparation\first\advanced.py : #dict
+"""
+- Write a Python function that takes a dictionary where keys are strings and values are lists, and returns a dictionary with the same keys but sorted lists as values.
+ Example input: `{"a": [3, 1, 2], "b": [5, 4]} → {"a": [1, 2, 3], "b": [4, 5]}`.
+- Write a program that finds the intersection of two dictionaries.
+ For example:
+ - Dict1: `{"a": 1, "b": 2, "c": 3}`
+ - Dict2: `{"b": 2, "c": 4, "d": 5}`
+ - Output: `{"b": 2}`.
+"""
+def sort_dict(dict1)->dict:
+    for key,value in dict1.items():
+        dict1[key]=sorted(value)
+    return dict1 (442)
+	C:\Users\benoit\PycharmProjects\python-1-2024\examens\preparation\first\advanced.py : def intersection(dict1,dict2)->dict:
+    ret=dict()
+    for key,value in dict1.items():
+        if key in dict2:
+            ret[key]=value
+    return ret (0)
+	C:\Users\benoit\PycharmProjects\python-1-2024\examens\preparation\first\advanced.py : #strings
+"""
+  - Write a Python function that checks if two strings are anagrams (contain the same characters in the same frequency).
+     Example: `"listen"` and `"silent"` → True.
+   - Write a program that extracts all the digits from a string. For example:
+     Input: `"abc123xyz456"` → Output: `[1, 2, 3, 4, 5, 6]`.
+"""
+def is_anagram(string1,string2):
+    return sorted(string1)==sorted(string2) (329)
+	C:\Users\benoit\PycharmProjects\python-1-2024\examens\preparation\first\advanced.py : def extract_digits(string):
+    return string.replace(" ","").split() (0)
+	C:\Users\benoit\PycharmProjects\python-1-2024\examens\preparation\first\advanced.py : #files
+"""
+ - Write a Python program that reads a file `numbers.txt` containing integers (one per line) and:
+     - Stores the integers in a list.
+     - Calculates and prints the sum of all numbers.
+     - Finds and prints the largest and smallest numbers.
+"""
+def files():
+    with open("numbers.txt","r") as f:
+        numbers=[int(i) for i in f.read().splitlines()]
+        print(numbers)
+        sum=0
+        for i in numbers:
+            sum+=int(i)
+        print(sum)
+        print(min(numbers))
+        print(max(numbers)) (262)
+	C:\Users\benoit\PycharmProjects\python-1-2024\examens\preparation\first\advanced.py : def log_summary():
+    levels=["INFO","ERROR","WARN","DEBUG"]
+    with open("log.txt","r") as f:
+        dict_log=dict()
+        for line in f:
+            for level in levels:
+                if level in line:
+                    dict_log[level]=dict_log.get(level,0)+1
+        with open("log_summary.txt","w") as f2:
+            f2.write(str(dict_log)) (0)
+	C:\Users\benoit\PycharmProjects\python-1-2024\examens\preparation\first\basic.py : def main(): (0)
+	C:\Users\benoit\PycharmProjects\python-1-2024\examens\preparation\first\Intermediate.py : def main():
+    #list
+    """
+     - Write a Python program that takes a list of integers and removes all duplicate values.
+   - Given the list: `fruits = ["apple", "banana", "cherry", "banana", "apple"]`, write a program to:
+     - Count the occurrence of each fruit.
+     - Sort the list alphabetically.
+    Returns: (0)
+	C:\Users\benoit\PycharmProjects\python-1-2024\examens\preparation\first\Intermediate.py : """
+def search_word(word,file):
+    with open(file,"r") as f:
+        count=0
+        for l in f.read().splitlines():
+            if word in l:
+                count+=1
+    return count (4)
+	C:\Users\benoit\PycharmProjects\python-1-2024\examens\preparation\first\Intermediate.py : def replace_word(word,new_word,file, new_file):
+    with open(file,"r") as f:
+        content=f.read()
+    with open(new_file,"w") as f2:
+        f2.write(content.replace(word,new_word)) (0)
+	C:\Users\benoit\PycharmProjects\python-1-2024\examens\preparation\scanner_ex\scanner.py : def main():
+    print("Scanner")
+    dict_paras = {}
+    word_list = ["def", "class", "if", "for", "while"]
+    result = scan_directory(Path(__file__).parent.parent, "py")
+    for file in result:
+        d = scan_file(file, word_list=["def", "class", "if", "for", "while"])
+        for key in d:
+            dict_paras[key] = dict_paras.get(key, []) + d[key]
+    for key in dict_paras:
+        print(key)
+        for file, para, index in dict_paras[key]:
+            print(f"\t{file} : {para} ({index})")
+    with open("summary.txt", "w") as file_s:
+        for key in dict_paras:
+            file_s.write(f"{key}\n")
+            for file, para, index in dict_paras[key]:
+                file_s.write(f"\t{file} : {para} ({index})\n") (0)
+	C:\Users\benoit\PycharmProjects\python-1-2024\examens\preparation\scanner_ex\scanner.py : def scan_directory(dir_path, suffix) -> [pathlib.Path]:
+    filenames = []
+    for f in Path(dir_path).iterdir():
+        if f.is_file() and f.suffix[1:] == suffix:
+            filenames.append(f)
+        elif f.is_dir():
+            filenames.extend(scan_directory(f.resolve(), suffix))
+    return filenames (0)
+	C:\Users\benoit\PycharmProjects\python-1-2024\examens\preparation\scanner_ex\scanner.py : def scan_file(path: Path, word_list: list):
+    dict_words = {}
+    with open(path, 'r') as file_c:
+        content = file_c.read()
+        # seperate in para
+        paragraphs = [para.strip() for para in content.split("\n\n") if para.strip()] (0)
+	C:\Users\benoit\PycharmProjects\python-1-2024\examens\preparation\scanner_ex\scanner.py : def make_summary():
+    print("Make summary") (0)
+	C:\Users\benoit\PycharmProjects\python-1-2024\examens\preparation\second\solution_questions2.py : def even_numbers(list_of_numbers: list[int]):
+    return [x for x in list_of_numbers if x%2 == 0] (0)
+	C:\Users\benoit\PycharmProjects\python-1-2024\examens\preparation\second\solution_questions2.py : def count_words(text: str)-> dict[str, int]:
+    list_words = text.lower().replace(".","").split()
+    ret_dict:dict[str, int] = dict()
+    for word in list_words:
+        if word in ret_dict:
+            ret_dict[word] += 1
+        else:
+            ret_dict[word] = 1
+    return ret_dict (0)
+	C:\Users\benoit\PycharmProjects\python-1-2024\examens\preparation\second\solution_questions2.py : def count_words_2(text: str)-> dict[str, int]:
+    list_words = text.lower().replace(".","").split()
+    ret_dict:dict[str, int] = dict()
+    for word in list_words:
+        ret_dict[word] =  ret_dict.get(word, 0) + 1
+    return ret_dict (0)
+	C:\Users\benoit\PycharmProjects\python-1-2024\examens\preparation\second\solution_questions2.py : def count_words_3(text: str) -> dict[str, int]:
+    list_words = text.lower().replace(".", "").split()
+    return {word: list_words.count(word) for word in set(list_words)} (0)
+	C:\Users\benoit\PycharmProjects\python-1-2024\examens\preparation\second\solution_questions2.py : def count_words_counter(text: str) -> dict[str, int]:
+    return Counter(text.lower().replace(".", "").split()) (0)
+	C:\Users\benoit\PycharmProjects\python-1-2024\examens\preparation\second\solution_questions2.py : def tuple_operations(tpl)->tuple:
+   return min(tpl),max(tpl),sum(tpl) (0)
+	C:\Users\benoit\PycharmProjects\python-1-2024\examens\preparation\second\solution_questions2.py : def write_and_read_file(filename, data):
+    with open(filename, "w") as file:
+        for item in data:
+            file.write(str(item) + "\n")
+    data_read = []
+    with open(filename, "r") as file:
+        for line in file:
+            data_read.append(line.strip())
+    return data_read (0)
+	C:\Users\benoit\PycharmProjects\python-1-2024\examens\preparation\second\solution_questions2.py : def reverse_vowels(s: str) -> str:
+    vowels = "aeiouAEIOU"
+    s_list = list(s)
+    i, j = 0, len(s) - 1
+    while i < j:
+        if s_list[i] not in vowels:
+            i += 1
+            continue
+        if s_list[j] not in vowels:
+            j -= 1
+            continue
+        s_list[i], s_list[j] = s_list[j], s_list[i]
+        i += 1
+        j -= 1 (0)
+	C:\Users\benoit\PycharmProjects\python-1-2024\examens\preparation\second\solution_questions2.py : def find_substrings(s, k):
+    return [s[x:x+k] for x in range(len(s)-(k-1))] (0)
+	C:\Users\benoit\PycharmProjects\python-1-2024\examens\preparation\second\solution_questions2.py : def top_3_most_frequently_occurring_words():
+    cache_dict = {}
+    with open("superman_vs_bart_de_wever.txt", "r") as file:
+        text = file.read().replace(".", "").lower().split()
+        cache_dict=Counter(text)
+    return sorted(cache_dict.items(), key=lambda x: x[1], reverse=True)[:3] (0)
+if
+	C:\Users\benoit\PycharmProjects\python-1-2024\examens\preparation\first\advanced.py : def main():
+    """
+   - Write a Python function that rotates a list by `n` positions. For example:
+     - Input: `lst = [1, 2, 3, 4, 5], n = 2`
+     - Output: `[4, 5, 1, 2, 3]` (if rotated to the right).
+   - Write a program that splits a list into two halves and swaps them. For example:
+     - Input: `[1, 2, 3, 4, 5, 6]`
+     - Output: `[4, 5, 6, 1, 2, 3]`
+    """
+    #list
+    lst = [1, 2, 3, 4, 5]
+    print(lst)
+    n=2
+    lst = lst[n+1:]+lst[:n+1]
+    print(lst) (179)
+	C:\Users\benoit\PycharmProjects\python-1-2024\examens\preparation\first\advanced.py : def intersection(dict1,dict2)->dict:
+    ret=dict()
+    for key,value in dict1.items():
+        if key in dict2:
+            ret[key]=value
+    return ret (96)
+	C:\Users\benoit\PycharmProjects\python-1-2024\examens\preparation\first\advanced.py : #strings
+"""
+  - Write a Python function that checks if two strings are anagrams (contain the same characters in the same frequency).
+     Example: `"listen"` and `"silent"` → True.
+   - Write a program that extracts all the digits from a string. For example:
+     Input: `"abc123xyz456"` → Output: `[1, 2, 3, 4, 5, 6]`.
+"""
+def is_anagram(string1,string2):
+    return sorted(string1)==sorted(string2) (53)
+	C:\Users\benoit\PycharmProjects\python-1-2024\examens\preparation\first\advanced.py : """
+- Write a Python program that reads a file `sentences.txt` containing multiple sentences and:
+     - Splits each sentence into words and stores them in a list.
+     - Counts the total number of words.
+     - Finds the longest word in the file.
+"""
+with open("sentences.txt","r") as f:
+    for line in f:
+        line=line.replace("."," ").replace("!"," ").replace("?"," ").lower()
+        lined=line.split()
+        if len(lined)!=0:
+            print(lined)
+            print(len(lined))
+            print(max(lined,key=len)) (420)
+	C:\Users\benoit\PycharmProjects\python-1-2024\examens\preparation\first\advanced.py : """
+import json
+with open("file1.txt","r") as f:
+    with open("file2.txt","r") as f2:
+        dict1:dict = json.load(f)
+        dict2:dict = json.load(f2)
+        for key,value in dict1.items():
+            if  key in dict2:
+                dict1[key]=dict1[key]+dict2[key]
+                dict2.pop(key)
+        for key, value in dict2.items():
+                dict1[key] = dict2[key] + dict1.get(key, 0)
+        with open("merged.txt","w") as f3:
+            f3.write(str(dict1)) (208)
+	C:\Users\benoit\PycharmProjects\python-1-2024\examens\preparation\first\advanced.py : def log_summary():
+    levels=["INFO","ERROR","WARN","DEBUG"]
+    with open("log.txt","r") as f:
+        dict_log=dict()
+        for line in f:
+            for level in levels:
+                if level in line:
+                    dict_log[level]=dict_log.get(level,0)+1
+        with open("log_summary.txt","w") as f2:
+            f2.write(str(dict_log)) (193)
+	C:\Users\benoit\PycharmProjects\python-1-2024\examens\preparation\first\advanced.py : if __name__ == "__main__":
+    main()
+    print(intersection({"a": 1, "b": 2, "c": 3}, {"b": 2, "c": 4, "d": 5}))
+    print(sort_dict({"a": [3, 1, 2], "b": [5, 4]}))
+    print(extract_digits("abc123xyz456"))
+    print(is_anagram("listen","silent"))
+    files()
+    log_summary() (0)
+	C:\Users\benoit\PycharmProjects\python-1-2024\examens\preparation\first\basic.py : #lists
+    """
+     - Write a Python program to:
+     - Create a list of the first 10 multiples of 3.
+     - Check if the number 15 is in the list.
+     - Insert the number 7 at the second position of the list.
+    """
+    li= [x*3 for x in range(1,10)]
+    print(li)
+    print(f"{15 in li}")
+    li.insert(1,7)
+    print(li) (115)
+	C:\Users\benoit\PycharmProjects\python-1-2024\examens\preparation\first\basic.py : #dict
+    """
+     - Write a program to create a dictionary from two lists:
+     `keys = ['name', 'age', 'city']` and `values = ['Alice', 25, 'New York']`.
+   - Given a dictionary: `person = {"name": "John", "age": 30}`, write a program to:
+     - Check if the key `"age"` exists in the dictionary.
+     - Print the value of the `"name"` key.
+    """
+    keys = ['name', 'age', 'city']
+    values = ['Alice', 25, 'New York']
+    dict_p= dict(zip(keys,values))
+    print(dict_p) (254)
+	C:\Users\benoit\PycharmProjects\python-1-2024\examens\preparation\first\basic.py : if __name__ == "__main__":
+    main() (0)
+	C:\Users\benoit\PycharmProjects\python-1-2024\examens\preparation\first\Intermediate.py : """
+    doube_list = [1,2,3,4,1,5,6,7,8,9,10,7,8,9,10,11,12,13,74,15,16,16,17,18,19,20]
+    print(doube_list)
+    doube_list.sort()
+    uniques=[]
+    for i in range(len(doube_list)):
+        if doube_list[i] not in doube_list[i+1:]:
+            uniques.append(doube_list[i])
+    print(uniques) (192)
+	C:\Users\benoit\PycharmProjects\python-1-2024\examens\preparation\first\Intermediate.py : fruits = ["apple", "banana", "cherry", "banana", "apple","cherry", "mango", "mango", "cherry"]
+    print(fruits)
+    fruits.sort()
+    print(fruits)
+    count_words = {}
+    for i in range(len(fruits)):
+        for j in range(i+1,len(fruits)):
+          if fruits[i] == fruits[j]:
+                count_words[fruits[i]] = count_words.get(fruits[i],0) + 1
+    print(count_words) (254)
+	C:\Users\benoit\PycharmProjects\python-1-2024\examens\preparation\first\Intermediate.py : scores = {"Math": 88, "Science": 92, "English": 85}
+    print(scores)
+    min_score=min(scores.values())
+    for key,value in scores.items():
+        if value==min_score:
+            print(key)
+    scores["History"]=90
+    print(scores) (150)
+	C:\Users\benoit\PycharmProjects\python-1-2024\examens\preparation\first\Intermediate.py : #strings
+    """
+     - Write a Python program to:
+         - Reverse the string `"Python"`.
+         - Remove all vowels from the string `"Hello, World!"`.
+         - Split the string `"apple,banana,cherry"` into a list of fruits.
+    """
+    print("Python".replace(" ","")[::-1])
+    string_to_remove="Hello, World!"
+    for i in string_to_remove:
+        if i in "aeiouAEIOU":
+            string_to_remove=string_to_remove.replace(i,"")
+    print(string_to_remove) (358)
+	C:\Users\benoit\PycharmProjects\python-1-2024\examens\preparation\first\Intermediate.py : """
+11. **Intermediate:**
+    - Write a Python program to search for a specific word in a file `document.txt` and:
+      - Count how many times the word occurs.
+      - Replace all occurrences of the word with another word and save the updated content to a new file `updated_document.txt`. (75)
+	C:\Users\benoit\PycharmProjects\python-1-2024\examens\preparation\first\Intermediate.py : """
+def search_word(word,file):
+    with open(file,"r") as f:
+        count=0
+        for l in f.read().splitlines():
+            if word in l:
+                count+=1
+    return count (130)
+	C:\Users\benoit\PycharmProjects\python-1-2024\examens\preparation\first\Intermediate.py : if __name__ == "__main__":
+    main()
+    print(search_word("Count","document.txt"))
+    replace_word("Count","New Count","document.txt","updated_document.txt") (0)
+	C:\Users\benoit\PycharmProjects\python-1-2024\examens\preparation\scanner_ex\scanner.py : def main():
+    print("Scanner")
+    dict_paras = {}
+    word_list = ["def", "class", "if", "for", "while"]
+    result = scan_directory(Path(__file__).parent.parent, "py")
+    for file in result:
+        d = scan_file(file, word_list=["def", "class", "if", "for", "while"])
+        for key in d:
+            dict_paras[key] = dict_paras.get(key, []) + d[key]
+    for key in dict_paras:
+        print(key)
+        for file, para, index in dict_paras[key]:
+            print(f"\t{file} : {para} ({index})")
+    with open("summary.txt", "w") as file_s:
+        for key in dict_paras:
+            file_s.write(f"{key}\n")
+            for file, para, index in dict_paras[key]:
+                file_s.write(f"\t{file} : {para} ({index})\n") (87)
+	C:\Users\benoit\PycharmProjects\python-1-2024\examens\preparation\scanner_ex\scanner.py : def scan_directory(dir_path, suffix) -> [pathlib.Path]:
+    filenames = []
+    for f in Path(dir_path).iterdir():
+        if f.is_file() and f.suffix[1:] == suffix:
+            filenames.append(f)
+        elif f.is_dir():
+            filenames.extend(scan_directory(f.resolve(), suffix))
+    return filenames (122)
+	C:\Users\benoit\PycharmProjects\python-1-2024\examens\preparation\scanner_ex\scanner.py : def scan_file(path: Path, word_list: list):
+    dict_words = {}
+    with open(path, 'r') as file_c:
+        content = file_c.read()
+        # seperate in para
+        paragraphs = [para.strip() for para in content.split("\n\n") if para.strip()] (228)
+	C:\Users\benoit\PycharmProjects\python-1-2024\examens\preparation\scanner_ex\scanner.py : # search for words
+        for para in paragraphs:
+            for word in word_list:
+                if word in para:
+                    if word not in dict_words:
+                        dict_words[word] = [(path, para, para.index(word))]
+                    else:
+                        dict_words[word].append((path, para, para.index(word)))
+                # dict_words[word] = dict_words.get(word, []).append((path, para,para.index(word)))
+    return dict_words (102)
+	C:\Users\benoit\PycharmProjects\python-1-2024\examens\preparation\scanner_ex\scanner.py : if __name__ == '__main__':
+    main() (0)
+	C:\Users\benoit\PycharmProjects\python-1-2024\examens\preparation\second\solution_questions2.py : def even_numbers(list_of_numbers: list[int]):
+    return [x for x in list_of_numbers if x%2 == 0] (85)
+	C:\Users\benoit\PycharmProjects\python-1-2024\examens\preparation\second\solution_questions2.py : def count_words(text: str)-> dict[str, int]:
+    list_words = text.lower().replace(".","").split()
+    ret_dict:dict[str, int] = dict()
+    for word in list_words:
+        if word in ret_dict:
+            ret_dict[word] += 1
+        else:
+            ret_dict[word] = 1
+    return ret_dict (172)
+	C:\Users\benoit\PycharmProjects\python-1-2024\examens\preparation\second\solution_questions2.py : def reverse_vowels(s: str) -> str:
+    vowels = "aeiouAEIOU"
+    s_list = list(s)
+    i, j = 0, len(s) - 1
+    while i < j:
+        if s_list[i] not in vowels:
+            i += 1
+            continue
+        if s_list[j] not in vowels:
+            j -= 1
+            continue
+        s_list[i], s_list[j] = s_list[j], s_list[i]
+        i += 1
+        j -= 1 (132)
+	C:\Users\benoit\PycharmProjects\python-1-2024\examens\preparation\second\solution_questions2.py : # Return the modified string
+    return ''.join(s_list) (16)
+	C:\Users\benoit\PycharmProjects\python-1-2024\examens\preparation\second\solution_questions2.py : if __name__ == '__main__':
+    print(even_numbers([1, 2, 3, 4, 5, 6]))
+    print(count_words("This is a test. This test is simple."))
+    print(tuple_operations((5, 3, 9, 2, 8)))
+    data = ["Hello", "World", "Python is great"]
+    write_and_read_file("example.txt", data)
+    print(reverse_vowels("Hello World"))
+    print(find_substrings("abcabcbb", 3))
+    print(top_3_most_frequently_occurring_words()) (0)
+for
+	C:\Users\benoit\PycharmProjects\python-1-2024\examens\preparation\first\advanced.py : #dict
+"""
+- Write a Python function that takes a dictionary where keys are strings and values are lists, and returns a dictionary with the same keys but sorted lists as values.
+ Example input: `{"a": [3, 1, 2], "b": [5, 4]} → {"a": [1, 2, 3], "b": [4, 5]}`.
+- Write a program that finds the intersection of two dictionaries.
+ For example:
+ - Dict1: `{"a": 1, "b": 2, "c": 3}`
+ - Dict2: `{"b": 2, "c": 4, "d": 5}`
+ - Output: `{"b": 2}`.
+"""
+def sort_dict(dict1)->dict:
+    for key,value in dict1.items():
+        dict1[key]=sorted(value)
+    return dict1 (474)
+	C:\Users\benoit\PycharmProjects\python-1-2024\examens\preparation\first\advanced.py : def intersection(dict1,dict2)->dict:
+    ret=dict()
+    for key,value in dict1.items():
+        if key in dict2:
+            ret[key]=value
+    return ret (56)
+	C:\Users\benoit\PycharmProjects\python-1-2024\examens\preparation\first\advanced.py : #files
+"""
+ - Write a Python program that reads a file `numbers.txt` containing integers (one per line) and:
+     - Stores the integers in a list.
+     - Calculates and prints the sum of all numbers.
+     - Finds and prints the largest and smallest numbers.
+"""
+def files():
+    with open("numbers.txt","r") as f:
+        numbers=[int(i) for i in f.read().splitlines()]
+        print(numbers)
+        sum=0
+        for i in numbers:
+            sum+=int(i)
+        print(sum)
+        print(min(numbers))
+        print(max(numbers)) (338)
+	C:\Users\benoit\PycharmProjects\python-1-2024\examens\preparation\first\advanced.py : """
+- Write a Python program that reads a file `sentences.txt` containing multiple sentences and:
+     - Splits each sentence into words and stores them in a list.
+     - Counts the total number of words.
+     - Finds the longest word in the file.
+"""
+with open("sentences.txt","r") as f:
+    for line in f:
+        line=line.replace("."," ").replace("!"," ").replace("?"," ").lower()
+        lined=line.split()
+        if len(lined)!=0:
+            print(lined)
+            print(len(lined))
+            print(max(lined,key=len)) (293)
+	C:\Users\benoit\PycharmProjects\python-1-2024\examens\preparation\first\advanced.py : """
+ - Write a program to merge two files, `file1.txt` and `file2.txt`, containing dictionaries stored in JSON-like format. Example:
+     ```
+     file1.txt: {"a": 1, "b": 2}
+     file2.txt: {"b": 3, "c": 4}
+     ```
+     - Merge the dictionaries and handle overlapping keys by summing their values. Save the result to a new file `merged.txt`. (116)
+	C:\Users\benoit\PycharmProjects\python-1-2024\examens\preparation\first\advanced.py : """
+import json
+with open("file1.txt","r") as f:
+    with open("file2.txt","r") as f2:
+        dict1:dict = json.load(f)
+        dict2:dict = json.load(f2)
+        for key,value in dict1.items():
+            if  key in dict2:
+                dict1[key]=dict1[key]+dict2[key]
+                dict2.pop(key)
+        for key, value in dict2.items():
+                dict1[key] = dict2[key] + dict1.get(key, 0)
+        with open("merged.txt","w") as f3:
+            f3.write(str(dict1)) (164)
+	C:\Users\benoit\PycharmProjects\python-1-2024\examens\preparation\first\advanced.py : """
+12. **Advanced:**
+    - Write a Python program that reads a file `log.txt` containing log entries in the format:
+      ```
+      2025-01-01 INFO Starting application
+      2025-01-01 ERROR Failed to connect
+      2025-01-02 INFO Process completed
+      ```
+      - Extract and count the number of log entries for each level (`INFO`, `ERROR`, etc.).
+      - Save the counts to a file `log_summary.txt`. (109)
+	C:\Users\benoit\PycharmProjects\python-1-2024\examens\preparation\first\advanced.py : def log_summary():
+    levels=["INFO","ERROR","WARN","DEBUG"]
+    with open("log.txt","r") as f:
+        dict_log=dict()
+        for line in f:
+            for level in levels:
+                if level in line:
+                    dict_log[level]=dict_log.get(level,0)+1
+        with open("log_summary.txt","w") as f2:
+            f2.write(str(dict_log)) (129)
+	C:\Users\benoit\PycharmProjects\python-1-2024\examens\preparation\first\basic.py : #lists
+    """
+     - Write a Python program to:
+     - Create a list of the first 10 multiples of 3.
+     - Check if the number 15 is in the list.
+     - Insert the number 7 at the second position of the list.
+    """
+    li= [x*3 for x in range(1,10)]
+    print(li)
+    print(f"{15 in li}")
+    li.insert(1,7)
+    print(li) (232)
+	C:\Users\benoit\PycharmProjects\python-1-2024\examens\preparation\first\basic.py : with open("data.txt","r") as f:
+        for line in f:
+            print(line) (40)
+	C:\Users\benoit\PycharmProjects\python-1-2024\examens\preparation\first\basic.py : ### **Integrating Files with Lists**
+    """
+    4. **Basic:**
+       - Write a program to read a file `fruits.txt` containing names of fruits (one per line), and:
+         - Append a new fruit name (e.g., `"Mango"`) to the file.
+         - Read and print the updated content of the file.
+    
+    """
+    with open("fruits.txt","a") as f:
+        f.write("Mango\n")
+        f.writelines(
+            [
+                "Apple\n",
+                "Banana\n",
+                "Cherry\n"
+            ])
+        f.close()
+    with open("fruits.txt","r") as f:
+        for line in f:
+            print(line) (564)
+	C:\Users\benoit\PycharmProjects\python-1-2024\examens\preparation\first\basic.py : ### **Integrating Files with Dictionaries**
+    """
+    - Create a file `employees.txt` containing data in the format:
+         ```
+         John, Developer
+         Alice, Manager
+         Bob, Analyst
+         ```
+         - Write a program to read the file and create a dictionary where the keys are names and the values are job titles.
+         - Print the dictionary.
+    """
+    with open("employees.txt","r") as f:
+        dict_employees=dict()
+        for line in f:
+            name,job=line.split(",")
+            dict_employees[name]=job
+    print(dict_employees) (111)
+	C:\Users\benoit\PycharmProjects\python-1-2024\examens\preparation\first\basic.py : count_char=0
+    count_sent=0
+    count_words=0
+    with open("paragraph.txt","r") as f:
+        for line in f:
+            line=line.split(".")
+            count_sent+=1
+            for l in line:
+                count_words+=len(l.split())
+                count_char+=len(l)
+    print(f"char: {count_char}\nsent: {count_sent}\nwords: {count_words}") (97)
+	C:\Users\benoit\PycharmProjects\python-1-2024\examens\preparation\first\Intermediate.py : """
+    doube_list = [1,2,3,4,1,5,6,7,8,9,10,7,8,9,10,11,12,13,74,15,16,16,17,18,19,20]
+    print(doube_list)
+    doube_list.sort()
+    uniques=[]
+    for i in range(len(doube_list)):
+        if doube_list[i] not in doube_list[i+1:]:
+            uniques.append(doube_list[i])
+    print(uniques) (151)
+	C:\Users\benoit\PycharmProjects\python-1-2024\examens\preparation\first\Intermediate.py : fruits = ["apple", "banana", "cherry", "banana", "apple","cherry", "mango", "mango", "cherry"]
+    print(fruits)
+    fruits.sort()
+    print(fruits)
+    count_words = {}
+    for i in range(len(fruits)):
+        for j in range(i+1,len(fruits)):
+          if fruits[i] == fruits[j]:
+                count_words[fruits[i]] = count_words.get(fruits[i],0) + 1
+    print(count_words) (174)
+	C:\Users\benoit\PycharmProjects\python-1-2024\examens\preparation\first\Intermediate.py : #dict
+    """
+     - Write a Python program to count the frequency of words in a sentence using a dictionary.
+     For example: `"hello world hello"` → `{'hello': 2, 'world': 1}`.
+   - Given the dictionary:
+     `scores = {"Math": 88, "Science": 92, "English": 85}`, write a program to:
+     - Print the subject with the lowest score.
+     - Add a new subject `"History": 90`.
+    """
+    freq=dict()
+    sentence="hello world hello".split()
+    for word in sentence:
+        freq[word]=freq.get(word,0)+1
+    print(freq) (448)
+	C:\Users\benoit\PycharmProjects\python-1-2024\examens\preparation\first\Intermediate.py : scores = {"Math": 88, "Science": 92, "English": 85}
+    print(scores)
+    min_score=min(scores.values())
+    for key,value in scores.items():
+        if value==min_score:
+            print(key)
+    scores["History"]=90
+    print(scores) (109)
+	C:\Users\benoit\PycharmProjects\python-1-2024\examens\preparation\first\Intermediate.py : #strings
+    """
+     - Write a Python program to:
+         - Reverse the string `"Python"`.
+         - Remove all vowels from the string `"Hello, World!"`.
+         - Split the string `"apple,banana,cherry"` into a list of fruits.
+    """
+    print("Python".replace(" ","")[::-1])
+    string_to_remove="Hello, World!"
+    for i in string_to_remove:
+        if i in "aeiouAEIOU":
+            string_to_remove=string_to_remove.replace(i,"")
+    print(string_to_remove) (323)
+	C:\Users\benoit\PycharmProjects\python-1-2024\examens\preparation\first\Intermediate.py : ### **Integrating Files with Lists**
+    """
+     - Write a program to read a file `scores.txt` containing student scores in the format:
+         ```
+         Alice, 85
+         Bob, 78
+         Charlie, 92
+         ```
+         - Store the data in a dictionary with names as keys and scores as values.
+         - Print the name of the student with the highest score.
+    """
+    with open("scores.txt","r") as f:
+        dict_scores=dict()
+        for l in f.read().splitlines():
+            name,score=l.split(",")
+            dict_scores[name]=int(score)
+        print(dict_scores)
+        print(max(dict_scores.values())) (129)
+	C:\Users\benoit\PycharmProjects\python-1-2024\examens\preparation\first\Intermediate.py : """
+     - Write a program to read a file `products.txt` containing product data in the format:
+         ```
+         ProductA, 100
+         ProductB, 200
+         ProductC, 150
+         ```
+         - Store the data in a dictionary with product names as keys and prices as values.
+         - Calculate the total value of all products.
+    """
+    with open("products.txt","r") as f:
+        dict_products=dict()
+        for l in f.read().splitlines():
+            name,price=l.split(",")
+            dict_products[name]=int(price)
+        print(dict_products)
+        print(sum(dict_products.values())) (88)
+	C:\Users\benoit\PycharmProjects\python-1-2024\examens\preparation\first\Intermediate.py : """
+11. **Intermediate:**
+    - Write a Python program to search for a specific word in a file `document.txt` and:
+      - Count how many times the word occurs.
+      - Replace all occurrences of the word with another word and save the updated content to a new file `updated_document.txt`. (65)
+	C:\Users\benoit\PycharmProjects\python-1-2024\examens\preparation\first\Intermediate.py : """
+def search_word(word,file):
+    with open(file,"r") as f:
+        count=0
+        for l in f.read().splitlines():
+            if word in l:
+                count+=1
+    return count (86)
+	C:\Users\benoit\PycharmProjects\python-1-2024\examens\preparation\scanner_ex\scanner.py : """
+scan files for words
+"""
+import pathlib
+from pathlib import Path (15)
+	C:\Users\benoit\PycharmProjects\python-1-2024\examens\preparation\scanner_ex\scanner.py : def main():
+    print("Scanner")
+    dict_paras = {}
+    word_list = ["def", "class", "if", "for", "while"]
+    result = scan_directory(Path(__file__).parent.parent, "py")
+    for file in result:
+        d = scan_file(file, word_list=["def", "class", "if", "for", "while"])
+        for key in d:
+            dict_paras[key] = dict_paras.get(key, []) + d[key]
+    for key in dict_paras:
+        print(key)
+        for file, para, index in dict_paras[key]:
+            print(f"\t{file} : {para} ({index})")
+    with open("summary.txt", "w") as file_s:
+        for key in dict_paras:
+            file_s.write(f"{key}\n")
+            for file, para, index in dict_paras[key]:
+                file_s.write(f"\t{file} : {para} ({index})\n") (93)
+	C:\Users\benoit\PycharmProjects\python-1-2024\examens\preparation\scanner_ex\scanner.py : def scan_directory(dir_path, suffix) -> [pathlib.Path]:
+    filenames = []
+    for f in Path(dir_path).iterdir():
+        if f.is_file() and f.suffix[1:] == suffix:
+            filenames.append(f)
+        elif f.is_dir():
+            filenames.extend(scan_directory(f.resolve(), suffix))
+    return filenames (79)
+	C:\Users\benoit\PycharmProjects\python-1-2024\examens\preparation\scanner_ex\scanner.py : def scan_file(path: Path, word_list: list):
+    dict_words = {}
+    with open(path, 'r') as file_c:
+        content = file_c.read()
+        # seperate in para
+        paragraphs = [para.strip() for para in content.split("\n\n") if para.strip()] (194)
+	C:\Users\benoit\PycharmProjects\python-1-2024\examens\preparation\scanner_ex\scanner.py : # search for words
+        for para in paragraphs:
+            for word in word_list:
+                if word in para:
+                    if word not in dict_words:
+                        dict_words[word] = [(path, para, para.index(word))]
+                    else:
+                        dict_words[word].append((path, para, para.index(word)))
+                # dict_words[word] = dict_words.get(word, []).append((path, para,para.index(word)))
+    return dict_words (9)
+	C:\Users\benoit\PycharmProjects\python-1-2024\examens\preparation\second\solution_questions2.py : def even_numbers(list_of_numbers: list[int]):
+    return [x for x in list_of_numbers if x%2 == 0] (60)
+	C:\Users\benoit\PycharmProjects\python-1-2024\examens\preparation\second\solution_questions2.py : def count_words(text: str)-> dict[str, int]:
+    list_words = text.lower().replace(".","").split()
+    ret_dict:dict[str, int] = dict()
+    for word in list_words:
+        if word in ret_dict:
+            ret_dict[word] += 1
+        else:
+            ret_dict[word] = 1
+    return ret_dict (140)
+	C:\Users\benoit\PycharmProjects\python-1-2024\examens\preparation\second\solution_questions2.py : def count_words_2(text: str)-> dict[str, int]:
+    list_words = text.lower().replace(".","").split()
+    ret_dict:dict[str, int] = dict()
+    for word in list_words:
+        ret_dict[word] =  ret_dict.get(word, 0) + 1
+    return ret_dict (142)
+	C:\Users\benoit\PycharmProjects\python-1-2024\examens\preparation\second\solution_questions2.py : def count_words_3(text: str) -> dict[str, int]:
+    list_words = text.lower().replace(".", "").split()
+    return {word: list_words.count(word) for word in set(list_words)} (144)
+	C:\Users\benoit\PycharmProjects\python-1-2024\examens\preparation\second\solution_questions2.py : def write_and_read_file(filename, data):
+    with open(filename, "w") as file:
+        for item in data:
+            file.write(str(item) + "\n")
+    data_read = []
+    with open(filename, "r") as file:
+        for line in file:
+            data_read.append(line.strip())
+    return data_read (87)
+	C:\Users\benoit\PycharmProjects\python-1-2024\examens\preparation\second\solution_questions2.py : def find_substrings(s, k):
+    return [s[x:x+k] for x in range(len(s)-(k-1))] (48)
+class
+	C:\Users\benoit\PycharmProjects\python-1-2024\examens\preparation\scanner_ex\scanner.py : def main():
+    print("Scanner")
+    dict_paras = {}
+    word_list = ["def", "class", "if", "for", "while"]
+    result = scan_directory(Path(__file__).parent.parent, "py")
+    for file in result:
+        d = scan_file(file, word_list=["def", "class", "if", "for", "while"])
+        for key in d:
+            dict_paras[key] = dict_paras.get(key, []) + d[key]
+    for key in dict_paras:
+        print(key)
+        for file, para, index in dict_paras[key]:
+            print(f"\t{file} : {para} ({index})")
+    with open("summary.txt", "w") as file_s:
+        for key in dict_paras:
+            file_s.write(f"{key}\n")
+            for file, para, index in dict_paras[key]:
+                file_s.write(f"\t{file} : {para} ({index})\n") (78)
+while
+	C:\Users\benoit\PycharmProjects\python-1-2024\examens\preparation\scanner_ex\scanner.py : def main():
+    print("Scanner")
+    dict_paras = {}
+    word_list = ["def", "class", "if", "for", "while"]
+    result = scan_directory(Path(__file__).parent.parent, "py")
+    for file in result:
+        d = scan_file(file, word_list=["def", "class", "if", "for", "while"])
+        for key in d:
+            dict_paras[key] = dict_paras.get(key, []) + d[key]
+    for key in dict_paras:
+        print(key)
+        for file, para, index in dict_paras[key]:
+            print(f"\t{file} : {para} ({index})")
+    with open("summary.txt", "w") as file_s:
+        for key in dict_paras:
+            file_s.write(f"{key}\n")
+            for file, para, index in dict_paras[key]:
+                file_s.write(f"\t{file} : {para} ({index})\n") (100)
+	C:\Users\benoit\PycharmProjects\python-1-2024\examens\preparation\second\solution_questions2.py : def reverse_vowels(s: str) -> str:
+    vowels = "aeiouAEIOU"
+    s_list = list(s)
+    i, j = 0, len(s) - 1
+    while i < j:
+        if s_list[i] not in vowels:
+            i += 1
+            continue
+        if s_list[j] not in vowels:
+            j -= 1
+            continue
+        s_list[i], s_list[j] = s_list[j], s_list[i]
+        i += 1
+        j -= 1 (111)
