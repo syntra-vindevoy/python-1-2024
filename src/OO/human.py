@@ -96,6 +96,8 @@ class Teacher(Human):
     def employee_id(self, value):
         self.__employee_id = value
 
+def __str__(self):
+        return f"{self.__class__.__name__}({self.__name}, {self.__department})"
 
 def __str__(self):
     return f"{self.__class__.__name__}({self.__name}, {self.__department})"
