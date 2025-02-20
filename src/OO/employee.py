@@ -1,8 +1,13 @@
+import dataclasses
+
+
+@dataclasses.dataclass
 class Employee:
     num_of_emps = 0
     raise_amt = 1.04
 
     def __init__(self, first, last, pay):
+        self.id = Employee.num_of_emps + 1
         self.first = first
         self.last = last
         self.email = first + '.' + last + '@email.com'
@@ -57,6 +62,17 @@ class Employee:
             return False
         return True
 
+    def __repr__(self):
+        return "Employee('{}  {}', '{}', {})".format(self.id, self.first, self.last, self.pay)
+
+    def __str__(self):
+        return '{} - {}'.format(self.fullname(), self.email)
+
+    def __eq__(self, __value):
+        return super().__eq__(__value)
+
+    def __hash__(self):
+        return hash(self.id)
 
 if __name__ == '__main__':
     emp_1 = Employee('Corey', 'Schafer', 50000)
