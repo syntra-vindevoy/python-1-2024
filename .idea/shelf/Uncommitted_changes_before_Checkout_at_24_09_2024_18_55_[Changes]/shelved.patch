@@ -1,0 +1,32 @@
+Index: .gitignore
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>.idea/\r\n.vscode/\r\n
+===================================================================
+diff --git a/.gitignore b/.gitignore
+--- a/.gitignore	(revision fac2c4c5ec0d23501f95f18270f550e48741fbbe)
++++ b/.gitignore	(date 1726769161648)
+@@ -1,2 +1,3 @@
+ .idea/
+ .vscode/
++__pycache__/
+\ No newline at end of file
+Index: demo.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+># This is an important demo
+===================================================================
+diff --git a/demo.py b/demo.py
+--- a/demo.py	(revision fac2c4c5ec0d23501f95f18270f550e48741fbbe)
++++ b/demo.py	(date 1726772682171)
+@@ -1,1 +1,8 @@
+-# This is an important demo
+\ No newline at end of file
++
++print("hello world!!!")
++
++x = 1
++y = 2
++z = x + y
++print(z)
++

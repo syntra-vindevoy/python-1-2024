@@ -1,0 +1,69 @@
+Index: .obsidian/workspace.json
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>{\r\n  \"main\": {\r\n    \"id\": \"32ebf3b1e978afb8\",\r\n    \"type\": \"split\",\r\n    \"children\": [\r\n      {\r\n        \"id\": \"14f5324e11fea9a3\",\r\n        \"type\": \"tabs\",\r\n        \"children\": [\r\n          {\r\n            \"id\": \"6534bf29f0f6b600\",\r\n            \"type\": \"leaf\",\r\n            \"state\": {\r\n              \"type\": \"markdown\",\r\n              \"state\": {\r\n                \"file\": \"obsidian/database.md\",\r\n                \"mode\": \"source\",\r\n                \"source\": false\r\n              },\r\n              \"icon\": \"lucide-file\",\r\n              \"title\": \"database\"\r\n            }\r\n          }\r\n        ]\r\n      }\r\n    ],\r\n    \"direction\": \"vertical\"\r\n  },\r\n  \"left\": {\r\n    \"id\": \"c5d1659cc0fd3c6b\",\r\n    \"type\": \"split\",\r\n    \"children\": [\r\n      {\r\n        \"id\": \"d9f1bf22b6626dca\",\r\n        \"type\": \"tabs\",\r\n        \"children\": [\r\n          {\r\n            \"id\": \"8ac99e628385eee9\",\r\n            \"type\": \"leaf\",\r\n            \"state\": {\r\n              \"type\": \"file-explorer\",\r\n              \"state\": {\r\n                \"sortOrder\": \"alphabetical\"\r\n              },\r\n              \"icon\": \"lucide-folder-closed\",\r\n              \"title\": \"Files\"\r\n            }\r\n          },\r\n          {\r\n            \"id\": \"77a581a76f0756ed\",\r\n            \"type\": \"leaf\",\r\n            \"state\": {\r\n              \"type\": \"search\",\r\n              \"state\": {\r\n                \"query\": \"tag:#review\",\r\n                \"matchingCase\": false,\r\n                \"explainSearch\": false,\r\n                \"collapseAll\": false,\r\n                \"extraContext\": false,\r\n                \"sortOrder\": \"alphabetical\"\r\n              },\r\n              \"icon\": \"lucide-search\",\r\n              \"title\": \"Search\"\r\n            }\r\n          },\r\n          {\r\n            \"id\": \"61d2a9735120d0a8\",\r\n            \"type\": \"leaf\",\r\n            \"state\": {\r\n              \"type\": \"bookmarks\",\r\n              \"state\": {},\r\n              \"icon\": \"lucide-bookmark\",\r\n              \"title\": \"Bookmarks\"\r\n            }\r\n          }\r\n        ]\r\n      }\r\n    ],\r\n    \"direction\": \"horizontal\",\r\n    \"width\": 221.5,\r\n    \"collapsed\": true\r\n  },\r\n  \"right\": {\r\n    \"id\": \"cd4a01c0c665e781\",\r\n    \"type\": \"split\",\r\n    \"children\": [\r\n      {\r\n        \"id\": \"9fe6011b4e3ed830\",\r\n        \"type\": \"tabs\",\r\n        \"children\": [\r\n          {\r\n            \"id\": \"c33c353dd6f8cd82\",\r\n            \"type\": \"leaf\",\r\n            \"state\": {\r\n              \"type\": \"backlink\",\r\n              \"state\": {\r\n                \"file\": \"syntra.md\",\r\n                \"collapseAll\": false,\r\n                \"extraContext\": false,\r\n                \"sortOrder\": \"alphabetical\",\r\n                \"showSearch\": false,\r\n                \"searchQuery\": \"\",\r\n                \"backlinkCollapsed\": false,\r\n                \"unlinkedCollapsed\": true\r\n              },\r\n              \"icon\": \"links-coming-in\",\r\n              \"title\": \"Backlinks for syntra\"\r\n            }\r\n          },\r\n          {\r\n            \"id\": \"a1c95226fea1ef6e\",\r\n            \"type\": \"leaf\",\r\n            \"state\": {\r\n              \"type\": \"outgoing-link\",\r\n              \"state\": {\r\n                \"file\": \"syntra.md\",\r\n                \"linksCollapsed\": false,\r\n                \"unlinkedCollapsed\": true\r\n              },\r\n              \"icon\": \"links-going-out\",\r\n              \"title\": \"Outgoing links from syntra\"\r\n            }\r\n          },\r\n          {\r\n            \"id\": \"37bd79afe611e7ad\",\r\n            \"type\": \"leaf\",\r\n            \"state\": {\r\n              \"type\": \"tag\",\r\n              \"state\": {\r\n                \"sortOrder\": \"frequency\",\r\n                \"useHierarchy\": true\r\n              },\r\n              \"icon\": \"lucide-tags\",\r\n              \"title\": \"Tags\"\r\n            }\r\n          },\r\n          {\r\n            \"id\": \"b86d903f74faadc6\",\r\n            \"type\": \"leaf\",\r\n            \"state\": {\r\n              \"type\": \"outline\",\r\n              \"state\": {\r\n                \"file\": \"syntra.md\"\r\n              },\r\n              \"icon\": \"lucide-list\",\r\n              \"title\": \"Outline of syntra\"\r\n            }\r\n          }\r\n        ]\r\n      }\r\n    ],\r\n    \"direction\": \"horizontal\",\r\n    \"width\": 300,\r\n    \"collapsed\": true\r\n  },\r\n  \"left-ribbon\": {\r\n    \"hiddenItems\": {\r\n      \"switcher:Open quick switcher\": false,\r\n      \"graph:Open graph view\": false,\r\n      \"canvas:Create new canvas\": false,\r\n      \"daily-notes:Open today's daily note\": false,\r\n      \"templates:Insert template\": false,\r\n      \"command-palette:Open command palette\": false\r\n    }\r\n  },\r\n  \"active\": \"6534bf29f0f6b600\",\r\n  \"lastOpenFiles\": [\r\n    \"obsidian/syntra.md\",\r\n    \"obsidian/database.md\",\r\n    \"database.md\",\r\n    \"obsidian/branch_overview.png\",\r\n    \"syntra.md\",\r\n    \"obsidian/Untitled.md\",\r\n    \"obsidian/Pasted image 20241112184008.png\",\r\n    \"obsidian\",\r\n    \"Pasted image 20241112184008.png\",\r\n    \"github.py\",\r\n    \"square_root.py\",\r\n    \"test.txt\",\r\n    \"New Tekstdocument.txt\",\r\n    \"index.md\",\r\n    \"hogent.md\",\r\n    \"code/lab/python/cli/try_streamlit.py\",\r\n    \"code/lab/python/python.md\",\r\n    \"code/lab/python/adding python to path.md\",\r\n    \"docs.python.org.md\",\r\n    \"code/lab/nvim/Vim NeoVim.md\",\r\n    \"code/lab/vscode/vscode.md\",\r\n    \"powershell.md\",\r\n    \"powershell_linux.md\",\r\n    \"code/pipe.ahk2\",\r\n    \"trading.md\",\r\n    \"code/python/python.md\",\r\n    \"Verkiezingen.md\",\r\n    \"calendar/~syncthing~calendar.md.tmp\",\r\n    \"calendar/~syncthing~calendar_archive.md.tmp\",\r\n    \"Verkiezingen.pdf\",\r\n    \"code/csharp/_md/MapperA.cs.md\",\r\n    \"code/csharp/CSharp.md\",\r\n    \"code/csharp/_md/Startup.cs.md\",\r\n    \"code/csharp/_md/Mapper vs Repository.md\",\r\n    \"code/csharp/_md/DomainManager.cs.md\",\r\n    \"code/csharp/_md/3TierModel.md\",\r\n    \"code/vscode/vscode.md\",\r\n    \"run.md\",\r\n    \"uilen.md\"\r\n  ]\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.obsidian/workspace.json b/.obsidian/workspace.json
+--- a/.obsidian/workspace.json	(revision febbeaa8c5b6c327c5ed9e2b74e1d68f6a983d24)
++++ b/.obsidian/workspace.json	(date 1732305047508)
+@@ -165,6 +165,18 @@
+   },
+   "active": "6534bf29f0f6b600",
+   "lastOpenFiles": [
++    "proefexamen/week_number.py",
++    "proefexamen/opgave_1.txt",
++    "proefexamen/opgave.pdf",
++    "proefexamen/leapyear.py",
++    "proefexamen/examen.zip",
++    "proefexamen/dow.py",
++    "proefexamen/dom.py",
++    "proefexamen/day_number.py",
++    "proefexamen/date_string.py",
++    "proefexamen/calendar.py",
++    "obsidian/syntra.md~",
++    "examen/opgave.md",
+     "obsidian/syntra.md",
+     "obsidian/database.md",
+     "database.md",
+@@ -172,15 +184,9 @@
+     "syntra.md",
+     "obsidian/Untitled.md",
+     "obsidian/Pasted image 20241112184008.png",
+-    "obsidian",
+     "Pasted image 20241112184008.png",
+-    "github.py",
+-    "square_root.py",
+-    "test.txt",
+-    "New Tekstdocument.txt",
+     "index.md",
+     "hogent.md",
+-    "code/lab/python/cli/try_streamlit.py",
+     "code/lab/python/python.md",
+     "code/lab/python/adding python to path.md",
+     "docs.python.org.md",
+@@ -188,21 +194,15 @@
+     "code/lab/vscode/vscode.md",
+     "powershell.md",
+     "powershell_linux.md",
+-    "code/pipe.ahk2",
+     "trading.md",
+     "code/python/python.md",
+     "Verkiezingen.md",
+-    "calendar/~syncthing~calendar.md.tmp",
+-    "calendar/~syncthing~calendar_archive.md.tmp",
+-    "Verkiezingen.pdf",
+     "code/csharp/_md/MapperA.cs.md",
+     "code/csharp/CSharp.md",
+     "code/csharp/_md/Startup.cs.md",
+     "code/csharp/_md/Mapper vs Repository.md",
+     "code/csharp/_md/DomainManager.cs.md",
+     "code/csharp/_md/3TierModel.md",
+-    "code/vscode/vscode.md",
+-    "run.md",
+-    "uilen.md"
++    "code/vscode/vscode.md"
+   ]
+ }
+\ No newline at end of file
