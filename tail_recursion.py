@@ -1,0 +1,22 @@
+def fact(n: int, t: int = 1) -> int:
+    if n < 2:
+        return 1
+
+    return fact(n - 1, n * t)
+#tussen resultaat meegeven zodat je elke keer opnioeuw u stak opkuist
+
+assert fact(0) == 1
+assert fact(1) == 1
+assert fact(2) == 2
+assert fact(3) == 6
+assert fact(4) == 24
+assert fact(5) == 120
+assert fact(6) == 720
+
+6   1   6
+5   6   30
+4   40  120
+3   120 360
+2   360 720
+1   720
+
