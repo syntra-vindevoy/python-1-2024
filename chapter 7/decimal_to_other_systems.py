@@ -10,4 +10,4 @@ def main (n):
     print (f"Roman = {higher_roman_numbers(n)}" if n > 3999 else f"Roman = {dec_to_roman(n)}")
 
 if __name__ == '__main__':
-    main (4255)
+    main (10)

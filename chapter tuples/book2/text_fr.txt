@@ -1,0 +1,40 @@
+Python (prononcé /pi.tɔ̃/) est un langage de programmation interprété, multiparadigme et multiplateformes. Il favorise la programmation impérative structurée, fonctionnelle et orientée objet. Il est doté d'un typage dynamique fort, d'une gestion automatique de la mémoire par ramasse-miettes et d'un système de gestion d'exceptions ; il est ainsi similaire à Perl, Ruby, Scheme, Smalltalk et Tcl.
+
+Le langage Python est placé sous une licence libre proche de la licence BSD et fonctionne sur la plupart des plateformes informatiques, des smartphones aux ordinateurs centraux, de Windows à Unix avec notamment GNU/Linux en passant par macOS, ou encore Android, iOS, et peut aussi être traduit en Java ou .NET. Il est conçu pour optimiser la productivité des programmeurs en offrant des outils de haut niveau et une syntaxe simple à utiliser.
+
+Il est également apprécié par certains pédagogues qui y trouvent un langage où la syntaxe, clairement séparée des mécanismes de bas niveau, permet une initiation aisée aux concepts de base de la programmation4. Selon l'Index TIOBE, notamment en raison de son efficacité pour l'apprentissage automatique, sa popularité va croissante ; et en 2022 n'a toujours pas montré de signe de ralentissement5.
+Utilisation
+
+Python est un langage de programmation qui peut s'utiliser dans de nombreux contextes et s'adapter à tout type d'utilisation grâce à des bibliothèques spécialisées.
+
+Il est cependant particulièrement utilisé comme langage de script pour automatiser des tâches simples mais fastidieuses, comme un script qui récupérerait la météo sur Internet ou qui s'intégrerait dans un logiciel de conception assistée par ordinateur afin d'automatiser certains enchaînements d'actions répétitives (voir la section Adoption). On l'utilise également comme langage de développement de prototype lorsqu'on a besoin d'une application fonctionnelle avant de l'optimiser avec un langage de plus bas niveau. Il est particulièrement répandu dans le monde scientifique, et possède de nombreuses bibliothèques optimisées destinées au calcul numérique.
+
+C'est l'un des langages les plus utilisés dans le domaine de l'informatique quantique6 et de l'intelligence artificielle, ainsi que pour le traitement des Big Data et du Machine learning7.
+Historique
+Au CWI
+Guido van Rossum, créateur de Python, à la OSCON 2006.
+
+À la fin des années 1980, le programmeur Guido van Rossum participe au développement du langage de programmation ABC au Centrum voor Wiskunde en Informatica (CWI) d'Amsterdam, aux Pays-Bas. Il travaille alors dans l'équipe du système d'exploitation Amoeba dont les appels systèmes sont difficilement interfaçables avec le Bourne shell utilisé comme interface utilisateur. Il estime alors qu'un langage de script inspiré d'ABC pourrait être intéressant comme interpréteur de commandes pour Amoeba8.
+
+En 1989, profitant d'une semaine de vacances durant les fêtes de Noël, il utilise son ordinateur personnel9 pour écrire la première version du langage. Fan de la série télévisée Monty Python's Flying Circus, il décide de baptiser ce projet Python10. Il s'est principalement inspiré d'ABC, par exemple pour l'indentation comme syntaxe ou les types de haut niveau mais aussi de Modula-3 pour la gestion des exceptions, du langage C et des outils UNIX11.
+
+Durant l'année suivante, le langage commence à être adopté par l'équipe du projet Amoeba, Guido poursuivant son développement principalement pendant son temps libre. En février 1991, la première version publique, numérotée 0.9.012, est postée sur le forum Usenet alt.sources. La dernière version sortie au CWI est Python 1.2.
+Au CNRI
+
+En 1995, Van Rossum continue son travail sur Python au CNRI (en) à Reston, aux États-Unis, où il sort plusieurs versions du logiciel.
+
+À partir d'août 1995, l'équipe Python travaille au CNRI sur Grail13 un navigateur web utilisant Tk. Il est l'équivalent pour Python du navigateur HotJava, permettant d'exécuter des applets dans un environnement sécurisé. La première version publique, disponible en novembre, est la 0.214. Il entraîne le développement de modules pour la bibliothèque standard comme rexec15, htmllib16 ou urllib17. La version 0.6 sera la dernière de Grail ; elle est publiée en avril 199918.
+
+En 1999, le projet Computer Programming for Everybody19 (CP4E) est lancé conjointement entre le CNRI et la DARPA. Il s'agit d'utiliser Python comme un langage d'enseignement de la programmation. Cette initiative conduira à la création de l'environnement de développement IDLE. Cependant, du fait du manque de financement du projet par la DARPA, et du départ de nombreux développeurs Python du CNRI (dont Guido van Rossum), le projet s'éteint en 200020. Python 1.6 est la dernière version sortie au CNRI.
+À BeOpen
+
+En 2000, l'équipe principale de développement de Python déménage à BeOpen.com pour former l'équipe PythonLabs de BeOpen. Python 2.0 est la seule version sortie à BeOpen.com. Après cette version, Guido Van Rossum et les autres développeurs de PythonLabs rejoignent Digital Creations (à présent connue sous le nom de Zope Corporation)21.
+
+Andrew M. Kuchling publie en décembre 199922 un texte nommé Python Warts23, qui synthétise les griefs les plus fréquents exprimés à l'encontre du langage. Ce document aura une influence certaine sur les développements futurs du langage24.
+La Python Software Foundation
+
+Python 2.1 est une version dérivée de Python 1.6.1 et de Python 2.0. Sa licence est renommée Python Software Foundation License. Tout code, documentation et spécification ajouté, depuis la sortie de Python 2.1 alpha, est détenu par la Python Software Foundation (PSF), une association sans but lucratif fondée en 2001, modelée d'après l'Apache Software Foundation.
+
+Afin de réparer certains défauts du langage (par exemple l'orienté objet avec deux types de classes), et pour nettoyer la bibliothèque standard de ses éléments obsolètes et redondants, Python a choisi de casser la compatibilité ascendante dans la nouvelle version majeure, Python 3.0, publié en décembre 2008. Cette version est rapidement suivie par une version 3.1 qui corrige les erreurs de jeunesse de la version 3.0.
+
+Selon l'Index TIOBE, « Python, qui est devenu un élément incontournable de la science des données, du DevOps et du développement web, est aussi désormais le langage le plus populaire dans le classement de TIOBE. Classé troisième langage le plus populaire de l'index au début de l'année 2021, Python s'est hissé à la première place en octobre 2022 »5.

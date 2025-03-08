@@ -45,5 +45,32 @@ def anagrams(file):
     eight_letter_anagrams = {key: value for key, value in anagrams_only.items() if len(key) == 8}
 
 
-    return eight_letter_anagrams.values()
-print(anagrams(file))
+    return anagrams_sorted.values()
+
+print (anagrams(file))
+"""Exercise 12.3. Two words form a “metathesis pair” if you can transform one into the other by
+swapping two letters; for example, “converse” and “conserve”. Write a program that finds all of
+the metathesis pairs in the dictionary. Hint: don’t test all pairs of words, and don’t test all possible
+swaps"""
+
+anagrams = anagrams(file)
+#print (len(anagrams))
+
+def metathesis_pairs():
+    for words in anagrams:
+        single_lenght = len(words[0])
+        number = len(words)
+        connected_word = "".join(words)
+        count = 0
+        pair = False
+
+        for i in range(single_lenght):
+            if connected_word[i] == connected_word[i + single_lenght]: #klopt nog niet voor meer dan 2 woorden
+                count += 1
+        if count == 2:
+            pair = True
+        print (single_lenght, connected_word)
+metathesis_pairs()
+
+
+

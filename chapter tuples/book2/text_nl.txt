@@ -1,0 +1,37 @@
+Python is een programmeertaal die begin jaren 90 ontworpen en ontwikkeld werd door Guido van Rossum, destijds verbonden aan het Centrum voor Wiskunde en Informatica (daarvoor Mathematisch Centrum) in Amsterdam.[2] De taal is mede gebaseerd op inzichten van professor Lambert Meertens, die de programmeertaal ABC ontworpen had, bedoeld als alternatief voor BASIC, maar dan met geavanceerde datastructuren. Inmiddels wordt de taal doorontwikkeld door een enthousiaste groep, tot juli 2018 geleid door Van Rossum.[3] Deze groep wordt ondersteund door vrijwilligers op het internet. De Python Software Foundation leidt de ontwikkeling van Python. Python is vrije software.
+
+Python dankt zijn naam aan het favoriete televisieprogramma van Guido van Rossum, Monty Python's Flying Circus.[4][5]
+Kenmerken
+IDLE, een van de beschikbare IDE's voor Python.
+Syntaxis
+
+Python is ontwikkeld met het oog op leesbare code. Dit uit zich op verschillende manieren. Zo wordt structuur aangebracht door indentatie (regelinspringing) in plaats van bijvoorbeeld accolades zoals in C-achtige talen. Statements (vergelijkbaar met zinnen uit gewone taal) worden simpelweg beëindigd door het eind van de regel. Variabelen krijgen geen typedeclaratie. Python maakt gebruik van duck-typing.
+Inspringing
+
+Python gebruikt als een van weinige talen de mate van inspringing van de regel, ook wel indentatie genoemd, als indicatie van gelaagdheid van de verschillende onderdelen van het programma. Dit is iets wat Jaap van Ganswijk, de ontwerper van JPL en UHL al sinds het begin van de jaren tachtig voorstaat, maar dat ook anderen wel geopperd hebben.
+
+Andere talen verschillen hierin door het gebruik van haakjes, die dan bestaan uit de woorden BEGIN en END (bij Pascal, Algol en PL/1) of accolades (bij C, C++ en Java) om een blokstructuur aan te duiden. In de praktijk zal een programmeur ook bij deze talen de regels inspringen om het programma leesbaarder te maken.
+
+Bij Python wordt de blokstructuur uitsluitend door inspringing bepaald. Door deze inspringing en een aantal andere elementen kan de structuur van de taal worden vergeleken met de structuur van de pseudoprogrammeertaal die in veel gevallen wordt gebruikt in de literatuur om algoritmen uit te leggen.
+Duck-typing
+
+Python implementeert het zogenaamde duck-typing. Dit houdt in dat het type van een variabele en het type van een argument van bijvoorbeeld een functie niet gedefinieerd hoeft te worden. Bij compilatie vindt (dus) ook geen typecontrole plaats. In runtime wordt slechts gecontroleerd of de methoden die worden gebruikt voor het betreffende object, gedefinieerd zijn. Als dat niet zo is, volgt een foutmelding.
+EAFP
+
+Een veel voorkomende wijze van programmeren in Python is het zogenaamde EAFP-systeem (Easier to Ask for Forgiveness than Permission, naar een uitspraak van Grace Hopper). Hierbij wordt een functie of methode gestart zonder eerst te controleren of deze wel goed werkt, en vervolgens een foutmelding gegeven en afgevangen als dat niet het geval is. In de meeste andere programmeertalen is dit ofwel onmogelijk, of het wordt als slechte programmeerstijl beschouwd. Die gebruiken wat in Python LBYL-programmeerstijl (Look Before You Leap) heet: eerst de argumenten van een functie bekijken om te zien of de functie goed gaat, en slechts verdergaan als dat het geval is.
+Uitvoering
+
+Een Python-programma wordt geschreven in een of meer tekstbestanden met de extensie .py. Om een Python-programma uit te voeren dient men, in het geval van CPython, de Python-interpreter aan te roepen, gevolgd door de naam van het bestand, waarin het begin van het programma wordt gecodeerd.
+Interpreter
+
+De CPython-interpreter zet de Python-programmacode niet meteen om in machine-instructies, maar compileert naar een tussenvorm, bytecode genoemd. Deze code wordt opgeslagen in de vorm van een .pyc-bestand (met de c van compiled, gecompileerd). De bytecode is onafhankelijk van het besturingssysteem – ze kan verhuisd worden naar een ander besturingssysteem. De volgende stap is het uitvoeren van de bytecode door de Python-virtual-machine. Deze zet de bytecode om in machinetaal (instructies voor de processor). De eerste stap is alleen nodig als de interpreter geen up-to-date .pyc-compilatie vindt. De tussenstap vindt plaats omdat bytecode geoptimaliseerd is om sneller te worden omgezet in machine-instructies. Daarnaast zorgt de virtual machine voor de garbage collection.
+
+Omdat Python een zogenaamde interpreter is, zijn programma's geschreven in Python langzamer dan programma's geschreven in een taal met een compiler, zoals C. Pythonprogramma's zijn ook langzamer door de garbage collection.
+Garbage collection
+
+Net als in veel andere moderne scripttalen wordt in Python geheugenruimte automatisch gereserveerd voor nieuwe variabelen of variabelen die groeien, en weer vrijgegeven als er geen referenties meer zijn aan die variabelen (garbage collection). Op deze manier wordt de programmeur een hoop werk bespaard dat hij of zij in sommige talen (zoals C en C++) wel moet doen.
+Standalone executables
+
+Het is ook mogelijk Python te gebruiken zonder de Python-interpreter en -bibliotheken te installeren. Een voorbeeld van een tool hiervoor is Py2exe.
+Bibliotheken
+Python wordt geleverd met een uitgebreide bibliotheek om van alles en nog wat standaard te kunnen bewerken. Het is erg eenvoudig om in Python herbruikbare code te schrijven. Doordat veel van de bibliotheken die mensen schrijven, gratis en vrij aan anderen ter beschikking worden gesteld, groeien de mogelijkheden van de bibliotheek voortdurend. Python wordt zo tot een programmeertaal die voor razendsnel ontwikkelen van een nieuwe applicatie kan worden gebruikt, zonder dat de daarbij geproduceerde code onleesbaar wordt.

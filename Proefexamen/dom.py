@@ -8,11 +8,9 @@ def days_of_month(year: int, month: int) -> int:
     elif month == 2:
         if is_leap_year(year):
             return 29
-        else:
-            return 28
-    else:
-        return 31
-    pass
+        return 28
+
+    return 31
 
 
 def main():

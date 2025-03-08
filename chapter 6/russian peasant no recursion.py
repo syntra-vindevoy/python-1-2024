@@ -6,7 +6,12 @@ def russian_peasant_alt(a,b):
     if b == 1: return a
 
     check_string (a,b) # deals with input of strings
-    a, b, negative = check_negative(a,b) #checks and deals with negative numbers
+
+    if (a < 0) ^ (b < 0): #checks and deals with negative numbers
+        negative = -1
+    else: negative = 1
+
+    a, b = abs(a), abs(b)
     a, b, factor = if_floats(a,b) #turns floats into integers and calculates the factor to convert the result
     n = int(log(a, 2)) #calculates the number of times a is dividable by 2
     result = 0
@@ -17,19 +22,6 @@ def russian_peasant_alt(a,b):
         a //= 2
         b *= 2
     return result * negative / factor
-
-def check_negative (a,b):
-    negative = 1
-    if (a < 0) and (b < 0):
-        a *= -1
-        b *= -1
-    elif (a < 0) ^ (b < 0):
-        if a < 0:
-            a *= -1
-        else:
-            b *= -1
-        negative = -1
-    return a,b,negative
 
 def check_string (a,b):
     if isinstance(a, str) or isinstance(b, str):

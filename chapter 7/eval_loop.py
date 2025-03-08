@@ -1,4 +1,4 @@
-import math
+
 
 def eval_loop ():
     x = input ("Give your input (To stop enter 'done'): ")

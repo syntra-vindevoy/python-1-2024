@@ -12,16 +12,16 @@ print (current_dir)
 config_dir = current_dir.parent.joinpath("config", "settings")
 
 try:
-    with open ("words.txt", "r") as file:
+    with open ("onbestaand.txt", "r") as file:
         lines = file.readlines()
-#except:
- #   print("Error")
-#except FileNotFoundError:
- #   print ("File not found")
-except Exception as err:
-    print(f"Het was deze fout: {err}")
-finally:
-    print("Dit gebeurt sowieso")
+except:
+    print("Error")
+# except FileNotFoundError:
+#     print ("File not found")
+# except Exception as err:
+#     print(f"Het was deze fout: {err}")
+# finally:
+#     print("Hier staat code die sowieso wordt uitgevoerd")
 
 import yaml
 # with open ("test.yaml", "r") as yaml_file:
@@ -68,8 +68,26 @@ print(config_readback)
 
 import hashlib
 
-md5_hash = hashlib.md5()
-type(md5_hash)
-digest = md5_hash.hexdigest()
+with open("100_0017.JPG", "rb") as file:
+    data = file.read()
 
+md5_hash = hashlib.md5()
+print(type(md5_hash))
+md5_hash.update(data)
+digest = md5_hash.hexdigest()
+print (digest)
+
+def walk(dirname):
+    for name in os.listdir(dirname):
+        path = os.path.join(dirname, name)
+
+        if os.path.isfile(path):
+            print(path)
+            with open(path, 'rb') as file:
+                data = file.read()
+            md5_hash.update(data)
+            print (md5_hash.hexdigest())
+        elif os.path.isdir(path):
+            walk(path)
+#walk("foto")
 

@@ -17,7 +17,7 @@ def primes (number):
         n += 2
 
     return prime_list
-
+#
 # if __name__ == '__main__':
 #     start = perf_counter()
 #     n = 10000
@@ -28,7 +28,7 @@ def primes (number):
 
 
 def primes_dict (total_numbers):
-    prime_dict = {2:4,}
+    prime_dict = {2:4}
     n = 3
 
     while len(prime_dict) < total_numbers:
@@ -42,15 +42,16 @@ def primes_dict (total_numbers):
         if prime_check: prime_dict[n] = n * n
         n += 2
 
+
     return prime_dict.keys()
 
-# if __name__ == '__main__':
-#     start = perf_counter()
-#     total_numbers = 100000
-#     primes = primes_dict(total_numbers)
-#     stop = perf_counter()
-#     print(primes)
-#     print (f"{len(primes)} primes found in {stop - start} seconds")
+if __name__ == '__main__':
+    start = perf_counter()
+    total_numbers = 1000000
+    primes = primes_dict(total_numbers)
+    stop = perf_counter()
+    print(primes)
+    print (f"{len(primes)} primes found in {stop - start} seconds")
 
 def primes_eratosthenes(max_number):
 
@@ -62,17 +63,17 @@ def primes_eratosthenes(max_number):
         while lijst[position] * multiplier <= max_number:
             if lijst[position] * multiplier in lijst:
                 lijst.remove(lijst[position] * multiplier)
-                print (lijst)
             multiplier += 1
+        print(lijst)
         multiplier = 2
         position += 1
     return lijst
 
 
-if __name__ == '__main__':
-    start = perf_counter()
-    max_number = 20
-    primes = primes_eratosthenes(max_number)
-    stop = perf_counter()
-    print(primes)
-    print (f"{len(primes)} primes found in {stop - start} seconds")
+# if __name__ == '__main__':
+#     start = perf_counter()
+#     max_number = 10000
+#     primes = primes_eratosthenes(max_number)
+#     stop = perf_counter()
+#     print(primes)
+#     print (f"{len(primes)} primes found in {stop - start} seconds")

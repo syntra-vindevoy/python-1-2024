@@ -37,5 +37,3 @@ lst.sort()
 for i in lst:
     print(i)
 print (lst)
-
-

@@ -4,7 +4,6 @@ string, and two filenames; it should read the first file and write the contents 
 with the replacement string.
 If an error occurs while opening, reading, writing or closing files, your program should catch the
 exception, print an error message, and exit"""
-from sys import exception
 
 
 def sed(pattern, replacement, filename_original, filename_replacement):

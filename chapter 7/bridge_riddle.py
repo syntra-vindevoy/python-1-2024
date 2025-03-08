@@ -6,8 +6,7 @@ def split_in_pairs (left):
     return pairs
 
 def move_left_to_right (left, right, pair):
-    right_new = right.copy()
-    left_new = left.copy()
+    right_new, left_new = right.copy(), left.copy()
     right_new.extend (pair)
     left_new.remove (pair[0])
     left_new.remove (pair[1])
@@ -19,8 +18,7 @@ def count_time_pair (pair):
     return time_pair
 
 def move_right_to_left (left, right, single):
-    left_new = left.copy()
-    right_new = right.copy()
+    left_new, right_new = left.copy(), right.copy()
     left_new.append (single)
     right_new.remove (single)
     return left_new, right_new
@@ -60,10 +58,3 @@ def show_results_bridge_riddle():
     print (f"This is the progress made towards the fastest time: {min_time}")
 
 show_results_bridge_riddle()
-
-
-
-
-
-
-

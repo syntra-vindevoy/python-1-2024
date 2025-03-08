@@ -79,6 +79,60 @@ def search_all_combinations():
         if result < result_min:
             result_min = result
             combination_min = n
-        print (f"{count / len(unique_combinations) * 100:.2f}%") if count % 100 == 0 else None
+        print (f"{count / len(unique_combinations) * 100:.2f}%") if count % 200 == 0 else None
     print (f"{combination_max} = {result_max} and {combination_min} = {result_min}")
 #search_all_combinations()
+
+def uses_all(word, required):
+    for letter in required:
+        if letter not in word:
+            return False
+    return True
+
+
+def avoids(word, forbidden):
+    """Returns True if the word doesn't use any of the forbidden letters."""
+    return not any(letter in forbidden for letter in word)
+
+
+
+def letter_frequencies(words):
+    """Count the frequency of each letter in the words."""
+    from collections import Counter
+    freq = Counter()
+    for word in words:
+        freq.update(word)
+    return freq
+
+def find_optimal_letters(words, k=5):
+    letter_freq = letter_frequencies(words)
+    excluded_words = set()
+    selected_letters = set()
+
+    for _ in range(k):
+        best_letter = None
+        best_exclusion = 0
+
+        for letter, freq in letter_freq.items():
+            if letter in selected_letters:
+                continue
+
+            current_exclusion = sum(1 for word in words if letter in word and word not in excluded_words)
+
+            if current_exclusion > best_exclusion:
+                best_letter = letter
+                best_exclusion = current_exclusion
+
+        if best_letter:
+            selected_letters.add(best_letter)
+            excluded_words.update(word for word in words if best_letter in word)
+
+    return selected_letters, len(words) - len(excluded_words)
+
+
+if __name__ == "__main__":
+    forbidden, remaining = find_optimal_letters(words, k=5)
+    print(f"Optimal forbidden letters: {''.join(forbidden)}")
+    print(f"Number of words that remain: {remaining}")
+
+

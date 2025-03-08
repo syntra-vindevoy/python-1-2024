@@ -2,6 +2,8 @@ import random
 
 with open("words.txt", "r") as f:
     words = f.read().split("\n")
+words.sort()
+
 
 def nested_sum(numbers):
     sums = 0
@@ -45,9 +47,18 @@ def has_duplicates(n):
     return test
 #print (has_duplicates([1, 2, 3, "g", 4, 5, "a", "g" ]))
 
+def has_duplicates_2(n):
+    n.sort()
+    test = False
+    for i in range (len(n)):
+        if n[i] == n[i+1]: return True
+    return test
+
+print (has_duplicates([1, 2, 3, "g", 4, 5, "a", "g" ]))
+
 
 def in_bisect (n, words):
-    words.sort()
+    #words is already sorted
     lenght = len(words)
     if lenght == 1 and n != words[0]: return False
     middle = words[lenght//2]
@@ -85,16 +96,7 @@ def test_birthday_paradox(tries, number_of_students):
 
 def interlock():
     interlocked_words = []
-    for word in words: #oude code vereenvoudigd door slicing
-        # new_word_1 = []
-        # new_word_2 = []
-        # count = 1
-        # for letter in word:
-        #     if count % 2 == 0: new_word_2.append(letter)
-        #     else: new_word_1.append(letter)
-        #     count += 1
-        # new_word_1 = ("".join(new_word_1))
-        # new_word_2 = ("".join(new_word_2))
+    for word in words:
         new_word_1 = word[::2]
         new_word_2 = word[1::2]
         if in_bisect(new_word_1, words) and in_bisect(new_word_2, words):
@@ -108,17 +110,18 @@ def interlock_more():
     count = 0
     total_words = len(words)
     for word in words:
-        if len(word) < 5: continue
         count += 1
-        new_word_1 = word[::5]
-        new_word_2 = word[1::5]
-        new_word_3 = word[2::5]
-        new_word_4 = word[3::5]
-        new_word_5 = word[4::5]
+        if len(word) < 6: continue
+        new_word_1 = word[::6]
+        new_word_2 = word[1::6]
+        new_word_3 = word[2::6]
+        new_word_4 = word[3::6]
+        new_word_5 = word[4::6]
+        new_word_6 = word[5::6]
         if (in_bisect(new_word_1, words) and in_bisect(new_word_2, words) and in_bisect(new_word_3, words) and
-                in_bisect(new_word_4, words) and in_bisect(new_word_5, words)):
-            interlocked_words.append([word, new_word_1, new_word_2, new_word_3, new_word_4, new_word_5])
-        if count % 100 == 0 or count == total_words: #print progress every x words
+                in_bisect(new_word_4, words) and in_bisect(new_word_5, words) and in_bisect(new_word_6, words)):
+            interlocked_words.append([word, new_word_1, new_word_2, new_word_3, new_word_4, new_word_5, new_word_6])
+        if count % 1000 == 0 or count == total_words: #print progress every x words
             print (f"progress: {count/total_words*100:.2f}% and {len(interlocked_words)} interlocks found")
-    print (interlocked_words)
+    print (f" {len(interlocked_words)} found {interlocked_words}")
 interlock_more()

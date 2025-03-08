@@ -57,7 +57,6 @@ def show_on_scale(n):
             result = sum (x)
             if result == n: weights_to_use = x
 
-
     scale_left = []
     scale_right = []
     for i in weights_to_use:
@@ -67,4 +66,4 @@ def show_on_scale(n):
     print (f"To weigh {n}, put it on the left side of the scale")
     print (f"{scale_left}-----{scale_right}")
 
-show_on_scale(7)
+show_on_scale(20)

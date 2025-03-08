@@ -2,10 +2,10 @@ from dom import days_of_month  # importing our days of month
 
 
 def day_number(year: int, month: int, day: int) -> int:
-    days = 0
+    days = day #zet day al meteen bij days ipv die achteraf pas toe te voegen
     for i in range (1, month):
         days += days_of_month(month = i, year = year)
-    days += day
+
     return days
 
 def main():

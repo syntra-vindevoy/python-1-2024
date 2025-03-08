@@ -15,6 +15,7 @@ def find_combination():
 
     for _ in range (5):
         letter_count = 10000000
+
         for letter in alphabet:
             value_temp = 0
 
@@ -31,7 +32,7 @@ def find_combination():
             if temp_letter in word:
                 del words[word]
 
-        #instead of the above, following dict comprehansion is slighly slower:
+        #instead of the above, following dict comprehension is slightly slower:
         #words = {key: value for key, value in words.items() if temp_letter not in key}
 
         combinations.append(temp_letter)

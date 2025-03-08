@@ -1,11 +1,9 @@
 import string
 from time import perf_counter
 
-
 def find_combination():
     with open("words.txt", "r") as f:
-        words = f.read().split("\n")
-
+        words = f.read().splitlines()
     alphabet = list (string.ascii_lowercase)
     combinations = []
 
@@ -13,6 +11,7 @@ def find_combination():
         value = 10000000
         for letter in alphabet:
             value_temp = 0
+
             for word in words:
                 if letter in word:
                     value_temp += 1
@@ -27,7 +26,6 @@ def find_combination():
         alphabet.remove(temp_letter)
 
     return combinations, len(words)
-
 
 if __name__ == "__main__":
     start = perf_counter()

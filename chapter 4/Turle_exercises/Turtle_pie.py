@@ -19,4 +19,4 @@ def draw_pie(segments, size):
         triangle (size, 360 / segments)
         bob.left(180)
 
-draw_pie(8, 100)
+draw_pie(16, 150)

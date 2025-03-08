@@ -59,7 +59,7 @@ class Modules(DataObject):
     name : str
     duration_hours : int
     course_part: int
-    course = [Courses]
+    #course = [Courses]
 
 
 @dataclass(slots=True)
@@ -71,6 +71,7 @@ class Courses(DataObject):
     duration_weeks : int
     is_online: bool
     modules = [Modules]
+
 
 @dataclass(slots=True)
 class Roles(DataObject):
@@ -84,4 +85,10 @@ class Enrollments(DataObject):
     period_id : int
     enrollment_date : datetime
     payement_status: bool
+
+
+if __name__ == "__main__":
+    pass
+
+
 

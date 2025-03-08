@@ -5,11 +5,13 @@ def estimate_pi ():
     result = 0
     k = 0
     formula_var = (math.factorial(4 * k) * (1103 + 26390 * k)) / ((math.factorial(k) ** 4) * (396 ** (4 * k)))
+    print (formula_var)
 
     while (formula_fix * formula_var) > 1e-15:
-        formula_var = (math.factorial(4 * k) * (1103 + 26390 * k)) / ((math.factorial(k) ** 4) * (396 ** (4 * k)))
         result += formula_fix * formula_var
         k += 1
+        formula_var = (math.factorial(4 * k) * (1103 + 26390 * k)) / ((math.factorial(k) ** 4) * (396 ** (4 * k)))
+
     return result
 
 if __name__ == "__main__":
