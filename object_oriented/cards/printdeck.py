@@ -10,4 +10,3 @@ class Printdeck (Shuffle):
 
     def show_deck_list(self):
         print (self.deck)
-
