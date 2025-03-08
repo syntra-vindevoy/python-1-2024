@@ -6,7 +6,7 @@ deck1.shuffle()
 deck1.show_deck_list()
 
 pulled_cards = []
-for i in range (5):
+for i in range (100):
     draw_one = DrawCard()
     card, deck1.deck = draw_one.draw_card(deck1.deck)
     pulled_cards.append(card)
