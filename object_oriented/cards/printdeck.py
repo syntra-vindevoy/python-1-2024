@@ -11,8 +11,3 @@ class Printdeck (Shuffle):
     def show_deck_list(self):
         print (self.deck)
 
-new_deck = Printdeck()
-new_deck.show_deck()
-new_deck.show_deck_list()
-new_deck.shuffle()
-new_deck.show_deck_list()
