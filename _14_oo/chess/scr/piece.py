@@ -16,7 +16,9 @@ class Pawn(Piece):
         super().__init__(color, position)
 
     def draw(self):
-        pass
+        print("  o")
+        print(" /|\\")
+        print(" / \\")
 
 
 class Rook(Piece):
