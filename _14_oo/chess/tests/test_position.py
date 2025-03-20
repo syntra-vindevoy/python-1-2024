@@ -1,4 +1,4 @@
-from chess import Position
+from main import Position
 
 
 def test_a1():
