@@ -2,8 +2,6 @@ class Color:
     def __init__(self, name: str):
         assert name in ["white", "black"]
 
-class Game:
-    pass
 
 class Board:
     def __init__(self):
@@ -90,6 +88,34 @@ class Player:
 
 
 
+class Game:
+    def __init__(self, player_white: Player, player_black: Player):
+        self.player_white = player_white
+        self.player_black = player_black
+
+        self.is_finished = False
+        self.player_to_move = self.player_white
+
+    def start(self):
+        while not self.is_finished:
+            pass
+
+    def ask_move(self):
+        print("Player to move: ", self.player_to_move.name, "playing", self.player_to_move.color.name)
+        n = input("Enter move: ")
+
+        #play the move
+
+        if self.is_finished:
+            print("Game is finished", self.player_to_move.name, "won!")
+            return
+
+        if self.player_to_move == self.player_white:
+            self.player_to_move = self.player_black
+        else:
+            self.player_to_move = self.player_white
+
+
 class Move:
     pass
 
@@ -97,8 +123,11 @@ def main():
     white = Color("white")
     black = Color("black")
 
-    player_white = Player(input("Enter white player name: "))
-    player_black = Player(input("Enter black player name: "))
+    player_white = Player(input("Enter white player name: "), white)
+    player_black = Player(input("Enter black player name: "), black)
+
+    game = Game(player_white, player_black)
+    game.start()
 
 
 
