@@ -26,7 +26,7 @@ class Game:
         to_pos = Position(m[2], int(m[3]))
         move = Move(from_pos, to_pos)
 
-        self.board.do_move(move)
+        self.board.do_move(move, self.player_to_move)
         self.board.draw()
         #check for mate
 
