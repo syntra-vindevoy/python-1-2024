@@ -1,4 +1,4 @@
-from board import Board
+from board import Board, Position, Move
 from player import Player
 
 
@@ -13,15 +13,22 @@ class Game:
         self.player_to_move = self.player_white
 
     def start(self):
+        self.board.draw()
+
         while not self.is_finished:
             self.board.draw()
             self.ask_move()
 
     def ask_move(self):
         print("Player to move: ", self.player_to_move.name, "playing", self.player_to_move.color.name)
-        _ = input("Enter move: ")
+        m = input("Enter move: (eg a2a4)")
+        from_pos = Position(m[0], int(m[1]))
+        to_pos = Position(m[2], int(m[3]))
+        move = Move(from_pos, to_pos)
 
-        # play the move
+        self.board.do_move(move)
+        self.board.draw()
+        #check for mate
 
         if self.is_finished:
             print("Game is finished", self.player_to_move.name, "won!")
