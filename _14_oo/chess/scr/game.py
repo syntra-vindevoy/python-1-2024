@@ -7,7 +7,7 @@ class Game:
         self.player_white = player_white
         self.player_black = player_black
 
-        self.board = Board()
+        self.board = Board(player_white.pieces + player_black.pieces)
 
         self.is_finished = False
         self.player_to_move = self.player_white
