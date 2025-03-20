@@ -11,4 +11,8 @@ class Position:
         self.vertical: int = vertical
 
     def color(self):
-        return Color(name="BLACK") if (self.horizontal + self.vertical) % 2 == 0 else Color(name="WHITE")
+        return (
+            Color(name="BLACK")
+            if (self.horizontal + self.vertical) % 2 == 0
+            else Color(name="WHITE")
+        )

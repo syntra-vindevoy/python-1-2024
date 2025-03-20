@@ -21,8 +21,12 @@ class Game:
             self.ask_move()
 
     def ask_move(self):
-        print("Player to move:", self.player_to_move.name, "playing",
-              self.player_to_move.color.name)
+        print(
+            "Player to move:",
+            self.player_to_move.name,
+            "playing",
+            self.player_to_move.color.name,
+        )
         m = input("Enter move: (e.g. a2a4) ")
         from_pos = Position(horizontal=m[0], vertical=int(m[1]))
         to_pos = Position(horizontal=m[2], vertical=int(m[3]))
