@@ -2,7 +2,11 @@ class Game:
     pass
 
 class Board:
-    pass
+    def __init__(self):
+        self.setup()
+
+    def setup(self):
+        pass
 
 class Piece:
     pass
@@ -29,16 +33,24 @@ class Color:
     pass
 
 class Position:
-    pass
+    def __init__(self, horizontal: str, vertical: int):
+        self.horizontal: int = ord(horizontal.upper()) - 64
+        self.vertical: int = vertical
+
+
 
 class Player:
-    pass
+    def __init__(self, name: str):
+        self.name = name
 
 class Move:
     pass
 
 def main():
-    pass
+    player_white = Player(input("Enter white player name: "))
+    player_black = Player(input("Enter black player name: "))
+
+
 
 if __name__ == "__main__":
     main()
