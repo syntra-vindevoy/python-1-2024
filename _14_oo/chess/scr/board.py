@@ -1,3 +1,6 @@
+from color import Color
+
+
 class Position:
     def __init__(self, horizontal: str, vertical: int):
         assert horizontal.upper() in "ABCDEFGH"
@@ -6,6 +9,9 @@ class Position:
 
         self.horizontal: int = ord(horizontal.upper()) - 64
         self.vertical: int = vertical
+
+    def color(self):
+        return Color("Black") if (self.horizontal + self.vertical) % 2 == 0 else Color("White")
 
 
 class Board:
