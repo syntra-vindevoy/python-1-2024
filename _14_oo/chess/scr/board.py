@@ -1,4 +1,5 @@
 from color import Color
+from player import Player
 
 
 class Position:
@@ -30,8 +31,13 @@ class Board:
         for piece in self.pieces:
             self.positions[piece.position] = piece
 
-    def do_move(self, move: Move):
-        pass
+    def do_move(self, move: Move, player: Player):
+        piece = self.positions[move.from_pos]
+
+        if piece is None:
+            raise ValueError(f"No piece at {move.from_pos}")
+
+
 
     def get_piece(self, position: Position):
         if position in self.positions:
