@@ -1,13 +1,15 @@
-from board import Board, Position, Move
+from board import Board
+from move import Move
 from player import Player
+from position import Position
 
 
 class Game:
-    def __init__(self, player_white: Player, player_black: Player):
+    def __init__(self, *, player_white: Player, player_black: Player):
         self.player_white = player_white
         self.player_black = player_black
 
-        self.board = Board(player_white.pieces + player_black.pieces)
+        self.board = Board(pieces=player_white.pieces + player_black.pieces)
 
         self.is_finished = False
         self.player_to_move = self.player_white
@@ -22,11 +24,11 @@ class Game:
         print("Player to move:", self.player_to_move.name, "playing",
               self.player_to_move.color.name)
         m = input("Enter move: (e.g. a2a4) ")
-        from_pos = Position(m[0], int(m[1]))
-        to_pos = Position(m[2], int(m[3]))
-        move = Move(from_pos, to_pos)
+        from_pos = Position(horizontal=m[0], vertical=int(m[1]))
+        to_pos = Position(horizontal=m[2], vertical=int(m[3]))
+        move = Move(from_pos=from_pos, to_pos=to_pos)
 
-        self.board.do_move(move, self.player_to_move)
+        self.board.do_move(move=move, player=self.player_to_move)
         self.board.draw()
         # check for mate, which puts the game.is_finished == True
 

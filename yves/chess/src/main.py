@@ -4,13 +4,13 @@ from player import Player
 
 
 def main():
-    white = Color("white")
-    black = Color("black")
+    white = Color(name="white")
+    black = Color(name="black")
 
-    player_white = Player(input("Enter white player name: "), white)
-    player_black = Player(input("Enter black player name: "), black)
+    player_white = Player(name=input("Enter white player name: "), color=white)
+    player_black = Player(name=input("Enter black player name: "), color=black)
 
-    game = Game(player_white, player_black)
+    game = Game(player_white=player_white, player_black=player_black)
     game.start()
 
 
