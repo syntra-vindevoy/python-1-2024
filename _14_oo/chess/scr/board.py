@@ -1,25 +1,43 @@
-
-
-
-class Board:
-    def __init__(self):
-        self.setup()
-
-    def setup(self):
-        pass
-
-    def draw(self):
-        pass
-
-
 class Position:
     def __init__(self, horizontal: str, vertical: int):
         assert horizontal.upper() in "ABCDEFGH"
         assert len(horizontal) == 1
-        assert vertical >= 1 and vertical <= 8
+        assert 1 <= vertical <= 8
 
         self.horizontal: int = ord(horizontal.upper()) - 64
         self.vertical: int = vertical
+
+
+class Board:
+    def __init__(self, pieces: list):
+        self.pieces = pieces
+        self.positions = {}
+        self.setup()
+
+    def setup(self):
+        for piece in self.pieces:
+            self.positions[piece.position] = piece
+
+    def get_piece(self, position: Position):
+        if position in self.positions:
+            return self.positions[position]
+        else:
+            return None
+
+    def empty(self, position: Position):
+        pass
+
+    def draw(self):
+        for horizontal in "ABCDEFGH":
+            for vertical in range(1, 9):
+                pos = Position(horizontal, vertical)
+                piece = self.get_piece(pos)
+
+                if piece:
+                    piece.draw(pos)
+                else:
+                    self.empty(pos)
+
 
 
 class Move:
