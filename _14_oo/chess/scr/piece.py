@@ -1,18 +1,21 @@
-from board import Position
+from board import Position, Board
 from color import Color
 
 
 class Piece:
-    def __init__(self, color: Color, position: Position):
+    def __init__(self, *, color: Color, position: Position):
         self.color = color
         self.position = position
 
     def draw(self):
         raise NotImplementedError("Draw not implemented")
 
+    def is_valid_move(self, *, from_pos: Position, to_pos: Position, board: Board):
+        raise NotImplementedError("is_valid_move not implemented")
+
 
 class Pawn(Piece):
-    def __init__(self, color: Color, position: Position):
+    def __init__(self, *, color: Color, position: Position):
         super().__init__(color, position)
 
     def draw(self):
@@ -22,7 +25,7 @@ class Pawn(Piece):
 
 
 class Rook(Piece):
-    def __init__(self, color: Color, position: Position):
+    def __init__(self, *, color: Color, position: Position):
         super().__init__(color, position)
 
     def draw(self):
@@ -30,7 +33,7 @@ class Rook(Piece):
 
 
 class Knight(Piece):
-    def __init__(self, color: Color, position: Position):
+    def __init__(self, *, color: Color, position: Position):
         super().__init__(color, position)
 
     def draw(self):
@@ -38,7 +41,7 @@ class Knight(Piece):
 
 
 class Bishop(Piece):
-    def __init__(self, color: Color, position: Position):
+    def __init__(self, *, color: Color, position: Position):
         super().__init__(color, position)
 
     def draw(self):
@@ -46,7 +49,7 @@ class Bishop(Piece):
 
 
 class Queen(Piece):
-    def __init__(self, color: Color, position: Position):
+    def __init__(self, *, color: Color, position: Position):
         super().__init__(color, position)
 
     def draw(self):
@@ -54,7 +57,7 @@ class Queen(Piece):
 
 
 class King(Piece):
-    def __init__(self, color: Color, position: Position):
+    def __init__(self, *, color: Color, position: Position):
         super().__init__(color, position)
 
     def draw(self):

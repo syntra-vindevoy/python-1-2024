@@ -3,7 +3,7 @@ from player import Player
 
 
 class Game:
-    def __init__(self, player_white: Player, player_black: Player):
+    def __init__(self, *, player_white: Player, player_black: Player):
         self.player_white = player_white
         self.player_black = player_black
 

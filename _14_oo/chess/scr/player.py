@@ -4,7 +4,7 @@ from piece import Pawn, Rook, Knight, Bishop, Queen, King
 
 
 class Player:
-    def __init__(self, name: str, color: Color):
+    def __init__(self, *, name: str, color: Color):
         self.name = name
         self.color = color
         self.pieces = []
