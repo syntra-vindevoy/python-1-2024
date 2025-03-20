@@ -14,6 +14,12 @@ class Position:
         return Color("Black") if (self.horizontal + self.vertical) % 2 == 0 else Color("White")
 
 
+class Move:
+    def __init__(self, from_pos: Position, to_pos: Position):
+        self.from_pos = from_pos
+        self.to_pos = to_pos
+
+
 class Board:
     def __init__(self, pieces: list):
         self.pieces = pieces
@@ -23,6 +29,9 @@ class Board:
     def setup(self):
         for piece in self.pieces:
             self.positions[piece.position] = piece
+
+    def do_move(self, move: Move):
+        pass
 
     def get_piece(self, position: Position):
         if position in self.positions:
@@ -45,8 +54,3 @@ class Board:
                     self.empty(pos)
 
 
-
-class Move:
-    def __init__(self, from_pos: Position, to_pos: Position):
-        self.from_pos = from_pos
-        self.to_pos = to_pos
