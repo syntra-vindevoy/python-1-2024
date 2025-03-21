@@ -1,6 +1,5 @@
-from move import Move
-
 from board import Board
+from move import Move
 from player import Player
 from position import Position
 

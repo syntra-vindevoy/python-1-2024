@@ -3,7 +3,6 @@ from __future__ import annotations
 from typing import TYPE_CHECKING
 
 from color import Color
-
 from position import Position
 
 if TYPE_CHECKING:
