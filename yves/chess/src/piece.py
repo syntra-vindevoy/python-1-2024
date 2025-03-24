@@ -25,7 +25,7 @@ class Pawn(Piece):
         super().__init__(color=color, position=position)
 
     def draw(self):
-        pass
+        return "♟" if self.color == "black" else "♙"
 
     def is_valid_move(self, *, from_pos: Position, to_pos: Position, board: Board):
         pass
@@ -36,7 +36,7 @@ class Rook(Piece):
         super().__init__(color=color, position=position)
 
     def draw(self):
-        pass
+        return "♜" if self.color == "black" else "♖"
 
 
 class Knight(Piece):
@@ -44,7 +44,7 @@ class Knight(Piece):
         super().__init__(color=color, position=position)
 
     def draw(self):
-        pass
+        return "♞" if self.color == "black" else "♘"
 
 
 class Bishop(Piece):
@@ -52,7 +52,7 @@ class Bishop(Piece):
         super().__init__(color=color, position=position)
 
     def draw(self):
-        pass
+        return "♝" if self.color == "black" else "♗"
 
 
 class Queen(Piece):
@@ -60,7 +60,7 @@ class Queen(Piece):
         super().__init__(color=color, position=position)
 
     def draw(self):
-        pass
+        return "♛" if self.color == "black" else "♕"
 
 
 class King(Piece):
@@ -68,4 +68,4 @@ class King(Piece):
         super().__init__(color=color, position=position)
 
     def draw(self):
-        pass
+        return "♚" if self.color == "black" else "♔"
