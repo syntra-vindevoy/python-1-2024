@@ -30,8 +30,14 @@ class Piece:
 
         return False
 
+    def get_movement(self, *, from_pos: Position, to_pos: Position):
+        delta_horizontal = abs(to_pos.horizontal - from_pos.horizontal)
+        delta_vertical = abs(to_pos.vertical - from_pos.vertical)
 
-    def has_invalid_submoves(
+        return delta_horizontal, delta_vertical
+
+
+def has_invalid_submoves(
             self,
             *,
             from_pos: Position,
@@ -138,7 +144,16 @@ class Bishop(Piece):
         return "♝" if self.color == "black" else "♗"
 
     def is_valid_move(self, *, from_pos: Position, to_pos: Position, board: Board):
-        return True
+        # Bishops move diagonally, meaning horizontal and vertical changes must be equal
+        horizontal, vertical = self.get_movement(from_pos=from_pos, to_pos=to_pos)
+        return horizontal == vertical
+
+        # horizontal_step = 1 if to_pos.horizontal > from_pos.horizontal else -1
+        # vertical_step = 1 if to_pos.vertical > from_pos.vertical else -1
+        # current_horizontal = from_pos.horizontal + horizontal_step
+        # current_vertical = from_pos.vertical + vertical_step
+        # # Check that no pieces are in the way
+        # while current_horizontal != to_pos.horizontal and current_vertical != to_pos.vertical:        current_key = Position(current_horizontal, current_vertical).get_key()        if board.positions[current_key] is not None:            return False  # something is blocking the path        current_horizontal += horizontal_step        current_vertical += vertical_step    # Check if the target position is occupied by a piece of the same color    target_piece = board.positions[to_pos.get_key()]    if target_piece is not None and target_piece.color == self.color:        return False    # If all checks pass, the move is valid    return True
 
 
 class Queen(Piece):
