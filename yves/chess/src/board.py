@@ -11,36 +11,30 @@ class Board:
 
     def setup(self):
         for piece in self.pieces:
-            self.positions[piece.position] = piece
+            self.positions[piece.position.get_key()] = piece
 
-    def do_move(self, *, move: Move, player: Player):
-        piece = self.positions[move.from_pos]
-
-        if piece is None:
-            raise ValueError(f"There is no piece on {move.from_pos}")
-
-        if piece.color != player.color:
-            raise ValueError("On the from position is a piece of the other player")
-
-        if not piece.valid_move(move.from_pos, move.to_pos, self):
-            raise ValueError(f"You cannot move from {move.from_pos} to {move.to_pos}")
+        for horizontal in "CDEF":
+            for vertical in range(1, 9):
+                pos = Position(horizontal=horizontal, vertical=vertical)
+                self.positions[pos.get_key()] = None
 
     def get_piece(self, *, position: Position):
-        if position in self.positions:
-            return self.positions[position]
+        key = position.get_key()
+        if key in self.positions:
+            return self.positions[key]
         else:
             return None
 
-    def empty(self, *, position: Position):
-        pass
 
     def draw(self):
-        for horizontal in "ABCDEFGH":
+        for horizontal in "ABCDEFGH"[::-1]:
             for vertical in range(1, 9):
                 pos = Position(horizontal=horizontal, vertical=vertical)
                 piece = self.get_piece(position=pos)
 
                 if piece:
-                    piece.draw(pos)
+                    print(piece.draw(pos), end="")
                 else:
-                    self.empty(position=pos)
+                    print(" ", end="")
+
+            print("")

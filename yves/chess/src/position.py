@@ -16,3 +16,6 @@ class Position:
             if (self.horizontal + self.vertical) % 2 == 0
             else Color(name="WHITE")
         )
+
+    def get_key(self):
+        return f"{chr(self.horizontal + 64)}{self.vertical}"

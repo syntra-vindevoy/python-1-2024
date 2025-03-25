@@ -13,7 +13,7 @@ class Piece:
         self.color = color
         self.position = position
 
-    def draw(self):
+    def draw(self, position: Position):
         raise NotImplementedError("draw not implemented")
 
     def is_valid_move(self, *, from_pos: Position, to_pos: Position, board: Board):
@@ -24,48 +24,63 @@ class Pawn(Piece):
     def __init__(self, *, color: Color, position: Position):
         super().__init__(color=color, position=position)
 
-    def draw(self):
+    def draw(self, position: Position):
         return "♟" if self.color == "black" else "♙"
 
     def is_valid_move(self, *, from_pos: Position, to_pos: Position, board: Board):
-        pass
+        return True
 
 
 class Rook(Piece):
     def __init__(self, *, color: Color, position: Position):
         super().__init__(color=color, position=position)
 
-    def draw(self):
+    def draw(self, position: Position):
         return "♜" if self.color == "black" else "♖"
+
+    def is_valid_move(self, *, from_pos: Position, to_pos: Position, board: Board):
+        return True
 
 
 class Knight(Piece):
     def __init__(self, *, color: Color, position: Position):
         super().__init__(color=color, position=position)
 
-    def draw(self):
+    def draw(self, position: Position):
         return "♞" if self.color == "black" else "♘"
+
+    def is_valid_move(self, *, from_pos: Position, to_pos: Position, board: Board):
+        return True
 
 
 class Bishop(Piece):
     def __init__(self, *, color: Color, position: Position):
         super().__init__(color=color, position=position)
 
-    def draw(self):
+    def draw(self, position: Position):
         return "♝" if self.color == "black" else "♗"
+
+    def is_valid_move(self, *, from_pos: Position, to_pos: Position, board: Board):
+        return True
 
 
 class Queen(Piece):
     def __init__(self, *, color: Color, position: Position):
         super().__init__(color=color, position=position)
 
-    def draw(self):
+    def draw(self, position: Position):
         return "♛" if self.color == "black" else "♕"
+
+    def is_valid_move(self, *, from_pos: Position, to_pos: Position, board: Board):
+        return True
 
 
 class King(Piece):
     def __init__(self, *, color: Color, position: Position):
         super().__init__(color=color, position=position)
 
-    def draw(self):
+    def draw(self, position: Position):
         return "♚" if self.color == "black" else "♔"
+
+    def is_valid_move(self, *, from_pos: Position, to_pos: Position, board: Board):
+        return True
