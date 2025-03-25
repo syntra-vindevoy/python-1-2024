@@ -30,6 +30,7 @@ class Game:
         m = input("Enter move: (e.g. a2a4) ")
         from_pos = Position(horizontal=m[0], vertical=int(m[1]))
         to_pos = Position(horizontal=m[2], vertical=int(m[3]))
+
         move = Move(from_pos=from_pos, to_pos=to_pos)
 
         self.board.do_move(move=move, player=self.player_to_move)

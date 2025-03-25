@@ -2,6 +2,8 @@ from color import Color
 
 from piece import Pawn, Rook, Knight, Bishop, Queen, King
 from position import Position
+from src.OO.chess.src.board import Board
+from src.OO.chess.src.move import Move
 
 
 class Player:
@@ -46,3 +48,15 @@ class Player:
             color=self.color, position=Position(horizontal=king_row, vertical=5)
         )
         self.pieces.append(king)
+
+    def do_move(self, *, move: Move, board: Board):
+        piece = board.positions[move.from_pos]
+
+        if piece is None:
+            raise ValueError(f"There is no piece on {move.from_pos}")
+
+        if piece.color != self.color:
+            raise ValueError("On the from position is a piece of the other player")
+
+        if not piece.valid_move(move.from_pos, move.to_pos, self):
+            raise ValueError(f"You cannot move from {move.from_pos} to {move.to_pos}")
