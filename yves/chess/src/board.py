@@ -27,7 +27,7 @@ class Board:
 
 
     def draw(self):
-        for horizontal in "ABCDEFGH"[::-1]:
+        for index, horizontal in enumerate("ABCDEFGH"[::-1]):
             for vertical in range(1, 9):
                 pos = Position(horizontal=horizontal, vertical=vertical)
                 piece = self.get_piece(position=pos)
@@ -35,6 +35,6 @@ class Board:
                 if piece:
                     print(piece.draw(pos), end="")
                 else:
-                    print(" ", end="")
+                    print("□" if (index + vertical) % 2 == 0 else "■", end="")
 
             print("")
