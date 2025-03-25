@@ -28,8 +28,34 @@ class Pawn(Piece):
         return "♟" if self.color == "black" else "♙"
 
     def is_valid_move(self, *, from_pos: Position, to_pos: Position, board: Board):
-        return True
+        # TODO: "slaan en passant"
+        # TODO: "promoveren" van pion die aan de andere kant geraakt
 
+        if self.color == "WHITE":
+            if from_pos.vertical != to_pos.vertical:
+                if abs(from_pos.vertical - to_pos.vertical) != 1:
+                    return False
+
+                piece = board.positions[to_pos.get_key()]
+
+                if piece is None:
+                    return False
+
+                if piece.color == self.color:
+                    return False
+
+            if from_pos.horizontal == 2:
+                if to_pos.horizontal not in [3, 4]:
+                    return False
+
+            else:
+                return to_pos.vertical == from_pos.vertical + 1
+
+        else:
+            pass
+
+
+        return True
 
 class Rook(Piece):
     def __init__(self, *, color: Color, position: Position):
