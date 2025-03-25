@@ -56,6 +56,7 @@ class Queen(Piece):
         pass
 
 
+
 class King(Piece):
     def __init__(self, *, color: Color, position: Position):
         super().__init__(color, position)
