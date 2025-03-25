@@ -160,4 +160,7 @@ class King(Piece):
         return "♚" if self.color == "black" else "♔"
 
     def is_valid_move(self, *, from_pos: Position, to_pos: Position, board: Board):
-        return True
+        vertical_diff = abs(to_pos.vertical - from_pos.vertical)
+        horizontal_diff = abs(to_pos.horizontal - from_pos.horizontal)
+
+        return vertical_diff <= 1 and horizontal_diff <= 1
