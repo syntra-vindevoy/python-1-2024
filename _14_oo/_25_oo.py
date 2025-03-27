@@ -13,9 +13,18 @@ class CustomerException(Exception):
 
 
 
+class CustomerEmailException(CustomerException):
+    def __init__(self, message):
+        super().__init__(message)
+
+
 class Customer:
     def __init__(self, name, email):
         self.name = name
+
+        if "@" not in email:
+            raise CustomerEmailException("Email must contain an @")
+
         self.email = email
 
     def save(self):
