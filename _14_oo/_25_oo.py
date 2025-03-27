@@ -5,6 +5,11 @@ def get_db_connection():
     pass
 
 
+class TotoException(Exception):
+    def __init__(self, err_no, message):
+        def __init__(self, message):
+            super().__init__(message)
+
 
 
 class CustomerException(Exception):
