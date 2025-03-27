@@ -9,7 +9,11 @@ def guess_number(number:int) -> None:
 
 def main():
     guess_number(5)
-    guess_number(11)
+
+    try:
+        guess_number(11)
+    except Exception as err:
+        print("Error", err)
 
 if __name__ == "__main__":
     main()
