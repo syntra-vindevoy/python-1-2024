@@ -10,6 +10,8 @@ def guess_number(number:int) -> None:
 
 
 def save_customer(customer:dict) -> None:
+    db = None
+
     try:
         db = get_database_connection()
 
@@ -21,7 +23,8 @@ def save_customer(customer:dict) -> None:
         print("Error:", err)
 
     finally:
-        db.close()
+        if db is not None:
+            db.close()
 
 
 
