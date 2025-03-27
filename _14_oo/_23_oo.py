@@ -8,10 +8,18 @@ def guess_number(number:int) -> None:
     print("You guessed it!", number)
 
 def main():
-    guess_number(5)
+    try:
+        guess_number(5)
+    except Exception as err:
+        print("Error", err)
 
     try:
         guess_number(11)
+    except Exception as err:
+        print("Error", err)
+
+    try:
+        guess_number("a")
     except Exception as err:
         print("Error", err)
 
