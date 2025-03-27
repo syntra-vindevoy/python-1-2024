@@ -7,6 +7,25 @@ def guess_number(number:int) -> None:
 
     print("You guessed it!", number)
 
+
+
+def save_customer(customer:dict) -> None:
+    try:
+        db = get_database_connection()
+
+        db.insert(customer)
+
+        db.close()
+
+    except Exception as err:
+        print("Error:", err)
+
+    finally:
+        db.close()
+
+
+
+
 def main():
     try:
         guess_number(5)
