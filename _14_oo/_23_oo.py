@@ -10,18 +10,30 @@ def guess_number(number:int) -> None:
 def main():
     try:
         guess_number(5)
+    except TypeError as err:
+        print("TypeError:", err)
+    except ValueError as err:
+        print("ValueError:", err)
     except Exception as err:
-        print("Error", err)
+        print("Error:", err)
 
     try:
         guess_number(11)
+    except TypeError as err:
+        print("TypeError:", err)
+    except ValueError as err:
+        print("ValueError:", err)
     except Exception as err:
-        print("Error", err)
+        print("Error:", err)
 
     try:
         guess_number("a")
+    except TypeError as err:
+        print("TypeError:", err)
+    except ValueError as err:
+        print("ValueError:", err)
     except Exception as err:
-        print("Error", err)
+        print("Error:", err)
 
 if __name__ == "__main__":
     main()
