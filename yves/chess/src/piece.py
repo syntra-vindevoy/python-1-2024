@@ -54,8 +54,38 @@ class Pawn(Piece):
         else:
             pass
 
-
         return True
+
+
+def has_invalid_submoves(
+    self,
+    *,
+    from_pos: Position,
+    to_pos: Position,
+    board: Board,
+):
+    delta_horizontal = to_pos.horizontal - from_pos.horizontal
+    delta_vertical = to_pos.vertical - from_pos.vertical
+
+    step_horizontal = 1 if delta_horizontal > 0 else -1 if delta_horizontal < 0 else 0
+    step_vertical = 1 if delta_vertical > 0 else -1 if delta_vertical < 0 else 0
+
+    current_pos = from_pos
+
+    horizontal_move = abs(delta_horizontal)
+    vertical_move = abs(delta_vertical)
+
+    for _ in range(max(horizontal_move, vertical_move)):
+        current_pos = Position(
+            current_pos.horizontal + step_horizontal,
+            current_pos.vertical + step_vertical,
+        )
+        if current_pos == to_pos:
+            break
+        if board.get_piece(current_pos) is not None:
+            return True
+    return False
+
 
 class Rook(Piece):
     def __init__(self, *, color: Color, position: Position):
