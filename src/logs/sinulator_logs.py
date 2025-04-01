@@ -1,8 +1,22 @@
 from pyclbr import Class
+from time import sleep
 
 from src.logs.log_manager import LogManager
+from src.logs.logging_decorator import trace_func
 from src.logs.logging_level import LoggingLevel
 from src.logs.type_logger_enum import TypeLogger
+
+
+class Klok:
+    def __init__(self) -> None:
+        pass
+    @trace_func
+    def start(self):
+       for i in range(5):
+           sleep(1)
+    def stop(self):
+        pass
+
 
 
 def main():
@@ -36,4 +50,6 @@ def main():
 
 
 if __name__ == "__main__":
+    klok = Klok()
+    klok.start()
     main()
