@@ -25,3 +25,8 @@ print(person["name"])
 # Accessing and printing the 'name' value using the named tuple
 # - Accessing the value through an attribute (dot notation)
 print(p.name)
+
+
+q = PersonTuple(name="Jane", age=25, country="United States")
+q_person = q._asdict()
+print(q_person)
