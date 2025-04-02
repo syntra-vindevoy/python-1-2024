@@ -10,6 +10,41 @@ class Person:
     def __repr__(self):
         return f"Person({self.id}, {self.name}), {self.age})"
 
+    def __hash__(self):
+        return hash(self.id)
+
+    def __eq__(self, other):
+        if isinstance(other, Person):
+            return self.id == other.id
+        return False
+
+    def __lt__(self, other):
+        if isinstance(other, Person):
+            return self.id < other.id
+        return False
+
+    def __gt__(self, other):
+        if isinstance(other, Person):
+            return self.id > other.id
+        return False
+
+    def __le__(self, other):
+        return self.__eq__(other) or self.__lt__(other)
+
+    def __ge__(self, other):
+        return self.__eq__(other) or self.__gt__(other)
+
+    def compare_to(self, other):
+        if isinstance(other, Person):
+            if self.id < other.id:
+                return -1
+            elif self.id > other.id:
+                return 1
+            else:
+                return 0
+        else:
+            raise TypeError("Cannot compare Person with non-Person object.")
+
 
 class Shop:
     def __init__(self):
@@ -60,9 +95,13 @@ def main():
     shop.add_person(Person(2, "Anna", 30))
     shop.add_person(Person(3, "Maria", 50))
     shop.add_person(Person(4, "John", 50))
-    shop.add_person(Person(5, "Jane", 10))
+    shop.add_person(Person(5, "Jane", 22))
     shop.add_person(Person(6, "Jack", 50))
     shop.add_person(Person(7, "Jill", 10))
+    var = filter(None, map(lambda x: f"{x.name} is between 20 and 50" if 20 < x.age < 50 else None, shop))
+
+    for person in var:
+        print(person)
     print("------------------------")
     for person in shop:
         print(person)
