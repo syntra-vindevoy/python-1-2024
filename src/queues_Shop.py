@@ -1,13 +1,14 @@
 class Person:
-    def __init__(self, id, name):
+    def __init__(self, id, name, age):
         self.name = name
         self.id = id
+        self.age = age
 
     def __str__(self):
-        return f"Person({self.id}, {self.name})"
+        return f"Person({self.id}, {self.name}, {self.age})"
 
     def __repr__(self):
-        return f"Person({self.id}, {self.name})"
+        return f"Person({self.id}, {self.name}), {self.age})"
 
 
 class Shop:
@@ -16,7 +17,19 @@ class Shop:
         self.current_index = 0
 
     def add_person(self, person: Person):
-        self.queue.insert(0, person)
+        """
+        Adds a Person object to the queue. If the person is aged 50 or older, they are appended
+        to the end of the queue. Otherwise, they are added at the beginning of the queue.
+
+        :param person: A `Person` object to be added to the queue.
+        :type person: Person
+        :return: None
+        """
+
+        if person.age >= 50:
+            self.queue.append(person)
+        else:
+            self.queue.insert(0, person)
 
     def get_next_person(self):
         if len(self.queue) > 0:
@@ -43,14 +56,17 @@ class Shop:
 
 def main():
     shop = Shop()
-    shop.add_person(Person(1, "Peter"))
-    shop.add_person(Person(2, "Anna"))
-    shop.add_person(Person(3, "Maria"))
-    shop.add_person(Person(4, "John"))
-    shop.add_person(Person(5, "Jane"))
-    shop.add_person(Person(6, "Jack"))
-    shop.add_person(Person(7, "Jill"))
-
+    shop.add_person(Person(1, "Peter", 30))
+    shop.add_person(Person(2, "Anna", 30))
+    shop.add_person(Person(3, "Maria", 50))
+    shop.add_person(Person(4, "John", 50))
+    shop.add_person(Person(5, "Jane", 10))
+    shop.add_person(Person(6, "Jack", 50))
+    shop.add_person(Person(7, "Jill", 10))
+    print("------------------------")
+    for person in shop:
+        print(person)
+    print("------------------------")
     print(shop)
 
     print(shop.get_next_person())
