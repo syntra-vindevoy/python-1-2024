@@ -6,7 +6,6 @@ sphinx_simplepdf
 asyncpg~=0.29.0
 psycopg2~=2.9.9
 numpy~=1.26.4
-yml
 pyyaml~=6.0.2
 colorama~=0.4.6
 requests~=2.32.3
@@ -16,6 +15,6 @@ pandas~=2.2.3
 sqlalchemy~=2.0.34
 alembic~=1.14.0
 beautifulsoup4~=4.12.3
-yaml~=0.2.5
+
 sortedcontainers~=2.4.0
 mgrs~=1.5.0
