@@ -291,15 +291,7 @@
       <workItem from="1738862095798" duration="216000" />
       <workItem from="1745944369578" duration="4603000" />
       <workItem from="1746090974488" duration="159000" />
-      <workItem from="1746091184552" duration="17167000" />
-    </task>
-    <task id="LOCAL-00004" summary="auto-format on save">
-      <option name="closed" value="true" />
-      <created>1727203597354</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1727203597354</updated>
+      <workItem from="1746091184552" duration="18411000" />
     </task>
     <task id="LOCAL-00005" summary="altair-all installed">
       <option name="closed" value="true" />
@@ -685,7 +677,15 @@
       <option name="project" value="LOCAL" />
       <updated>1746362862806</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="Add IDE configuration files and update .gitignore&#10;&#10;Introduced IntelliJ IDEA project configuration files under `.idea/` and updated `.gitignore` to exclude specific IDE-related files and directories. This ensures a cleaner version control setup by avoiding unnecessary local development artifacts.">
+      <option name="closed" value="true" />
+      <created>1746363143946</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1746363143946</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -727,7 +727,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="opdracht 2.5 getest voor een gans jaar" />
     <MESSAGE value="opdracht 2.7 getest op ganse jaar" />
     <MESSAGE value="opdracht 2.8 weeknumber" />
     <MESSAGE value="opgave 2.9.2 layout met weeknummers gemaakt" />
@@ -752,7 +751,8 @@
     <MESSAGE value="Refactor SFTP host directory handling and update configs&#10;&#10;Updated local_base_dir logic to dynamically include hostname, ensuring more flexible and standardized directory structures. Removed redundant `re` dependency and simplified database query by hardcoding the table name. Adjusted `plc.yaml` to align with the new configuration and cleaned up unnecessary fields for unused hosts." />
     <MESSAGE value="Refactor PLC YAML to use shared credentials and port.  &#10;&#10;Introduced reusable variables for username, password, and port to reduce redundancy and simplify updates across SFTP host configurations. This improves maintainability and consistency in handling connection details." />
     <MESSAGE value="Refactor SFTP host selection to use hostnames.&#10;&#10;Replaced numeric selection with hostname-based input for improved clarity and usability. Removed redundant logic for enumerating hosts and validation of numeric inputs. Simplified user interaction by directly matching inputted hostnames." />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactor SFTP host selection to use hostnames.&#10;&#10;Replaced numeric selection with hostname-based input for improved clarity and usability. Removed redundant logic for enumerating hosts and validation of numeric inputs. Simplified user interaction by directly matching inputted hostnames." />
+    <MESSAGE value="Add IDE configuration files and update .gitignore&#10;&#10;Introduced IntelliJ IDEA project configuration files under `.idea/` and updated `.gitignore` to exclude specific IDE-related files and directories. This ensures a cleaner version control setup by avoiding unnecessary local development artifacts." />
+    <option name="LAST_COMMIT_MESSAGE" value="Add IDE configuration files and update .gitignore&#10;&#10;Introduced IntelliJ IDEA project configuration files under `.idea/` and updated `.gitignore` to exclude specific IDE-related files and directories. This ensures a cleaner version control setup by avoiding unnecessary local development artifacts." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -773,7 +773,7 @@
     <SUITE FILE_PATH="coverage/python_1_2024$leap_year.coverage" NAME="leap_year Coverage Results" MODIFIED="1729019285358" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/python_1_2024$fibo.coverage" NAME="fibo Coverage Results" MODIFIED="1729350967075" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/python_1_2024$OO_24.coverage" NAME="OO_24 Coverage Results" MODIFIED="1743103920441" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/OO" />
-    <SUITE FILE_PATH="coverage/python_1_2024$head.coverage" NAME="head Coverage Results" MODIFIED="1746362803294" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/python-1-2024-25-PLC-Forceringen/Groepswerk" />
+    <SUITE FILE_PATH="coverage/python_1_2024$head.coverage" NAME="head Coverage Results" MODIFIED="1746363838567" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/python-1-2024-25-PLC-Forceringen/Groepswerk" />
     <SUITE FILE_PATH="coverage/python_1_2024$oefening4.coverage" NAME="oefening4 Coverage Results" MODIFIED="1745340425781" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/python1-2024-25-tom/examen_2" />
     <SUITE FILE_PATH="coverage/python_1_2024$calendar.coverage" NAME="calendar Coverage Results" MODIFIED="1729627357188" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/proefexamen" />
     <SUITE FILE_PATH="coverage/python_1_2024$class_making_querry.coverage" NAME="class_making_querry Coverage Results" MODIFIED="1745568398882" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/python-1-2024-25-PLC-Forceringen/Groepswerk" />
