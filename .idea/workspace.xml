@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0554c8db-d998-47fd-bd56-950ade66fcd8" name="Changes" comment="" />
+    <list default="true" id="0554c8db-d998-47fd-bd56-950ade66fcd8" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,13 +22,17 @@
   <component name="FormatOnSaveOptions">
     <option name="myRunOnSave" value="true" />
   </component>
+  <component name="Git.Rebase.Settings">
+    <option name="NEW_BASE" value="main" />
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
         <entry key="$PROJECT_DIR$" value="marijn" />
+        <entry key="$PROJECT_DIR$/python-1-2024-25-PLC-Forceringen" value="main" />
       </map>
     </option>
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/python-1-2024-25-PLC-Forceringen" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {}
@@ -59,18 +65,23 @@
     &quot;Python.chapter_3_oefening_3.executor&quot;: &quot;Run&quot;,
     &quot;Python.chapter_4_les_turtle.executor&quot;: &quot;Run&quot;,
     &quot;Python.chapter_7_iteration_and_search.executor&quot;: &quot;Run&quot;,
+    &quot;Python.connect_to_PLC.executor&quot;: &quot;Run&quot;,
     &quot;Python.day_number.executor&quot;: &quot;Run&quot;,
     &quot;Python.demo.executor&quot;: &quot;Run&quot;,
     &quot;Python.dom.executor&quot;: &quot;Run&quot;,
     &quot;Python.dow.executor&quot;: &quot;Run&quot;,
     &quot;Python.faculteit.executor&quot;: &quot;Run&quot;,
     &quot;Python.fibo.executor&quot;: &quot;Run&quot;,
+    &quot;Python.head.executor&quot;: &quot;Run&quot;,
     &quot;Python.leap_year.executor&quot;: &quot;Run&quot;,
     &quot;Python.leapyear.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
     &quot;Python.test.executor&quot;: &quot;Run&quot;,
     &quot;Python.week_number.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;marijn&quot;,
+    &quot;database.data.extractors.current.export.id&quot;: &quot;CSV-Groovy.csv.groovy&quot;,
+    &quot;database.data.extractors.current.id&quot;: &quot;CSV-Groovy.csv.groovy&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/_MaRn/senne&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
@@ -90,6 +101,20 @@
     </key>
   </component>
   <component name="RunManager">
+    <configuration default="true" type="PyBehaveRunConfigurationType" factoryName="Behave">
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="ADDITIONAL_ARGS" value="" />
+      <method v="2" />
+    </configuration>
     <configuration default="true" type="DjangoTestsConfigurationType">
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -109,20 +134,6 @@
       <option name="CUSTOM_SETTINGS" value="false" />
       <option name="USE_OPTIONS" value="false" />
       <option name="OPTIONS" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration default="true" type="PyBehaveRunConfigurationType" factoryName="Behave">
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="ADDITIONAL_ARGS" value="" />
       <method v="2" />
     </configuration>
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
@@ -212,8 +223,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-PY-242.23339.19" />
-        <option value="bundled-python-sdk-0029f7779945-399fe30bd8c1-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-242.23339.19" />
+        <option value="bundled-js-predefined-d6986cc7102b-f27c65a3e318-JavaScript-PY-251.23774.444" />
+        <option value="bundled-python-sdk-890ed5b35930-d9c5bdb153f4-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-251.23774.444" />
       </set>
     </attachedChunks>
   </component>
@@ -278,30 +289,9 @@
       <workItem from="1738793345446" duration="118000" />
       <workItem from="1738861961068" duration="53000" />
       <workItem from="1738862095798" duration="216000" />
-    </task>
-    <task id="LOCAL-00001" summary="testfile aangemaakt">
-      <option name="closed" value="true" />
-      <created>1727198284965</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1727198284965</updated>
-    </task>
-    <task id="LOCAL-00002" summary="pauze">
-      <option name="closed" value="true" />
-      <created>1727202771605</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1727202771605</updated>
-    </task>
-    <task id="LOCAL-00003" summary="pauze">
-      <option name="closed" value="true" />
-      <created>1727203286590</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1727203286590</updated>
+      <workItem from="1745944369578" duration="4603000" />
+      <workItem from="1746090974488" duration="159000" />
+      <workItem from="1746091184552" duration="17167000" />
     </task>
     <task id="LOCAL-00004" summary="auto-format on save">
       <option name="closed" value="true" />
@@ -639,13 +629,84 @@
       <option name="project" value="LOCAL" />
       <updated>1733261264984</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="Add tests, data, and new Python scripts for analysis&#10;&#10;This commit introduces several new files, including test data files (`test.txt`, `namen.txt`, `verbruik.txt`, `landen.txt`) and multiple Python scripts for object-oriented examples and data processing. Key updates include aggregating usage data for countries, creating class structures with special methods, and adding test utilities for analysis.">
+      <option name="closed" value="true" />
+      <created>1745944915969</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1745944915969</updated>
+    </task>
+    <task id="LOCAL-00047" summary="Update project_management.xlsx in examen_pm folder&#10;&#10;Modified project_management.xlsx to reflect necessary changes. Ensure the file is up-to-date for accurate project management tracking.">
+      <option name="closed" value="true" />
+      <created>1745946204599</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1745946204599</updated>
+    </task>
+    <task id="LOCAL-00048" summary="Add theorie.txt with exam preparation content&#10;&#10;This commit introduces a new file, theorie.txt, containing answers to questions and structured information for exam preparation. It includes multiple-choice responses, daily stand-up topics, and issue-related details for better organization.">
+      <option name="closed" value="true" />
+      <created>1745947464484</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1745947464484</updated>
+    </task>
+    <task id="LOCAL-00049" summary="Add SFTP functionality and automated file processing&#10;&#10;Introduced SFTP client and file processing pipeline in `main.py` to facilitate connecting to remote hosts, downloading files, and processing data. Simplified error handling and path management in `connect_to_PLC.py`. Added a YAML configuration file for managing SFTP host details and file paths.">
+      <option name="closed" value="true" />
+      <created>1746346169561</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1746346169561</updated>
+    </task>
+    <task id="LOCAL-00050" summary="Refactor SFTP host directory handling and update configs&#10;&#10;Updated local_base_dir logic to dynamically include hostname, ensuring more flexible and standardized directory structures. Removed redundant `re` dependency and simplified database query by hardcoding the table name. Adjusted `plc.yaml` to align with the new configuration and cleaned up unnecessary fields for unused hosts.">
+      <option name="closed" value="true" />
+      <created>1746351723594</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1746351723595</updated>
+    </task>
+    <task id="LOCAL-00051" summary="Refactor PLC YAML to use shared credentials and port.  &#10;&#10;Introduced reusable variables for username, password, and port to reduce redundancy and simplify updates across SFTP host configurations. This improves maintainability and consistency in handling connection details.">
+      <option name="closed" value="true" />
+      <created>1746355786781</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1746355786781</updated>
+    </task>
+    <task id="LOCAL-00052" summary="Refactor SFTP host selection to use hostnames.&#10;&#10;Replaced numeric selection with hostname-based input for improved clarity and usability. Removed redundant logic for enumerating hosts and validation of numeric inputs. Simplified user interaction by directly matching inputted hostnames.">
+      <option name="closed" value="true" />
+      <created>1746362862806</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1746362862806</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="origin/main" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
@@ -658,17 +719,6 @@
                   <entry key="Table.GitHub.CommitStatus.ColumnIdWidth" value="70" />
                 </map>
               </option>
-              <option name="FILTERS">
-                <map>
-                  <entry key="branch">
-                    <value>
-                      <list>
-                        <option value="origin/marijn" />
-                      </list>
-                    </value>
-                  </entry>
-                </map>
-              </option>
             </State>
           </value>
         </entry>
@@ -677,13 +727,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="fibo experiments" />
-    <MESSAGE value="opdracht 1.1" />
-    <MESSAGE value="opdracht 2.1 leapyear dom dow finished" />
-    <MESSAGE value="opdracht 2.2 date_string finished" />
-    <MESSAGE value="opdracht 2.3 finished day_number" />
-    <MESSAGE value="opdracht 2.4 eerste correcte weergave van december" />
-    <MESSAGE value="opdracht 2.5 getest op 3 maanden" />
     <MESSAGE value="opdracht 2.5 getest voor een gans jaar" />
     <MESSAGE value="opdracht 2.7 getest op ganse jaar" />
     <MESSAGE value="opdracht 2.8 weeknumber" />
@@ -702,23 +745,60 @@
     <MESSAGE value="einde van de les" />
     <MESSAGE value="oef erd" />
     <MESSAGE value="added gitignore" />
-    <option name="LAST_COMMIT_MESSAGE" value="added gitignore" />
+    <MESSAGE value="Add tests, data, and new Python scripts for analysis&#10;&#10;This commit introduces several new files, including test data files (`test.txt`, `namen.txt`, `verbruik.txt`, `landen.txt`) and multiple Python scripts for object-oriented examples and data processing. Key updates include aggregating usage data for countries, creating class structures with special methods, and adding test utilities for analysis." />
+    <MESSAGE value="Update project_management.xlsx in examen_pm folder&#10;&#10;Modified project_management.xlsx to reflect necessary changes. Ensure the file is up-to-date for accurate project management tracking." />
+    <MESSAGE value="Add theorie.txt with exam preparation content&#10;&#10;This commit introduces a new file, theorie.txt, containing answers to questions and structured information for exam preparation. It includes multiple-choice responses, daily stand-up topics, and issue-related details for better organization." />
+    <MESSAGE value="Add SFTP functionality and automated file processing&#10;&#10;Introduced SFTP client and file processing pipeline in `main.py` to facilitate connecting to remote hosts, downloading files, and processing data. Simplified error handling and path management in `connect_to_PLC.py`. Added a YAML configuration file for managing SFTP host details and file paths." />
+    <MESSAGE value="Refactor SFTP host directory handling and update configs&#10;&#10;Updated local_base_dir logic to dynamically include hostname, ensuring more flexible and standardized directory structures. Removed redundant `re` dependency and simplified database query by hardcoding the table name. Adjusted `plc.yaml` to align with the new configuration and cleaned up unnecessary fields for unused hosts." />
+    <MESSAGE value="Refactor PLC YAML to use shared credentials and port.  &#10;&#10;Introduced reusable variables for username, password, and port to reduce redundancy and simplify updates across SFTP host configurations. This improves maintainability and consistency in handling connection details." />
+    <MESSAGE value="Refactor SFTP host selection to use hostnames.&#10;&#10;Replaced numeric selection with hostname-based input for improved clarity and usability. Removed redundant logic for enumerating hosts and validation of numeric inputs. Simplified user interaction by directly matching inputted hostnames." />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactor SFTP host selection to use hostnames.&#10;&#10;Replaced numeric selection with hostname-based input for improved clarity and usability. Removed redundant logic for enumerating hosts and validation of numeric inputs. Simplified user interaction by directly matching inputted hostnames." />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/python-1-2024-25-PLC-Forceringen/Groepswerk/connect_to_PLC.py</url>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/python_1_2024$test.coverage" NAME="test Coverage Results" MODIFIED="1727203977079" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/python_1_2024$day_number.coverage" NAME="day_number Coverage Results" MODIFIED="1729620773752" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/proefexamen" />
-    <SUITE FILE_PATH="coverage/python_1_2024$chapter_7_iteration_and_search.coverage" NAME="chapter_7_iteration_and_search Coverage Results" MODIFIED="1729791642814" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/python_1_2024$fibo.coverage" NAME="fibo Coverage Results" MODIFIED="1729350967075" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/python_1_2024$chapter_3_oefening_3.coverage" NAME="chapter_3_oefening_3 Coverage Results" MODIFIED="1728411458428" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/python_1_2024$.coverage" NAME=" Coverage Results" MODIFIED="1729618489696" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/proefexamen" />
-    <SUITE FILE_PATH="coverage/python_1_2024$dow.coverage" NAME="dow Coverage Results" MODIFIED="1729618158686" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/proefexamen" />
-    <SUITE FILE_PATH="coverage/python_1_2024$chapter_4_les_turtle.coverage" NAME="chapter_4_les_turtle Coverage Results" MODIFIED="1728410138974" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/python_1_2024$dom.coverage" NAME="dom Coverage Results" MODIFIED="1729619527149" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/proefexamen" />
-    <SUITE FILE_PATH="coverage/python_1_2024$calendar.coverage" NAME="calendar Coverage Results" MODIFIED="1729627357188" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/proefexamen" />
     <SUITE FILE_PATH="coverage/python_1_2024$leapyear.coverage" NAME="leapyear Coverage Results" MODIFIED="1729617046352" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/proefexamen" />
-    <SUITE FILE_PATH="coverage/python_1_2024$demo.coverage" NAME="demo Coverage Results" MODIFIED="1726772844459" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/python_1_2024$connect_to_PLC.coverage" NAME="connect_to_PLC Coverage Results" MODIFIED="1745591314340" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/python-1-2024-25-PLC-Forceringen/Groepswerk" />
+    <SUITE FILE_PATH="coverage/python_1_2024$OO_38.coverage" NAME="OO_38 Coverage Results" MODIFIED="1743706081696" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/OO" />
+    <SUITE FILE_PATH="coverage/python_1_2024$chapter_7_iteration_and_search.coverage" NAME="chapter_7_iteration_and_search Coverage Results" MODIFIED="1729791642814" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/python_1_2024$test.coverage" NAME="test Coverage Results" MODIFIED="1727203977079" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/python_1_2024$leap_year.coverage" NAME="leap_year Coverage Results" MODIFIED="1729019285358" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/python_1_2024$faculteit.coverage" NAME="faculteit Coverage Results" MODIFIED="1728572622047" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/python_1_2024$fibo.coverage" NAME="fibo Coverage Results" MODIFIED="1729350967075" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/python_1_2024$OO_24.coverage" NAME="OO_24 Coverage Results" MODIFIED="1743103920441" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/OO" />
+    <SUITE FILE_PATH="coverage/python_1_2024$head.coverage" NAME="head Coverage Results" MODIFIED="1746362803294" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/python-1-2024-25-PLC-Forceringen/Groepswerk" />
+    <SUITE FILE_PATH="coverage/python_1_2024$oefening4.coverage" NAME="oefening4 Coverage Results" MODIFIED="1745340425781" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/python1-2024-25-tom/examen_2" />
+    <SUITE FILE_PATH="coverage/python_1_2024$calendar.coverage" NAME="calendar Coverage Results" MODIFIED="1729627357188" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/proefexamen" />
+    <SUITE FILE_PATH="coverage/python_1_2024$class_making_querry.coverage" NAME="class_making_querry Coverage Results" MODIFIED="1745568398882" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/python-1-2024-25-PLC-Forceringen/Groepswerk" />
+    <SUITE FILE_PATH="coverage/python_1_2024$OO_27.coverage" NAME="OO_27 Coverage Results" MODIFIED="1743702110172" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/OO" />
     <SUITE FILE_PATH="coverage/python_1_2024$week_number.coverage" NAME="week_number Coverage Results" MODIFIED="1729626034083" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/proefexamen" />
+    <SUITE FILE_PATH="coverage/python_1_2024$dow.coverage" NAME="dow Coverage Results" MODIFIED="1729618158686" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/proefexamen" />
+    <SUITE FILE_PATH="coverage/python_1_2024$main.coverage" NAME="main Coverage Results" MODIFIED="1745591254159" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/python-1-2024-25-PLC-Forceringen/Groepswerk" />
+    <SUITE FILE_PATH="coverage/python_1_2024$OO_39.coverage" NAME="OO_39 Coverage Results" MODIFIED="1743707803603" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/OO" />
+    <SUITE FILE_PATH="coverage/python_1_2024$chapter_4_les_turtle.coverage" NAME="chapter_4_les_turtle Coverage Results" MODIFIED="1728410138974" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/python_1_2024$OO_25.coverage" NAME="OO_25 Coverage Results" MODIFIED="1743106141007" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/OO" />
+    <SUITE FILE_PATH="coverage/python_1_2024$chapter_3_oefening_3.coverage" NAME="chapter_3_oefening_3 Coverage Results" MODIFIED="1728411458428" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/python_1_2024$ex_test.coverage" NAME="ex_test Coverage Results" MODIFIED="1745340737421" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Proefexamen" />
+    <SUITE FILE_PATH="coverage/python_1_2024$piece.coverage" NAME="piece Coverage Results" MODIFIED="1742933122887" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/yves/chess/src" />
+    <SUITE FILE_PATH="coverage/python_1_2024$OO_37.coverage" NAME="OO_37 Coverage Results" MODIFIED="1743705384826" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/OO" />
+    <SUITE FILE_PATH="coverage/python_1_2024$class_database.coverage" NAME="class_database Coverage Results" MODIFIED="1745568477819" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/python-1-2024-25-PLC-Forceringen/Groepswerk" />
+    <SUITE FILE_PATH="coverage/python_1_2024$class_bit_conversion.coverage" NAME="class_bit_conversion Coverage Results" MODIFIED="1745569276131" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/python-1-2024-25-PLC-Forceringen/Groepswerk" />
+    <SUITE FILE_PATH="coverage/python_1_2024$faculteit.coverage" NAME="faculteit Coverage Results" MODIFIED="1728572622047" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/python_1_2024$oldcon.coverage" NAME="oldcon Coverage Results" MODIFIED="1742496817677" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/python-1-2024-25-PLC-Forceringen/Groepswerk" />
+    <SUITE FILE_PATH="coverage/python_1_2024$day_number.coverage" NAME="day_number Coverage Results" MODIFIED="1729620773752" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/proefexamen" />
+    <SUITE FILE_PATH="coverage/python_1_2024$Get_Bit_Names.coverage" NAME="Get_Bit_Names Coverage Results" MODIFIED="1742496615312" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/python-1-2024-25-PLC-Forceringen/Groepswerk" />
+    <SUITE FILE_PATH="coverage/python_1_2024$dom.coverage" NAME="dom Coverage Results" MODIFIED="1729619527149" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/proefexamen" />
+    <SUITE FILE_PATH="coverage/python_1_2024$.coverage" NAME=" Coverage Results" MODIFIED="1729618489696" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/proefexamen" />
+    <SUITE FILE_PATH="coverage/python_1_2024$OO_23.coverage" NAME="OO_23 Coverage Results" MODIFIED="1743099499068" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/OO" />
+    <SUITE FILE_PATH="coverage/python_1_2024$demo.coverage" NAME="demo Coverage Results" MODIFIED="1726772844459" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/python_1_2024$oefening5.coverage" NAME="oefening5 Coverage Results" MODIFIED="1745340841845" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/python1-2024-25-tom/examen_2" />
+    <SUITE FILE_PATH="coverage/python_1_2024$chess.coverage" NAME="chess Coverage Results" MODIFIED="1742503417125" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/OO" />
   </component>
 </project>
